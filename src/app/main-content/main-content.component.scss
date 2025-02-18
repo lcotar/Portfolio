@@ -1,29 +1,34 @@
 .startScreen {
-  img {
-    width: 646px;
-    height: 705px;
-    top: 106px;
-    left: 47px;
+  display: flex;
+  align-items: center;
+
+  .profileIMG {
+    width: 700px;
+    height: 800px;
+    justify-content: left;
+    z-index: -10;
   }
 
-  button {
-    position: absolute;
+  .talk {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
     width: 165px;
     height: 58px;
-    gap: 10px;
-    top: 513px;
-    left: 792px;
     border-radius: 10px;
     border-color: transparent;
     padding: 15px 30px;
     background-color: #70e61c;
     color: rgba(255, 255, 255, 1);
     box-shadow: rgba(0, 0, 0, 0.25);
-
     font-size: 23px;
+    z-index: 999;
 
     &:hover {
       cursor: pointer;
+      animation-timing-function: ease-out;
+      animation-duration: 300ms;
+      transform: scale(1.1);
     }
   }
 }
@@ -31,13 +36,9 @@
 .title {
   display: flex;
   align-items: center;
+  justify-content: right;
   gap: 1rem;
-  position: absolute;
-
-  width: 718px;
-  height: 172px;
-  top: 297px;
-  left: 622px;
+  padding: auto;
 
   .content {
     writing-mode: vertical-rl; // Dreht den Text vertikal
@@ -55,7 +56,6 @@
   }
 
   .name {
-    width: 620px;
     height: 108px;
     font-family: Poppins;
     font-weight: 700px;
@@ -67,7 +67,6 @@
   }
 
   .profession {
-    width: 619px;
     height: 70px;
 
     font-family: Poppins;
@@ -77,5 +76,79 @@
     letter-spacing: 0%;
 
     color: rgba(151, 71, 255, 1);
+  }
+}
+
+.scrollDown {
+  position: absolute;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  gap: 8px;
+  transform: rotate(90deg);
+  top: 773px;
+  color: rgb(255, 255, 255);
+  font-family: Poppins;
+  z-index: 999;
+
+  .arrowScrollDown {
+    width: 32px;
+    height: 32px;
+    transform: rotate(270deg);
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.shapeIcon {
+  position: absolute;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 971px;
+  top: 380px;
+  clip-path: polygon(
+    /* Links oben */ 0% 0%,
+    /* links unten */ 100% 0%,
+    /* Rechts unten */ 100% 100%,
+    /* Rechts oben */ 0% 100%
+  );
+  z-index: -5;
+}
+
+.quickContact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .socialMediaIcons {
+    display: flex;
+    gap: 16px;
+  }
+
+  .gitHub,
+  .linkedIn,
+  .mail {
+    width: 30px;
+    height: 30px;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+    }
+  }
+
+  .eMail {
+    color: rgb(255, 255, 255);
+    font-family: Poppins;
+
+    &:hover {
+      cursor: pointer;
+      animation-timing-function: ease-out;
+      animation-duration: 300ms;
+      transform: scale(1.1);
+    }
   }
 }
