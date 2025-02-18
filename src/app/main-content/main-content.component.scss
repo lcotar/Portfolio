@@ -87,6 +87,7 @@
   gap: 8px;
   transform: rotate(90deg);
   top: 773px;
+  right: 50px;
   color: rgb(255, 255, 255);
   font-family: Poppins;
   z-index: 999;
@@ -99,6 +100,8 @@
 
   &:hover {
     cursor: pointer;
+    animation-timing-function: ease-out;
+    animation-duration: 300ms;
   }
 }
 
