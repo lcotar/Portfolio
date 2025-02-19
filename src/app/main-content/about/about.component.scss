@@ -1,0 +1,81 @@
+.aboutMe {
+  color: rgba(255, 255, 255, 1);
+  font-family: Poppins;
+  display: flex;
+}
+
+.contentLeft {
+  width: 50%;
+
+  .title {
+    font-size: 90px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .descriptionAboutMe {
+    margin: 0;
+    font-size: 30px;
+  }
+
+  .information {
+    .location,
+    .openMinded,
+    .description {
+      display: flex;
+      padding: 20px 0;
+
+      p {
+        margin: 0px;
+        font-size: 24px;
+      }
+
+      img {
+        height: 70px;
+      }
+
+      .aboutMeIcon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}
+
+.contentRight {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 50%;
+
+  .about {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+  }
+
+  .profileIMG {
+    flex-shrink: 0; // Verhindert, dass das Bild schrumpft
+
+    .img {
+      display: flex;
+      justify-content: end;
+
+      border-radius: 250px;
+      border: 50px;
+      border-color: rgba(112, 230, 28, 1);
+    }
+  }
+
+  .line {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+
+    .lineIMG {
+      width: 100%;
+    }
+  }
+}
