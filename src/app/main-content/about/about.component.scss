@@ -5,25 +5,45 @@
 }
 
 .contentLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   width: 50%;
 
-  .title {
-    font-size: 90px;
-    margin: 0;
-    padding: 0;
-  }
+  .introduction {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    max-width: 585px;
 
-  .descriptionAboutMe {
-    margin: 0;
-    font-size: 30px;
+    .title {
+      font-size: 135px;
+      margin: 0;
+      padding: 0;
+      display: block;
+    }
+
+    .descriptionAboutMe {
+      margin: 0;
+      font-size: 30px;
+      display: block;
+    }
   }
 
   .information {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+
     .location,
     .openMinded,
     .description {
-      display: flex;
       padding: 20px 0;
+      display: flex;
+      justify-content: end;
+      align-items: center;
 
       p {
         margin: 0px;
