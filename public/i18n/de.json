@@ -1,0 +1,97 @@
+{
+  "navbar": {
+    "aboutMe": "Über mich",
+    "skills": "Fähigkeiten",
+    "projects": "Projekte",
+    "contact": "Kontakt"
+  },
+
+
+  "home": {
+    "name": "Lea Cotar",
+    "role": "Frontend Entwicklerin"
+  },
+
+"aboutMe": {
+  "header": "Über mich",
+  "text": "Schreiben Sie einige Informationen über sich selbst, die mit IT zu tun haben. Warum begeistern Sie sich für das Programmieren? Was inspiriert Sie dazu, Ihre Programmierkenntnisse zu verbessern?",
+  "location": "Wo befinden Sie sich? Sind Sie offen für verschiedene Arbeitsweisen, wie z. B. Remote-Arbeit oder sogar einen Umzug?",
+  "openMinded": "Zeigen Sie, dass Sie aufgeschlossen sind. Sind Sie begeistert davon, neue Technologien zu erlernen und Ihre Fähigkeiten kontinuierlich zu verbessern?",
+  "description": "Eine kurze Beschreibung Ihres Ansatzes zur Problemlösung. Lernen Sie aus jeder Herausforderung, während Sie nach der effizientesten oder elegantesten Lösung suchen? Sie können einige Schlüsselwörter wie analytisches Denken, Kreativität, Beharrlichkeit und Zusammenarbeit einfügen."
+},
+
+
+"mySkills": {
+  "header": {
+    "eins": "Meine Fähigkeiten",
+    "zewi": "Suchen Sie nach einer weiteren Fähigkeit?"
+  },
+  "text": {
+    "eins": "Zeigen Sie, dass Sie in Ihren Projekten verschiedene Frontend-Technologien eingesetzt haben.",
+    "zwei": "Zeigen Sie Begeisterung für das Erlernen neuer Technologien und Frameworks."
+  }
+},
+
+
+"myProjects": {
+  "header": "Projekte",
+  "text": "Entdecken Sie hier eine Auswahl meiner Arbeiten - interagieren Sie mit den Projekten, um meine Fähigkeiten in Aktion zu sehen.",
+  "join": {
+    "title": "Join",
+    "description": "Vom Kanban-System inspirierter Task-Manager. Erstellen und organisieren Sie Aufgaben mithilfe von Drag-and-Drop-Funktionen, weisen Sie Benutzer und Kategorien zu."
+  },
+  "el-pollo-loco": {
+    "title": "El-Pollo-Loco",
+    "description": "Ein einfaches Jump-and-Run-Spiel, das auf einem objektorientierten Ansatz basiert. Helfen Sie Sharkie, Münzen und Giftflaschen zu finden, um gegen den Killerwal zu kämpfen."
+  },
+  "simplecrm": {
+    "title": "simpleCRM",
+    "description": "Ein sehr einfaches Customer-Relationship-Management-System mit CRUD-Funktionalität."
+  },
+
+  "pokedex": {
+    "title": "Pokédex",
+    "description": "Basierend auf der PokéAPI eine einfache Bibliothek, die Pokémon-Informationen bereitstellt und katalogisiert."
+  },
+  "dabubble": {
+    "title": "DA Bubble",
+    "description": "Diese App ist eine Slack-Klon-App. Sie revolutioniert die Teamkommunikation und -zusammenarbeit mit ihrer intuitiven Benutzeroberfläche, Echtzeit-Nachrichtenübermittlung und robusten Kanalorganisation."
+  }
+},
+
+
+"whatMyColleguasSay": {
+  "teamPlayer": {
+    "johannes": {
+      "name":"Johannes Singl",
+      "project": "Join",
+      "feedback": "Die Zusammenarbeit mit Lea an unserem Projekt war grossartig. Mit ihrer Kreativität, ihrem technischen Know-how und ihrer lösungsorientierten Art hat sie massgeblich zum Erfolg beigetragen. Ihre positive Einstellung und Teamfähigkeit machten die Arbeit nicht nur produktiv, sondern auch angenehm.",
+      "linkedin": ""
+    },
+    "test": {
+      "name":"",
+      "project": "",
+      "feedback": "",
+      "linkedin": ""
+    }
+  }
+},
+
+"contact": {
+  "header": "",
+  "text": "",
+  "privacy": {
+    "eins": "Ich habe die ",
+    "zwei": "Datenschutzerklärung ",
+    "drei": "gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu."
+  }
+},
+
+"imprint": {
+  "header": "",
+  "": "",
+  "contact": "",
+  "mobile": ""
+}
+
+}

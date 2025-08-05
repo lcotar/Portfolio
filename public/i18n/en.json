@@ -1,0 +1,94 @@
+{
+  "navbar": {
+    "aboutMe": "About me",
+    "skills": "Skills",
+    "projects": "Portfolio",
+    "contact": "Contact"
+  },
+
+  "home": {
+    "name": "Lea Cotar",
+    "role": "Frontend Developer"
+  },
+
+  "aboutMe": {
+    "header": "About me",
+    "text": "Write some information about yourself that is IT related. Why are you passionate about coding? What is your source of inspiration for improving your programming skills?",
+    "location": "Where are you located? Are you open to different ways of working, such as working remotely or even relocating?",
+    "openMinded": "Show that you are open-minded. Are you enthusiastic about learning new technologies and continually improving your skills?",
+    "description": "A brief description of your problem-solving approach. Do you learn from each challenge as you search for the most efficient or elegant solution? You can include some keywords like: analytical thinking, creativity, persistence and  collaboration."
+  },
+
+  "mySkills": {
+    "header": {
+      "eins": "My Skills",
+      "zwei": "Looking for another skill?"
+    },
+    "text": {
+      "eins": "Show that you have used a variety of  front-end technologies in your projects.",
+      "zwei": "Reveal enthusiasm for learning new technologies and frameworks."
+    }
+  },
+
+  "myProjects": {
+    "header": "Portfolio",
+    "text": "Explore a selection of my work here - Interact with projects to see my skills in action.",
+    "join": {
+      "title": "Join",
+      "description": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories."
+    },
+    "el-pollo-loco": {
+      "title": "El-Pollo-Loco",
+      "description": "A simple Jump-and-Run game based on an object-oriented approach. Help sharkie to find coins and poison bottles to fight against the killer whale."
+    },
+    "simplecrm": {
+      "title": "simpleCRM",
+      "description": "A very Simple Customer Relationship Management system working with CRUD functionality."
+    },
+
+    "pokedex": {
+      "title": "Pokédex",
+      "description": "Based on the PokéAPI a simple library that provides and catalogues pokemon information."
+    },
+    "dabubble": {
+      "title": "DA Bubble",
+      "description": "This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization."
+    }
+  },
+
+  "whatMyColleguasSay": {
+    "teamPlayer": {
+      "johannes": {
+        "name": "Johannes Singl",
+        "project": "Join",
+        "feedback": "Working with Lea on our project was fantastic. With her creativity, technical expertise, and solution-oriented approach, she contributed significantly to its success. Her positive attitude and ability to work well in a team made the work not only productive but also enjoyable.",
+        "linkedin": ""
+      },
+      "test": {
+        "name": "",
+        "project": "",
+        "feedback": "",
+        "linkedin": ""
+      }
+    }
+  },
+
+  "contact": {
+    "header": "",
+    "text": {
+      "eins": "Encourage people to contact you and describe what role you are interested in. Show that you will add value to their projects through your work.",
+      "zwei": "Need a Frontend developer? Contact me!"
+    },
+    "privacy": {
+      "eins": "I've read the ",
+      "zwei": "privacy policy ",
+      "drei": "and agree to the processing of my data as outlined."
+    }
+  },
+
+  "imprint": {
+    "header": "",
+    "contact": "",
+    "mobile": ""
+  }
+}
