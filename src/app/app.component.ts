@@ -19,8 +19,8 @@ export class AppComponent implements OnInit {
 
   constructor(private translate: TranslateService, public router: Router) {
     this.translate.addLangs(['de', 'en']);
-    this.translate.setDefaultLang('de');
-    this.translate.use('de');
+    this.translate.setDefaultLang('en');
+    this.translate.use('en');
   }
 
   ngOnInit() {

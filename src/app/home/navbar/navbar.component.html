@@ -1,1 +1,29 @@
-<p>navbar works!</p>
+<section class="navbarCNT">
+  <div class="navbarLogo">
+    <img src="/img/navbar/lc_logo.jpg" alt="" />
+  </div>
+
+  <div class="navbarMenu">
+    <div class="navbarLinks">
+      <a href="#aboutme">{{ "navbar.aboutMe" | translate }}</a>
+      <a href="#skills">{{ "navbar.skills" | translate }}</a>
+      <a href="#portfolio">{{ "navbar.projects" | translate }}</a>
+      <a href="#contact">{{ "navbar.contact" | translate }}</a>
+    </div>
+
+    <div class="navbarSwitchingLanguage">
+      <button
+        [class.active-lang]="currentLang === 'de'"
+        (click)="toogleTranslation('de')"
+      >
+        DE
+      </button>
+      <button
+        [class.active-lang]="currentLang === 'en'"
+        (click)="toogleTranslation('en')"
+      >
+        EN
+      </button>
+    </div>
+  </div>
+</section>
