@@ -9,7 +9,10 @@
   "home": {
     "whoIs": "Ich bin",
     "name": "Lea Cotar",
-    "role": "Frontend Entwicklerin"
+    "role": "Frontend Entwicklerin",
+    "talk": "Lass uns reden!",
+    "email": "cotar@contact.com",
+    "scroll": "Scroll down"
   },
 
   "aboutMe": {
