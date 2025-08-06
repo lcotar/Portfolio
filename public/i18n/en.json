@@ -7,16 +7,17 @@
   },
 
   "home": {
+    "whoIs": "I am",
     "name": "Lea Cotar",
     "role": "Frontend Developer"
   },
 
   "aboutMe": {
     "header": "About me",
-    "text": "Write some information about yourself that is IT related. Why are you passionate about coding? What is your source of inspiration for improving your programming skills?",
-    "location": "Where are you located? Are you open to different ways of working, such as working remotely or even relocating?",
-    "openMinded": "Show that you are open-minded. Are you enthusiastic about learning new technologies and continually improving your skills?",
-    "description": "A brief description of your problem-solving approach. Do you learn from each challenge as you search for the most efficient or elegant solution? You can include some keywords like: analytical thinking, creativity, persistence and  collaboration."
+    "text": "I have been interested in computer technology since my school days and have taught myself a lot of IT skills. In addition, I successfully completed an apprenticeship as a computer scientist EFZ specializing in systems engineering. Since then, I have been working with Windows and am well versed in network technologies and Linux. I have always been enthusiastic about technology. In programming, I have finally found a tool that allows me to actively create something myself—not just consume it. The world is becoming increasingly digital, and programming is a key skill for the future. That's why I am inspired to constantly learn new technologies and tools. I am improving my programming skills so that I can implement my projects even more efficiently, user-friendly, and innovatively. The more I learn, the greater my possibilities become-this motivates me enormously to constantly develop myself further.",
+    "location": "I live in Zurich. I am open to working on-site or remotely. I am willing to relocate to a specific city or location. It is important to me that I have the opportunity to take such an important step.",
+    "openMinded": "I am very open-minded and curious when it comes to new technologies. I see every new technology as an opportunity to continuously expand my skills and broaden my horizons. Whether through online courses or personal projects, I regularly work on keeping my skills up to date. This continuous development is what makes the IT world so appealing to me.",
+    "description": "I see challenges as opportunities, as I can learn something from every problem I encounter. Through analytical thinking, I recognize patterns and often find targeted solutions. Creativity helps me find new solutions when standard methods don't work. Teamwork often leads to particularly efficient and elegant results."
   },
 
   "mySkills": {
@@ -25,34 +26,33 @@
       "zwei": "Looking for another skill?"
     },
     "text": {
-      "eins": "Show that you have used a variety of  front-end technologies in your projects.",
-      "zwei": "Reveal enthusiasm for learning new technologies and frameworks."
+      "eins": "Here you will find various front-end technologies that I have used in my projects.",
+      "zwei": "Technologies are constantly evolving-that's exactly what motivates me to always discover and try new things."
     }
   },
 
   "myProjects": {
     "header": "Portfolio",
-    "text": "Explore a selection of my work here - Interact with projects to see my skills in action.",
+    "text": "Scroll, click, marvel-discover my projects, test features live, and see for yourself what technology can achieve with creativity.",
     "join": {
       "title": "Join",
-      "description": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories."
+      "description": "Organize your tasks like a pro with intuitive drag-and-drop, Kanban-inspired boards, and smart user and category assignment. Visual. Dynamic. Efficient. Join Projekt brings structure to your chaos-easily, quickly, and with technical finesse."
     },
     "el-pollo-loco": {
       "title": "El-Pollo-Loco",
-      "description": "A simple Jump-and-Run game based on an object-oriented approach. Help sharkie to find coins and poison bottles to fight against the killer whale."
+      "description": "An action-packed jump-and-run game in object-oriented style: Collect coins and bottles, equip your Mexican hero, and face the ultimate showdown against the dreaded killer chicken!"
     },
-    "simplecrm": {
-      "title": "simpleCRM",
-      "description": "A very Simple Customer Relationship Management system working with CRUD functionality."
-    },
-
     "pokedex": {
       "title": "Pokédex",
-      "description": "Based on the PokéAPI a simple library that provides and catalogues pokemon information."
+      "description": "Welcome to the Pokédex Project-an interactive application that uses the powerful PokéAPI to retrieve, analyze, and visualize real Pokémon data in real time. With this API as its technological backbone, the result is a digital reference work that will delight Pokémon fans and developers alike-fast, dynamic, and brimming with Poké knowledge."
     },
     "dabubble": {
       "title": "DA Bubble",
       "description": "This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization."
+    },
+    "simplecrm": {
+      "title": "simpleCRM",
+      "description": "A very Simple Customer Relationship Management system working with CRUD functionality."
     }
   },
 
@@ -62,7 +62,7 @@
         "name": "Johannes Singl",
         "project": "Join",
         "feedback": "Working with Lea on our project was fantastic. With her creativity, technical expertise, and solution-oriented approach, she contributed significantly to its success. Her positive attitude and ability to work well in a team made the work not only productive but also enjoyable.",
-        "linkedin": ""
+        "linkedin": "linkedin.com/in/johannes-singl-1920aa33b"
       },
       "test": {
         "name": "",

@@ -6,92 +6,87 @@
     "contact": "Kontakt"
   },
 
-
   "home": {
+    "whoIs": "Ich bin",
     "name": "Lea Cotar",
     "role": "Frontend Entwicklerin"
   },
 
-"aboutMe": {
-  "header": "Über mich",
-  "text": "Schreiben Sie einige Informationen über sich selbst, die mit IT zu tun haben. Warum begeistern Sie sich für das Programmieren? Was inspiriert Sie dazu, Ihre Programmierkenntnisse zu verbessern?",
-  "location": "Wo befinden Sie sich? Sind Sie offen für verschiedene Arbeitsweisen, wie z. B. Remote-Arbeit oder sogar einen Umzug?",
-  "openMinded": "Zeigen Sie, dass Sie aufgeschlossen sind. Sind Sie begeistert davon, neue Technologien zu erlernen und Ihre Fähigkeiten kontinuierlich zu verbessern?",
-  "description": "Eine kurze Beschreibung Ihres Ansatzes zur Problemlösung. Lernen Sie aus jeder Herausforderung, während Sie nach der effizientesten oder elegantesten Lösung suchen? Sie können einige Schlüsselwörter wie analytisches Denken, Kreativität, Beharrlichkeit und Zusammenarbeit einfügen."
-},
-
-
-"mySkills": {
-  "header": {
-    "eins": "Meine Fähigkeiten",
-    "zewi": "Suchen Sie nach einer weiteren Fähigkeit?"
-  },
-  "text": {
-    "eins": "Zeigen Sie, dass Sie in Ihren Projekten verschiedene Frontend-Technologien eingesetzt haben.",
-    "zwei": "Zeigen Sie Begeisterung für das Erlernen neuer Technologien und Frameworks."
-  }
-},
-
-
-"myProjects": {
-  "header": "Projekte",
-  "text": "Entdecken Sie hier eine Auswahl meiner Arbeiten - interagieren Sie mit den Projekten, um meine Fähigkeiten in Aktion zu sehen.",
-  "join": {
-    "title": "Join",
-    "description": "Vom Kanban-System inspirierter Task-Manager. Erstellen und organisieren Sie Aufgaben mithilfe von Drag-and-Drop-Funktionen, weisen Sie Benutzer und Kategorien zu."
-  },
-  "el-pollo-loco": {
-    "title": "El-Pollo-Loco",
-    "description": "Ein einfaches Jump-and-Run-Spiel, das auf einem objektorientierten Ansatz basiert. Helfen Sie Sharkie, Münzen und Giftflaschen zu finden, um gegen den Killerwal zu kämpfen."
-  },
-  "simplecrm": {
-    "title": "simpleCRM",
-    "description": "Ein sehr einfaches Customer-Relationship-Management-System mit CRUD-Funktionalität."
+  "aboutMe": {
+    "header": "Über mich",
+    "text": "Ich interessiere mich seit meiner Schulzeit für Computertechnik und habe mir viele IT-Kenntnisse autodidaktisch angeeignet. Hinzu kommt, das ich eine Ausbildung als Informatikerin EFZ Fachrichtung Systemtechnik erfolgreich absolviert. Seither arbeite ich mit Windows und kenne mich mit Netzwerktechnologien und Linux gut aus. Ich war schon immer technikbegeistert. Beim Programmieren habe ich endlich ein Werkzeug gefunden, mit dem ich selbst aktiv etwas erschaffen kann-nicht nur konsumieren. Die Welt wird immer digitaler, und Programmieren ist eine Schlüsselkompetenz der Zukunft. Deshalb inspiriert es mich, ständig neue Technologien und Tools zu lernen. Ich verbessere meine Programmierkenntnisse, um meine Projekte noch effizienter, nutzerfreundlicher und innovativer umsetzen zu können. Je mehr ich lerne, desto grösser werden meine Möglichkeiten-das motiviert mich enorm, mich ständig weiterzuentwickeln.",
+    "location": "Ich bin Wohnhaft in Zürich. Ich bin offen für arbeit im Betrieb oder Remote zu arbeiten. Einen Umzug in eine bestimmte Stadt oder an einen bestimmten Standort ist für mich nicht ausgeschlossen. Mir ist wichtig, dass mir die Möglichkeit offen steht und das ich die Möglichkeit habe, so einen wichtigen Schritt zu machen.",
+    "openMinded": "Ich bin sehr aufgeschlossen und neugierig, wenn es um neue Technologien geht. Ich sehe jede neue Technologie als Chance, meine Fähigkeiten stetig zu erweitern und meinen Horizont zu vergrössern. Ob durch Online-Kurse oder persönliche Projekte-ich arbeite regelmässig daran, meine Skills aktuell zu halten. Diese kontinuierliche Weiterentwicklung macht für mich den Reiz an der IT-Welt aus.",
+    "description": "Ich sehe Herausforderungen als Chance, da ich aus jedem meiner Probleme etwas lernen kann. Durch analytisches Denken erkenne ich Muster und finde oft zielgerichtete Lösungen. Kreativität hilft mir, neue Lösungswege zu finden, wenn Standardmethoden nicht greifen. Durch Zusammenarbeit im Team entstehen oft besonders effiziente und elegante Ergebnisse."
   },
 
-  "pokedex": {
-    "title": "Pokédex",
-    "description": "Basierend auf der PokéAPI eine einfache Bibliothek, die Pokémon-Informationen bereitstellt und katalogisiert."
-  },
-  "dabubble": {
-    "title": "DA Bubble",
-    "description": "Diese App ist eine Slack-Klon-App. Sie revolutioniert die Teamkommunikation und -zusammenarbeit mit ihrer intuitiven Benutzeroberfläche, Echtzeit-Nachrichtenübermittlung und robusten Kanalorganisation."
-  }
-},
-
-
-"whatMyColleguasSay": {
-  "teamPlayer": {
-    "johannes": {
-      "name":"Johannes Singl",
-      "project": "Join",
-      "feedback": "Die Zusammenarbeit mit Lea an unserem Projekt war grossartig. Mit ihrer Kreativität, ihrem technischen Know-how und ihrer lösungsorientierten Art hat sie massgeblich zum Erfolg beigetragen. Ihre positive Einstellung und Teamfähigkeit machten die Arbeit nicht nur produktiv, sondern auch angenehm.",
-      "linkedin": ""
+  "mySkills": {
+    "header": {
+      "eins": "Meine Fähigkeiten",
+      "zewi": "Suchen Sie nach einer weiteren Fähigkeit?"
     },
-    "test": {
-      "name":"",
-      "project": "",
-      "feedback": "",
-      "linkedin": ""
+    "text": {
+      "eins": "Hier findest du verschiedene Frontend-Technologien, die ich meinen Projekten verwendet habe.",
+      "zwei": "Technologien entwickeln sich ständig weiter-genau das motiviert mich, immer Neues zu entdecken und auszuprobieren."
     }
+  },
+
+  "myProjects": {
+    "header": "Projekte",
+    "text": "Scrollen, klicken, staunen-entdecke meine Projekte, teste Features live und seh selbst, was Technik mit Kreativität bewirken kann.",
+    "join": {
+      "title": "Join",
+      "description": "Organisiere deine Aufgaben wie ein Profi-mit intuitivem Drag-and-Drop, Kanban-inspiriertem Board und smarter Zuweisung von Nutzern und Kategorien. Visuell. Dynamisch. Effizient. Join Projekt bringt Struktur in dein Chaos-einfach, schnell und technisch clever."
+    },
+    "el-pollo-loco": {
+      "title": "El-Pollo-Loco",
+      "description": "Ein actiongeladenes Jump-and-Run im objektorientierten Stil: Sammle Münzen und Flaschen, rüste deinen mexikanischen Helden aus- und stelle dich dem ultimativen Showdown gegen das gefürchtete Killerhuhn!"
+    },
+    "pokedex": {
+      "title": "Pokédex",
+      "description": "Willkommen beim Pokédex-Projekt-einer interaktiven Anwendung, die mithilfe der leistungsstarken PokéAPI echte Pokémon-Daten in Echtzeit abruft, analysiert und visualisiert. Mit dieser API als technologischem Rückgrat entsteht ein digitales Nachschlagewerk, das Pokémon-Fans und Entwickler gleichermassen begeistert-schnell, dynamisch und randvoll mit Poké-Wissen."
+    },
+    "dabubble": {
+      "title": "DA Bubble",
+      "description": "Diese App ist eine Slack-Klon-App. Sie revolutioniert die Teamkommunikation und -zusammenarbeit mit ihrer intuitiven Benutzeroberfläche, Echtzeit-Nachrichtenübermittlung und robusten Kanalorganisation."
+    },
+    "simplecrm": {
+      "title": "simpleCRM",
+      "description": "Ein sehr einfaches Customer-Relationship-Management-System mit CRUD-Funktionalität."
+    }
+  },
+
+  "whatMyColleguasSay": {
+    "teamPlayer": {
+      "johannes": {
+        "name": "Johannes Singl",
+        "project": "Join",
+        "feedback": "Die Zusammenarbeit mit Lea an unserem Projekt war grossartig. Mit ihrer Kreativität, ihrem technischen Know-how und ihrer lösungsorientierten Art hat sie massgeblich zum Erfolg beigetragen. Ihre positive Einstellung und Teamfähigkeit machten die Arbeit nicht nur produktiv, sondern auch angenehm.",
+        "linkedin": "linkedin.com/in/johannes-singl-1920aa33b"
+      },
+      "test": {
+        "name": "",
+        "project": "",
+        "feedback": "",
+        "linkedin": ""
+      }
+    }
+  },
+
+  "contact": {
+    "header": "",
+    "text": "",
+    "privacy": {
+      "eins": "Ich habe die ",
+      "zwei": "Datenschutzerklärung ",
+      "drei": "gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu."
+    }
+  },
+
+  "imprint": {
+    "header": "",
+    "": "",
+    "contact": "",
+    "mobile": ""
   }
-},
-
-"contact": {
-  "header": "",
-  "text": "",
-  "privacy": {
-    "eins": "Ich habe die ",
-    "zwei": "Datenschutzerklärung ",
-    "drei": "gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu."
-  }
-},
-
-"imprint": {
-  "header": "",
-  "": "",
-  "contact": "",
-  "mobile": ""
-}
-
 }
