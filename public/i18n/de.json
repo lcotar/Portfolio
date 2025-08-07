@@ -26,7 +26,9 @@
   "mySkills": {
     "header": {
       "eins": "Meine Fähigkeiten",
-      "zewi": "Suchen Sie nach einer weiteren Fähigkeit?"
+      "zwei": "Suchen Sie nach einer",
+      "drei": "weiteren Fähigkeit",
+      "vier": "?"
     },
     "text": {
       "eins": "Hier findest du verschiedene Frontend-Technologien, die ich meinen Projekten verwendet habe.",
