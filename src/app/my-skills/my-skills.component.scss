@@ -46,3 +46,64 @@
     width: 600px;
   }
 }
+
+/* .skillsCTN {
+
+} */
+
+.skillsSubheader {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 0;
+  height: 50px;
+  gap: 0;
+
+  h2 {
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 120%;
+    text-align: left;
+  }
+
+  .skillsHeaderGap {
+    margin-right: 10px;
+  }
+
+  .skillsHeaderColor {
+    color: #9747ff;
+  }
+}
+
+/* .skillsHeaderTXT {
+}
+
+.skillsSubTXT {
+} */
+
+.skillsBTNContact {
+  button {
+    font-size: 1.2rem;
+    color: #ffffff;
+    border-color: #70e61c;
+    border-radius: 10px;
+    background-color: #70e61c;
+
+    width: 200px;
+    height: 60px;
+    gap: 10px;
+    border-radius: 10px;
+    padding: 15px 30px;
+
+    &:hover {
+      cursor: pointer;
+      color: #ffffff;
+      background-color: #9747ff;
+      border-color: #9747ff;
+      transform: scale(1.1);
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+}
