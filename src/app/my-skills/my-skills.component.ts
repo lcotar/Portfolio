@@ -10,21 +10,73 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrl: './my-skills.component.scss',
 })
 export class MySkillsComponent {
-  iconsFrondend: string[] = [
-    '/img/skills/icons/10_html_icon.png',
-    '/img/skills/icons/11_css_icon.png',
-    '/img/skills/icons/06_javaScript_icon.png',
-
-    '/img/skills/icons/12_typeScript_icon.png.png',
-    '/img/skills/icons/15_angular_icon.png',
-    '/img/skills/icons/07_firebase_icon.png',
-    '/img/skills/icons/09_git_icon.png',
-    '/img/skills/icons/13_restAPI_icon.png',
-    '/img/skills/icons/08_scrum_icon.png',
-
-    '/img/skills/icons/18_materialDesign_icon.png',
-    '/img/skills/icons/16_continuallyLearning_icon.png',
-    // '/img/skills/icons/.png',
+  iconsFrondend = [
+    {
+      name: 'HTML',
+      srcDefault: '/img/skills/icons/10_html_icon.png',
+      srcHover: '/img/skills/hover_icons/10_html_icon_hover.png',
+      isHovered: false,
+    },
+    {
+      name: 'CSS',
+      srcDefault: '/img/skills/icons/11_css_icon.png',
+      srcHover: '/img/skills/hover_icons/11_css_icon_hover.png',
+      isHovered: false,
+    },
+    {
+      name: 'JavaScript',
+      srcDefault: '/img/skills/icons/06_javaScript_icon.png',
+      srcHover: '/img/skills/hover_icons/06_javaScript_icon_hover.png',
+      isHovered: false,
+    },
+    {
+      name: 'TypeScript',
+      srcDefault: '/img/skills/icons/12_typeScript_icon.png',
+      srcHover: '/img/skills/hover_icons/12_typeScript_icon_hover.png',
+      isHovered: false,
+    },
+    {
+      name: 'Angular',
+      srcDefault: '/img/skills/icons/15_angular_icon.png',
+      srcHover: '/img/skills/hover_icons/15_angular_icon_hover.png',
+      isHovered: false,
+    },
+    {
+      name: 'Firebase',
+      srcDefault: '/img/skills/icons/07_firebase_icon.png',
+      srcHover: '/img/skills/hover_icons/07_firebase_icon_hover.png',
+      isHovered: false,
+    },
+    {
+      name: 'Git',
+      srcDefault: '/img/skills/icons/09_git_icon.png',
+      srcHover: '/img/skills/hover_icons/09_git_icon_hover.png',
+      isHovered: false,
+    },
+    {
+      name: 'Rest API',
+      srcDefault: '/img/skills/icons/13_restAPI_icon.png',
+      srcHover: '/img/skills/hover_icons/13_restAPI_icon_hover.png',
+      isHovered: false,
+    },
+    {
+      name: 'Scrum',
+      srcDefault: '/img/skills/icons/08_scrum_icon.png',
+      srcHover: '/img/skills/hover_icons/08_scrum_icon_hover.png',
+      isHovered: false,
+    },
+    {
+      name: 'Material Design',
+      srcDefault: '/img/skills/icons/18_materialDesign_icon.png',
+      srcHover: '/img/skills/hover_icons/18_materialDesign_icon_hover.png',
+      isHovered: false,
+    },
+    {
+      name: 'Continuous Learning',
+      srcDefault: '/img/skills/icons/16_continuallyLearning_icon.png',
+      srcHover: '/img/skills/icons/16_continuallyLearning_icon.png',
+      isHovered: false,
+    },
   ];
 
   /* iconsBackend:string[] =

@@ -1,37 +1,71 @@
 <p>my-skills works!</p>
 
 <section class="wholeSkillsCTN" id="skills">
-  <section class="skillsLeftSide"></section>
+  <!-- Left Side -->
+  <section class="skillsLeftSide">
+    @for (item of iconsFrondend; track $index) {
+    <div
+      class="skillItem"
+      data-aos="flip-down"
+      (mouseenter)="item.isHovered = true"
+      (mouseleave)="item.isHovered = false"
+    >
+      <img
+        [src]="item.isHovered ? item.srcHover : item.srcDefault"
+        [alt]="item.name"
+        class="skillIcon"
+      />
 
+      <p
+        class="skillLBL"
+        [ngClass]="{ highlightedSkill: item.name === 'Continuous Learning' }"
+      >
+        {{ item.name }}
+      </p>
+    </div>
+    }
+  </section>
+
+  <!-- Right Side -->
   <section class="skillsRightSide">
     <div class="skillsTitle">
+      <!-- Titel -->
       <h1>{{ "mySkills.header.eins" | translate }}</h1>
       <img src="/img/lines/01_my_skills.png" alt="" />
     </div>
 
+    <!-- Ganzer Text Inhalt -->
     <div class="skillsCTN">
+      <!-- Text des Titels -->
       <div class="skillsHeaderTXT">
         <p>{{ "mySkills.text.eins" | translate }}</p>
       </div>
 
-      <div>
-        <div class="skillsSubheader">
-          <h2 class="skillsHeaderGap">
-            {{ "mySkills.header.zwei" | translate }}
-          </h2>
-          <h2 class="skillsHeaderColor">
-            {{ "mySkills.header.drei" | translate }}
-          </h2>
-          <h2>{{ "mySkills.header.vier" | translate }}</h2>
+      <div class="skillsDescri">
+        <div class="skillsSubheaderCTN">
+          <div class="skillsSubHeader">
+            <!-- Subtitels -->
+            <h2 class="skillsHeaderGap">
+              {{ "mySkills.header.zwei" | translate }}
+            </h2>
+            <h2 class="skillsHeaderColor">
+              {{ "mySkills.header.drei" | translate }}
+            </h2>
+            <h2>{{ "mySkills.header.vier" | translate }}</h2>
+          </div>
+
+          <!-- Text des Subtitels -->
+          <div class="skillsSubTXT">
+            <p>{{ "mySkills.text.zwei" | translate }}</p>
+          </div>
         </div>
 
-        <div class="skillsSubTXT">
-          <p>{{ "mySkills.text.zwei" | translate }}</p>
+        <!-- Button 'Get in Touch' -->
+        <div class="skillsBTNContact">
+          <button class="contactBTN" id="#contact">
+            {{ "mySkills.button.text" | translate }}
+          </button>
         </div>
-      </div>
-
-      <div class="skillsBTNContact">
-        <button id="#contact">{{ "mySkills.button.text" | translate }}</button>
       </div>
     </div>
   </section>
