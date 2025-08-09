@@ -1,7 +1,7 @@
 <p>portfolio works!</p>
 
 <section class="wholePortfolioCNT" id="portfolio">
-  <div class="portfolioHead">
+  <section class="portfolioHead">
     <div class="portfolioHeader">
       <img src="/img/lines/06_portfolio.png" alt="" />
       <h1>{{ "myProjects.header" | translate }}</h1>
@@ -11,7 +11,9 @@
     <div class="portfolioHeaderTXT">
       <p>{{ "myProjects.text" | translate }}</p>
     </div>
-  </div>
-</section>
+  </section>
 
-<app-single-project></app-single-project>
+  <section class="myPortfolioProjects">
+    <app-single-project></app-single-project>
+  </section>
+</section>
