@@ -14,6 +14,8 @@
   </section>
 
   <section class="myPortfolioProjects">
-    <app-single-project></app-single-project>
+    <div ngClass="[fadeclass]">
+      <app-single-project [project]="activeProject"></app-single-project>
+    </div>
   </section>
 </section>
