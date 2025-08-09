@@ -13,9 +13,17 @@
     </div>
   </section>
 
-  <section class="myPortfolioProjects">
-    <div ngClass="[fadeclass]">
-      <app-single-project [project]="activeProject"></app-single-project>
-    </div>
+  <section class="myPortfolioProjects" ngClass="[fadeclass]">
+    <app-single-project
+      *ngFor="let project of projects; let i = index"
+      [project]="project"
+      [reverseLayout]="i === 1"
+    ></app-single-project>
   </section>
 </section>
+
+<!--
+      *ngFor="let project of projects; let i = index"
+      [project]="project"
+      [reverseLayout]="i === 1"
+-->

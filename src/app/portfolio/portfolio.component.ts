@@ -10,19 +10,17 @@ import * as AOS from 'aos';
   standalone: true,
   imports: [SingleProjectComponent, CommonModule, TranslateModule],
   templateUrl: './portfolio.component.html',
-  styleUrl: './portfolio.component.scss',
+  styleUrls: ['./portfolio.component.scss'],
 })
 export class PortfolioComponent {
   projects: Project[] = [
     {
       projectname: 'Join',
       content: {
-        projectname: 'Join',
         title: 'myProjects.join.title',
         technologies: 'HTML | CSS | Javascript',
         description: 'myProjects.join.description',
       },
-
       imageProject: ['/img/portfolio_projects/01_join.png'],
       github: 'https://github.com/johannesngl/join-main',
       livetest: 'https://join.leacotar.com/',
@@ -40,11 +38,12 @@ export class PortfolioComponent {
     },
   ];
 
-  activeProject = this.projects[0];
+  /*  */
+  /* activeProject = this.projects[0];
 
-  // projectnavbar: string[] = ['Join', 'Pollo Loco'];
+  // projectnavbar: string[] = ['Join', 'Sharky'];
 
   changeIndex(index: number) {
     this.activeProject = this.projects[index];
-  }
+  } */
 }

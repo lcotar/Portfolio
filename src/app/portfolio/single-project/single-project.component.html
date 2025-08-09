@@ -1,102 +1,75 @@
-<p>single-project works!</p>
-
 <section
   class="wholeSingleProjectCNT"
   data-aos="fade-right"
   data-aos-offset="800"
 >
-  <div class="joinProject"></div>
+  <table class="singleProjectTbl">
+    <tr class="singleProject" [class.reverse]="reverseLayout">
+      <td *ngIf="!reverseLayout">
+        <img
+          *ngFor="let img of project.imageProject"
+          [src]="img"
+          [alt]="project.projectname"
+        />
+      </td>
+      <td *ngIf="!reverseLayout">
+        <div class="singleProjectDetails">
+          <h3>{{ project.projectname }}</h3>
 
-  <div class="polloLocoProject"></div>
+          <div class="singleProjectTech">
+            {{ project.content.technologies | translate }}
+          </div>
+
+          <div class="singleProjectTXT">
+            <p>{{ project.content.description | translate }}</p>
+          </div>
+
+          <div class="singleProjectBTN">
+            <a [href]="project.livetest" target="_blank"
+              ><button class="singleProjectBTNLiveTest">Live Test</button></a
+            >
+            <a [href]="project.github" target="_blank"
+              ><button class="singleProjectBTNGitHub">GitHub</button></a
+            >
+          </div>
+        </div>
+      </td>
+    </tr>
+
+    <!-- Für reverseLayout = true: Reihenfolge vertauschen -->
+    <tr>
+      <!-- class="singleProjectRvs" -->
+      <td *ngIf="reverseLayout">
+        <div class="singleProjectDetailsRvs">
+          <h3>{{ project.projectname }}</h3>
+          <div class="singleProjectTechRvs">
+            {{ project.content.technologies | translate }}
+          </div>
+          <div class="singleProjectTXTRvs">
+            <p>{{ project.content.description | translate }}</p>
+          </div>
+          <div class="singleProjectBTNRvs">
+            <a [href]="project.livetest" target="_blank">
+              <button class="singleProjectBTNLiveTest">Live Test</button>
+            </a>
+            <a [href]="project.github" target="_blank">
+              <button class="singleProjectBTNGitHub">GitHub</button>
+            </a>
+          </div>
+        </div>
+      </td>
+
+      <td *ngIf="reverseLayout">
+        <img
+          *ngFor="let img of project.imageProject"
+          [src]="img"
+          [alt]="project.projectname"
+        />
+      </td>
+    </tr>
+  </table>
+
+  <!-- <div class="joinProject"></div>
+
+  <div class="polloLocoProject"></div> -->
 </section>
-
-<!--
-
-<div class="single-project-content" data-aos="fade-right" data-aos-offset="800">
-  <div class="single-project-description">
-    <div class="single-project-description-detail">
-      <div class="single-project-description-detail-title">
-        <img
-          src="/img/myprojects/Ellipse 8.png"
-          alt="my-projects-anfürhrungszeichen"
-        />
-        <h4>{{ "myProjects.aboutTheProject" | translate }}</h4>
-      </div>
-
-      <div class="single-project-description-detail-content">
-        <span>{{ project.content.aboutTheProject | translate }}</span>
-      </div>
-    </div>
-
-    <div class="single-project-description-detail">
-      <div class="single-project-description-detail-title">
-        <img
-          src="/img/myprojects/Ellipse 8.png"
-          alt="my-projects-anfürhrungszeichen"
-        />
-        <h4>{{ "myProjects.organisation" | translate }}</h4>
-      </div>
-      <div class="single-project-description-detail-content">
-        <span>{{ project.content.organisation | translate }}</span>
-      </div>
-    </div>
-
-    <div class="single-project-description-detail">
-      <div class="single-project-description-detail-title">
-        <img
-          src="/img/myprojects/Ellipse 8.png"
-          alt="my-projects-anfürhrungszeichen"
-        />
-        <h4>{{ "myProjects.whatILearned" | translate }}</h4>
-      </div>
-      <div class="single-project-description-detail-content">
-        <span>{{ project.content.whatILearned | translate }}</span>
-      </div>
-    </div>
-
-    <div class="single-project-details-testingButtons-respo">
-      <a href="{{ project.livetest }}" target="_blank">
-        <button>Live Test</button>
-      </a>
-
-      <a href="{{ project.github }}" target="_blank">
-        <button>Github</button>
-      </a>
-    </div>
-  </div>
-
-  <div class="single-project-details">
-    <div class="single-project-description-title-respo">
-      <span>{{ project.projectname }}</span>
-      <p>
-        {{ "myProjects.technologies" | translate }}: {{ project.technologies }}
-      </p>
-    </div>
-    <div class="single-project-deteils-technologies">
-      <p>{{ "myProjects.technologies" | translate }}</p>
-      <div class="single-project-details-programmlanguage">
-        @for (item of project.images; track $index) {
-        <img src="{{ item }}" alt="Images Project Programmiersprachen" />
-        }
-      </div>
-    </div>
-
-    <img
-      class="single-project-details-pictureProject"
-      src="{{ project.imageProject }}"
-      alt="Images Project Example"
-    />
-
-    <div class="single-project-details-testingButtons">
-      <a href="{{ project.livetest }}" target="_blank">
-        <button>Live Test</button>
-      </a>
-
-      <a href="{{ project.github }}" target="_blank">
-        <button>Github</button>
-      </a>
-    </div>
-  </div>
-</div>
-
--->
