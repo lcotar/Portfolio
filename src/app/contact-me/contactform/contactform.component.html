@@ -6,44 +6,55 @@
     (ngSubmit)="onSubmit(contactform)"
     #contactform="ngForm"
   >
-    <label for="lname">Name</label>
-    <!-- Label entfernen -->
-    <input
-      [(ngModel)]="contactData.name"
-      type="text"
-      id="lname"
-      name="name"
-      [placeholder]="'contact.contactform.name' | translate"
-      required
-    />
+    <!-- Name -->
+    <div class="contactName">
+      <input
+        #name="ngModel"
+        [(ngModel)]="contactData.name"
+        type="text"
+        id="lname"
+        name="name"
+        [placeholder]="'contact.contactform.name' | translate"
+        required
+      />
+      @if (!name.valid && name.touched) {
+      <span class="error">Bitte gib deinen Namen ein</span>
+      }
+    </div>
 
-    <label for="email">E-Mail:</label>
-    <!-- Label entfernen -->
-    <input
-      [(ngModel)]="contactData.email"
-      type="email"
-      id="email"
-      name="email"
-      [placeholder]="'contact.contactform.email' | translate"
-      required
-      pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
-    />
+    <!-- E-Mail Adresse -->
+    <div class="contactEmail">
+      <input
+        #email="ngModel"
+        [(ngModel)]="contactData.email"
+        type="email"
+        id="email"
+        name="email"
+        [placeholder]="'contact.contactform.email' | translate"
+        required
+        pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+      />
+      @if (!email.valid && email.touched) {
+      <span class="error">Bitte gib eine gültige Email-Adresse ein</span>
+      }
+    </div>
 
-    <label for="subject">Subject</label>
-    <!-- Label entfernen -->
-    <textarea
-      #message="ngModel"
-      [(ngModel)]="contactData.message"
-      id="subject"
-      name="subject"
-      [placeholder]="'contact.contactform.message' | translate"
-      style="height: 200px"
-      required
-    ></textarea>
+    <!-- Message -->
+    <div class="contactMessage">
+      <textarea
+        #message="ngModel"
+        [(ngModel)]="contactData.message"
+        id="subject"
+        name="subject"
+        [placeholder]="'contact.contactform.message' | translate"
+        style="height: 200px"
+        required
+      ></textarea>
 
-    @if (!message.valid && message.touched && message.disabled) {
-    <span class="error">Bitte gib eine gültige Email-Adresse ein</span>
-    }
+      @if (!message.valid && message.touched && message.disabled) {
+      <span class="error">Bitte schreibe eine Nachricht</span>
+      }
+    </div>
 
     <input type="submit" value="Submit" />
   </form>
