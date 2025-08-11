@@ -90,6 +90,11 @@
       "eins": "Encourage people to contact you and describe what role you are interested in. Show that you will add value to their projects through your work.",
       "zwei": "Need a Frontend developer? Contact me!"
     },
+    "contactform": {
+      "name": "Your name",
+      "email": "Your email",
+      "message": "Your message"
+    },
     "privacy": {
       "eins": "I've read the ",
       "zwei": "privacy policy ",

@@ -1,6 +1,70 @@
 .contactComponent {
   position: absolute;
-  top: 500vh;
-
+  top: 490vh;
   z-index: 10;
+  display: flex;
+  font-family: Poppins;
+}
+
+.contactHeader {
+  display: flex;
+  align-items: center;
+
+  width: 945px;
+  height: 110px;
+
+  /* top: 5286px; */
+  gap: 35px;
+  top: 490vh;
+
+  h3 {
+    color: #ffffff;
+    width: 375px;
+    height: 110px;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 90px;
+    line-height: 120%;
+    text-align: center;
+  }
+}
+
+.contactContent {
+  position: absolute;
+  width: 475px;
+  height: 155px;
+
+  top: 10vh;
+  left: 5.5vw;
+  gap: 25px;
+
+  h2 {
+    height: 40px;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 120%;
+    color: #ffffff;
+  }
+}
+
+.contactTXT {
+  width: 475px;
+  height: 95px;
+  gap: 15px;
+
+  p {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 120%;
+    color: #ffffff;
+  }
+}
+
+.contactForm {
+  position: absolute;
+  width: 615px;
+  height: 510px;
+  top: 20vh;
+  left: 50vw;
+  gap: 35px;
 }

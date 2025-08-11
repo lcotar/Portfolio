@@ -86,9 +86,14 @@
       "eins": "Kontakt",
       "zwei": "Haben Sie ein Problem, das gelöst werden muss?"
     },
-    "„text“": {
+    "text": {
       "eins": "Ermutigen Sie die Leute, sich mit Ihnen in Verbindung zu setzen und beschreiben Sie, für welche Position Sie sich interessieren. Zeigen Sie, dass Sie durch Ihre Arbeit einen Mehrwert für ihre Projekte schaffen werden.",
       "zwei": "Benötigen Sie einen Frontend-Entwickler? Kontaktieren Sie mich!"
+    },
+    "contactform": {
+      "name": "Ihre Name",
+      "email": "Ihre E-Mail",
+      "message": "Ihre Nachricht"
     },
     "privacy": {
       "eins": "Ich habe die ",
