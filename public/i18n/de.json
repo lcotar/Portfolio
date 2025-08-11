@@ -82,8 +82,14 @@
   },
 
   "contact": {
-    "header": "",
-    "text": "",
+    "header": {
+      "eins": "Kontakt",
+      "zwei": "Haben Sie ein Problem, das gelöst werden muss?"
+    },
+    "„text“": {
+      "eins": "Ermutigen Sie die Leute, sich mit Ihnen in Verbindung zu setzen und beschreiben Sie, für welche Position Sie sich interessieren. Zeigen Sie, dass Sie durch Ihre Arbeit einen Mehrwert für ihre Projekte schaffen werden.",
+      "zwei": "Benötigen Sie einen Frontend-Entwickler? Kontaktieren Sie mich!"
+    },
     "privacy": {
       "eins": "Ich habe die ",
       "zwei": "Datenschutzerklärung ",

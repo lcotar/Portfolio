@@ -82,7 +82,10 @@
   },
 
   "contact": {
-    "header": "",
+    "header": {
+      "eins": "Contact",
+      "zwei": "Got a problem to solve?"
+    },
     "text": {
       "eins": "Encourage people to contact you and describe what role you are interested in. Show that you will add value to their projects through your work.",
       "zwei": "Need a Frontend developer? Contact me!"

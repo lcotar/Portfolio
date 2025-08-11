@@ -25,7 +25,7 @@ export class PortfolioComponent {
       github: 'https://github.com/johannesngl/join-main',
       livetest: 'https://join.leacotar.com/',
     },
-    {
+    /* {
       projectname: 'Pollo Loco',
       content: {
         title: 'myProjects.polloLoco.title',
@@ -35,7 +35,7 @@ export class PortfolioComponent {
       imageProject: ['/img/portfolio_projects/02_el_pollo_loco.png'],
       github: 'https://github.com/lcotar/El-Pollo-Loco',
       livetest: 'https://pollo-loco.leacotar.com/',
-    },
+    }, */
   ];
 
   /* activeProject = this.projects[0];
