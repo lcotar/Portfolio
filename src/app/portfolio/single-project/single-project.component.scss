@@ -8,148 +8,33 @@
   font-family: Poppins;
 }
 
-/* Tabelle */
-.singleProject {
-  img {
-    width: 620px;
-    height: 340px;
-  }
-}
-
-.singleProjectDetails {
+/*
   h3 {
     color: #9747ff;
   }
-}
 
-.singleProjectTech {
+  .singleProjectTech {
   color: #70e61c;
 }
 
-.singleProjectTXT {
-  width: 515px;
-  height: 100px;
-
-  p {
     color: #ffffff;
 
-    font-weight: 400;
-    font-style: Regular;
-    font-size: 15px;
-    line-height: 120%;
-    letter-spacing: 0%;
-    text-align: left;
-  }
-}
+    &:hover {
+      cursor: pointer;
+    }
 
-.singleProjectBTN {
+
+*/
+
+.projectCard {
   display: flex;
-  width: 375px;
-  height: 80px;
-  gap: 85px;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 4rem;
+  /* flex-wrap: wrap; */
 
-  .singleProjectBTNLiveTest {
-    width: 150px;
-    height: 60px;
-    gap: 10px;
-    border-radius: 10px;
-    padding: 15px 30px;
-    border-color: #9747ff;
-    background-color: #9747ff;
-    color: #ffffff;
-
-    &:hover {
-      cursor: pointer;
-    }
-  }
-
-  .singleProjectBTNGitHub {
-    width: 140px;
-    height: 60px;
-    gap: 10px;
-    border-radius: 10px;
-    border-width: 1px;
-    padding: 15px 30px;
-    border-color: #70e61c;
-    background-color: transparent;
-    color: #ffffff;
-
-    &:hover {
-      cursor: pointer;
-    }
-  }
-}
-
-/* Tabelle Reverse */
-.singleProjectRvs {
-  img {
-    width: 620px;
-    height: 340px;
-  }
-}
-
-.singleProjectDetailsRvs {
-  h3 {
-    color: #9747ff;
-    text-align: end;
-  }
-}
-
-.singleProjectTechRvs {
-  color: #70e61c;
-  text-align: end;
-}
-
-.singleProjectTXTRvs {
-  width: 515px;
-  height: 100px;
-
-  p {
-    color: #ffffff;
-
-    font-weight: 400;
-    font-style: Regular;
-    font-size: 15px;
-    line-height: 120%;
-    letter-spacing: 0%;
-    text-align: right;
-  }
-}
-
-.singleProjectBTNRvs {
-  display: flex;
-  width: 375px;
-  height: 80px;
-  gap: 85px;
-
-  .singleProjectBTNLiveTest {
-    width: 150px;
-    height: 60px;
-    gap: 10px;
-    border-radius: 10px;
-    padding: 15px 30px;
-    border-color: #9747ff;
-    background-color: #9747ff;
-    color: #ffffff;
-
-    &:hover {
-      cursor: pointer;
-    }
-  }
-
-  .singleProjectBTNGitHub {
-    width: 140px;
-    height: 60px;
-    gap: 10px;
-    border-radius: 10px;
-    border-width: 1px;
-    padding: 15px 30px;
-    border-color: #70e61c;
-    background-color: transparent;
-    color: #ffffff;
-
-    &:hover {
-      cursor: pointer;
-    }
+  &.reverse {
+    flex-direction: row-reverse;
   }
 }

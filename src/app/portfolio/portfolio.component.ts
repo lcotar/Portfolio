@@ -38,10 +38,9 @@ export class PortfolioComponent {
     },
   ];
 
-  /*  */
   /* activeProject = this.projects[0];
 
-  // projectnavbar: string[] = ['Join', 'Sharky'];
+  projectnavbar: string[] = ['Join', 'Sharky'];
 
   changeIndex(index: number) {
     this.activeProject = this.projects[index];
