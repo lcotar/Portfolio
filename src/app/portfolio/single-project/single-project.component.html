@@ -1,12 +1,14 @@
-<section
-  class="wholeSingleProjectCNT"
-  data-aos="fade-right"
+<section class="wholeSingleProjectCNT">
+  <!--
+data-aos="fade-right"
   data-aos-offset="800"
->
+-->
+
   <table class="singleProjectTbl">
     <tr class="singleProject" [class.reverse]="reverseLayout">
       <td *ngIf="!reverseLayout">
         <img
+          class="singleProjectIMG"
           *ngFor="let img of project.imageProject"
           [src]="img"
           [alt]="project.projectname"
@@ -14,14 +16,16 @@
       </td>
       <td *ngIf="!reverseLayout">
         <div class="singleProjectDetails">
-          <h3>{{ project.projectname }}</h3>
+          <div class="singleProjectDescription">
+            <h3>{{ project.projectname }}</h3>
 
-          <div class="singleProjectTech">
-            {{ project.content.technologies | translate }}
-          </div>
+            <div class="singleProjectTech">
+              {{ project.content.technologies | translate }}
+            </div>
 
-          <div class="singleProjectTXT">
-            <p>{{ project.content.description | translate }}</p>
+            <div class="singleProjectTXT">
+              <p>{{ project.content.description | translate }}</p>
+            </div>
           </div>
 
           <div class="singleProjectBTN">
@@ -40,15 +44,18 @@
     <tr>
       <!-- class="singleProjectRvs" -->
       <td *ngIf="reverseLayout">
-        <div class="singleProjectDetailsRvs">
-          <h3>{{ project.projectname }}</h3>
-          <div class="singleProjectTechRvs">
-            {{ project.content.technologies | translate }}
+        <div class="singleProjectDetails">
+          <div class="singleProjectDescription">
+            <h3>{{ project.projectname }}</h3>
+            <div class="singleProjectTech">
+              {{ project.content.technologies | translate }}
+            </div>
+            <div class="singleProjectTXT">
+              <p>{{ project.content.description | translate }}</p>
+            </div>
           </div>
-          <div class="singleProjectTXTRvs">
-            <p>{{ project.content.description | translate }}</p>
-          </div>
-          <div class="singleProjectBTNRvs">
+
+          <div class="singleProjectBTN">
             <a [href]="project.livetest" target="_blank">
               <button class="singleProjectBTNLiveTest">Live Test</button>
             </a>
@@ -61,6 +68,7 @@
 
       <td *ngIf="reverseLayout">
         <img
+          class="singleProjectIMG"
           *ngFor="let img of project.imageProject"
           [src]="img"
           [alt]="project.projectname"

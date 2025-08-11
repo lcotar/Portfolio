@@ -4,7 +4,6 @@
 }
 
 .wholeSingleProjectCNT {
-  width: 100%;
   font-family: Poppins;
 }
 
@@ -26,15 +25,132 @@
 
 */
 
-.projectCard {
+/* Table */
+
+.singleProjectTbl {
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+
+  /* width: 1170px;
+  height: 340px;
+  left: 5vw;
+
+  display: flex;
+  flex-direction: column;
+  gap: 35px; */
+}
+
+.singleProject {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  margin-bottom: 4rem;
-  /* flex-wrap: wrap; */
+  height: 340px;
+  gap: 35px;
+}
 
-  &.reverse {
-    flex-direction: row-reverse;
+.singleProjectIMG {
+  width: 620px;
+  height: 340px;
+}
+
+.singleProjectDetails {
+  display: flex;
+  flex-direction: column;
+  width: 515px;
+  gap: 35px;
+
+  h3 {
+    color: #9747ff;
+    margin: 0;
+    width: 195px;
+    height: 40px;
+    font-family: Poppins;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 120%;
+  }
+
+  .singleProjectTech {
+    width: 490px;
+    height: 30px;
+    color: #70e61c;
+    display: flex;
+    align-items: center;
+  }
+
+  .singleProjectTXT {
+    width: 515px;
+
+    p {
+      color: #ffffff;
+      font-weight: 400;
+      font-style: Regular;
+      font-size: 15px;
+
+      line-height: 120%;
+      letter-spacing: 0%;
+    }
+  }
+
+  .singleProjectBTN {
+    display: flex;
+    align-items: center;
+    width: 375px;
+    height: 65px;
+    gap: 85px;
+
+    .singleProjectBTNLiveTest {
+      width: 150px;
+      height: 60px;
+      gap: 10px;
+      border-radius: 10px;
+      padding: 15px 30px;
+
+      background-color: #9747ff;
+      color: #ffffff;
+
+      &:hover {
+        cursor: pointer;
+        background-color: #70e61c;
+      }
+    }
+
+    .singleProjectBTNGitHub {
+      width: 150px;
+      height: 60px;
+      gap: 10px;
+      padding: 15px 30px;
+      border-radius: 10px;
+      border-color: #70e61c;
+      background-color: transparent;
+      color: #ffffff;
+
+      &:hover {
+        cursor: pointer;
+        background-color: #70e61c;
+      }
+    }
+  }
+}
+
+.singleProjectDescription {
+  display: flex;
+  flex-direction: column;
+  width: 515px;
+  gap: 15px;
+}
+
+/* Reverse */
+.singleProjectRvs {
+  display: flex;
+  align-items: center;
+  height: 340px;
+  gap: 35px;
+
+  img {
+    width: 620px;
+    height: 340px;
   }
 }
