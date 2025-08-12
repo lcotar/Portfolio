@@ -1,6 +1,6 @@
 <p>contactform works!</p>
 
-<div class="container">
+<div class="contactCNT">
   <form
     action="action_page.php"
     (ngSubmit)="onSubmit(contactform)"
@@ -54,8 +54,36 @@
       @if (!message.valid && message.touched && message.disabled) {
       <span class="error">Bitte schreibe eine Nachricht</span>
       }
+
+      <div class="contactFooter">
+        <div class="contactPrivacy">
+          <!-- Privacy Checkbox
+
+      [(ngModel)]="privacyAccepted"
+      -->
+          <input
+            type="checkbox"
+            name="privacyAccepted"
+            id="privacyAccepted"
+            class="checkbox"
+            required
+          />
+          <label for="privacyAccepted">
+            {{ "contact.privacy.eins" | translate }}
+            <a [routerLink]="['/privacy']">{{
+              "contact.privacy.zwei" | translate
+            }}</a>
+
+            {{ "contact.privacy.drei" | translate }}
+          </label>
+        </div>
+
+        <input type="submit" value="Submit" />
+      </div>
     </div>
 
-    <input type="submit" value="Submit" />
+    <div class="contactArrow">
+      <img src="/img/contact/go_up.png" alt="" />
+    </div>
   </form>
 </div>

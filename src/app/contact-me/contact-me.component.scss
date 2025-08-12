@@ -30,13 +30,9 @@
 }
 
 .contactContent {
-  position: absolute;
-  width: 475px;
-  height: 155px;
-
-  top: 10vh;
-  left: 5.5vw;
-  gap: 25px;
+  position: absolute; /* oder weglassen */
+  left: auto;
+  top: auto;
 
   h2 {
     height: 40px;

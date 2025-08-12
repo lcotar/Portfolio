@@ -29,8 +29,25 @@ input[type="submit"]:hover {
 }
 
 /* Add a background color and some padding around the form */
-.container {
+.contactCNT {
   border-radius: 5px;
-  background-color: #f2f2f2;
+  background-color: #141d2f;
   padding: 20px;
+}
+
+.contactName,
+.contactEmail,
+.contactMessage {
+  input,
+  textarea {
+    background-color: #141d2f;
+    border-color: #9747ff;
+    border-radius: 10px;
+    color: #ffffff;
+
+    &:hover {
+      border-color: #70e61c;
+      cursor: pointer;
+    }
+  }
 }
