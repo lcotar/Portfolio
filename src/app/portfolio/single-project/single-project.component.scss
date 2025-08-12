@@ -5,42 +5,16 @@
 
 .wholeSingleProjectCNT {
   font-family: Poppins;
+  margin-bottom: 30px;
 }
-
-/*
-  h3 {
-    color: #9747ff;
-  }
-
-  .singleProjectTech {
-  color: #70e61c;
-}
-
-    color: #ffffff;
-
-    &:hover {
-      cursor: pointer;
-    }
-
-
-*/
 
 /* Table */
-
 .singleProjectTbl {
   padding-top: 50px;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
   gap: 35px;
-
-  max-width: 80%;
-  /* height: 340px;
-  left: 5vw;
-
-  display: flex;
-  flex-direction: column;
-  gap: 35px; */
 }
 
 .singleProject {

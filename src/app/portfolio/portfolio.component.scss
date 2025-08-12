@@ -7,6 +7,8 @@
   z-index: 10;
   left: 10vw;
   font-family: Poppins;
+
+  // box-sizing: border-box;
 }
 
 /* .portfolioHead {} */
@@ -36,4 +38,8 @@
   line-height: 30px;
   text-align: center;
   margin-top: 10px;
+}
+
+.myPortfolioProjects {
+  margin-top: 50px; // oder größer, je nach gewünschtem Abstand
 }
