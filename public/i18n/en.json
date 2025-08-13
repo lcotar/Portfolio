@@ -98,7 +98,11 @@
     "privacy": {
       "eins": "I've read the ",
       "zwei": "privacy policy ",
-      "drei": "and agree to the processing of my data as outlined."
+      "drei": "and agree to the processing of my data as outlined.",
+      "accept": "*Please accept the privacy policy."
+    },
+    "button": {
+      "text": "Send Message :)"
     }
   },
 

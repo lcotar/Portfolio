@@ -98,7 +98,11 @@
     "privacy": {
       "eins": "Ich habe die ",
       "zwei": "Datenschutzerklärung ",
-      "drei": "gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu."
+      "drei": "gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
+      "accept": "*Bitte akzeptieren Sie die Datenschutzerklärung."
+    },
+    "button": {
+      "text": "Nachricht senden :)"
     }
   },
 
