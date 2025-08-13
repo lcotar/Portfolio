@@ -13,8 +13,8 @@ export class NavbarComponent {
   currentLang: string = 'en';
   constructor(private translate: TranslateService) {}
 
-  toogleTranslation(languae: string) {
-    this.translate.use(languae);
-    this.currentLang = this.translate.currentLang;
+  toogleTranslation(language: string) {
+    this.translate.use(language);
+    this.currentLang = language;
   }
 }

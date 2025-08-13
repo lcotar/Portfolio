@@ -31,7 +31,7 @@
   left: 0;
   z-index: 2;
   height: 970px;
-  top: 50vh;
+  top: 45vh;
 
   img {
     width: 100%;
@@ -137,14 +137,13 @@
   }
 
   .talkBTN {
+    width: 250px;
     color: #ffffff;
-    font-weight: 700;
     font-family: Poppins;
     font-weight: 400;
 
     font-size: 25px;
     line-height: 120%;
-    letter-spacing: 0%;
   }
 }
 

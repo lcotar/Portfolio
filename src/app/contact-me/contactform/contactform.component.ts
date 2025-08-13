@@ -30,6 +30,7 @@ export class ContactformComponent {
   } */
 
   mailTest = true;
+  privacyAccepted = false;
 
   post = {
     endPoint: 'https://deineDomain.de/sendMail.php',
@@ -43,7 +44,12 @@ export class ContactformComponent {
   };
 
   onSubmit(ngForm: NgForm) {
-    if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
+    if (
+      ngForm.submitted &&
+      ngForm.form.valid &&
+      !this.mailTest &&
+      this.privacyAccepted
+    ) {
       this.http
         .post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
@@ -55,7 +61,12 @@ export class ContactformComponent {
           },
           complete: () => console.info('send post complete'),
         });
-    } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
+    } else if (
+      ngForm.submitted &&
+      ngForm.form.valid &&
+      this.mailTest &&
+      this.privacyAccepted
+    ) {
       ngForm.resetForm();
     }
   }

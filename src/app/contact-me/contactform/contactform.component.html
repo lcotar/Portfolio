@@ -41,19 +41,21 @@
 
     <!-- Message -->
     <div class="contactMessage">
-      <textarea
-        #message="ngModel"
-        [(ngModel)]="contactData.message"
-        id="subject"
-        name="subject"
-        [placeholder]="'contact.contactform.message' | translate"
-        style="height: 200px"
-        required
-      ></textarea>
+      <div>
+        <textarea
+          #message="ngModel"
+          [(ngModel)]="contactData.message"
+          id="subject"
+          name="subject"
+          [placeholder]="'contact.contactform.message' | translate"
+          style="height: 200px"
+          required
+        ></textarea>
 
-      @if (!message.valid && message.touched && message.disabled) {
-      <span class="error">Bitte schreibe eine Nachricht</span>
-      }
+        @if (!message.valid && message.touched && message.disabled) {
+        <span class="error">Bitte schreibe eine Nachricht</span>
+        }
+      </div>
 
       <div class="contactFooter">
         <div class="contactPrivacy">
@@ -66,6 +68,7 @@
             name="privacyAccepted"
             id="privacyAccepted"
             class="checkbox"
+            [(ngModel)]="privacyAccepted"
             required
           />
           <label for="privacyAccepted">
@@ -78,7 +81,12 @@
           </label>
         </div>
 
-        <input type="submit" value="Submit" />
+        <input
+          type="submit"
+          [value]="'contact.button.text' | translate"
+          class="contactMessage"
+          [disabled]="!contactform.valid || !privacyAccepted"
+        />
       </div>
     </div>
 

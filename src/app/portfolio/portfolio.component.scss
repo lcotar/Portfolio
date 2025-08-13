@@ -1,16 +1,19 @@
 /* Whole Content */
 .wholePortfolioCNT {
   position: absolute;
-  top: 350vh;
+  top: 300vh;
   height: 100%;
   z-index: 10;
   left: 10vw;
   font-family: Poppins;
-
+  right: 0;
   // box-sizing: border-box;
 }
 
-/* .portfolioHead {} */
+.portfolioHead {
+  width: 100%;
+}
+
 .portfolioHeader {
   gap: 32px;
   margin-left: auto;
