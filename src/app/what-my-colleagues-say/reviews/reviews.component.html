@@ -1,1 +1,66 @@
 <p>reviews works!</p>
+<section class="wholeFeedbackCNT">
+  @for (item of rezessionen; track item.name) {
+  <div class="reviewBox">
+    <div class="feedback">
+      <span class="review">{{ item.review | translate }}</span>
+    </div>
+
+    <div class="bottomFeedback">
+      <img src="/img/lines/01_review.png" alt="" />
+      <p>{{ item.name | translate }}</p>
+      <a href="{{ item.linkedin }}" target="_blank">
+        <img src="/img/social_media/10_linkedin.png" alt="" />
+      </a>
+    </div>
+  </div>
+
+  }
+
+  <div class="arrows">
+    <img src="/img/review/01_arrow_back.png" alt="" />
+    <img src="/img/review/02_arrow_forward.png" alt="" />
+  </div>
+
+  <!-- @for (item of rezessionen; track item.name) {
+  <div class="rezessionen-content">
+    <h4 class="name">{{ item.name | translate }}</h4>
+    <div class="projekt-container">
+      <p class="projekt-label">
+        {{ "whatMyColleguasSay.projecttitle" | translate }}
+      </p>
+      <p class="projekt-name">{{ item.project | translate }}</p>
+    </div>
+    <div class="rezessionen-text">
+      <span class>{{ item.review | translate }}</span>
+    </div>
+    <a href="{{ item.linkedin }}" target="_blank">
+      {{ "whatMyColleguasSay.header.linkedin" | translate }}
+    </a>
+  </div>
+} -->
+  <!--<div class="reviewBox" *ngFor="let r of reviews">
+    <div class="feedback">
+      <h3>{{ r.name }}</h3>
+      <p>{{ r.project }}</p>
+      <p>{{ r.review }}</p>
+    </div>
+    <div class="bottomFeedback">
+      <img src="/img/lines/01_review.png" alt="" />
+      <a [href]="'https://' + r.linkedin" target="_blank">
+        <img src="/img/social_media/10_linkedin.png" alt="LinkedIn" />
+      </a>
+    </div>
+  </div>
+  -->
+
+  <!--
+  <section>
+
+    <div>
+      <img src="" alt="" />
+    </div>
+
+  </section>
+  -->
+</section>

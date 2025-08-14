@@ -1,0 +1,23 @@
+.reviewBox {
+  // width: 200px; // Breite der Box
+  height: 150px; // Höhe der Box
+  background-color: transparent; // Hintergrundfarbe
+  color: white; // Textfarbe
+  display: flex; // Inhalt zentrieren
+  align-items: center; // Vertikal zentrieren
+  justify-content: center; // Horizontal zentrieren
+  flex-direction: column;
+  border-radius: 30px; // Abgerundete Ecken
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Schatten
+  border: 4px solid #70e61c; // Neuer Rand
+
+  width: 850px;
+  height: 270px;
+  gap: 44px;
+  padding: 50px;
+}
+
+.bottomFeedback {
+  display: flex;
+  align-items: center;
+}

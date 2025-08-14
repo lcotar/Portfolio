@@ -14,16 +14,17 @@ import { Reviews } from '../interfaces/rezession.interface';
 export class WhatMyColleaguesSayComponent {
   review: Reviews[] = [
     {
-      name: 'whatMyColleguasSay.teamPlayer.florian.name',
-      project: 'whatMyColleguasSay.teamPlayer.florian.project',
-      review: 'whatMyColleguasSay.teamPlayer.florian.feedback',
-      linkedin: 'https://www.linkedin.com/in/florian-zunke-b18420328/',
+      name: 'whatMyColleguasSay.teamPlayer.johannes.name',
+      project: 'whatMyColleguasSay.teamPlayer.johannes.project',
+      review: 'whatMyColleguasSay.teamPlayer.johannes.feedback',
+      linkedin:
+        'https://www.linkedin.com/in/johannes-singl-1920aa33b?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B7WWBSp%2FlQiKur%2F3sspBeGg%3D%3D',
     },
-    {
+    /* {
       name: 'whatMyColleguasSay.teamPlayer.kai.name',
       project: 'whatMyColleguasSay.teamPlayer.kai.project',
       review: 'whatMyColleguasSay.teamPlayer.kai.feedback',
       linkedin: 'https://www.linkedin.com/in/kai-schulz-53207b1a6/',
-    },
+    }, */
   ];
 }
