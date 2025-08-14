@@ -20,11 +20,19 @@ export class WhatMyColleaguesSayComponent {
       linkedin:
         'https://www.linkedin.com/in/johannes-singl-1920aa33b?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B7WWBSp%2FlQiKur%2F3sspBeGg%3D%3D',
     },
-    /* {
-      name: 'whatMyColleguasSay.teamPlayer.kai.name',
-      project: 'whatMyColleguasSay.teamPlayer.kai.project',
-      review: 'whatMyColleguasSay.teamPlayer.kai.feedback',
-      linkedin: 'https://www.linkedin.com/in/kai-schulz-53207b1a6/',
-    }, */
+    {
+      name: 'whatMyColleguasSay.teamPlayer.test.name',
+      project: 'whatMyColleguasSay.teamPlayer.test.project',
+      review: 'whatMyColleguasSay.teamPlayer.test.feedback',
+      linkedin:
+        'https://www.linkedin.com/in/leacotar?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BtUFWNKPoS5u1HIt39aq7Ig%3D%3D',
+    },
   ];
 }
+
+/*
+        "name": "Test Test",
+        "project": "Join",
+        "feedback": "Test Feedback",
+        "linkedin": "https://www.linkedin.com/in/leacotar?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BtUFWNKPoS5u1HIt39aq7Ig%3D%3D"
+*/

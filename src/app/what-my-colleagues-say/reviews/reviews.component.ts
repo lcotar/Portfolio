@@ -8,8 +8,24 @@ import { Reviews } from '../../interfaces/rezession.interface';
   standalone: true,
   imports: [CommonModule, TranslateModule],
   templateUrl: './reviews.component.html',
-  styleUrl: './reviews.component.scss',
+  styleUrls: ['./reviews.component.scss'],
 })
 export class ReviewsComponent {
   @Input() rezessionen!: Reviews[];
+
+  currentIndex: number = 0;
+
+  nextReview() {
+    if (this.rezessionen) {
+      this.currentIndex = (this.currentIndex + 1) % this.rezessionen.length;
+    }
+  }
+
+  prevReview() {
+    if (this.rezessionen) {
+      this.currentIndex =
+        (this.currentIndex - 1 + this.rezessionen.length) %
+        this.rezessionen.length;
+    }
+  }
 }
