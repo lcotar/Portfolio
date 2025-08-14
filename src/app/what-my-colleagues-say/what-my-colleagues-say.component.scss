@@ -1,8 +1,9 @@
 .wholeReviewCNT {
-  position: relative; // Bezugspunkt für das absolute Gänsefüßchen
+  /* position: relative; // Bezugspunkt für das absolute Gänsefüßchen
   top: 350vh; // behält die ursprüngliche Positionierung der Section
   padding: 2rem; // optional, damit Inhalt Platz hat
-  // width: 100%;
+  // width: 100%; */
+  height: 125vh;
   display: flex;
   align-items: center;
   justify-content: center;

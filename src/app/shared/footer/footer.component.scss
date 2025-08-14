@@ -1,0 +1,49 @@
+.wholeFooter {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 25vh;
+  justify-content: space-around;
+
+  gap: 30px;
+  z-index: 10;
+}
+
+.line {
+  height: 125vh;
+  height: 5px; /* Dicke der Linie */
+  background-color: #70e61c; /* Farbe */
+  width: 100%; /* Breite */
+  margin: 20px auto; /* Abstand oben/unten + zentriert */
+  z-index: 10;
+}
+
+.footerLogo {
+  img {
+    width: 100px;
+  }
+}
+
+.footerLegalNotice {
+  a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+}
+
+.footerCopyright {
+  p {
+    color: #ffffff;
+  }
+}
+
+.footerSocialMedia {
+  width: 175px;
+  height: 40px;
+
+  top: 120px;
+  // left: 1166px;
+
+  display: flex;
+  justify-content: space-between;
+}

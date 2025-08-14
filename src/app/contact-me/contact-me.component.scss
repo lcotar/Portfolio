@@ -1,9 +1,15 @@
 .contactComponent {
-  position: absolute;
+  /* position: absolute;
   top: 550vh;
-  z-index: 10;
+  z-index: 10; */
+
   display: flex;
+  flex-direction: column;
   font-family: Poppins;
+}
+
+.contactLeftSide {
+  height: 15vh;
 }
 
 .contactHeader {
@@ -30,6 +36,7 @@
 }
 
 .contactContent {
+  /* ändern!!! */
   position: absolute; /* oder weglassen */
   left: 100px;
   top: auto;
@@ -44,7 +51,7 @@
 }
 
 .contactTXT {
-  width: 475px;
+  width: 25vw;
   height: 95px;
   gap: 15px;
 
@@ -57,10 +64,7 @@
 }
 
 .contactForm {
-  position: absolute;
-  width: 615px;
-  height: 510px;
-  top: 20vh;
-  left: 50vw;
+  margin-top: 100px;
+  width: 100%;
   gap: 35px;
 }

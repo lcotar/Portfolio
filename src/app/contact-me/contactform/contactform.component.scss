@@ -30,6 +30,9 @@ input[type="submit"]:hover {
 
 /* Add a background color and some padding around the form */
 .contactCNT {
+  display: flex;
+  justify-content: flex-end;
+  height: 100vh;
   border-radius: 5px;
   background-color: transparent;
   padding: 20px;
