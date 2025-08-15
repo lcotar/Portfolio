@@ -19,21 +19,38 @@
   display: flex;
   align-items: center;
   gap: 20px;
+  justify-content: flex-end; /* Inhalt nach rechts im Container */
+  margin-left: auto; /* Schiebt den Container selbst nach rechts */
+
+  /* img:first-child {
+    width: 100px; /* z. B. für das erste Bild
+  } */
+
+  p {
+    width: 300px; /* z. B. für den Text */
+    text-align: center;
+  }
+
+  a {
+    width: 50px; /* z. B. für den Link mit Icon */
+
+    img {
+      align-items: center;
+      // width: 100%; /* füllt den Linkbereich */
+    }
+  }
 }
 
 .arrowsDots {
   display: flex;
-  align-items: center; // vertikal zentrieren
+  align-items: center;
   justify-content: center;
-  gap: 50px; // Abstand zwischen Pfeilen und Dots
-  width: 100%;
-  height: 50px;
-  // padding-top: 25px;
+  gap: 20px;
 }
 
 .dots {
   display: flex;
-  gap: 10px;
+  gap: 8px;
 
   span {
     width: 12px;
@@ -45,7 +62,7 @@
   }
 
   span.active {
-    background-color: limegreen;
+    background-color: #70e61c;
   }
 }
 

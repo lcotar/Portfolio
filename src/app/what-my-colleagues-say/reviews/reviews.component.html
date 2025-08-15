@@ -25,9 +25,8 @@
 
     <div class="dots">
       <span
-        *ngFor="let item of rezessionen; let i = index"
-        [class.active]="i === currentIndex"
-        (click)="currentIndex = i"
+        *ngFor="let idx of visibleDots; let dotPos = index"
+        [class.active]="isCenterDot(dotPos)"
       >
       </span>
     </div>

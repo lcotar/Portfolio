@@ -27,6 +27,14 @@ export class WhatMyColleaguesSayComponent {
       linkedin:
         'https://www.linkedin.com/in/leacotar?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BtUFWNKPoS5u1HIt39aq7Ig%3D%3D',
     },
+
+    {
+      name: 'whatMyColleguasSay.teamPlayer.test2.name',
+      project: 'whatMyColleguasSay.teamPlayer.test2.project',
+      review: 'whatMyColleguasSay.teamPlayer.test2.feedback',
+      linkedin:
+        'https://www.linkedin.com/in/leacotar?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BtUFWNKPoS5u1HIt39aq7Ig%3D%3D',
+    },
   ];
 }
 
