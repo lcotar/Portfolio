@@ -1,0 +1,71 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+button {
+  background-color: #89bcd9;
+  color: #1a1a1a;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-family: "Josefin Sans";
+  font-weight: 400;
+  font-size: 18px;
+  margin-top: 64px;
+
+  &:hover {
+    background-color: #78aac6;
+  }
+}
+
+.privacyComponent {
+  display: flex;
+  // align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  height: auto;
+  width: 90vw;
+
+  h1 {
+    color: #ffffff;
+    margin-bottom: 0;
+    padding: 0;
+  }
+
+  h2 {
+    color: #ffffff;
+    margin-bottom: 0;
+    padding: 0;
+  }
+
+  h3 {
+    color: #ffffff;
+    margin-bottom: 0;
+    padding: 0;
+  }
+
+  p {
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: #ffffff;
+  }
+
+  ul {
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    color: #ffffff;
+  }
+}

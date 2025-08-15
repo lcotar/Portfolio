@@ -11,7 +11,7 @@
     "name": "Lea Cotar",
     "role": "Frontend Developer",
     "talk": "Let's talk!",
-    "email": "cotar@contact.com",
+    "email": "contact@leacotar.com",
     "scroll": "Scroll down"
   },
 
@@ -109,6 +109,9 @@
     },
     "button": {
       "text": "Send Message :)"
+    },
+    "main": {
+      "message": "Back to main"
     }
   },
 
