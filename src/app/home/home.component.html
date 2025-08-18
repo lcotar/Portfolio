@@ -1,12 +1,14 @@
 <section class="wholeCNT" id="home">
   <section class="leftSide">
-    <img class="proIMG" src="/img/professionelles_Bild.png" alt="" />
     <img class="shadowIMG" src="/img/shadow/01_photo_shadows.png" alt="" />
+    <img class="proIMG" src="/img/professionelles_Bild.png" alt="" />
   </section>
 
   <img class="shape" src="/img/shape.png" alt="" />
 
   <section class="rightSide">
+    <!--
+
     <div class="descriptionCNT">
       <div class="descriptionTXT">
         <div class="whoIs">
@@ -19,7 +21,31 @@
       </div>
 
       <div class="talk">
-        <button class="talkBTN">{{ "home.talk" | translate }}</button>
+        <a href="#contact" class="talkBTN">
+          <button id="toContact">
+            {{ "home.talk" | translate }}
+          </button></a
+        >
+      </div>
+    </div>
+-->
+
+    <div class="hero">
+      <div class="leftTXT">
+        <span class="intro">{{ "home.whoIs" | translate }}</span>
+
+        <div class="name-role">
+          <h1 class="name">{{ "home.name" | translate }}</h1>
+          <h2 class="role">{{ "home.role" | translate }}</h2>
+        </div>
+      </div>
+
+      <div class="talk">
+        <a href="#contact" class="talkBTN">
+          <button id="toContact">
+            {{ "home.talk" | translate }}
+          </button></a
+        >
       </div>
     </div>
 
