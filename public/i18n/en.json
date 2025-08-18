@@ -116,8 +116,31 @@
   },
 
   "imprint": {
-    "header": "",
-    "contact": "",
-    "mobile": ""
+    "header": "Imprint",
+    "contact": "Contact",
+    "disclaim": "Disclaimer",
+    "mobile": "Mobile:",
+    "content": {
+      "header": "Content",
+      "text": "Despite careful content control, I assume no liability for the topicality, completeness, and accuracy of the information provided. Any liability claims against me relating to material or immaterial damage caused by the use or non-use of the content provided or by the use of incorrect or incomplete information are excluded."
+    },
+    "links": {
+      "header": "External links",
+      "text": "My website contains links to external third-party websites over whose content I have no influence. Therefore, I cannot accept any liability for this external content. The respective provider or operator of the linked pages is always responsible for their content."
+    },
+
+    "copyright": {
+      "header": "Copyright",
+      "text": "The content and works on this website created by the site operators are subject to Swiss copyright law. Contributions by third parties are identified as such. The reproduction, editing, distribution, and any kind of use outside the limits of copyright law require our written consent."
+    },
+    "changes": {
+      "header": "Changes and errors",
+      "text": "I expressly reserve the right to change, supplement, delete parts of the pages or the entire offer at any time, or to discontinue publication temporarily or permanently. Should individual formulations or representations of this disclaimer be invalid, the remaining provisions shall remain unaffected."
+    },
+
+    "created": {
+      "header": "Imprint created by:",
+      "text": "Certified Swiss online shops"
+    }
   }
 }

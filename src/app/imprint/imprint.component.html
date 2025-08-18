@@ -1,1 +1,89 @@
-<p>imprint works!</p>
+<!--<div class="imprint-component">
+  <a [routerLink]="['/homepage']">
+    <button>Back to main</button>
+  </a>
+  <h3>{{ "imprint.header" | translate }}</h3>
+
+  <p>
+    Lea Cotar<br />
+    Witikonerstrasse 3 <br />
+    8032 Zürich<br />
+  </p>
+
+
+  <h3>{{ "imprint.contact" | translate }}</h3>
+  <p>{{ "imprint.mobile" | translate }} 015753683264</p>
+
+
+  <p>Quelle: <a href="https://www.e-recht24.de">https://www.e-recht24.de</a></p>
+</div>
+-->
+
+<section class="wholeImprintContent">
+  <h1>{{ "imprint.header" | translate }}</h1>
+  <address>
+    Lea Cotar<br />
+    Witikonerstrasse 3<br />
+    8032 Zürich<br />
+    Schweiz
+  </address>
+
+  <h2>{{ "imprint.contact" | translate }}</h2>
+  <p>
+    <b>E-Mail: </b> <a href="mailto:lea.cotar@gmx.ch">lea.cotar&#64;gmx.ch</a
+    ><br />
+    <b>Web: </b> <a href="leacotar.com">leacotar.com</a>
+  </p>
+
+  <h2 class="disclaim">{{ "imprint.disclaim" | translate }}</h2>
+  <ol>
+    <li>
+      {{ "imprint.content.header" | translate }}
+    </li>
+
+    <ul>
+      {{
+        "imprint.content.text" | translate
+      }}
+    </ul>
+
+    <li>
+      {{ "imprint.links.header" | translate }}
+    </li>
+
+    <ul>
+      {{
+        "imprint.links.text" | translate
+      }}
+    </ul>
+
+    <li>
+      {{ "imprint.copyright.header" | translate }}
+    </li>
+
+    <ul>
+      {{
+        "imprint.copyright.text" | translate
+      }}
+    </ul>
+
+    <li>{{ "imprint.changes.header" | translate }}</li>
+
+    <ul>
+      {{
+        "imprint.changes.text" | translate
+      }}
+    </ul>
+  </ol>
+
+  <p>
+    <strong> {{ "imprint.created.header" | translate }} </strong>
+    <a href="https://www.zertifizierte-shops.ch/members/">
+      {{ "imprint.created.text" | translate }}
+    </a>
+  </p>
+
+  <a [routerLink]="['/homepage']" class="imprintBTN">
+    <button>Back to main</button>
+  </a>
+</section>

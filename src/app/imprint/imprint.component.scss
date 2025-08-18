@@ -1,0 +1,72 @@
+.wholeImprintContent {
+  display: flex;
+  // align-items: center;
+  margin-top: 100px;
+  flex-direction: column;
+  flex: 1;
+  height: 100vh;
+  width: 95vw;
+  color: #ffffff;
+  gap: 20px;
+
+  h1,
+  h2,
+  address,
+  p {
+    text-align: center;
+    font-style: normal;
+    margin: 0;
+  }
+
+  .disclaim {
+    text-align: left;
+  }
+
+  ol {
+    margin: 0;
+  }
+
+  li {
+    font-weight: bold;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: #ffffff;
+  }
+
+  address {
+    font-style: normal;
+  }
+}
+
+.imprintBTN {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  button {
+    background-color: #70e61c;
+    border-color: #70e61c;
+    color: #ffffff;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 999px;
+    font-weight: 400;
+    font-size: 18px;
+
+    &:hover {
+      cursor: pointer;
+      color: #ffffff;
+      background-color: #9747ff;
+      border-color: #9747ff;
+      transform: scale(1.1);
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+}
