@@ -65,7 +65,7 @@
 .skillsRightSide {
   width: 50%;
   align-items: end;
-  height: 400px;
+  height: 65vh;
 }
 
 .skillsTitle {
@@ -183,3 +183,154 @@
     transition: transform 0.3s ease-in-out;
   }
 }
+
+@media screen and (max-width: 1000px) {
+  .wholeSkillsCTN {
+    position: relative;
+    top: 60vh;
+  }
+}
+
+/* @media screen and (max-width: 1000px)
+wholeSkillsCTN */
+/* -------- MY SKILLS Layout --------
+@media screen and (max-width: 1000px) {
+  .wholeSkillsCTN {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    min-height: 100vh;
+    font-family: Poppins;
+    font-weight: 400;
+    padding: 60px 5vw;
+    box-sizing: border-box;
+    top: 125vh;
+  } */
+
+/* Left Side: Icons
+  .skillsLeftSide {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); // 3 Spalten
+    gap: 40px;
+    justify-items: center;
+    align-items: start;
+    padding: 40px;
+    height: auto; // verhindert das Quetschen
+  }
+
+  .skillItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+
+    img {
+      width: 60px;
+      height: auto;
+    }
+
+    .skillLBL {
+      color: #ffffff;
+      font-size: 18px;
+    }
+
+    .highlightedSkill {
+      color: #9747ff;
+      font-weight: bold;
+    }
+  } */
+
+/* Right Side
+  .skillsRightSide {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 500px;
+  }
+
+  .skillsTitle {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 25px;
+
+    h1 {
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 60px;
+      line-height: 120%;
+      text-align: right;
+      width: auto;
+    }
+
+    img {
+      height: 50px;
+    }
+  }
+
+  .skillsHeaderTXT p {
+    color: #ffffff;
+    font-size: 20px;
+    line-height: 150%;
+    text-align: right;
+    max-width: 450px;
+    margin-left: auto;
+  }
+
+  .skillsSubHeader {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+
+    h2 {
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 28px;
+    }
+
+    .skillsHeaderColor {
+      color: #9747ff;
+    }
+  }
+
+  .skillsSubTXT p {
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 150%;
+    text-align: right;
+    max-width: 500px;
+    margin-left: auto;
+  } */
+
+/* Button
+  .skillsBTNContact {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+
+    .contactBTN {
+      font-size: 1.2rem;
+      color: #ffffff;
+      border-color: #70e61c;
+      border-radius: 10px;
+      background-color: #70e61c;
+      width: 250px;
+      height: 60px;
+      padding: 15px 30px;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        cursor: pointer;
+        background-color: #9747ff;
+        border-color: #9747ff;
+        transform: scale(1.1);
+      }
+    }
+  }
+} */

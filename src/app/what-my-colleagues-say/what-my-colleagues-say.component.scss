@@ -3,18 +3,34 @@
   top: 350vh; // behält die ursprüngliche Positionierung der Section
   padding: 2rem; // optional, damit Inhalt Platz hat
   // width: 100%; */
-  height: 125vh;
+  height: 75vh;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  top: 20vh;
+  position: relative;
 }
 
 .wholeReviewCNT .quotation {
-  position: absolute; // absolut innerhalb der Section
-  top: 5px; // über die obere Ecke der Box
   left: 170px; // über die linke Ecke der Box
   width: 100px; // Grösse anpassen
   height: auto;
   z-index: 10; // über der Box
+}
+
+@media screen and (max-width: 1000px) {
+  .wholeReviewCNT {
+    /*position: relative; // Bezugspunkt für das absolute Gänsefüßchen
+  top: 350vh; // behält die ursprüngliche Positionierung der Section
+  padding: 2rem; // optional, damit Inhalt Platz hat
+  // width: 100%;  */
+    height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    top: 100vh;
+    position: relative;
+  }
 }

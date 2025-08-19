@@ -1,12 +1,13 @@
 .wholeFooter {
   display: flex;
   align-items: center;
-  width: 100%;
+  width: 99vw;
   height: 25vh;
   justify-content: space-around;
-
+  position: relative;
   gap: 30px;
   z-index: 10;
+  top: 100vh;
 }
 
 .line {
@@ -16,6 +17,12 @@
   width: 100%; /* Breite */
   margin: 20px auto; /* Abstand oben/unten + zentriert */
   z-index: 10;
+
+  width: 99vw;
+
+  position: relative;
+
+  top: 100vh;
 }
 
 .footerLogo {

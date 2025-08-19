@@ -9,6 +9,7 @@
   width: 50vw;
   align-items: start;
   justify-items: start;
+  top: 10vh;
 
   img {
     grid-area: 1 / 1; // beide Bilder in derselben Grid-Zelle -> übereinander
@@ -211,5 +212,64 @@
       transform: scale(1.1);
       transition: transform 0.3s ease-in-out;
     }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .leftSide {
+    .shadowIMG {
+      width: auto; // überschreibt 40vw
+      // max-width: 100%;
+      height: auto;
+    }
+
+    .proIMG {
+      width: auto; // überschreibt 30vw
+      // max-width: 100%;
+      height: auto;
+    }
+  }
+
+  .rightSide {
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    height: 100vh;
+    top: 130vh;
+    width: 95vw;
+    display: flex;
+    flex-direction: column;
+    gap: 5vw;
+  }
+
+  .hero {
+    align-items: flex-end;
+    height: 50vh;
+    padding: 2rem;
+  }
+
+  .talk {
+    height: 15vh;
+    width: 75vw;
+  }
+
+  .shape {
+    position: absolute;
+    width: 99vw;
+    left: 0;
+    z-index: 2;
+    height: 100vh;
+    top: 85vh;
+  }
+
+  .homeFooter {
+    display: flex;
+    justify-content: space-between;
+    width: 95vw;
+    height: auto;
+  }
+
+  .scrollDown {
+    display: none;
   }
 }

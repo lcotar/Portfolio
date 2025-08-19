@@ -81,13 +81,14 @@
       gap: 10px;
       border-radius: 10px;
       padding: 15px 30px;
-
+      border-color: #9747ff;
       background-color: #9747ff;
       color: #ffffff;
 
       &:hover {
         cursor: pointer;
         background-color: #70e61c;
+        border-color: #70e61c;
       }
     }
 
@@ -126,5 +127,72 @@
   img {
     width: 620px;
     height: 340px;
+  }
+}
+
+/* Responsive Layout für ALLE Projekte */
+@media screen and (max-width: 1000px) {
+  .wholeSingleProjectCNT {
+    font-family: Poppins;
+    margin-bottom: 0px;
+  }
+
+  /* Table */
+  .singleProjectTbl {
+    padding-top: 0px;
+    flex-direction: column;
+    gap: 10px; /* Abstand zwischen Projekten */
+  }
+
+  .singleProject,
+  .singleProjectRvs {
+    flex-direction: column;
+    height: auto;
+    gap: 25px;
+    align-items: center;
+  }
+
+  .singleProjectRvs {
+    flex-direction: column-reverse;
+    height: auto;
+    gap: 25px;
+    align-items: center;
+  }
+
+  .singleProjectIMG {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .singleProjectDetails {
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    align-items: center;
+    gap: 20px;
+    h3 {
+      font-size: 28px;
+      width: auto;
+      height: auto;
+    }
+    .singleProjectTech {
+      justify-content: center;
+      width: auto;
+      font-size: 16px;
+    }
+    .singleProjectTXT {
+      width: auto;
+      p {
+        font-size: 14px;
+      }
+    }
+    .singleProjectBTN {
+      flex-wrap: wrap; /* wichtig, damit Buttons umbrechen können */
+      justify-content: center;
+      gap: 20px;
+      width: auto;
+    }
   }
 }

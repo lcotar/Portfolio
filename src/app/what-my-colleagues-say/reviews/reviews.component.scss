@@ -9,8 +9,8 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Schatten
   border: 4px solid #70e61c; // Neuer Rand
 
-  width: 850px;
-  height: 270px;
+  width: 45vw;
+  height: 25vh;
   gap: 45px;
   padding: 50px 95px;
 }
@@ -75,5 +75,47 @@
 
   &:hover {
     cursor: pointer;
+  }
+}
+
+/* @media screen and (max-width: 1000px) {
+  .wholeFeedbackCNT {
+    position: relative;
+    top: 15vh;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+} */
+
+@media screen and (max-width: 1000px) {
+  .reviewBox {
+    width: 90vw; /* Breite anpassen */
+    height: auto; /* Höhe automatisch anpassen, damit Inhalt Platz hat */
+    padding: 30px 20px; /* Padding reduzieren für kleinere Bildschirme */
+    gap: 30px; /* Optional: Abstand zwischen Elementen anpassen */
+  }
+
+  .bottomFeedback {
+    display: flex;
+    justify-content: center; /* Inhalte innerhalb der Box zentrieren */
+    margin-left: 0; /* Entfernt Verschiebung nach rechts */
+    flex-wrap: wrap; /* Falls es zu eng wird, brechen die Elemente um */
+    gap: 15px; /* Lücke zwischen Elementen anpassen */
+
+    p {
+      // width: 100%; /* Text passt sich der Breite an */
+      text-align: center; /* Text zentrieren */
+    }
+
+    a {
+      width: auto; /* Icon passt sich an */
+
+      img {
+        width: 30px; /* Icon-Grösse anpassen */
+      }
+    }
   }
 }

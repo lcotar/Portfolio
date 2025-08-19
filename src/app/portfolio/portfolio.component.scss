@@ -1,12 +1,12 @@
 /* Whole Content */
 .wholePortfolioCNT {
-  /* position: absolute;
-  top: 300vh; */
+  position: relative;
+  // top: 300vh;
   height: 125vh;
   z-index: 10;
-  left: 10vw;
+  // left: 10vw;
   font-family: Poppins;
-  right: 0;
+  // right: 0;
   // box-sizing: border-box;
 }
 
@@ -44,4 +44,54 @@
 
 .myPortfolioProjects {
   margin-top: 50px; // oder grösser, je nach gewünschtem Abstand
+}
+
+/* @media screen and (max-width: 1000px) {
+  .wholePortfolioCNT {
+    position: relative;
+    top: 25vh;
+    width: 99vw;
+  }
+
+  .portfolioHeader {
+    gap: 32px;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 110px;
+    width: 99vw;
+  }
+} */
+
+@media screen and (max-width: 1000px) {
+  .wholePortfolioCNT {
+    position: relative;
+    top: 25vh;
+    width: 100%; // nicht 99vw, sondern 100% damit kein Überlauf entsteht
+    padding: 0 2vw; // optional: etwas Innenabstand für Ränder
+    box-sizing: border-box;
+  }
+
+  .portfolioHeader {
+    gap: 16px; // kleinerer Abstand zwischen Elementen
+    display: flex;
+    align-items: center;
+    justify-content: center; // mittig ausrichten, verhindert Überlauf
+    height: auto; // flexible Höhe
+    flex-wrap: wrap; // Zeilenumbruch, falls Elemente zu breit sind
+    width: 100%; // volle Breite innerhalb von .wholePortfolioCNT
+    margin: 0 auto; // zentrieren
+  }
+
+  .portfolioHeader h1 {
+    font-size: 40px; // Schriftgrösse verkleinern für kleinere Screens
+    gap: 5px;
+    text-align: center;
+  }
+
+  .portfolioHeaderTXT {
+    font-size: 16px;
+    line-height: 24px;
+  }
 }

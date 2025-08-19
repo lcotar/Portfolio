@@ -2,7 +2,7 @@
   position: relative;
   display: flex;
   // top: 120vh;
-  width: 100%;
+  width: 99vw;
   height: 125vh;
   z-index: 10;
   color: #ffffff;
@@ -93,3 +93,25 @@
     height: 500px; // beliebige Höhe
   }
 }
+
+@media screen and (max-width: 1000px) {
+  .wholeAboutMeCNT {
+    position: relative;
+    top: 85vh;
+    display: flex;
+    width: 99vw;
+    height: 150vh;
+    z-index: 10;
+    color: #ffffff;
+    font-family: Poppins;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .aboutMeRightSide {
+    display: none;
+  }
+}
+
+/* @media screen and (max-width: 1000px)
+wholeSkillsCTN */
