@@ -13,17 +13,17 @@
 /* left Side: Icons & Description */
 .skillsLeftSide {
   width: 50%;
-  height: 40vh;
+  height: 100vh;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px; // Abstand zwischen den Icons
+  // gap: 20px; // Abstand zwischen den Icons
   justify-content: center;
   padding: 20px;
 }
 
 .skillItem {
   position: relative;
-  left: 5.208vw;
+  // left: 5.208vw;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -73,17 +73,15 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 35px;
+  // gap: 35px;
   right: 0;
   height: 110px;
 
   h1 {
     color: #ffffff;
     font-weight: 700;
-    font-style: Bold;
-    font-size: 70px;
+    font-size: 50px;
     line-height: 120%;
-    letter-spacing: 0%;
     text-align: right;
     width: 60vw;
     padding-right: 5vw;
@@ -147,7 +145,7 @@
     line-height: 120%;
     text-align: right;
     padding-right: 10vw; // 10% der Breite des Browserfensters
-    width: 500px;
+    // width: 500px;
     margin-left: auto;
   }
 }
@@ -166,7 +164,7 @@
 .contactBTN {
   font-size: 1.2rem;
   color: #ffffff;
-  border-color: #70e61c;
+  border-color: transparent;
   border-radius: 10px;
   background-color: #70e61c;
   width: 250px;
@@ -186,151 +184,112 @@
 
 @media screen and (max-width: 1000px) {
   .wholeSkillsCTN {
-    position: relative;
-    top: 60vh;
-  }
-}
-
-/* @media screen and (max-width: 1000px)
-wholeSkillsCTN */
-/* -------- MY SKILLS Layout --------
-@media screen and (max-width: 1000px) {
-  .wholeSkillsCTN {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 100%;
-    min-height: 100vh;
+    display: block;
+    width: 99vw;
     font-family: Poppins;
     font-weight: 400;
-    padding: 60px 5vw;
-    box-sizing: border-box;
-    top: 125vh;
-  } */
-
-/* Left Side: Icons
-  .skillsLeftSide {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); // 3 Spalten
-    gap: 40px;
-    justify-items: center;
-    align-items: start;
-    padding: 40px;
-    height: auto; // verhindert das Quetschen
+    position: relative;
+    height: auto;
+    transform: translateY(85vh); // verschiebt alles 10vh nach unten
   }
 
-  .skillItem {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 15px;
+  .skillsLeftSide {
+    position: absolute;
+    top: 80vh; // ungefähre Position zwischen Header und Description
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    justify-content: center;
+  }
 
-    img {
-      width: 60px;
-      height: auto;
-    }
-
-    .skillLBL {
-      color: #ffffff;
-      font-size: 18px;
-    }
-
-    .highlightedSkill {
-      color: #9747ff;
-      font-weight: bold;
-    }
-  } */
-
-/* Right Side
   .skillsRightSide {
-    width: 50%;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    justify-content: flex-start;
-    gap: 500px;
+    /* gap: 20px;
+    padding: 20px; */
   }
 
   .skillsTitle {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 25px;
+    gap: 35px;
+    right: 0;
+    height: 110px;
 
     h1 {
       color: #ffffff;
       font-weight: 700;
+      font-style: Bold;
       font-size: 60px;
       line-height: 120%;
+      letter-spacing: 0%;
       text-align: right;
-      width: auto;
-    }
-
-    img {
-      height: 50px;
+      width: 60vw;
     }
   }
-
-  .skillsHeaderTXT p {
-    color: #ffffff;
-    font-size: 20px;
-    line-height: 150%;
-    text-align: right;
-    max-width: 450px;
-    margin-left: auto;
-  }
-
-  .skillsSubHeader {
+  .skillsCTN {
     display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-
-    h2 {
-      color: #ffffff;
-      font-weight: bold;
-      font-size: 28px;
-    }
-
-    .skillsHeaderColor {
-      color: #9747ff;
-    }
+    flex-direction: column;
+    gap: 100vh;
   }
 
-  .skillsSubTXT p {
-    color: #ffffff;
-    font-size: 18px;
-    line-height: 150%;
-    text-align: right;
-    max-width: 500px;
-    margin-left: auto;
-  } */
-
-/* Button
-  .skillsBTNContact {
-    margin-top: 20px;
-    display: flex;
-    justify-content: flex-end;
+  .skillsHeaderTXT,
+  .skillsDescri {
     width: 100%;
+  }
+}
 
-    .contactBTN {
-      font-size: 1.2rem;
-      color: #ffffff;
-      border-color: #70e61c;
-      border-radius: 10px;
-      background-color: #70e61c;
-      width: 250px;
-      height: 60px;
-      padding: 15px 30px;
-      transition: all 0.3s ease-in-out;
+/*  {
+  .wholeSkillsCTN {
+    position: relative; // oder static, falls es aktuell verschoben ist
+    top: 0; // nach oben setzen
+    transform: translateY(35vh); // verschiebt alles 10vh nach unten
+    margin-top: 0; // evtl. bestehende Abstände entfernen
 
-      &:hover {
-        cursor: pointer;
-        background-color: #9747ff;
-        border-color: #9747ff;
-        transform: scale(1.1);
-      }
+    height: auto; // statt fixer Höhe, damit Inhalt flexibel bleibt
+    display: inline-block;
+  }
+
+  .skillsRightSide {
+    width: 100%;
+    align-items: end;
+    height: auto;
+    position: relative;
+    z-index: 10;
+  }
+
+  .skillsTitle {
+    h1 {
+      margin: 0;
+
+      font-size: 40px;
+      text-align: right;
+      width: 60vw;
+      padding-right: 0vw;
     }
   }
-} */
+
+  .skillsCTN {
+    position: relative;
+    gap: 50px;
+  }
+
+  .skillsLeftSide {
+    position: relative;
+    top: 55vh;
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px; // Abstand zwischen den Icons
+    justify-content: center;
+    padding: 20px;
+  }
+}
+*/

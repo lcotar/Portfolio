@@ -2,12 +2,13 @@
 .wholePortfolioCNT {
   position: relative;
   // top: 300vh;
-  height: 125vh;
+  height: 200vh;
   z-index: 10;
   // left: 10vw;
   font-family: Poppins;
   // right: 0;
   // box-sizing: border-box;
+  transform: translateY(10vh);
 }
 
 .portfolioHead {
@@ -67,10 +68,11 @@
 @media screen and (max-width: 1000px) {
   .wholePortfolioCNT {
     position: relative;
-    top: 25vh;
+    // top: 25vh;
     width: 100%; // nicht 99vw, sondern 100% damit kein Überlauf entsteht
     padding: 0 2vw; // optional: etwas Innenabstand für Ränder
     box-sizing: border-box;
+    transform: translateY(200vh); // verschiebt alles 10vh nach unten
   }
 
   .portfolioHeader {

@@ -81,7 +81,7 @@
       gap: 10px;
       border-radius: 10px;
       padding: 15px 30px;
-      border-color: #9747ff;
+      border-color: transparent;
       background-color: #9747ff;
       color: #ffffff;
 
@@ -131,7 +131,7 @@
 }
 
 /* Responsive Layout für ALLE Projekte */
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1300px) {
   .wholeSingleProjectCNT {
     font-family: Poppins;
     margin-bottom: 0px;

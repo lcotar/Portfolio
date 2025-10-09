@@ -158,14 +158,16 @@ input[type="submit"]:hover {
 @media screen and (max-width: 1000px) {
   .contactCNT {
     display: flex;
-    justify-content: flex-end;
-    height: 100vh;
+    justify-content: center;
+    height: 70vh;
     border-radius: 5px;
     background-color: transparent;
     padding: 0px;
+    transform: translateY(30vh);
+  }
+
+  .contactArrow {
+    display: flex;
+    justify-content: flex-end;
   }
 }
-
-/*
-
-  */

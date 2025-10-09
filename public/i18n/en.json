@@ -117,30 +117,39 @@
 
   "imprint": {
     "header": "Imprint",
-    "contact": "Contact",
-    "disclaim": "Disclaimer",
-    "mobile": "Mobile:",
+
+    "subheader": {
+      "eins": "Exploring the Board",
+      "zwei": "Acceptance of terms",
+      "drei": "Scope and ownership of the product",
+      "vier": "Proprietary rights",
+      "fuenf": "Use of the product",
+      "sechs": "Disclaimer of warranties and limitation of liability",
+      "sieben": "Indemnity"
+    },
+
     "content": {
-      "header": "Content",
-      "text": "Despite careful content control, I assume no liability for the topicality, completeness, and accuracy of the information provided. Any liability claims against me relating to material or immaterial damage caused by the use or non-use of the content provided or by the use of incorrect or incomplete information are excluded."
+      "eins": "lea.cotar@gmx.ch",
+      "zwei": "By accessing and using Portfolio (Product), you acknowledge and agree to the following terms and conditions, and any policies, guidelines, or amendments thereto that may be presented to you from time to time. We, the listed students, may update or change the terms and conditions from time to time without notice.",
+      "drei": "Portfolio has been developed as part of a student group project in a web development bootcamp at the Developer Akademie GmbH. It has an educational purpose and is not intended for extensive personal & business usage. As such, we cannot guarantee consistent availability, reliability, accuracy, or any other aspect of quality regarding this Product. The design of Portfolio is owned by the Developer Akademie GmbH. Unauthorized use, reproduction, modification, distribution, or replication of the design is strictly prohibited.",
+      "vier": "Aside from the design owned by Developer Akademie GmbH, we, the listed students, retain all proprietary rights in Portfolio, including any associated copyrighted material, trademarks, and other proprietary information.",
+      "fuenf": "Portfolio is intended to be used for lawful purposes only, in accordance with all applicable laws and regulations. Any use of Portfolio for illegal activities, or to harass, harm, threaten, or intimidate another person, is strictly prohibited. You are solely responsible for your interactions with other users of Portfolio.",
+      "sechs": "Portfolio is provided as is without warranty of any kind, whether express or implied, including but not limited to the implied warranties of merchantability, fitness for a particular purpose, and non-infringement. In no event will we, the listed students, or the Developer Akademie, be liable for any direct, indirect, incidental, special, consequential or exemplary damages, including but not limited to, damages for loss of profits, goodwill, use, data, or other intangible losses, even if we have been advised of the possibility of such damages, arising out of or in connection with the use or performance of Portfolio.",
+      "sieben": "You agree to indemnify, defend and hold harmless us, the listed students, the Developer Akademie, and our affiliates, partners, officers, directors, agents, and employees, from and against any claim, demand, loss, damage, cost, or liability (including reasonable legal fees) arising out of or relating to your use of Portfolio and/or your breach of this Legal Notice."
     },
-    "links": {
-      "header": "External links",
-      "text": "My website contains links to external third-party websites over whose content I have no influence. Therefore, I cannot accept any liability for this external content. The respective provider or operator of the linked pages is always responsible for their content."
-    },
+    "fragen": "For any questions or notices, please contact us at ",
+    "date:": "October 9th, 2025"
+  },
 
-    "copyright": {
-      "header": "Copyright",
-      "text": "The content and works on this website created by the site operators are subject to Swiss copyright law. Contributions by third parties are identified as such. The reproduction, editing, distribution, and any kind of use outside the limits of copyright law require our written consent."
+  "privacy": {
+    "header": "Privacy Policy",
+    "subtitle": {
+      "eins": "Sub1",
+      "zwei": "Sub2"
     },
-    "changes": {
-      "header": "Changes and errors",
-      "text": "I expressly reserve the right to change, supplement, delete parts of the pages or the entire offer at any time, or to discontinue publication temporarily or permanently. Should individual formulations or representations of this disclaimer be invalid, the remaining provisions shall remain unaffected."
-    },
-
-    "created": {
-      "header": "Imprint created by:",
-      "text": "Certified Swiss online shops"
+    "text": {
+      "eins": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+      "zwei": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
     }
   }
 }

@@ -115,31 +115,40 @@
     }
   },
   "imprint": {
-    "header": "Impressum",
-    "contact": "Kontakt",
-    "disclaim": "Haftungsausschluss",
-    "mobile": "Mobil:",
+    "header": "Imprint",
+
+    "subheader": {
+      "eins": "Exploring the Board",
+      "zwei": "Acceptance of terms",
+      "drei": "Scope and ownership of the product",
+      "vier": "Proprietary rights",
+      "fuenf": "Use of the product",
+      "sechs": "Disclaimer of warranties and limitation of liability",
+      "sieben": "Indemnity"
+    },
+
     "content": {
-      "header": "Inhalte",
-      "text": "Trotz sorgfältiger inhaltlicher Kontrolle übernehme ich keinen Gewähr für die Aktualität, Vollständigkeit und Richtigkeit der bereitgestellten Informationen. Jegliche Haftungsansprüche gegen mich, die sich auf Schäden materieller oder ideeller Art beziehen - verursacht durch die Nutzung oder Nichtnutzung der dargebotenen Inhalte bzw. durch Nutzung fehlerhafter und unvollständiger Informationen - sind grundsätzlich ausgeschlossen."
+      "eins": "lea.cotar@gmx.ch",
+      "zwei": "Durch den Zugriff auf und die Nutzung von Portfolio (Produkt) erkennen Sie die folgenden Bedingungen sowie alle Richtlinien, Leitlinien oder Änderungen daran, die Ihnen von Zeit zu Zeit vorgelegt werden, an und erklären sich damit einverstanden. Wir, die aufgeführten Studenten, können die Bedingungen von Zeit zu Zeit ohne vorherige Ankündigung aktualisieren oder ändern.",
+      "drei": "Portfolio wurde im Rahmen eines studentischen Gruppenprojekts in einem Webentwicklungs-Bootcamp der Developer Akademie GmbH entwickelt. Es dient zu Bildungszwecken und ist nicht für eine umfassende private oder geschäftliche Nutzung vorgesehen. Daher können wir keine Garantie für die ständige Verfügbarkeit, Zuverlässigkeit, Genauigkeit oder sonstige Qualitätsmerkmale dieses Produkts übernehmen. Das Design von Portfolio ist Eigentum der Developer Akademie GmbH. Die unbefugte Nutzung, Vervielfältigung, Änderung, Verbreitung oder Nachahmung des Designs ist strengstens untersagt.",
+      "vier": "Abgesehen von dem Design, dessen Eigentümer die Developer Akademie GmbH ist, behalten wir, die aufgeführten Studenten, alle Eigentumsrechte an Portfolio, einschliesslich aller damit verbundenen urheberrechtlich geschützten Materialien, Marken und sonstigen geschützten Informationen.",
+      "fuenf": "Portfolio darf nur für rechtmässige Zwecke in Übereinstimmung mit allen geltenden Gesetzen und Vorschriften verwendet werden. Jede Nutzung von Portfolio für illegale Aktivitäten oder zur Belästigung, Schädigung, Bedrohung oder Einschüchterung anderer Personen ist strengstens untersagt. Sie sind allein verantwortlich für Ihre Interaktionen mit anderen Nutzern von Portfolio.",
+      "sechs": "Das Portfolio wird ohne Mängelgewähr und ohne jegliche ausdrückliche oder stillschweigende Gewährleistung bereitgestellt, einschließlich, aber nicht beschränkt auf die stillschweigenden Gewährleistungen der Marktgängigkeit, der Eignung für einen bestimmten Zweck und der Nichtverletzung von Rechten Dritter. In keinem Fall haften wir, die aufgeführten Studenten oder die Developer Akademie für direkte, indirekte, zufällige, besondere, Folge- oder exemplarische Schäden, einschliesslich, aber nicht beschränkt auf Schäden für entgangenen Gewinn, Goodwill, Nutzung, Daten oder andere immaterielle Verluste, selbst wenn wir auf die Möglichkeit solcher Schäden hingewiesen wurden, die sich aus oder in Verbindung mit der Nutzung oder Leistung des Portfolios ergeben.",
+      "sieben": "Sie erklären sich damit einverstanden, uns, die aufgeführten Studenten, die Developer Akademie und unsere verbundenen Unternehmen, Partner, Führungskräfte, Direktoren, Vertreter und Mitarbeiter von allen Ansprüchen, Forderungen, Verlusten, Schäden, Kosten oder Haftungen (einschliesslich angemessener Rechtskosten) freizustellen, zu verteidigen und schadlos zu halten, die sich aus Ihrer Nutzung des Portfolios und/oder Ihrem Verstoss gegen diesen rechtlichen Hinweis ergeben oder damit in Zusammenhang stehen."
     },
-    "links": {
-      "header": "External links",
-      "text": "Meine Webseite enthält Links zu externen Websites Dritter, auf deren Inhalte ich keinen Einfluss haben. Deshalb übernehme ich für diese fremden Inhalte auch keine Gewähr. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich."
-    },
+    "fragen": "Bei Fragen oder Hinweisen wenden Sie sich bitte an ",
+    "date:": "9. October 2025"
+  },
 
-    "copyright": {
-      "header": "Copyright",
-      "text": "Die durch die Seitenbetreiber erstellten Inhalte und Werke auf dieser Website unterliegen dem schweizerischen Urheberrecht. Beiträge Dritter sind als solche gekennzeichnet. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung ausserhalb der Grenzen des Urheberrechts bedürfen unserer schriftlichen Zustimmung."
+  "privacy": {
+    "header": "Datenschutzerklärung",
+    "subtitle": {
+      "eins": "Sub1",
+      "zwei": "Sub2"
     },
-    "changes": {
-      "header": "Changes and errors",
-      "text": "Ich behalte mir ausdrücklich vor, Teile der Seiten oder das gesamte Angebot jederzeit zu ändern, zu ergänzen, zu löschen oder die Veröffentlichung zeitweise oder endgültig einzustellen. Sollten einzelne Formulierungen oder Darstellungen dieses Haftungsausschlusses unwirksam sein, bleiben die übrigen Bestimmungen davon unberührt."
-    },
-
-    "created": {
-      "header": "Imprint created by:",
-      "text": "Certified Swiss online shops"
+    "text": {
+      "eins": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+      "zwei": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
     }
   }
 }

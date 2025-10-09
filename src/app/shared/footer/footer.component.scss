@@ -7,7 +7,7 @@
   position: relative;
   gap: 30px;
   z-index: 10;
-  top: 100vh;
+  transform: translateY(30vh);
 }
 
 .line {
@@ -17,12 +17,9 @@
   width: 100%; /* Breite */
   margin: 20px auto; /* Abstand oben/unten + zentriert */
   z-index: 10;
-
   width: 99vw;
-
   position: relative;
-
-  top: 100vh;
+  transform: translateY(30vh);
 }
 
 .footerLogo {
@@ -47,10 +44,19 @@
 .footerSocialMedia {
   width: 175px;
   height: 40px;
-
   top: 120px;
   // left: 1166px;
 
   display: flex;
   justify-content: space-between;
+}
+
+@media screen and (max-width: 1000px) {
+  .line {
+    transform: translateY(300vh); // verschiebt alles 10vh nach unten
+  }
+
+  .wholeFooter {
+    transform: translateY(300vh); // verschiebt alles 10vh nach unten
+  }
 }
