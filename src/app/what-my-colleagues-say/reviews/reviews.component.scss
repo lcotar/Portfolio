@@ -41,6 +41,12 @@
   }
 }
 
+.memberReview {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .arrowsDots {
   display: flex;
   align-items: center;
@@ -90,6 +96,23 @@
   }
 } */
 
+@media screen and (max-width: 1300px) {
+  .bottomFeedback {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    justify-content: flex-start; /* Inhalt nach rechts im Container */
+    margin-left: 0; /* Schiebt den Container selbst nach rechts */
+  }
+
+  .memberReview {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
 @media screen and (max-width: 1000px) {
   .reviewBox {
     width: 90vw; /* Breite anpassen */
@@ -120,7 +143,7 @@
   }
 }
 
-// @media screen and (min-width: 800px) and (max-width: 1000px)
+//
 // @media screen and (min-width: 600px) and (max-width: 800px)
 // @media screen and (min-width: 500px) and (max-width: 600px)
 // @media screen and (min-width: 400px) and (max-width: 500px)

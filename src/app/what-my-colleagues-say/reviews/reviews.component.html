@@ -8,10 +8,13 @@
 
     <div class="bottomFeedback">
       <img src="/img/lines/01_review.png" alt="" />
-      <p>{{ rezessionen[currentIndex].name | translate }}</p>
-      <a href="{{ rezessionen[currentIndex].linkedin }}" target="_blank">
-        <img src="/img/social_media/10_linkedin.png" alt="" />
-      </a>
+
+      <div class="memberReview">
+        <p>{{ rezessionen[currentIndex].name | translate }}</p>
+        <a href="{{ rezessionen[currentIndex].linkedin }}" target="_blank">
+          <img src="/img/social_media/10_linkedin.png" alt="" />
+        </a>
+      </div>
     </div>
   </div>
 
