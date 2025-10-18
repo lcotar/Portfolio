@@ -1,13 +1,14 @@
 .wholeFooter {
   display: flex;
   align-items: center;
-  width: 99vw;
+  width: 100vw;
   height: 25vh;
   justify-content: space-around;
   position: relative;
   gap: 30px;
   z-index: 10;
   transform: translateY(30vh);
+  background-color: #1a2233;
 }
 
 .line {
@@ -15,9 +16,9 @@
   height: 5px; /* Dicke der Linie */
   background-color: #70e61c; /* Farbe */
   width: 100%; /* Breite */
-  margin: 20px auto; /* Abstand oben/unten + zentriert */
+  // margin: 20px auto; /* Abstand oben/unten + zentriert */
   z-index: 10;
-  width: 99vw;
+  width: 100vw;
   position: relative;
   transform: translateY(30vh);
 }

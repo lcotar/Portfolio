@@ -39,7 +39,8 @@
 .contactContent {
   /* ändern!!! */
   position: absolute; /* oder weglassen */
-  left: 10px;
+  left: 5vw;
+  height: 30vh;
   top: auto;
 
   h2 {
@@ -66,7 +67,7 @@
 
 .contactForm {
   // margin-top: 100px;
-  width: 100%;
+  width: 100vw;
   gap: 35px;
 }
 
