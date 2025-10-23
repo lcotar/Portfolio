@@ -1,7 +1,8 @@
 .wholeCNT {
   position: relative;
+  width: 100vw;
   height: 125vh;
-  width: 99vw;
+  overflow: hidden;
 }
 
 .leftSide {
@@ -10,20 +11,21 @@
   align-items: start;
   justify-items: start;
   top: 10vh;
+  position: relative;
 
   img {
-    grid-area: 1 / 1; // beide Bilder in derselben Grid-Zelle -> übereinander
+    grid-area: 1 / 1;
   }
 
   .shadowIMG {
     width: 50vw;
-    margin-top: 20vh; // statt top: 150px
+    margin-top: 10vh;
   }
 
   .proIMG {
     width: 30vw;
-    margin-top: 20vh; // statt top: 80px
-    margin-left: 10vw; // statt left: 50px
+    margin-top: 15vh;
+    margin-left: 10vw;
   }
 }
 
@@ -44,36 +46,34 @@
   position: absolute;
   z-index: 10;
   left: 0;
-  height: 100vh;
+  // height: 100vh;
   top: 10vh;
   width: 95vw;
-
   display: flex;
-  flex-direction: column; // vertikal anordnen
-  gap: 5vw; // Abstand zwischen oben (hero) und unten (scrollDown)
+  flex-direction: column;
+  gap: 5vw;
 }
 
 .hero {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center; */ // vertikal zentriert
-  align-items: flex-end; // horizontal zentriert
+  align-items: flex-end;
   display: grid;
   place-items: center;
-  margin-left: auto;
   margin-right: 0;
-
-  // height: 35vh;
   padding: 2rem;
 
   .leftTXT {
     display: flex;
-    align-items: center;
+    align-items: flex-end; // sorgt für vertikale Ausrichtung an der Unterkante
+    gap: 2rem;
 
     .intro {
       font-size: 65px;
       color: #ffffff;
       transform: rotate(-90deg);
+      // transform-origin: bottom left; // Drehpunkt unten links für präzise Ausrichtung
+      line-height: 1;
+      position: relative;
+      // top: 40px;
     }
 
     .name-role {
@@ -99,7 +99,6 @@
 
 .talk {
   height: 15vh;
-  /* width: 50vw; */
   padding-right: 35vw;
 
   .talkBTN {
@@ -141,8 +140,6 @@
   width: 95vw;
   height: 50vh;
 
-  // transform: translateY(-200px); // nach oben verschieben
-
   .emailAdressCNT {
     font-family: Poppins;
 
@@ -162,7 +159,7 @@
     align-items: center;
     justify-content: space-between;
     margin-top: auto;
-    transform: translateY(-25%);
+    // transform: translateY(-25%);
     width: 50vw;
     height: 40px;
     gap: 32px;
@@ -206,11 +203,11 @@
 
 .scrollDown {
   display: flex;
-  justify-content: center; // horizontal zentriert
+  justify-content: center;
   align-items: center;
 
   img {
-    width: 50px; // gewünschte Grösse
+    width: 50px;
     height: auto;
 
     &:hover {
@@ -221,240 +218,271 @@
   }
 }
 
-/* Responsive Design
+@media (min-width: 1280px) and (max-width: 1920px) {
+  .hero {
+    .leftTXT {
+      .intro {
+        font-size: clamp(55px, 4vw, 65px);
+      }
 
-@media screen and (min-width: 320px) and (max-width: 480px) {
-.shape {
-    position: absolute;
-  width: 100vw;
-  left: 0;
-  z-index: 2;
-  height: 100vh;
-  top: 60vh;
-}
-} */
+      .name-role {
+        .name {
+          font-size: clamp(75px, 5.5vw, 90px);
+        }
 
-/* @media screen and (max-width: 1300px) {
-  .shape {
-    position: absolute;
-    width: 100vw;
-    left: 0;
-    z-index: 2;
-    height: 100vh;
-    top: 45vh;
+        .role {
+          font-size: clamp(50px, 3.5vw, 60px);
+        }
+      }
+    }
   }
-} */
 
-@media screen and (min-width: 1100px) and (max-width: 1200px) {
+  .talk {
+    .talkBTN {
+      left: clamp(200px, 15vw, 250px);
+    }
+  }
+}
+
+@media (min-width: 960px) and (max-width: 1440px) {
   .wholeCNT {
-    position: relative;
-    height: 125vh;
-    width: 99vw;
+    height: 120vh;
   }
 
   .leftSide {
-    display: grid;
-    width: 50vw;
-    align-items: start;
-    justify-items: start;
-    top: 10vh;
-
-    img {
-      grid-area: 1 / 1; // beide Bilder in derselben Grid-Zelle -> übereinander
-    }
-
     .shadowIMG {
-      width: 50vw;
-      margin-top: 20vh; // statt top: 150px
+      margin-top: 15vh;
     }
 
     .proIMG {
-      width: 30vw;
-      margin-top: 15vh; // statt top: 80px
-      margin-left: 10vw; // statt left: 50px
+      margin-top: 20vh;
+      margin-left: 8vw;
     }
   }
 
   .shape {
-    position: absolute;
-    width: 100vw;
-    left: 0;
-    z-index: 2;
-    height: 100vh;
+    top: 55vh;
+  }
+
+  .hero {
+    .leftTXT {
+      .intro {
+        font-size: clamp(50px, 4.5vw, 60px);
+      }
+
+      .name-role {
+        .name {
+          font-size: clamp(70px, 6vw, 85px);
+        }
+
+        .role {
+          font-size: clamp(45px, 4vw, 55px);
+        }
+      }
+    }
+  }
+
+  .talk {
+    padding-right: 30vw;
+
+    .talkBTN {
+      left: clamp(150px, 12vw, 200px);
+
+      button {
+        font-size: clamp(20px, 1.8vw, 23px);
+        width: clamp(200px, 15vw, 220px);
+        height: clamp(55px, 4.5vw, 58px);
+      }
+    }
+  }
+
+  .homeFooter {
+    .socialMedia {
+      width: 45vw;
+    }
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1080px) {
+  .wholeCNT {
+    height: 115vh;
+  }
+
+  .leftSide {
+    .shadowIMG {
+      margin-top: 20vh;
+    }
+
+    .proIMG {
+      margin-top: 25vh;
+      margin-left: 7vw;
+    }
+  }
+
+  .shape {
     top: 50vh;
   }
 
   .hero {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; // vertikal zentriert
-    align-items: flex-end; // horizontal zentriert
-    // height: 35vh;
-    padding: 2rem;
-
     .leftTXT {
-      display: flex;
-      align-items: center;
-
       .intro {
-        font-size: 65px;
-        color: #ffffff;
-        transform: rotate(-90deg);
+        font-size: clamp(45px, 5vw, 55px);
       }
 
       .name-role {
-        display: flex;
-        flex-direction: column;
-
         .name {
-          font-size: 90px;
-          font-weight: 800;
-          color: #ffffff;
-          margin: 0;
+          font-size: clamp(65px, 6.5vw, 80px);
         }
 
         .role {
-          font-size: 60px;
-          font-weight: 600;
-          color: #8a63ff;
-          margin: 0.5rem;
+          font-size: clamp(40px, 4.5vw, 50px);
         }
       }
     }
-  }
-}
-
-@media screen and (min-width: 1000px) and (max-width: 1100px) {
-  .wholeCNT {
-    position: relative;
-    height: 125vh;
-    width: 99vw;
-  }
-
-  .leftSide {
-    display: grid;
-    width: 50vw;
-    align-items: start;
-    justify-items: start;
-    top: 10vh;
-
-    img {
-      grid-area: 1 / 1; // beide Bilder in derselben Grid-Zelle -> übereinander
-    }
-
-    .shadowIMG {
-      width: 50vw;
-      margin-top: 25vh; // statt top: 150px
-    }
-
-    .proIMG {
-      width: 30vw;
-      margin-top: 25vh; // statt top: 80px
-      margin-left: 7.5vw; // statt left: 50px
-    }
-  }
-
-  .shape {
-    position: absolute;
-    width: 99vw;
-    left: 0;
-    z-index: 2;
-    height: 100vh;
-    top: 45vh;
-  }
-
-  .hero {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; // vertikal zentriert
-    align-items: flex-end; // horizontal zentriert
-    // height: 35vh;
-    padding: 2rem;
-
-    .leftTXT {
-      display: flex;
-      align-items: center;
-
-      .intro {
-        font-size: 65px;
-        color: #ffffff;
-        transform: rotate(-90deg);
-      }
-
-      .name-role {
-        display: flex;
-        flex-direction: column;
-
-        .name {
-          font-size: 90px;
-          font-weight: 800;
-          color: #ffffff;
-          margin: 0;
-        }
-
-        .role {
-          font-size: 60px;
-          font-weight: 600;
-          color: #8a63ff;
-          margin: 0.5rem;
-        }
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 1000px) {
-  .leftSide {
-    .shadowIMG {
-      width: auto; // überschreibt 40vw
-      // max-width: 100%;
-      height: auto;
-    }
-
-    .proIMG {
-      width: auto; // überschreibt 30vw
-      // max-width: 100%;
-      height: auto;
-    }
-  }
-
-  .rightSide {
-    position: absolute;
-    z-index: 10;
-    left: 0;
-    height: 100vh;
-    top: 130vh;
-    width: 95vw;
-    display: flex;
-    flex-direction: column;
-    gap: 5vw;
-  }
-
-  .hero {
-    align-items: flex-end;
-    height: 50vh;
-    padding: 2rem;
   }
 
   .talk {
-    height: 15vh;
-    width: 75vw;
-  }
+    padding-right: 25vw;
 
-  .shape {
-    position: absolute;
-    width: 99vw;
-    left: 0;
-    z-index: 2;
-    height: 99vh;
-    top: 85vh;
+    .talkBTN {
+      left: clamp(120px, 10vw, 180px);
+      top: 15px;
+
+      button {
+        font-size: clamp(18px, 2vw, 22px);
+        width: clamp(180px, 16vw, 210px);
+        height: clamp(50px, 5vw, 56px);
+      }
+    }
   }
 
   .homeFooter {
+    .socialMedia {
+      width: 48vw;
+      gap: 25px;
+    }
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1280px) {
+  .wholeCNT {
+    height: 180vh;
+  }
+
+  .leftSide {
+    width: 100vw;
+    justify-items: center;
+    top: 5vh;
+
+    .shadowIMG {
+      width: 70vw;
+      margin-top: 10vh;
+      margin-left: 0;
+    }
+
+    .proIMG {
+      width: 45vw;
+      margin-top: 15vh;
+      margin-left: 0;
+    }
+  }
+
+  .shape {
+    top: 50vh;
+  }
+
+  .rightSide {
+    top: 55vh;
+    width: 100vw;
+    align-items: center;
+    gap: 3vh;
+  }
+
+  .hero {
+    width: 90vw;
+    margin: 0 auto;
+    padding: 1rem;
+
+    .leftTXT {
+      /* flex-direction: column;
+      align-items: center;
+
+      .intro {
+        font-size: clamp(35px, 5vw, 50px);
+        transform: rotate(-90deg);
+        margin-bottom: 1rem;
+      } */
+
+      display: flex;
+      align-items: flex-end; // sorgt für vertikale Ausrichtung an der Unterkante
+      gap: 2rem;
+
+      .intro {
+        font-size: clamp(35px, 5vw, 50px);
+        color: #ffffff;
+        transform: rotate(-90deg);
+        transform-origin: bottom left; // Drehpunkt unten links für präzise Ausrichtung
+        line-height: 1;
+        position: relative;
+        top: 40px;
+      }
+
+      .name-role {
+        text-align: center;
+
+        .name {
+          font-size: clamp(50px, 7vw, 70px);
+        }
+
+        .role {
+          font-size: clamp(32px, 5vw, 45px);
+        }
+      }
+    }
+  }
+
+  .talk {
+    width: 90vw;
+    padding-right: 0;
     display: flex;
-    justify-content: space-between;
-    width: 95vw;
+    justify-content: center;
     height: auto;
+
+    .talkBTN {
+      left: 0;
+      top: 10px;
+
+      button {
+        font-size: clamp(18px, 2.5vw, 22px);
+        width: clamp(180px, 25vw, 220px);
+        height: clamp(50px, 6vw, 58px);
+      }
+    }
+  }
+
+  .homeFooter {
+    width: 90vw;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    height: auto;
+
+    .socialMedia {
+      width: 80vw;
+      transform: translateY(0);
+      flex-wrap: wrap;
+      justify-content: center;
+
+      .homeLine {
+        width: 60%;
+      }
+    }
+
+    .emailAdressCNT {
+      text-align: center;
+      font-size: clamp(14px, 2vw, 16px);
+    }
   }
 
   .scrollDown {
@@ -462,8 +490,246 @@
   }
 }
 
-// @media screen and (min-width: 800px) and (max-width: 1000px)
-// @media screen and (min-width: 600px) and (max-width: 800px)
-// @media screen and (min-width: 500px) and (max-width: 600px)
-// @media screen and (min-width: 400px) and (max-width: 500px)
-// @media screen and (min-width: 320px) and (max-width: 400px)
+@media (min-width: 568px) and (max-width: 932px) {
+  .wholeCNT {
+    height: 160vh;
+  }
+
+  .leftSide {
+    width: 100vw;
+    justify-items: center;
+    top: 3vh;
+
+    .shadowIMG {
+      width: 75vw;
+      margin-top: 8vh;
+    }
+
+    .proIMG {
+      width: 50vw;
+      margin-top: 12vh;
+    }
+  }
+
+  .shape {
+    top: 45vh;
+  }
+
+  .rightSide {
+    top: 50vh;
+    width: 100vw;
+    align-items: center;
+  }
+
+  .hero {
+    width: 85vw;
+
+    .leftTXT {
+      flex-direction: column;
+      align-items: center;
+      display: flex;
+      align-items: flex-end; // sorgt für vertikale Ausrichtung an der Unterkante
+      gap: 2rem;
+
+      /* .intro {
+        font-size: clamp(32px, 5.5vw, 45px);
+        transform: rotate(-90deg);
+        margin-bottom: 0.8rem;
+      } */
+
+      .intro {
+        font-size: clamp(32px, 5.5vw, 45px);
+        color: #ffffff;
+        transform: rotate(-90deg);
+        transform-origin: bottom left; // Drehpunkt unten links für präzise Ausrichtung
+        line-height: 1;
+        position: relative;
+        top: 40px;
+      }
+
+      .name-role {
+        text-align: center;
+
+        .name {
+          font-size: clamp(48px, 7.5vw, 65px);
+        }
+
+        .role {
+          font-size: clamp(30px, 5.5vw, 42px);
+        }
+      }
+    }
+  }
+
+  .talk {
+    width: 85vw;
+    padding-right: 0;
+    display: flex;
+    justify-content: center;
+
+    .talkBTN {
+      left: 0;
+
+      button {
+        font-size: clamp(16px, 2.8vw, 20px);
+        width: clamp(170px, 28vw, 210px);
+        height: clamp(48px, 6.5vw, 56px);
+      }
+    }
+  }
+
+  .homeFooter {
+    width: 85vw;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+
+    .socialMedia {
+      width: 75vw;
+      gap: 20px;
+    }
+  }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .wholeCNT {
+    height: 140vh;
+  }
+
+  .leftSide {
+    width: 100vw;
+    justify-items: center;
+    top: 2vh;
+
+    .shadowIMG {
+      width: 100vw;
+      margin-top: 5vh;
+    }
+
+    .proIMG {
+      width: 60vw;
+      margin-top: 8vh;
+      margin-left: 0;
+    }
+  }
+
+  .shape {
+    top: 30vh;
+    height: 35vh;
+  }
+
+  .rightSide {
+    top: 45vh;
+    width: 90vw;
+    // align-items: center;
+    gap: 2vh;
+  }
+
+  .hero {
+    width: 85vw;
+    padding: 1rem 0.5rem;
+    place-items: flex-start;
+
+    .leftTXT {
+      // flex-direction: column;
+      align-items: center;
+      /* display: flex;
+      align-items: flex-end; */ // sorgt für vertikale Ausrichtung an der Unterkante
+      gap: 0rem;
+
+      .intro {
+        font-size: clamp(28px, 7vw, 38px);
+        transform: rotate(-90deg);
+        // margin-bottom: 0.5rem;
+      }
+
+      .intro {
+        font-size: clamp(28px, 8vw, 38px);
+        color: #ffffff;
+        transform: rotate(-90deg);
+        // transform-origin: bottom left; // Drehpunkt unten links für präzise Ausrichtung
+        line-height: 1;
+        position: relative;
+        // top: 40px;
+      }
+
+      .name-role {
+        // text-align: center;
+
+        .name {
+          font-size: clamp(40px, 9vw, 55px);
+        }
+
+        .role {
+          font-size: clamp(26px, 6.5vw, 36px);
+          margin-top: 0.3rem;
+        }
+      }
+    }
+  }
+
+  .talk {
+    width: 80vw;
+    padding-right: 0;
+    display: flex;
+    justify-content: center;
+    /* height: auto; */
+    align-items: center;
+
+    .talkBTN {
+      left: 0;
+      top: 5px;
+      width: auto;
+
+      button {
+        font-size: clamp(16px, 4vw, 19px);
+        width: clamp(160px, 40vw, 200px);
+        height: clamp(48px, 12vw, 54px);
+        padding: 12px 25px;
+      }
+    }
+  }
+
+  .homeFooter {
+    width: 90vw;
+    // margin: 0 auto;
+    flex-direction: column;
+    // align-items: center;
+    gap: 1.5rem;
+    height: auto;
+
+    .socialMedia {
+      width: 85vw;
+      gap: 15px;
+      // flex-direction: column;
+      height: auto;
+
+      .homeLine {
+        width: 100%;
+        order: -1;
+      }
+
+      img {
+        width: 35px;
+        height: 35px;
+      }
+    }
+
+    .SocialMediaIcons {
+      gap: 20px;
+
+      img {
+        width: 35px;
+        height: 35px;
+      }
+    }
+
+    .emailAdressCNT {
+      display: none;
+    }
+  }
+
+  .scrollDown {
+    display: none;
+  }
+}
