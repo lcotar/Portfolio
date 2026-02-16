@@ -2,7 +2,7 @@
 .wholeCNT {
   position: relative;
   width: 100vw;
-  // min-height: 100vh;
+  min-height: 100vh;
   overflow: visible;
   display: flex;
   flex-direction: column;
@@ -201,7 +201,7 @@
 // Responsivness
 @media (min-width: 780px) and (max-width: 999px) {
   .wholeCNT {
-    // min-height: 100vh;
+    min-height: 100vh;
     height: auto;
     flex-direction: column;
   }
@@ -318,7 +318,7 @@
 // Responsivness
 @media (min-width: 600px) and (max-width: 780px) {
   .wholeCNT {
-    // min-height: 100vh;
+    min-height: 100vh;
     height: auto;
     display: flex;
     flex-direction: column;
