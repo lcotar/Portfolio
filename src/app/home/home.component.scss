@@ -43,7 +43,7 @@
   width: 100vw;
   height: auto;
   min-height: 60vh;
-  top: 40%;
+  top: 50%;
   left: 0;
   z-index: 2;
   pointer-events: none;
@@ -54,7 +54,7 @@
   right: 5%;
   top: 50%;
   transform: translateY(-50%);
-  // width: 45%;
+  width: 45%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -72,7 +72,7 @@
   .leftTXT {
     display: flex;
     align-items: flex-end;
-    gap: 0rem;
+    gap: 2rem;
 
     .intro {
       font-size: 64px;
@@ -138,10 +138,11 @@
   position: absolute;
   bottom: 30px;
   left: 0;
-  width: 99vw;
+  width: 100vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 3vw;
   z-index: 10;
 
   .socialMedia {
@@ -163,153 +164,111 @@
         width: 30px;
         height: 30px;
         transition: transform 0.125s ease;
-
         &:hover {
           transform: scale(1.1);
         }
       }
     }
 
-    .emailAdressCNT {
-      a {
-        color: #ffffff;
-        font-family: Poppins, sans-serif;
-        font-size: 16px;
-        text-decoration: none;
-
-        &:hover {
-          color: #9747ff;
-        }
+    .emailAdressCNT a {
+      color: #ffffff;
+      font-family: Poppins, sans-serif;
+      font-size: 16px;
+      text-decoration: none;
+      &:hover {
+        color: #9747ff;
       }
     }
   }
 
-  .scrollDown {
-    a img {
-      width: 16px;
-      height: auto;
-      transition: transform 0.125s ease;
-
-      &:hover {
-        transform: scale(1.1);
-      }
+  .scrollDown a img {
+    width: 16px;
+    height: auto;
+    transition: transform 0.125s ease;
+    &:hover {
+      transform: scale(1.1);
     }
   }
 }
 
-// ===== LARGE DESKTOP (1441px - 1920px) =====
+// ===== DESKTOP BREAKPOINTS =====
 @media (min-width: 1441px) and (max-width: 1920px) {
   .leftSide {
-    .shadowIMG {
-      width: 50vw;
-    }
-
     .proIMG {
       width: 28vw;
       left: 11vw;
     }
   }
-
   .shape {
     min-height: 65vh;
   }
-
-  .hero {
-    .leftTXT {
-      .intro {
-        font-size: 70px;
+  .hero .leftTXT {
+    .intro {
+      font-size: 70px;
+    }
+    .name-role {
+      .name {
+        font-size: 95px;
       }
-
-      .name-role {
-        .name {
-          font-size: 95px;
-        }
-
-        .role {
-          font-size: 62px;
-        }
+      .role {
+        font-size: 62px;
       }
     }
   }
 }
 
-// ===== MEDIUM DESKTOP (1281px - 1440px) =====
 @media (min-width: 1281px) and (max-width: 1440px) {
   .leftSide {
-    .shadowIMG {
-      width: 50vw;
-    }
-
     .proIMG {
       width: 29vw;
       left: 10.5vw;
     }
   }
-
-  .hero {
-    .leftTXT {
-      .intro {
-        font-size: 62px;
+  .hero .leftTXT {
+    .intro {
+      font-size: 62px;
+    }
+    .name-role {
+      .name {
+        font-size: 88px;
       }
-
-      .name-role {
-        .name {
-          font-size: 88px;
-        }
-
-        .role {
-          font-size: 56px;
-        }
+      .role {
+        font-size: 56px;
       }
     }
   }
 }
 
-// ===== SMALL DESKTOP (1000px - 1280px) =====
 @media (min-width: 1000px) and (max-width: 1280px) {
   .leftSide {
-    .shadowIMG {
-      width: 50vw;
-    }
-
     .proIMG {
       width: 31vw;
-      left: 10vw;
     }
   }
-
   .shape {
     top: 48%;
   }
-
-  .hero {
-    .leftTXT {
-      .intro {
-        font-size: 60px;
+  .hero .leftTXT {
+    .intro {
+      font-size: 56px;
+    }
+    .name-role {
+      .name {
+        font-size: 78px;
       }
-
-      .name-role {
-        .name {
-          font-size: 78px;
-        }
-
-        .role {
-          font-size: 50px;
-        }
+      .role {
+        font-size: 50px;
       }
     }
   }
-
-  .talk {
-    .talkBTN button {
-      font-size: 21px;
-      padding: 16px 32px;
-    }
+  .talk .talkBTN button {
+    font-size: 21px;
+    padding: 16px 32px;
   }
 }
 
-// ===== TABLET (780px - 999px) =====
-@media (min-width: 780px) and (max-width: 999px) {
+// ===== TABLET & MOBILE =====
+@media (max-width: 999px) {
   .wholeCNT {
     min-height: 100vh;
     height: auto;
@@ -320,20 +279,14 @@
     width: 100%;
     height: 50vh;
     top: 0;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
 
     .shadowIMG {
-      position: absolute;
       left: 0;
       top: 50%;
       transform: translateY(-50%);
       width: 70vw;
     }
-
     .proIMG {
-      position: absolute;
       left: 10vw;
       top: 50%;
       transform: translateY(-50%);
@@ -361,17 +314,14 @@
     gap: 2rem;
 
     .leftTXT {
-      gap: 0rem;
-
+      gap: 1.5rem;
       .intro {
         font-size: 50px;
       }
-
       .name-role {
         .name {
           font-size: 68px;
         }
-
         .role {
           font-size: 44px;
         }
@@ -381,7 +331,6 @@
 
   .talk {
     justify-content: center;
-
     .talkBTN button {
       font-size: 19px;
       padding: 16px 32px;
@@ -392,369 +341,188 @@
     position: relative;
     bottom: 0;
     margin-top: 3rem;
-    // padding: 0 5vw 2rem;
+    padding: 0 5vw 2rem;
     justify-content: flex-start;
 
     .socialMedia {
       gap: 35px;
-
       .homeLine {
         width: 80px;
       }
-
       .SocialMediaIcons {
         gap: 35px;
       }
-
       .emailAdressCNT {
         display: none;
       }
     }
-
     .scrollDown {
       display: none;
     }
   }
 }
 
-// ===== TABLET SMALL (600px - 779px) =====
-@media (min-width: 600px) and (max-width: 779px) {
-  .wholeCNT {
-    min-height: 100vh;
-    height: auto;
-  }
-
+@media (max-width: 779px) {
   .leftSide {
-    position: relative;
-    width: 100%;
     height: 45vh;
-    top: 0;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-
     .shadowIMG {
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
       width: 75vw;
     }
-
     .proIMG {
-      position: absolute;
-      left: 12vw;
-      top: 50%;
-      transform: translateY(-50%);
       width: 52vw;
+      left: 12vw;
     }
   }
-
   .shape {
     top: 32%;
     min-height: 45vh;
   }
-
   .rightSide {
-    position: relative;
-    width: 100%;
-    top: 0;
-    right: 0;
-    transform: none;
-    padding: 0 5vw;
     margin-top: -5vh;
   }
-
   .hero {
-    align-items: flex-start;
-    gap: 2rem;
-
     .leftTXT {
-      gap: 0rem;
-
+      gap: 1.2rem;
       .intro {
         font-size: 44px;
       }
-
       .name-role {
         .name {
           font-size: 60px;
         }
-
         .role {
           font-size: 38px;
         }
       }
     }
   }
-
-  .talk {
-    justify-content: center;
-
-    .talkBTN button {
-      font-size: 18px;
-      padding: 15px 30px;
-    }
+  .talk .talkBTN button {
+    font-size: 18px;
+    padding: 15px 30px;
   }
-
   .homeFooter {
-    position: relative;
-    bottom: 0;
     margin-top: 2.5rem;
-    // padding: 0 5vw 2rem;
-    justify-content: flex-start;
-
     .socialMedia {
       gap: 32px;
-
       .homeLine {
         width: 70px;
       }
-
       .SocialMediaIcons {
         gap: 32px;
-
         a img {
           width: 28px;
           height: 28px;
         }
       }
-
-      .emailAdressCNT {
-        display: none;
-      }
-    }
-
-    .scrollDown {
-      display: none;
     }
   }
 }
 
-// ===== MOBILE (480px - 599px) =====
-@media (min-width: 480px) and (max-width: 599px) {
-  .wholeCNT {
-    min-height: 100vh;
-    height: auto;
-  }
-
+@media (max-width: 599px) {
   .leftSide {
-    position: relative;
-    width: 100%;
     height: 42vh;
-    top: 0;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-
     .shadowIMG {
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
       width: 80vw;
     }
-
     .proIMG {
-      position: absolute;
-      left: 12vw;
-      top: 50%;
-      transform: translateY(-50%);
       width: 56vw;
     }
   }
-
   .shape {
     top: 28%;
     min-height: 42vh;
   }
-
   .rightSide {
-    position: relative;
-    width: 100%;
-    top: 0;
-    right: 0;
-    transform: none;
-    padding: 0 5vw;
     margin-top: -3vh;
   }
-
   .hero {
-    align-items: flex-start;
     gap: 1.8rem;
-
     .leftTXT {
-      gap: 0rem;
-
+      gap: 1rem;
       .intro {
         font-size: 38px;
       }
-
       .name-role {
         .name {
           font-size: 52px;
         }
-
         .role {
           font-size: 34px;
         }
       }
     }
   }
-
-  .talk {
-    justify-content: center;
-
-    .talkBTN button {
-      font-size: 17px;
-      padding: 14px 28px;
-    }
+  .talk .talkBTN button {
+    font-size: 17px;
+    padding: 14px 28px;
   }
-
   .homeFooter {
-    position: relative;
-    bottom: 0;
     margin-top: 2rem;
-    // padding: 0 5vw 2rem;
-    justify-content: flex-start;
-
     .socialMedia {
       gap: 30px;
-
       .homeLine {
         width: 65px;
       }
-
       .SocialMediaIcons {
         gap: 30px;
-
-        a img {
-          width: 28px;
-          height: 28px;
-        }
       }
-
-      .emailAdressCNT {
-        display: none;
-      }
-    }
-
-    .scrollDown {
-      display: none;
     }
   }
 }
 
-// ===== SMALL MOBILE (320px - 479px) =====
-@media (min-width: 320px) and (max-width: 479px) {
-  .wholeCNT {
-    min-height: 100vh;
-    height: auto;
-  }
-
+@media (max-width: 479px) {
   .leftSide {
-    position: relative;
-    width: 100%;
     height: 38vh;
-    top: 0;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-
     .shadowIMG {
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
       width: 85vw;
     }
-
     .proIMG {
-      position: absolute;
-      left: 12vw;
-      top: 50%;
-      transform: translateY(-50%);
       width: 60vw;
     }
   }
-
   .shape {
     top: 25%;
     min-height: 38vh;
   }
-
   .rightSide {
-    position: relative;
-    width: 100%;
-    top: 0;
-    right: 0;
-    transform: none;
-    padding: 0 5vw;
     margin-top: -2vh;
   }
-
   .hero {
-    align-items: flex-start;
     gap: 1.5rem;
-
     .leftTXT {
-      gap: 0rem;
-
+      gap: 0.8rem;
       .intro {
         font-size: 32px;
       }
-
       .name-role {
         .name {
           font-size: 44px;
         }
-
         .role {
           font-size: 28px;
         }
       }
     }
   }
-
-  .talk {
-    justify-content: center;
-
-    .talkBTN button {
-      font-size: 16px;
-      padding: 13px 26px;
-    }
+  .talk .talkBTN button {
+    font-size: 16px;
+    padding: 13px 26px;
   }
-
   .homeFooter {
-    position: relative;
-    bottom: 0;
     margin-top: 1.5rem;
-    // padding: 0 5vw 1.5rem;
-    justify-content: flex-start;
-
+    padding: 0 5vw 1.5rem;
     .socialMedia {
       gap: 28px;
-
       .homeLine {
         width: 60px;
       }
-
       .SocialMediaIcons {
         gap: 28px;
-
         a img {
           width: 26px;
           height: 26px;
         }
       }
-
-      .emailAdressCNT {
-        display: none;
-      }
-    }
-
-    .scrollDown {
-      display: none;
     }
   }
 }
