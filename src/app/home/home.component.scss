@@ -23,13 +23,19 @@
   }
 
   .shadowIMG {
-    // width: 45vw;
+    position: absolute;
+    left: 0;
+    top: 15%;
+    width: 50vw;
     height: auto;
     z-index: 1;
   }
 
   .proIMG {
-    width: 70%;
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    width: 75%;
     height: auto;
     z-index: 2;
   }
@@ -40,7 +46,7 @@
   width: 100vw;
   height: auto;
   min-height: 70vh;
-  top: 35%;
+  top: 40%;
   left: 0;
   z-index: 2;
   pointer-events: none;
@@ -70,7 +76,7 @@
   .leftTXT {
     display: flex;
     align-items: flex-end;
-    gap: 2rem;
+    gap: 0rem;
 
     .intro {
       font-size: 64px;
@@ -133,9 +139,9 @@
 }
 
 .homeFooter {
-  /* position: absolute;
+  position: absolute;
   top: 105%;
-  left: 0; */
+  left: 0;
   width: 95vw;
   display: flex;
   justify-content: space-between;
