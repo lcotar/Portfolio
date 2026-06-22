@@ -1,9 +1,10 @@
-// ===== BASE STYLES (Desktop / fluid 1024px - 1920px) =====
+// ===== BASE STYLES (Desktop 1366px - 1919px) =====
+// .shape wird NUR hier definiert und nie wieder verändert.
 .wholeCNT {
   position: relative;
   width: 100%;
   min-height: 100vh;
-  overflow: hidden;
+  // overflow-x: hidden;
 }
 
 .leftSide {
@@ -40,8 +41,8 @@
   .shape {
     position: absolute;
     left: 0;
-    top: 65%;
-    transform: translateY(-50%) translateY(220px) rotate(3deg);
+    top: 55%;
+    // transform: translateY(-50%) translateY(220px) rotate(3deg);
     transform-origin: left center;
     width: 100vw;
     height: auto;
@@ -73,7 +74,7 @@
   .leftTXT {
     display: flex;
     align-items: flex-end;
-    // gap: clamp(1rem, 2vw, 2rem);
+    gap: clamp(1rem, 2vw, 2rem);
 
     .intro {
       font-size: clamp(36px, 3.5vw, 70px);
@@ -198,49 +199,70 @@
   }
 }
 
-// ===== TABLETS (max 1024px - "Kleine Laptops" / "Tablets") =====
-@media (max-width: 1024px) {
+// ===== ULTRAWIDE (ab 1920px) =====
+@media (min-width: 1920px) {
+  .leftSide {
+    .shadowIMG {
+      width: 1050px;
+    }
+
+    .proIMG {
+      left: 175px;
+      width: 490px;
+    }
+  }
+}
+
+// ===== KLEINE LAPTOPS (1024px - 1365px) =====
+@media (min-width: 1024px) and (max-width: 1365px) {
+  .leftSide {
+    .shadowIMG {
+      width: 760px;
+    }
+
+    .proIMG {
+      left: 127px;
+      width: 355px;
+    }
+  }
+}
+
+// ===== TABLET & SMARTPHONE LAYOUT (bis 1023px) =====
+// Ab hier wandert .rightSide unter das Bild, .shape bleibt unangetastet.
+@media (max-width: 1023px) {
   .wholeCNT {
     height: auto;
+    min-height: 0;
   }
 
   .leftSide {
     position: relative;
     width: 100%;
-    // height: 580px;
-    top: 0;
+    height: 60vh;
+    display: flex;
     justify-content: center;
+    align-items: center;
 
     .shadowIMG {
-      left: 39%;
-      top: 50%;
+      left: 30%;
+      top: 75%;
       transform: translate(-50%, -50%);
-      // width: 480px;
     }
 
     .proIMG {
-      left: 30%;
-      top: 50%;
+      left: 25%;
+      top: 75%;
       transform: translate(-50%, -50%);
-      // width: 380px;
-    }
-
-    .shape {
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%) translateY(280px);
-      width: 100vw;
     }
   }
 
   .rightSide {
     position: relative;
-    width: 50%;
-    top: 0;
+    width: 100%;
+    // top: 0;
     right: 0;
-    // padding-left: 8vw;
-    margin-top: -15vh;
-    // transform: none;
+    transform: translateY(50%);
+    z-index: 10;
   }
 
   .hero {
@@ -248,15 +270,10 @@
     gap: clamp(1rem, 3vw, 1.5rem);
 
     .leftTXT {
-      align-items: flex-start;
-      text-align: left;
+      align-items: center;
 
       .name-role {
         align-items: flex-start;
-
-        .name {
-          font-size: clamp(34px, 9vw, 58px);
-        }
       }
     }
   }
@@ -264,29 +281,14 @@
   .talk {
     width: 100%;
     justify-content: center;
-
-    .talkBTN button {
-      font-size: clamp(16px, 3vw, 19px);
-      padding: clamp(13px, 2.5vw, 16px) clamp(26px, 5vw, 32px);
-    }
   }
 
   .homeFooter {
     position: relative;
-    bottom: 0;
-    margin-top: clamp(2rem, 5vw, 3rem);
+    top: 15vh;
+    // margin-top: clamp(2rem, 15vw, 30rem);
 
     .socialMedia {
-      gap: clamp(20px, 5vw, 32px);
-
-      .homeLine {
-        width: clamp(60px, 18vw, 100px);
-      }
-
-      .SocialMediaIcons {
-        gap: clamp(20px, 5vw, 32px);
-      }
-
       .emailAdressCNT {
         display: none;
       }
@@ -298,32 +300,41 @@
   }
 }
 
-// ===== TABLETS - 834px ("Tablets") =====
-@media (max-width: 834px) {
+// ===== TABLETS (834px - 1023px) =====
+@media (min-width: 834px) and (max-width: 1023px) {
   .leftSide {
-    height: 520px;
-
     .shadowIMG {
-      width: 440px;
+      width: 600px;
     }
 
     .proIMG {
-      width: 350px;
+      width: 280px;
     }
   }
 }
 
-// ===== GROSSE SMARTPHONES - 768px =====
-@media (max-width: 768px) {
+// ===== GROSSE SMARTPHONES (768px - 833px) =====
+@media (min-width: 768px) and (max-width: 833px) {
   .leftSide {
-    height: 460px;
+    .shadowIMG {
+      width: 520px;
+    }
 
+    .proIMG {
+      width: 243px;
+    }
+  }
+}
+
+// ===== NORMALE SMARTPHONES (480px - 767px) =====
+@media (min-width: 480px) and (max-width: 767px) {
+  .leftSide {
     .shadowIMG {
       width: 400px;
     }
 
     .proIMG {
-      width: 320px;
+      width: 187px;
     }
   }
 
@@ -332,40 +343,19 @@
   }
 }
 
-// ===== NORMALE SMARTPHONES - 480px =====
-@media (max-width: 480px) {
+// ===== KLEINE SMARTPHONES (320px - 479px) =====
+@media (max-width: 479px) {
   .leftSide {
-    height: 380px;
-
     .shadowIMG {
-      width: 320px;
+      width: 280px;
     }
 
     .proIMG {
-      width: 260px;
+      width: 131px;
     }
   }
 
   .hero .leftTXT .name-role .name {
-    font-size: clamp(28px, 9vw, 40px);
-  }
-}
-
-// ===== KLEINE SMARTPHONES - 320px =====
-@media (max-width: 320px) {
-  .leftSide {
-    height: 320px;
-
-    .shadowIMG {
-      width: 260px;
-    }
-
-    .proIMG {
-      width: 210px;
-    }
-  }
-
-  .hero .leftTXT .name-role .name {
-    font-size: clamp(24px, 9vw, 32px);
+    font-size: clamp(24px, 9vw, 36px);
   }
 }
