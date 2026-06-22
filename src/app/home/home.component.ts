@@ -5,15 +5,14 @@ import { RouterModule } from '@angular/router';
 import { NavbarResponsivComponent } from './navbar-responsiv/navbar-responsiv.component';
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [
-    TranslateModule,
-    CommonModule,
-    RouterModule,
-    NavbarResponsivComponent,
-  ],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss',
+    selector: 'app-home',
+    imports: [
+        TranslateModule,
+        CommonModule,
+        RouterModule,
+        NavbarResponsivComponent,
+    ],
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.scss'
 })
 export class HomeComponent {}

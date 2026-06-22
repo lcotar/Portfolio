@@ -5,11 +5,10 @@ import { TranslateModule } from '@ngx-translate/core';
 import { Reviews } from '../interfaces/rezession.interface';
 
 @Component({
-  selector: 'app-what-my-colleagues-say',
-  standalone: true,
-  imports: [ReviewsComponent, CommonModule, TranslateModule],
-  templateUrl: './what-my-colleagues-say.component.html',
-  styleUrl: './what-my-colleagues-say.component.scss',
+    selector: 'app-what-my-colleagues-say',
+    imports: [ReviewsComponent, CommonModule, TranslateModule],
+    templateUrl: './what-my-colleagues-say.component.html',
+    styleUrl: './what-my-colleagues-say.component.scss'
 })
 export class WhatMyColleaguesSayComponent {
   review: Reviews[] = [

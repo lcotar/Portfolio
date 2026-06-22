@@ -4,11 +4,10 @@ import { TranslateModule } from '@ngx-translate/core';
 import { Reviews } from '../../interfaces/rezession.interface';
 
 @Component({
-  selector: 'app-reviews',
-  standalone: true,
-  imports: [CommonModule, TranslateModule],
-  templateUrl: './reviews.component.html',
-  styleUrls: ['./reviews.component.scss'],
+    selector: 'app-reviews',
+    imports: [CommonModule, TranslateModule],
+    templateUrl: './reviews.component.html',
+    styleUrls: ['./reviews.component.scss']
 })
 export class ReviewsComponent {
   @Input() rezessionen!: Reviews[];

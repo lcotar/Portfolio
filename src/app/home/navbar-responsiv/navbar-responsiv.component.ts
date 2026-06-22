@@ -4,11 +4,10 @@ import { RouterModule } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-navbar-responsiv',
-  standalone: true,
-  imports: [CommonModule, RouterModule, TranslateModule],
-  templateUrl: './navbar-responsiv.component.html',
-  styleUrl: './navbar-responsiv.component.scss',
+    selector: 'app-navbar-responsiv',
+    imports: [CommonModule, RouterModule, TranslateModule],
+    templateUrl: './navbar-responsiv.component.html',
+    styleUrl: './navbar-responsiv.component.scss'
 })
 export class NavbarResponsivComponent {
   currentLang: string = 'en';

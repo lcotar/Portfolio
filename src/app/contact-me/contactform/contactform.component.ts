@@ -6,11 +6,10 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-contactform',
-  standalone: true,
-  imports: [FormsModule, TranslateModule, CommonModule, RouterModule],
-  templateUrl: './contactform.component.html',
-  styleUrl: './contactform.component.scss',
+    selector: 'app-contactform',
+    imports: [FormsModule, TranslateModule, CommonModule, RouterModule],
+    templateUrl: './contactform.component.html',
+    styleUrl: './contactform.component.scss'
 })
 export class ContactformComponent {
   /* thankYouVisible = false;

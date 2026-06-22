@@ -8,17 +8,16 @@ import { WhatMyColleaguesSayComponent } from '../what-my-colleagues-say/what-my-
 import { ContactMeComponent } from '../contact-me/contact-me.component';
 
 @Component({
-  selector: 'app-homepage',
-  standalone: true,
-  imports: [
-    HomeComponent,
-    AboutMeComponent,
-    MySkillsComponent,
-    PortfolioComponent,
-    WhatMyColleaguesSayComponent,
-    ContactMeComponent,
-  ],
-  templateUrl: './homepage.component.html',
-  styleUrl: './homepage.component.scss',
+    selector: 'app-homepage',
+    imports: [
+        HomeComponent,
+        AboutMeComponent,
+        MySkillsComponent,
+        PortfolioComponent,
+        WhatMyColleaguesSayComponent,
+        ContactMeComponent,
+    ],
+    templateUrl: './homepage.component.html',
+    styleUrl: './homepage.component.scss'
 })
 export class HomepageComponent {}
