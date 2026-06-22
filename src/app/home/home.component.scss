@@ -74,7 +74,7 @@
   .leftTXT {
     display: flex;
     align-items: flex-end;
-    gap: clamp(1rem, 2vw, 2rem);
+    // gap: clamp(1rem, 2vw, 2rem);
 
     .intro {
       font-size: clamp(36px, 3.5vw, 70px);
@@ -261,7 +261,7 @@
     width: 100%;
     // top: 0;
     right: 0;
-    transform: translateY(50%);
+    // transform: translateY(50%);
     z-index: 10;
   }
 
@@ -347,11 +347,15 @@
 @media (max-width: 479px) {
   .leftSide {
     .shadowIMG {
-      width: 280px;
+      width: 325px;
+      top: 45%;
+      left: 53%;
     }
 
     .proIMG {
-      width: 131px;
+      width: 300px;
+      left: 50%;
+      top: 45%;
     }
   }
 
