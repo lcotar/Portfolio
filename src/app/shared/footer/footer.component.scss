@@ -1,7 +1,7 @@
 .wholeFooter {
   display: flex;
   align-items: center;
-  width: 100vw;
+  width: 100%;
   height: 25vh;
   justify-content: space-around;
   position: relative;
@@ -18,7 +18,7 @@
   width: 100%; /* Breite */
   // margin: 20px auto; /* Abstand oben/unten + zentriert */
   z-index: 10;
-  width: 100vw;
+  width: 100%;
   position: relative;
   transform: translateY(30vh);
 }

@@ -21,6 +21,7 @@
   gap: 20px;
   justify-content: flex-end; /* Inhalt nach rechts im Container */
   margin-left: auto; /* Schiebt den Container selbst nach rechts */
+  box-sizing: border-box;
 
   /* img:first-child {
     width: 100px; /* z. B. für das erste Bild

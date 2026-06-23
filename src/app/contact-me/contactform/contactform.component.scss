@@ -1,17 +1,17 @@
 /* Style inputs with type="text", select elements and textareas */
-input[type="text"],
+/* input[type="text"],
 [type="email"],
 select,
 textarea {
-  width: 100%; /* Full width */
-  padding: 12px; /* Some padding */
-  border: 1px solid #70e61c; /* Gray border */
-  border-radius: 4px; /* Rounded borders */
-  box-sizing: border-box; /* Make sure that padding and width stays in place */
-  margin-top: 6px; /* Add a top margin */
-  margin-bottom: 16px; /* Bottom margin */
-  resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
-}
+  width: 100%;Full width */
+// padding: 12px; /* Some padding */
+// border: 1px solid #70e61c; /* Gray border */
+// border-radius: 4px; /* Rounded borders */
+// box-sizing: border-box; /* Make sure that padding and width stays in place */
+// margin-top: 6px; /* Add a top margin */
+// margin-bottom: 16px; /* Bottom margin */
+// resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally)
+// }
 
 /* Style the submit button with a specific background color etc
 input[type="submit"] {
@@ -28,17 +28,17 @@ input[type="submit"]:hover {
   background-color: #45a049;
 } */
 
-/* Add a background color and some padding around the form */
+/* Add a background color and some padding around the form
 .contactCNT {
   display: flex;
   justify-content: flex-end;
   height: 65vh;
-  border-radius: 5px;
+  // border-radius: 5px;
   background-color: transparent;
-  padding: 20px;
-}
+  // padding: 20px;
+}*/
 
-.contactName,
+/* .contactName,
 .contactEmail,
 .contactMessage {
   input,
@@ -171,3 +171,4 @@ input[type="submit"]:hover {
     justify-content: flex-end;
   }
 }
+*/

@@ -14,6 +14,101 @@
   </section>
 
   <section class="contactForm">
-    <app-contactform></app-contactform>
+    <!-- <app-contactform></app-contactform> -->
+    <div class="contactCNT">
+      <form
+        action="action_page.php"
+        (ngSubmit)="onSubmit(contactform)"
+        #contactform="ngForm"
+      >
+        <!-- Name -->
+        <div class="contactName">
+          <input
+            #name="ngModel"
+            [(ngModel)]="contactData.name"
+            type="text"
+            id="lname"
+            name="name"
+            [placeholder]="'contact.contactform.name' | translate"
+            required
+          />
+          @if (!name.valid && name.touched) {
+            <span class="error">Bitte gib deinen Namen ein</span>
+          }
+        </div>
+
+        <!-- E-Mail Adresse -->
+        <div class="contactEmail">
+          <input
+            #email="ngModel"
+            [(ngModel)]="contactData.email"
+            type="email"
+            id="email"
+            name="email"
+            [placeholder]="'contact.contactform.email' | translate"
+            required
+            pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+          />
+          @if (!email.valid && email.touched) {
+            <span class="error">Bitte gib eine gültige Email-Adresse ein</span>
+          }
+        </div>
+
+        <!-- Message -->
+        <div class="contactMessage">
+          <div>
+            <textarea
+              #message="ngModel"
+              [(ngModel)]="contactData.message"
+              id="subject"
+              name="subject"
+              [placeholder]="'contact.contactform.message' | translate"
+              style="height: 200px"
+              required
+            ></textarea>
+
+            @if (!message.valid && message.touched && message.disabled) {
+              <span class="error">Bitte schreibe eine Nachricht</span>
+            }
+          </div>
+
+          <div class="contactFooter">
+            <div class="contactPrivacy">
+              <!-- Privacy Checkbox
+
+      [(ngModel)]="privacyAccepted"
+      -->
+              <input
+                type="checkbox"
+                name="privacyAccepted"
+                id="privacyAccepted"
+                class="checkbox"
+                [(ngModel)]="privacyAccepted"
+                required
+              />
+              <label for="privacyAccepted">
+                {{ "contact.privacy.eins" | translate }}
+                <a [routerLink]="['/privacy']">{{
+                  "contact.privacy.zwei" | translate
+                }}</a>
+
+                {{ "contact.privacy.drei" | translate }}
+              </label>
+            </div>
+
+            <input
+              type="submit"
+              [value]="'contact.button.text' | translate"
+              class="contactMessage"
+              [disabled]="!contactform.valid || !privacyAccepted"
+            />
+          </div>
+        </div>
+
+        <div class="contactArrow">
+          <img src="/img/contact/go_up.png" alt="" />
+        </div>
+      </form>
+    </div>
   </section>
 </section>
