@@ -9,7 +9,7 @@ import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-contact-me',
   imports: [
-    ContactformComponent,
+    // ContactformComponent,
     TranslateModule,
     FormsModule,
     CommonModule,
