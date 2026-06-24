@@ -8,7 +8,7 @@
   display: flex;
   flex-direction: column;
   font-family: Poppins;
-  transform: translateY(20vh); // verschiebt alles 10vh nach unten
+  // transform: translateY(20vh); // verschiebt alles 10vh nach unten
 }
 
 .contactLeftSide {
@@ -75,9 +75,9 @@
 //     transform: translateY(250vh); // verschiebt alles 10vh nach unten
 
 @media screen and (max-width: 1000px) {
-  .contactComponent {
+  /* .contactComponent {
     transform: translateY(250vh); // verschiebt alles 10vh nach unten
-  }
+  } */
 
   .contactContent {
     /* NACHFRAGEN!!! */
