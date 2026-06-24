@@ -211,6 +211,8 @@
 // ===== KLEINE LAPTOPS (1024px - 1365px) =====
 @media (min-width: 1024px) and (max-width: 1365px) {
   .leftSide {
+    height: 100vh;
+
     .shadowIMG {
       width: 100%;
       top: 40%;
@@ -241,7 +243,7 @@
   .leftSide {
     position: relative;
     width: 100%;
-    height: 55vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -331,23 +333,23 @@
 // ===== TABLETS (834px - 1023px) =====
 @media (min-width: 834px) and (max-width: 1023px) {
   .leftSide {
-    height: 52vh;
+    height: 100vh;
 
     .shadowIMG {
       width: 75%;
-      top: 90%;
+      top: 50%;
       left: 37%;
     }
 
     .proIMG {
       width: 38%;
-      top: 90%;
+      top: 45%;
       left: 35%;
     }
   }
 
   .shape {
-    top: 40%;
+    top: 30%;
   }
 
   .rightSide {
@@ -370,7 +372,7 @@
 // ===== GROSSE SMARTPHONES (768px - 833px) =====
 @media (min-width: 768px) and (max-width: 833px) {
   .leftSide {
-    height: 54vh;
+    height: 100vh;
 
     .shadowIMG {
       width: 80%;
@@ -409,7 +411,7 @@
 // ===== NORMALE SMARTPHONES (480px - 767px) =====
 @media (min-width: 480px) and (max-width: 767px) {
   .leftSide {
-    height: 58vh;
+    height: 100vh;
 
     .shadowIMG {
       width: 85%;
@@ -457,7 +459,7 @@
   }
 
   .leftSide {
-    height: 62vh;
+    height: 100vh;
 
     .shadowIMG {
       width: 100%;
