@@ -187,12 +187,12 @@
 @media screen and (max-width: 1000px) {
   .wholeSkillsCTN {
     display: block;
-    width: 99vw;
+    width: 100%;
     font-family: Poppins;
     font-weight: 400;
     position: relative;
     height: auto;
-    transform: translateY(85vh); // verschiebt alles 10vh nach unten
+    // transform: translateY(85vh); // verschiebt alles 10vh nach unten
   }
 
   .skillsLeftSide {

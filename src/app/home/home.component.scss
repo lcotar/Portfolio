@@ -377,12 +377,12 @@
     .shadowIMG {
       width: 80%;
       left: 40%;
-      top: 60%;
+      top: 35%;
     }
 
     .proIMG {
       width: 50%;
-      top: 65%;
+      top: 32%;
       left: 35%;
     }
   }
@@ -416,13 +416,13 @@
     .shadowIMG {
       width: 85%;
       left: 42%;
-      top: 50%;
+      top: 35%;
     }
 
     .proIMG {
       width: 50%;
       left: 42%;
-      top: 50%;
+      top: 30%;
     }
   }
 
@@ -451,7 +451,7 @@
 // ===== KLEINE SMARTPHONES (320px - 479px) =====
 @media (min-width: 320px) and (max-width: 479px) {
   .shape {
-    top: 35%;
+    top: 26%;
   }
 
   .wholeCNT {
@@ -464,14 +464,14 @@
     .shadowIMG {
       width: 100%;
       left: 50%;
-      top: 40%;
+      top: 25%;
       transform: translate(-50%, -50%);
     }
 
     .proIMG {
       width: 65%;
       left: 45%;
-      top: 40%;
+      top: 25%;
       transform: translate(-50%, -50%);
     }
 
