@@ -6,19 +6,19 @@
 }
 
 button {
-  background-color: #89bcd9;
-  color: #1a1a1a;
+  background-color: #70e61c;
+  color: #ffffff;
   border: none;
-  padding: 10px 24px;
+  padding: 15px 30px;
   border-radius: 999px;
   cursor: pointer;
-  font-family: "Josefin Sans";
+  font-family: arial, "Poppins", sans-serif;
   font-weight: 400;
   font-size: 18px;
   margin-top: 64px;
 
   &:hover {
-    background-color: #78aac6;
+    background-color: #9747ff;
   }
 }
 
