@@ -1,36 +1,38 @@
-<section class="wholeAboutMeCNT" id="aboutme">
-  <section class="aboutMeLeftSide">
-    <div class="aboutMeHeading">
-      <h1>{{ "aboutMe.header" | translate }}</h1>
-    </div>
+<section class="about-me" id="aboutme">
+  <div class="about-me-left">
+    <h1 class="about-me-heading">{{ "aboutMe.header" | translate }}</h1>
 
-    <div class="aboutMeDescription">
-      <p class="aboutMeTXT">{{ "aboutMe.text" | translate }}</p>
-      <div class="aboutMeLocation">
-        <img src="/img/about_me/11_location.png" alt="Location Icon" />
-        <p>{{ "aboutMe.location" | translate }}</p>
+    <div class="about-me-description">
+      <p class="about-me-text">{{ "aboutMe.text" | translate }}</p>
+
+      <div class="about-me-info">
+        <div class="info-item">
+          <img src="/img/about_me/11_location.png" alt="Location" />
+          <p>{{ "aboutMe.location" | translate }}</p>
+        </div>
+
+        <div class="info-item">
+          <img src="/img/about_me/12_bulb.png" alt="Open minded" />
+          <p>{{ "aboutMe.openMinded" | translate }}</p>
+        </div>
+
+        <div class="info-item">
+          <img src="/img/about_me/13_puzzle.png" alt="Problem solving" />
+          <p>{{ "aboutMe.description" | translate }}</p>
+        </div>
       </div>
-
-      <div class="aboutMeOpenMinded">
-        <img src="/img/about_me/12_bulb.png" alt="Bulb Icon" />
-        <p>{{ "aboutMe.openMinded" | translate }}</p>
-      </div>
-
-      <div class="aboutMeProblemSolving">
-        <img src="/img/about_me/13_puzzle.png" alt="Puzzle Icon" />
-        <p>{{ "aboutMe.description" | translate }}</p>
-      </div>
     </div>
-  </section>
+  </div>
 
-  <section class="aboutMeRightSide">
-    <div class="profileBorder">
-      <img class="profileIMG" src="/img/profilbild.jpg" alt="" />
-      <img class="aboutMeBorder" src="/img/lines/07_border.png" alt="" />
+  <div class="about-me-right">
+    <div class="profile-border">
+      <img
+        class="profile-img"
+        src="/img/profilbild.jpg"
+        alt="Profilbild Lea Cotar"
+      />
+      <img class="border-ring" src="/img/lines/07_border.png" alt="" />
     </div>
-
-    <div class="aboutMeLine">
-      <img src="/img/lines/07_about_me.png" alt="" />
-    </div>
-  </section>
+    <img class="about-me-line" src="/img/lines/07_about_me.png" alt="" />
+  </div>
 </section>
