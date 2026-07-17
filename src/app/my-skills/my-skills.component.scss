@@ -1,303 +1,237 @@
-/* Whole Content */
-.wholeSkillsCTN {
-  /* position: absolute;
-  top: 225vh;
-  z-index: 10; */
-  display: flex;
-  width: 100%;
-  height: 100vh;
-  font-family: Poppins;
-  font-weight: 400;
-}
+// ===== VARIABLES =====
+$color-white: #ffffff;
+$color-purple: #9747ff;
+$color-green: #70e61c;
+$font-main: "Poppins", sans-serif;
 
-/* left Side: Icons & Description */
-.skillsLeftSide {
-  width: 50%;
-  height: 100vh;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  // gap: 20px; // Abstand zwischen den Icons
-  justify-content: center;
-  padding: 20px;
-}
-
-.skillItem {
+// ===== BASE / MOBILE FIRST (320px+) =====
+.skills-section {
   position: relative;
-  left: 5.208vw;
+  width: 100%;
+  padding: 80px 5%;
+  font-family: $font-main;
+  box-sizing: border-box;
+  color: $color-white;
+}
+
+// --- Content (Text side) ---
+.skills-content {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.skills-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+
+  h1 {
+    font-size: clamp(40px, 8vw, 60px);
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: right;
+    margin: 0;
+  }
+
+  img {
+    display: none;
+  }
+}
+
+.skills-text {
+  p {
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: right;
+    margin: 0;
+  }
+}
+
+.skills-subheader {
+  text-align: right;
+
+  h2 {
+    font-size: clamp(22px, 4vw, 30px);
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0 0 12px;
+
+    span {
+      margin-right: 6px;
+    }
+
+    .highlight {
+      color: $color-purple;
+    }
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+  }
+}
+
+.contact-btn {
+  display: inline-block;
+  align-self: flex-end;
+  color: $color-white;
+  font-size: 18px;
+  font-family: $font-main;
+  font-weight: 400;
+  padding: 15px 30px;
+  border-radius: 10px;
+  background-color: $color-green;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color 0.125s ease,
+    transform 0.125s ease;
+
+  &:hover {
+    background-color: $color-purple;
+    transform: scale(1.05);
+  }
+}
+
+// --- Skills Grid (Icons) ---
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+  justify-items: center;
+}
+
+.skill-item {
+  display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  flex-wrap: wrap;
-  // gap: 10px;
-  width: 100px;
-
-  img {
-    width: 60px;
-    height: auto;
-  }
-
-  .skillLBL {
-    color: #ffffff;
-    margin-bottom: 8px;
-    font-size: 20px;
-  }
-
-  .highlightedSkill {
-    color: #9747ff;
-    font-weight: bold;
-  }
-
-  .skillIcon {
-    width: 60px;
-    height: auto;
-    transition: transform 0.3s ease-in-out;
-
-    &:hover {
-      width: 60px;
-      transform: scale(1.1);
-    }
-  }
+  gap: 8px;
+  cursor: default;
 }
 
-/* Right Side */
-.skillsRightSide {
-  // width: 50%;
-  align-items: end;
-  // height: 65vh;
-}
+.skill-icon {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  transition: transform 0.2s ease;
 
-.skillsTitle {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  // gap: 35px;
-  right: 0;
-  height: 110px;
-
-  h1 {
-    color: #ffffff;
-    font-weight: 700;
-    font-size: 50px;
-    line-height: 120%;
-    text-align: right;
-    width: 60vw;
-    padding-right: 5vw;
-  }
-}
-
-.SkillsCTN,
-.skillsDescri {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-
-.skillsHeaderTXT {
-  display: flex;
-  flex-direction: column;
-  gap: 200px;
-
-  p {
-    color: #ffffff;
-    font-size: 20px;
-    line-height: 120%;
-    text-align: right;
-    padding-right: 5vw; // 5% der Breite des Browserfensters
-    width: 450px;
-    margin-left: auto;
-  }
-}
-
-/* Subtitels */
-.skillsSubHeader {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  height: 50px;
-  padding-right: 5vw; // 5% der Breite des Browserfensters
-
-  h2 {
-    color: #ffffff;
-    font-weight: 500;
-    font-size: 30px;
-    line-height: 120%;
-    text-align: left;
-    font-weight: bold;
-  }
-
-  .skillsHeaderGap {
-    margin-right: 10px;
-  }
-
-  .skillsHeaderColor {
-    color: #9747ff;
-  }
-}
-
-.skillsSubTXT {
-  p {
-    color: #ffffff;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 120%;
-    text-align: right;
-    padding-right: 5vw; // 10% der Breite des Browserfensters
-    // width: 500px;
-    margin-left: auto;
-  }
-}
-
-/* Button 'Get in Touch' */
-.skillsBTNContact {
-  padding-right: 10vw; // 10% der Breite des Browserfensters
-  width: 410px;
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 10px;
-}
-
-.contactBTN {
-  font-size: 1.2rem;
-  color: #ffffff;
-  border-color: transparent;
-  border-radius: 10px;
-  background-color: #70e61c;
-  width: 250px;
-  height: 60px;
-  gap: 10px;
-  padding: 15px 30px;
-
-  &:hover {
-    cursor: pointer;
-    color: #ffffff;
-    background-color: #9747ff;
-    border-color: #9747ff;
+  .skill-item:hover & {
     transform: scale(1.1);
-    transition: transform 0.3s ease-in-out;
   }
 }
 
-// @media screen and (max-width: 1250px)
+.skill-label {
+  font-size: 14px;
+  color: $color-white;
+  margin: 0;
 
-@media screen and (max-width: 1000px) {
-  .wholeSkillsCTN {
+  &.highlighted {
+    color: $color-purple;
+    font-weight: 700;
+  }
+}
+
+// ===== TABLET (768px+) =====
+@media (min-width: 768px) {
+  .skills-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+
+  .skill-icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .skill-label {
+    font-size: 16px;
+  }
+
+  .skills-header img {
     display: block;
-    width: 100%;
-    font-family: Poppins;
-    font-weight: 400;
-    position: relative;
-    height: auto;
-    // transform: translateY(85vh); // verschiebt alles 10vh nach unten
-  }
-
-  .skillsLeftSide {
-    position: absolute;
-    top: 80vh; // ungefähre Position zwischen Header und Description
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    justify-content: center;
-  }
-
-  .skillsRightSide {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    /* gap: 20px;
-    padding: 20px; */
-  }
-
-  .skillsTitle {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 35px;
-    right: 0;
-    height: 110px;
-
-    h1 {
-      color: #ffffff;
-      font-weight: 700;
-      font-style: Bold;
-      font-size: 60px;
-      line-height: 120%;
-      letter-spacing: 0%;
-      text-align: right;
-      width: 60vw;
-    }
-  }
-  .skillsCTN {
-    display: flex;
-    flex-direction: column;
-    gap: 100vh;
-  }
-
-  .skillsHeaderTXT,
-  .skillsDescri {
-    width: 100%;
+    height: 4px;
+    width: 80px;
   }
 }
 
-// @media screen and (min-width: 800px) and (max-width: 1000px)
-// @media screen and (min-width: 600px) and (max-width: 800px)
-// @media screen and (min-width: 500px) and (max-width: 600px)
-// @media screen and (min-width: 400px) and (max-width: 500px)
-// @media screen and (min-width: 320px) and (max-width: 400px)
-
-/*  {
-  .wholeSkillsCTN {
-    position: relative; // oder static, falls es aktuell verschoben ist
-    top: 0; // nach oben setzen
-    transform: translateY(35vh); // verschiebt alles 10vh nach unten
-    margin-top: 0; // evtl. bestehende Abstände entfernen
-
-    height: auto; // statt fixer Höhe, damit Inhalt flexibel bleibt
-    display: inline-block;
+// ===== DESKTOP (1024px+) =====
+@media (min-width: 1024px) {
+  .skills-section {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    gap: 5%;
+    padding: 120px 5%;
   }
 
-  .skillsRightSide {
-    width: 100%;
-    align-items: end;
-    height: auto;
-    position: relative;
-    z-index: 10;
+  // Text on the right
+  .skills-content {
+    flex: 1;
+    gap: 32px;
   }
 
-  .skillsTitle {
+  .skills-header {
     h1 {
-      margin: 0;
+      font-size: clamp(50px, 4vw, 70px);
+    }
 
-      font-size: 40px;
-      text-align: right;
-      width: 60vw;
-      padding-right: 0vw;
+    img {
+      display: block;
+      height: 4px;
+      width: clamp(60px, 5vw, 100px);
     }
   }
 
-  .skillsCTN {
-    position: relative;
-    gap: 50px;
+  .skills-text p {
+    max-width: 450px;
+    margin-left: auto;
+    font-size: 18px;
   }
 
-  .skillsLeftSide {
-    position: relative;
-    top: 55vh;
-    width: 100%;
-    height: auto;
-    display: grid;
+  .skills-subheader {
+    p {
+      max-width: 450px;
+      margin-left: auto;
+      font-size: 18px;
+    }
+  }
+
+  // Icons on the left
+  .skills-grid {
+    flex: 0 0 45%;
+    margin-top: 0;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px; // Abstand zwischen den Icons
-    justify-content: center;
-    padding: 20px;
+    gap: 28px;
+    align-content: center;
+  }
+
+  .skill-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .skill-label {
+    font-size: 18px;
   }
 }
-*/
+
+// ===== LARGE DESKTOP (1440px+) =====
+@media (min-width: 1440px) {
+  .skills-section {
+    padding: 140px 8%;
+  }
+
+  .skills-grid {
+    gap: 36px;
+  }
+
+  .skill-icon {
+    width: 64px;
+    height: 64px;
+  }
+}
