@@ -1,14 +1,9 @@
-/* Whole Content */
+/* ===== Portfolio Section ===== */
+
 .wholePortfolioCNT {
   position: relative;
-  // top: 300vh;
-  // height: 130vh;
   z-index: 10;
-  // left: 10vw;
   font-family: Poppins;
-  // right: 0;
-  // box-sizing: border-box;
-  // transform: translateY(10vh);
 }
 
 .portfolioHead {
@@ -44,52 +39,219 @@
 }
 
 .myPortfolioProjects {
-  margin-top: 50px; // oder grösser, je nach gewünschtem Abstand
+  margin-top: 50px;
 }
 
-/* @media screen and (max-width: 1000px) {
-  .wholePortfolioCNT {
-    position: relative;
-    top: 25vh;
-    width: 99vw;
+/* ===== Single Project ===== */
+
+.singleProjectCNT {
+  margin-bottom: 30px;
+}
+
+.singleProjectTbl {
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+}
+
+.singleProject {
+  display: flex;
+  align-items: center;
+  height: 340px;
+  gap: 35px;
+}
+
+.singleProjectIMG {
+  width: 620px;
+  height: 340px;
+}
+
+.singleProjectDetails {
+  display: flex;
+  flex-direction: column;
+  width: 515px;
+  gap: 35px;
+
+  h3 {
+    color: #9747ff;
+    margin: 0;
+    width: 195px;
+    height: 40px;
+    font-family: Poppins;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 120%;
   }
 
-  .portfolioHeader {
-    gap: 32px;
-    margin-left: auto;
+  .singleProjectTech {
+    width: 490px;
+    height: 30px;
+    color: #70e61c;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    height: 110px;
-    width: 99vw;
   }
-} */
+
+  .singleProjectTXT {
+    width: 515px;
+
+    p {
+      color: #ffffff;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 120%;
+    }
+  }
+}
+
+.singleProjectBTN {
+  display: flex;
+  align-items: center;
+  width: 375px;
+  height: 65px;
+  gap: 85px;
+
+  .singleProjectBTNLiveTest {
+    width: 150px;
+    height: 60px;
+    gap: 10px;
+    border-radius: 10px;
+    padding: 15px 30px;
+    border-color: transparent;
+    background-color: #9747ff;
+    color: #ffffff;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #70e61c;
+      border-color: #70e61c;
+    }
+  }
+
+  .singleProjectBTNGitHub {
+    width: 150px;
+    height: 60px;
+    gap: 10px;
+    padding: 15px 30px;
+    border-radius: 10px;
+    border-color: #70e61c;
+    background-color: transparent;
+    color: #ffffff;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #70e61c;
+    }
+  }
+}
+
+.singleProjectDescription {
+  display: flex;
+  flex-direction: column;
+  width: 515px;
+  gap: 15px;
+}
+
+/* Reverse Layout */
+.singleProject.reverse {
+  flex-direction: row;
+}
+
+/* ===== Responsive ===== */
+
+@media screen and (max-width: 1300px) {
+  .singleProjectCNT {
+    margin-bottom: 0;
+  }
+
+  .singleProjectTbl {
+    padding-top: 0;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .singleProject {
+    flex-direction: column;
+    height: auto;
+    gap: 25px;
+    align-items: center;
+
+    &.reverse {
+      flex-direction: column;
+    }
+
+    td:has(.singleProjectIMG) {
+      order: -1;
+    }
+  }
+
+  .singleProjectIMG {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .singleProjectDetails {
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    align-items: center;
+    gap: 20px;
+
+    h3 {
+      font-size: 28px;
+      width: auto;
+      height: auto;
+    }
+
+    .singleProjectTech {
+      justify-content: center;
+      width: auto;
+      font-size: 16px;
+    }
+
+    .singleProjectTXT {
+      width: auto;
+
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .singleProjectBTN {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: auto;
+  }
+}
 
 @media screen and (max-width: 1000px) {
   .wholePortfolioCNT {
     position: relative;
-    // top: 25vh;
-    width: 100%; // nicht 99vw, sondern 100% damit kein Überlauf entsteht
-    padding: 0 2vw; // optional: etwas Innenabstand für Ränder
+    width: 100%;
+    padding: 0 2vw;
     box-sizing: border-box;
-    // transform: translateY(200vh); // verschiebt alles 10vh nach unten
   }
 
   .portfolioHeader {
-    gap: 16px; // kleinerer Abstand zwischen Elementen
+    gap: 16px;
     display: flex;
     align-items: center;
-    justify-content: center; // mittig ausrichten, verhindert Überlauf
-    height: auto; // flexible Höhe
-    flex-wrap: wrap; // Zeilenumbruch, falls Elemente zu breit sind
-    width: 100%; // volle Breite innerhalb von .wholePortfolioCNT
-    margin: 0 auto; // zentrieren
-  }
+    justify-content: center;
+    height: auto;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 auto;
 
-  .portfolioHeader h1 {
-    font-size: 40px; // Schriftgrösse verkleinern für kleinere Screens
-    gap: 5px;
-    text-align: center;
+    h1 {
+      font-size: 40px;
+      gap: 5px;
+      text-align: center;
+    }
   }
 
   .portfolioHeaderTXT {
@@ -97,9 +259,3 @@
     line-height: 24px;
   }
 }
-
-// @media screen and (min-width: 800px) and (max-width: 1000px)
-// @media screen and (min-width: 600px) and (max-width: 800px)
-// @media screen and (min-width: 500px) and (max-width: 600px)
-// @media screen and (min-width: 400px) and (max-width: 500px)
-// @media screen and (min-width: 320px) and (max-width: 400px)

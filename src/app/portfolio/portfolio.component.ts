@@ -1,15 +1,24 @@
-import { Component, AfterViewInit } from '@angular/core';
-import { SingleProjectComponent } from './single-project/single-project.component';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Project } from '../interfaces/projects.interface';
 import { TranslateModule } from '@ngx-translate/core';
-import * as AOS from 'aos';
+
+interface Project {
+  projectname: string;
+  content: {
+    title: string;
+    technologies: string;
+    description: string;
+  };
+  imageProject: string[];
+  github: string;
+  livetest: string;
+}
 
 @Component({
-    selector: 'app-portfolio',
-    imports: [SingleProjectComponent, CommonModule, TranslateModule],
-    templateUrl: './portfolio.component.html',
-    styleUrls: ['./portfolio.component.scss']
+  selector: 'app-portfolio',
+  imports: [CommonModule, TranslateModule],
+  templateUrl: './portfolio.component.html',
+  styleUrls: ['./portfolio.component.scss'],
 })
 export class PortfolioComponent {
   projects: Project[] = [
@@ -36,12 +45,4 @@ export class PortfolioComponent {
       livetest: 'https://pollo-loco.leacotar.com/',
     },
   ];
-
-  /* activeProject = this.projects[0];
-
-  projectnavbar: string[] = ['Join', 'Sharky'];
-
-  changeIndex(index: number) {
-    this.activeProject = this.projects[index];
-  } */
 }
