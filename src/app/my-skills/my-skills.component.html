@@ -1,47 +1,55 @@
-<section class="skills-section" id="skills">
-  <div class="skills-content">
-    <div class="skills-header">
-      <h1>{{ "mySkills.header.eins" | translate }}</h1>
-      <img src="/img/lines/01_my_skills.png" alt="" />
-    </div>
-
-    <div class="skills-text">
-      <p>{{ "mySkills.text.eins" | translate }}</p>
-    </div>
-
-    <div class="skills-subheader">
-      <h2>
-        <span>{{ "mySkills.header.zwei" | translate }}</span>
-        <span class="highlight">{{ "mySkills.header.drei" | translate }}</span>
-        <span>{{ "mySkills.header.vier" | translate }}</span>
-      </h2>
-      <p>{{ "mySkills.text.zwei" | translate }}</p>
-    </div>
-
-    <a href="#contact" class="contact-btn">
-      {{ "mySkills.button.text" | translate }}
-    </a>
+<section class="wholeSkillsCTN" id="skills">
+  <div class="skillsTitle">
+    <h1>{{ "mySkills.header.eins" | translate }}</h1>
+    <img src="/img/lines/01_my_skills.png" alt="" />
   </div>
 
-  <div class="skills-grid">
+  <div class="skillsHeaderTXT">
+    <p>{{ "mySkills.text.eins" | translate }}</p>
+  </div>
+
+  <div class="skillsIcons">
     @for (item of iconsFrondend; track $index) {
       <div
-        class="skill-item"
+        class="skillItem"
         (mouseenter)="item.isHovered = true"
         (mouseleave)="item.isHovered = false"
       >
         <img
           [src]="item.isHovered ? item.srcHover : item.srcDefault"
           [alt]="item.name"
-          class="skill-icon"
+          class="skillIcon"
         />
         <p
-          class="skill-label"
-          [class.highlighted]="item.name === 'Continuous Learning'"
+          class="skillLBL"
+          [ngClass]="{ highlightedSkill: item.name === 'Continuous Learning' }"
         >
           {{ item.name }}
         </p>
       </div>
     }
+  </div>
+
+  <div class="skillsSubheaderCTN">
+    <div class="skillsSubHeader">
+      <h2 class="skillsHeaderGap">
+        {{ "mySkills.header.zwei" | translate }}
+      </h2>
+      <h2 class="skillsHeaderColor">
+        {{ "mySkills.header.drei" | translate }}
+      </h2>
+      <h2>{{ "mySkills.header.vier" | translate }}</h2>
+    </div>
+    <div class="skillsSubTXT">
+      <p>{{ "mySkills.text.zwei" | translate }}</p>
+    </div>
+  </div>
+
+  <div class="skillsBTNContact">
+    <a href="#contact">
+      <button class="contactBTN">
+        {{ "mySkills.button.text" | translate }}
+      </button>
+    </a>
   </div>
 </section>

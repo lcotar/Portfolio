@@ -1,237 +1,275 @@
-// ===== VARIABLES =====
-$color-white: #ffffff;
-$color-purple: #9747ff;
-$color-green: #70e61c;
-$font-main: "Poppins", sans-serif;
+/* ===========================
+   My Skills Section
+   Desktop: 2-column grid (icons left, text right)
+   Mobile:  1-column stacked (title → text → icons → sub → btn)
+   =========================== */
 
-// ===== BASE / MOBILE FIRST (320px+) =====
-.skills-section {
-  position: relative;
+.wholeSkillsCTN {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "icons title"
+    "icons text"
+    "icons sub"
+    "icons btn";
+  align-items: center;
   width: 100%;
-  padding: 80px 5%;
-  font-family: $font-main;
+  min-height: 100vh;
+  padding: 80px 0;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
   box-sizing: border-box;
-  color: $color-white;
 }
 
-// --- Content (Text side) ---
-.skills-content {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.skills-header {
+/* ---- Title: "My skills" + line ---- */
+.skillsTitle {
+  grid-area: title;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 16px;
+  gap: 30px;
+  padding-right: 5vw;
+  align-self: end;
 
   h1 {
-    font-size: clamp(40px, 8vw, 60px);
+    color: #ffffff;
     font-weight: 700;
+    font-size: clamp(40px, 4vw, 65px);
     line-height: 1.2;
-    text-align: right;
-    margin: 0;
+    white-space: nowrap;
   }
 
   img {
-    display: none;
+    width: clamp(40px, 5vw, 80px);
+    height: auto;
   }
 }
 
-.skills-text {
+/* ---- Description text ---- */
+.skillsHeaderTXT {
+  grid-area: text;
+  padding-right: 5vw;
+  align-self: start;
+
   p {
-    font-size: 16px;
-    line-height: 1.5;
+    color: #ffffff;
+    font-size: clamp(16px, 1.2vw, 20px);
+    line-height: 1.4;
     text-align: right;
-    margin: 0;
+    max-width: 450px;
+    margin-left: auto;
   }
 }
 
-.skills-subheader {
-  text-align: right;
-
-  h2 {
-    font-size: clamp(22px, 4vw, 30px);
-    font-weight: 700;
-    line-height: 1.3;
-    margin: 0 0 12px;
-
-    span {
-      margin-right: 6px;
-    }
-
-    .highlight {
-      color: $color-purple;
-    }
-  }
-
-  p {
-    font-size: 16px;
-    line-height: 1.5;
-    margin: 0;
-  }
-}
-
-.contact-btn {
-  display: inline-block;
-  align-self: flex-end;
-  color: $color-white;
-  font-size: 18px;
-  font-family: $font-main;
-  font-weight: 400;
-  padding: 15px 30px;
-  border-radius: 10px;
-  background-color: $color-green;
-  text-decoration: none;
-  cursor: pointer;
-  transition:
-    background-color 0.125s ease,
-    transform 0.125s ease;
-
-  &:hover {
-    background-color: $color-purple;
-    transform: scale(1.05);
-  }
-}
-
-// --- Skills Grid (Icons) ---
-.skills-grid {
+/* ---- Icons Grid ---- */
+.skillsIcons {
+  grid-area: icons;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-top: 48px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px 10px;
   justify-items: center;
+  align-content: center;
+  padding: 40px 5vw;
 }
 
-.skill-item {
+.skillItem {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   gap: 8px;
   cursor: default;
-}
 
-.skill-icon {
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
-  transition: transform 0.2s ease;
-
-  .skill-item:hover & {
-    transform: scale(1.1);
-  }
-}
-
-.skill-label {
-  font-size: 14px;
-  color: $color-white;
-  margin: 0;
-
-  &.highlighted {
-    color: $color-purple;
-    font-weight: 700;
-  }
-}
-
-// ===== TABLET (768px+) =====
-@media (min-width: 768px) {
-  .skills-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 32px;
-  }
-
-  .skill-icon {
-    width: 56px;
-    height: 56px;
-  }
-
-  .skill-label {
-    font-size: 16px;
-  }
-
-  .skills-header img {
-    display: block;
-    height: 4px;
-    width: 80px;
-  }
-}
-
-// ===== DESKTOP (1024px+) =====
-@media (min-width: 1024px) {
-  .skills-section {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: flex-start;
-    gap: 5%;
-    padding: 120px 5%;
-  }
-
-  // Text on the right
-  .skills-content {
-    flex: 1;
-    gap: 32px;
-  }
-
-  .skills-header {
-    h1 {
-      font-size: clamp(50px, 4vw, 70px);
-    }
-
-    img {
-      display: block;
-      height: 4px;
-      width: clamp(60px, 5vw, 100px);
-    }
-  }
-
-  .skills-text p {
-    max-width: 450px;
-    margin-left: auto;
-    font-size: 18px;
-  }
-
-  .skills-subheader {
-    p {
-      max-width: 450px;
-      margin-left: auto;
-      font-size: 18px;
-    }
-  }
-
-  // Icons on the left
-  .skills-grid {
-    flex: 0 0 45%;
-    margin-top: 0;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 28px;
-    align-content: center;
-  }
-
-  .skill-icon {
+  .skillIcon {
     width: 60px;
     height: 60px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
   }
 
-  .skill-label {
-    font-size: 18px;
+  &:hover .skillIcon {
+    transform: scale(1.1);
+  }
+
+  .skillLBL {
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  .highlightedSkill {
+    color: #9747ff;
+    font-weight: 700;
+    font-style: italic;
   }
 }
 
-// ===== LARGE DESKTOP (1440px+) =====
-@media (min-width: 1440px) {
-  .skills-section {
-    padding: 140px 8%;
+/* ---- Subheader: "Looking for another skill?" ---- */
+.skillsSubheaderCTN {
+  grid-area: sub;
+  padding-right: 5vw;
+  align-self: start;
+}
+
+.skillsSubHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+
+  h2 {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: clamp(20px, 2vw, 30px);
+    line-height: 1.2;
+    margin: 0;
   }
 
-  .skills-grid {
-    gap: 36px;
+  .skillsHeaderGap {
+    margin-right: 8px;
   }
 
-  .skill-icon {
-    width: 64px;
-    height: 64px;
+  .skillsHeaderColor {
+    color: #9747ff;
+    font-style: italic;
+    margin-right: 0;
+  }
+}
+
+.skillsSubTXT {
+  margin-top: 10px;
+
+  p {
+    color: #ffffff;
+    font-size: clamp(16px, 1.2vw, 20px);
+    line-height: 1.4;
+    text-align: right;
+    max-width: 450px;
+    margin-left: auto;
+  }
+}
+
+/* ---- Button "Get in Touch" ---- */
+.skillsBTNContact {
+  grid-area: btn;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 5vw;
+  align-self: start;
+  margin-top: 20px;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.contactBTN {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #70e61c;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 15px 30px;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.15s ease;
+
+  &:hover {
+    background-color: #9747ff;
+    transform: scale(1.05);
+  }
+}
+
+/* ===========================
+   Tablet / Mobile
+   =========================== */
+@media screen and (max-width: 1000px) {
+  .wholeSkillsCTN {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "text"
+      "icons"
+      "sub"
+      "btn";
+    min-height: auto;
+    padding: 60px 20px;
+    gap: 30px;
+  }
+
+  .skillsTitle {
+    justify-content: center;
+    padding-right: 0;
+
+    h1 {
+      font-size: clamp(36px, 8vw, 55px);
+    }
+  }
+
+  .skillsHeaderTXT {
+    padding-right: 0;
+
+    p {
+      text-align: center;
+      margin: 0 auto;
+      max-width: 90%;
+    }
+  }
+
+  .skillsIcons {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 20px 10px;
+    gap: 30px 10px;
+  }
+
+  .skillsSubheaderCTN {
+    padding-right: 0;
+  }
+
+  .skillsSubHeader {
+    justify-content: center;
+  }
+
+  .skillsSubTXT {
+    p {
+      text-align: center;
+      margin: 0 auto;
+      max-width: 90%;
+    }
+  }
+
+  .skillsBTNContact {
+    justify-content: center;
+    padding-right: 0;
+    margin-top: 10px;
+  }
+}
+
+/* Small phones */
+@media screen and (max-width: 480px) {
+  .skillsIcons {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px 5px;
+    padding: 10px 0;
+  }
+
+  .skillItem {
+    .skillIcon {
+      width: 50px;
+      height: 50px;
+    }
+
+    .skillLBL {
+      font-size: 13px;
+    }
+  }
+
+  .contactBTN {
+    width: 100%;
+    max-width: 280px;
   }
 }
