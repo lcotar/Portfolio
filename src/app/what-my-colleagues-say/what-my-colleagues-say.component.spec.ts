@@ -1,3 +1,4 @@
+/// <reference types="jasmine" />
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { WhatMyColleaguesSayComponent } from './what-my-colleagues-say.component';
@@ -8,9 +9,8 @@ describe('WhatMyColleaguesSayComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [WhatMyColleaguesSayComponent]
-    })
-    .compileComponents();
+      imports: [WhatMyColleaguesSayComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(WhatMyColleaguesSayComponent);
     component = fixture.componentInstance;

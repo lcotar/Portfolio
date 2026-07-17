@@ -2,7 +2,7 @@
 .wholeCNT {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  min-height: 150vh;
 }
 
 .leftSide {
@@ -227,7 +227,7 @@
 }
 
 // ===== TABLET & SMARTPHONE LAYOUT (bis 1023px) =====
-@media (max-width: 1023px) {
+/* @media (max-width: 1023px) {
   .shape {
     top: 45%;
     width: 100%;
@@ -311,9 +311,9 @@
   }
 
   .homeFooter {
-    /* position: relative;
+    position: relative;
     bottom: 0;
-    margin-top: 15rem;*/
+    margin-top: 15rem;
     // padding: 0 5% 2rem;
 
     .socialMedia {
@@ -328,7 +328,7 @@
       display: none;
     }
   }
-}
+}*/
 
 // ===== TABLETS (834px - 1023px) =====
 @media (min-width: 834px) and (max-width: 1023px) {
@@ -370,7 +370,7 @@
 }
 
 // ===== GROSSE SMARTPHONES (768px - 833px) =====
-@media (min-width: 768px) and (max-width: 833px) {
+/* @media (min-width: 768px) and (max-width: 833px) {
   .leftSide {
     height: 100vh;
 
@@ -406,84 +406,122 @@
       font-size: clamp(26px, 4vw, 34px);
     }
   }
-}
+} */
 
-// ===== NORMALE SMARTPHONES (480px - 767px) =====
-@media (min-width: 480px) and (max-width: 767px) {
+// Hochformatige Geräte -> iPad & Smartphones
+// ===== iPad Pro (1024px - 1366px) Hochformat =====
+@media (min-width: 1024px) and (max-width: 1366px) {
+  .wholeCNT {
+    min-height: 100vh;
+  }
   .leftSide {
     height: 100vh;
+    width: 100%;
 
     .shadowIMG {
-      width: 85%;
-      left: 42%;
-      top: 35%;
+      width: 80%;
+      left: 40%;
+      top: 48%;
+      transform: translate(-50%, -50%);
     }
 
     .proIMG {
-      width: 50%;
-      left: 42%;
-      top: 30%;
+      width: 60%;
+      left: 37%;
+      top: 43%;
+      transform: translate(-50%, -50%);
     }
   }
 
   .shape {
-    top: 30%;
+    top: 50%;
   }
 
   .rightSide {
-    // right: 5%;
-    top: 15%;
-    transform: translateY(50%);
+    right: 0%;
+    top: 80%;
+    // transform: translateY(-60%);
     width: 100%;
   }
 
-  .hero .leftTXT .name-role {
-    .name {
-      font-size: clamp(32px, 7.5vw, 48px);
-    }
+  .hero {
+    gap: 0.75rem;
 
-    .role {
-      font-size: clamp(20px, 5vw, 30px);
+    .leftTXT {
+      .intro {
+        font-size: clamp(55px, 3.5vw, 70px);
+      }
+
+      .name-role {
+        .name {
+          font-size: clamp(28px, 20vw, 70px);
+          line-height: 1;
+        }
+
+        .role {
+          font-size: clamp(18px, 7vw, 45px);
+        }
+      }
     }
+  }
+
+  .talk {
+    justify-content: center;
+
+    .talkBTN button {
+      font-size: 25px;
+      padding: 12px 28px;
+    }
+  }
+
+  .homeFooter {
+    position: relative;
+    top: 90vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
   }
 }
 
-// ===== KLEINE SMARTPHONES (320px - 479px) =====
-@media (min-width: 320px) and (max-width: 479px) {
-  .shape {
-    top: 26%;
-  }
+/* // ===== iPad Air (820px - 1180px) =====
+@media (min-width: 820px) and (max-width: 1180px) {
+} */
 
+// @media (min-width: 953px) and (max-width: 1023px)
+@media (min-width: 953px) and (max-width: 1023px) {
   .wholeCNT {
-    min-height: 100svh;
+    min-height: 150vh;
   }
 
   .leftSide {
     height: 100vh;
+    width: 100%;
 
     .shadowIMG {
-      width: 100%;
-      left: 50%;
-      top: 25%;
+      width: 80%;
+      left: 40%;
+      top: 70%;
       transform: translate(-50%, -50%);
     }
 
     .proIMG {
-      width: 65%;
-      left: 45%;
-      top: 25%;
+      width: 60%;
+      left: 37%;
+      top: 65%;
       transform: translate(-50%, -50%);
-    }
-
-    .shape {
-      top: 30%;
     }
   }
 
+  .shape {
+    top: 50%;
+  }
+
   .rightSide {
-    // right: 5%;
-    top: 15%;
-    transform: translateY(-60%);
+    right: 0%;
+    top: 85%;
+    // transform: translateY(-60%);
     width: 100%;
   }
 
@@ -497,12 +535,12 @@
 
       .name-role {
         .name {
-          font-size: clamp(28px, 9vw, 38px);
+          font-size: clamp(28px, 20vw, 40px);
           line-height: 1;
         }
 
         .role {
-          font-size: clamp(18px, 5.5vw, 24px);
+          font-size: clamp(18px, 7vw, 24px);
         }
       }
     }
@@ -518,26 +556,266 @@
   }
 
   .homeFooter {
-    margin-top: 1.5rem;
-    padding: 0 5% 1.5rem;
-    justify-content: center;
+    position: relative;
+    top: 140vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+  }
 
-    .socialMedia {
-      gap: 16px;
-      justify-content: center;
+  .scrollDown,
+  .emailAdressCNT {
+    display: none;
+  }
+}
 
-      .homeLine {
-        display: none;
+// ===== iPhone 14 Pro Max (430px - 932px) Hochformat =====
+@media (min-width: 430px) and (max-width: 932px) {
+  .wholeCNT {
+    min-height: 100vh;
+  }
+
+  .leftSide {
+    height: 50vh;
+    width: 100%;
+
+    .shadowIMG {
+      width: 100%;
+      left: 50%;
+      top: 55%;
+      transform: translate(-50%, -50%);
+    }
+
+    .proIMG {
+      width: 80%;
+      left: 50%;
+      top: 60%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .shape {
+    top: 50%;
+  }
+
+  .rightSide {
+    right: 0%;
+    top: 80%;
+    // transform: translateY(-60%);
+    width: 100%;
+  }
+
+  .hero {
+    gap: 0.75rem;
+
+    .leftTXT {
+      .intro {
+        font-size: 30px;
       }
 
-      .SocialMediaIcons {
-        gap: 20px;
+      .name-role {
+        .name {
+          font-size: clamp(28px, 20vw, 40px);
+          line-height: 1;
+        }
 
-        a img {
-          width: 24px;
-          height: 24px;
+        .role {
+          font-size: clamp(18px, 7vw, 24px);
         }
       }
     }
   }
+
+  .talk {
+    justify-content: center;
+
+    .talkBTN button {
+      font-size: 15px;
+      padding: 12px 28px;
+    }
+  }
+
+  .homeFooter {
+    position: relative;
+    top: 75vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+  }
+
+  .scrollDown,
+  .emailAdressCNT {
+    display: none;
+  }
 }
+
+// Kleine Smartphones (375px - 429px)
+@media (min-width: 375px) and (max-width: 429px) {
+  .leftSide {
+    height: 50vh;
+    width: 100%;
+
+    .shadowIMG {
+      width: 100%;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .proIMG {
+      width: 80%;
+      left: 50%;
+      top: 54%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .shape {
+    top: 24%;
+  }
+
+  .rightSide {
+    right: 0%;
+    top: 38%;
+    // transform: translateY(-60%);
+    width: 100%;
+  }
+
+  .hero {
+    gap: 0.75rem;
+
+    .leftTXT {
+      .intro {
+        font-size: 30px;
+      }
+
+      .name-role {
+        .name {
+          font-size: clamp(28px, 20vw, 40px);
+          line-height: 1;
+        }
+
+        .role {
+          font-size: clamp(18px, 7vw, 24px);
+        }
+      }
+    }
+  }
+
+  .talk {
+    justify-content: center;
+
+    .talkBTN button {
+      font-size: 15px;
+      padding: 12px 28px;
+    }
+  }
+
+  .homeFooter {
+    position: relative;
+    top: 70vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+  }
+
+  .scrollDown,
+  .emailAdressCNT {
+    display: none;
+  }
+}
+
+// Kleine Smartphones (320px - 374px)
+@media (min-width: 320px) and (max-width: 374px) {
+  .leftSide {
+    height: 45vh;
+    width: 100%;
+
+    .shadowIMG {
+      width: 100%;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .proIMG {
+      width: 80%;
+      left: 50%;
+      top: 54%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .shape {
+    top: 21%;
+  }
+
+  .rightSide {
+    // right: 5%;
+    top: 35%;
+    // transform: translateY(-60%);
+    width: 100%;
+  }
+
+  .hero {
+    gap: 0.75rem;
+
+    .leftTXT {
+      .intro {
+        font-size: 30px;
+      }
+
+      .name-role {
+        .name {
+          font-size: clamp(28px, 20vw, 40px);
+          line-height: 1;
+        }
+
+        .role {
+          font-size: clamp(18px, 7vw, 24px);
+        }
+      }
+    }
+  }
+
+  .talk {
+    justify-content: center;
+
+    .talkBTN button {
+      font-size: 15px;
+      padding: 12px 28px;
+    }
+  }
+
+  .homeFooter {
+    position: relative;
+    top: 65vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+  }
+
+  .scrollDown,
+  .emailAdressCNT {
+    display: none;
+  }
+}
+
+// @media (min-width: 320px) and (max-width: 374px) -> kleine Smartphones
+// @media (min-width: 375px) and (max-width: 667px) -> iPhone SE -> Raus nehmen
+// @media (min-width: 375px) and (max-width: 812px) -> iPhone X
+// @media (min-width: 414px) and (max-width: 896px) -> iPhone Xr
+// @media (min-width: 390px) and (max-width: 844px) -> iPhone 12
+// @media (min-width: 430px) and (max-width: 932px) -> iPhone 14 Pro Max
+
+// @media (min-width: 768px) and (max-width: 1024px) -> iPad Mini
+// @media (min-width: 820px) and (max-width: 1180px) -> iPad Air
+// @media (min-width: 1024px) and (max-width: 1366px) -> iPad Pro
