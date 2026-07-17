@@ -1,186 +1,317 @@
-// ===== BASE STYLES (Desktop 1366px - 1919px) =====
-.wholeCNT {
+// ===== VARIABLES =====
+$color-white: #ffffff;
+$color-purple: #9747ff;
+$color-green: #70e61c;
+$color-dark: #1c1c2e;
+$font-main: "Poppins", sans-serif;
+
+// ===== BASE / MOBILE FIRST (320px+) =====
+.heroSection {
   position: relative;
   width: 100%;
-  min-height: 150vh;
-}
-
-.leftSide {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 50%;
   height: 100vh;
   display: flex;
-  justify-content: flex-start;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+// --- Photo Area ---
+.heroPhoto {
+  position: relative;
+  flex: 0 0 50%;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  z-index: 1;
 
   .shadowIMG {
     position: absolute;
-    left: 0;
+    width: 100%;
     top: 50%;
-    transform: translateY(-50%);
-    height: auto;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 1;
   }
 
   .proIMG {
-    position: absolute;
-    left: 20%;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 55%;
+    position: relative;
+    width: 65%;
+    max-width: 320px;
     height: auto;
+    object-fit: cover;
     z-index: 2;
+  }
+
+  .shape {
+    position: absolute;
+    left: 0;
+    top: 58%;
+    width: 100%;
+    height: auto;
+    z-index: 3;
+    pointer-events: none;
   }
 }
 
-.shape {
-  position: absolute;
-  left: 0;
-  top: 25%;
-  transform-origin: left center;
-  width: 100%;
-  height: auto;
-  z-index: 3;
-  pointer-events: none;
-}
-
-.rightSide {
-  position: absolute;
-  right: 5%;
-  top: 45%;
-  transform: translateY(-50%);
-  width: 50%;
+// --- Content Area ---
+.heroContent {
+  position: relative;
+  // flex: 1;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
-  align-items: center;
+  gap: 1.5rem;
   z-index: 10;
+  // padding: 0 5%;
 }
 
-.hero {
+.heroText {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: clamp(1.5rem, 3%, 3rem);
-  width: 100%;
+  align-items: flex-end;
 
-  .leftTXT {
+  .intro {
+    font-size: 28px;
+    font-weight: 400;
+    color: $color-white;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    line-height: 1;
+    margin-right: 0.25rem;
+  }
+
+  .name-role {
     display: flex;
-    align-items: flex-end;
+    flex-direction: column;
 
-    .intro {
-      font-size: clamp(36px, 3.5vw, 70px);
-      font-weight: 400;
-      color: #ffffff;
-      writing-mode: vertical-rl;
-      transform: rotate(180deg);
-      line-height: 1;
+    .name {
+      font-size: clamp(36px, 10vw, 44px);
+      font-weight: 700;
+      color: $color-white;
+      margin: 0;
+      line-height: 0.95;
     }
 
-    .name-role {
-      display: flex;
-      flex-direction: column;
+    .role {
+      font-size: clamp(20px, 5.5vw, 28px);
+      font-weight: 400;
+      color: $color-purple;
+      margin: 0;
+      line-height: 1.1;
+    }
+  }
+}
 
+.talkBTN {
+  display: inline-block;
+  color: $color-white;
+  font-size: 16px;
+  font-family: $font-main;
+  font-weight: 400;
+  padding: 14px 28px;
+  border-radius: 10px;
+  background-color: $color-green;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    background-color 0.125s ease,
+    transform 0.125s ease;
+
+  &:hover {
+    background-color: $color-purple;
+    transform: scale(1.05);
+  }
+}
+
+// --- Footer ---
+.heroFooter {
+  position: absolute;
+  bottom: 24px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  // justify-content: center;
+  align-items: center;
+  // padding: 0 5%;
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+.socialMedia {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  .footerLine {
+    display: none;
+  }
+
+  .emailAddress {
+    display: none;
+  }
+}
+
+.social-icons {
+  display: flex;
+  gap: 20px;
+
+  a img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.125s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.scrollDown {
+  display: none;
+}
+
+// ===== TABLET (768px+) =====
+@media (min-width: 768px) {
+  .heroPhoto {
+    .proIMG {
+      width: 50%;
+      max-width: 400px;
+    }
+  }
+
+  .heroText {
+    .intro {
+      font-size: 36px;
+    }
+
+    .nameRole {
       .name {
-        font-size: clamp(44px, 4.7vw, 95px);
-        font-weight: 700;
-        color: #ffffff;
-        margin: 0;
-        line-height: 0.9;
+        font-size: clamp(44px, 7vw, 58px);
       }
 
       .role {
-        font-size: clamp(30px, 3vw, 62px);
-        font-weight: 400;
-        color: #9747ff;
-        margin: 0;
-        line-height: 1;
+        font-size: clamp(28px, 4vw, 36px);
       }
     }
   }
-}
-
-.talk {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-
-  .talkBTN {
-    text-decoration: none;
-
-    button {
-      color: #ffffff;
-      font-size: clamp(18px, 1.5vw, 23px);
-      font-family: Poppins, sans-serif;
-      font-weight: 400;
-      padding: clamp(14px, 1.2vw, 18px) clamp(28px, 2.5vw, 35px);
-      border-radius: 10px;
-      background-color: #70e61c;
-      border: none;
-      cursor: pointer;
-      transition: all 0.125s ease;
-
-      &:hover {
-        background-color: #9747ff;
-        transform: scale(1.1);
-      }
-    }
-  }
-}
-
-.homeFooter {
-  position: absolute;
-  bottom: 30px;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 10;
 
   .socialMedia {
-    display: flex;
-    align-items: center;
-    gap: clamp(24px, 2.5%, 42px);
+    gap: 28px;
 
-    .homeLine {
-      width: clamp(60px, 6%, 100px);
+    .footerLine {
+      display: block;
+      width: 80px;
       height: 4px;
-      background-color: #9747ff;
+      background-color: $color-purple;
+    }
+  }
+
+  .socialMediaIcons {
+    gap: 28px;
+  }
+}
+
+// ===== DESKTOP (1024px+) =====
+@media (min-width: 1024px) {
+  .heroSection {
+    flex-direction: row;
+  }
+
+  // --- Photo: left half ---
+  .heroPhoto {
+    flex: 0 0 50%;
+    height: 100%;
+    align-items: center;
+
+    .shadowIMG {
+      top: 50%;
+      width: 85%;
+      left: 0;
+      transform: translateY(-50%);
     }
 
-    .SocialMediaIcons {
-      display: flex;
-      gap: clamp(24px, 2.5%, 42px);
+    .proIMG {
+      position: absolute;
+      left: 20%;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 50%;
+      max-width: none;
+    }
 
-      a img {
-        width: clamp(22px, 1.8%, 30px);
-        height: clamp(22px, 1.8%, 30px);
-        transition: transform 0.125s ease;
+    .shape {
+      left: 0;
+      top: 30%;
+      bottom: auto;
+      width: 200%;
+    }
+  }
 
-        &:hover {
-          transform: scale(1.1);
-        }
+  // --- Content: right half ---
+  .heroContent {
+    gap: 2rem;
+  }
+
+  .heroText {
+    .intro {
+      font-size: clamp(40px, 3.5vw, 70px);
+    }
+
+    .nameRole {
+      .name {
+        font-size: clamp(48px, 4.5vw, 95px);
+      }
+
+      .role {
+        font-size: clamp(32px, 3vw, 62px);
       }
     }
+  }
 
-    .emailAdressCNT a {
-      color: #ffffff;
-      font-family: Poppins, sans-serif;
+  .talkBTN {
+    font-size: clamp(18px, 1.3vw, 23px);
+    padding: 16px 32px;
+  }
+
+  // --- Footer: full width bottom ---
+  .heroFooter {
+    justify-content: space-between;
+    // padding: 0 3%;
+  }
+
+  .socialMedia {
+    gap: clamp(24px, 2.5%, 42px);
+
+    .footerLine {
+      display: block;
+      width: clamp(60px, 6vw, 100px);
+    }
+
+    .emailAddress {
+      display: inline;
+      color: $color-white;
+      font-family: $font-main;
       font-size: clamp(13px, 1vw, 16px);
       text-decoration: none;
 
       &:hover {
-        color: #9747ff;
+        color: $color-purple;
       }
     }
   }
 
+  .socialMediaIcons {
+    gap: clamp(24px, 2.5%, 42px);
+
+    a img {
+      width: clamp(24px, 1.8vw, 30px);
+      height: clamp(24px, 1.8vw, 30px);
+    }
+  }
+
   .scrollDown {
-    margin-right: 4%;
+    display: block;
+    padding: 0 2.5% 0 0;
 
     a img {
       width: 16px;
@@ -194,628 +325,21 @@
   }
 }
 
-// ===== ULTRAWIDE (ab 1920px) =====
+// ===== ULTRAWIDE (1920px+) =====
 @media (min-width: 1920px) {
-  .leftSide {
+  .heroPhoto {
     .shadowIMG {
-      width: 85%;
+      top: 50%;
+      width: 80%;
     }
 
     .proIMG {
       left: 15%;
-      width: 55%;
-    }
-  }
-}
-
-// ===== KLEINE LAPTOPS (1024px - 1365px) =====
-@media (min-width: 1024px) and (max-width: 1365px) {
-  .leftSide {
-    height: 100vh;
-
-    .shadowIMG {
-      width: 100%;
-      top: 40%;
-    }
-
-    .proIMG {
-      left: 20%;
-      width: 60%;
-      top: 40%;
-    }
-  }
-}
-
-// ===== TABLET & SMARTPHONE LAYOUT (bis 1023px) =====
-/* @media (max-width: 1023px) {
-  .shape {
-    top: 45%;
-    width: 100%;
-  }
-
-  .wholeCNT {
-    height: auto;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .leftSide {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-
-    .shadowIMG {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      width: 90%;
-    }
-
-    .proIMG {
-      position: absolute;
-      left: 50%;
-      top: 100%;
-      transform: translate(-50%, -50%);
-      width: 42%;
-    }
-  }
-
-  .rightSide {
-    position: relative;
-    width: 100%;
-    right: 0;
-    top: 15%;
-    transform: none;
-    // padding: 2rem 5% 0;
-    z-index: 10;
-  }
-
-  .hero {
-    align-items: center;
-    gap: 1.25rem;
-
-    .leftTXT {
-      align-items: flex-end;
-
-      .intro {
-        font-size: clamp(20px, 5vw, 100px);
-      }
-
-      .name-role {
-        align-items: flex-start;
-
-        .name {
-          font-size: clamp(36px, 7vw, 58px);
-          line-height: 1;
-        }
-
-        .role {
-          font-size: clamp(22px, 4.5vw, 38px);
-        }
-      }
-    }
-  }
-
-  .talk {
-    justify-content: center;
-
-    .talkBTN button {
-      font-size: 16px;
-      padding: 14px 28px;
-    }
-  }
-
-  .homeFooter {
-    position: relative;
-    bottom: 0;
-    margin-top: 15rem;
-    // padding: 0 5% 2rem;
-
-    .socialMedia {
-      gap: 20px;
-
-      .emailAdressCNT {
-        display: none;
-      }
-    }
-
-    .scrollDown {
-      display: none;
-    }
-  }
-}*/
-
-// ===== TABLETS (834px - 1023px) =====
-@media (min-width: 834px) and (max-width: 1023px) {
-  .leftSide {
-    height: 100vh;
-
-    .shadowIMG {
-      width: 75%;
-      top: 50%;
-      left: 37%;
-    }
-
-    .proIMG {
-      width: 38%;
-      top: 45%;
-      left: 35%;
-    }
-  }
-
-  .shape {
-    top: 30%;
-  }
-
-  .rightSide {
-    right: 15%;
-    top: 15%;
-    transform: translateY(-95%);
-  }
-
-  .hero .leftTXT .name-role {
-    .name {
-      font-size: clamp(44px, 6vw, 58px);
-    }
-
-    .role {
-      font-size: clamp(28px, 3.8vw, 38px);
-    }
-  }
-}
-
-// ===== GROSSE SMARTPHONES (768px - 833px) =====
-/* @media (min-width: 768px) and (max-width: 833px) {
-  .leftSide {
-    height: 100vh;
-
-    .shadowIMG {
-      width: 80%;
-      left: 40%;
-      top: 35%;
-    }
-
-    .proIMG {
       width: 50%;
-      top: 32%;
-      left: 35%;
-    }
-  }
-
-  .shape {
-    top: 35%;
-  }
-
-  .rightSide {
-    right: 15%;
-    top: 15%;
-    transform: translateY(75%);
-  }
-
-  .hero .leftTXT .name-role {
-    .name {
-      font-size: clamp(40px, 6.5vw, 54px);
     }
 
-    .role {
-      font-size: clamp(26px, 4vw, 34px);
+    .shape {
+      top: 20%;
     }
-  }
-} */
-
-// Hochformatige Geräte -> iPad & Smartphones
-// ===== iPad Pro (1024px - 1366px) Hochformat =====
-@media (min-width: 1024px) and (max-width: 1366px) {
-  .wholeCNT {
-    min-height: 100vh;
-  }
-  .leftSide {
-    height: 100vh;
-    width: 100%;
-
-    .shadowIMG {
-      width: 80%;
-      left: 40%;
-      top: 48%;
-      transform: translate(-50%, -50%);
-    }
-
-    .proIMG {
-      width: 60%;
-      left: 37%;
-      top: 43%;
-      transform: translate(-50%, -50%);
-    }
-  }
-
-  .shape {
-    top: 50%;
-  }
-
-  .rightSide {
-    right: 0%;
-    top: 80%;
-    // transform: translateY(-60%);
-    width: 100%;
-  }
-
-  .hero {
-    gap: 0.75rem;
-
-    .leftTXT {
-      .intro {
-        font-size: clamp(55px, 3.5vw, 70px);
-      }
-
-      .name-role {
-        .name {
-          font-size: clamp(28px, 20vw, 70px);
-          line-height: 1;
-        }
-
-        .role {
-          font-size: clamp(18px, 7vw, 45px);
-        }
-      }
-    }
-  }
-
-  .talk {
-    justify-content: center;
-
-    .talkBTN button {
-      font-size: 25px;
-      padding: 12px 28px;
-    }
-  }
-
-  .homeFooter {
-    position: relative;
-    top: 90vh;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 10;
   }
 }
-
-/* // ===== iPad Air (820px - 1180px) =====
-@media (min-width: 820px) and (max-width: 1180px) {
-} */
-
-// @media (min-width: 953px) and (max-width: 1023px)
-@media (min-width: 953px) and (max-width: 1023px) {
-  .wholeCNT {
-    min-height: 150vh;
-  }
-
-  .leftSide {
-    height: 100vh;
-    width: 100%;
-
-    .shadowIMG {
-      width: 80%;
-      left: 40%;
-      top: 70%;
-      transform: translate(-50%, -50%);
-    }
-
-    .proIMG {
-      width: 60%;
-      left: 37%;
-      top: 65%;
-      transform: translate(-50%, -50%);
-    }
-  }
-
-  .shape {
-    top: 50%;
-  }
-
-  .rightSide {
-    right: 0%;
-    top: 85%;
-    // transform: translateY(-60%);
-    width: 100%;
-  }
-
-  .hero {
-    gap: 0.75rem;
-
-    .leftTXT {
-      .intro {
-        font-size: 30px;
-      }
-
-      .name-role {
-        .name {
-          font-size: clamp(28px, 20vw, 40px);
-          line-height: 1;
-        }
-
-        .role {
-          font-size: clamp(18px, 7vw, 24px);
-        }
-      }
-    }
-  }
-
-  .talk {
-    justify-content: center;
-
-    .talkBTN button {
-      font-size: 15px;
-      padding: 12px 28px;
-    }
-  }
-
-  .homeFooter {
-    position: relative;
-    top: 140vh;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 10;
-  }
-
-  .scrollDown,
-  .emailAdressCNT {
-    display: none;
-  }
-}
-
-// ===== iPhone 14 Pro Max (430px - 932px) Hochformat =====
-@media (min-width: 430px) and (max-width: 932px) {
-  .wholeCNT {
-    min-height: 100vh;
-  }
-
-  .leftSide {
-    height: 50vh;
-    width: 100%;
-
-    .shadowIMG {
-      width: 100%;
-      left: 50%;
-      top: 55%;
-      transform: translate(-50%, -50%);
-    }
-
-    .proIMG {
-      width: 80%;
-      left: 50%;
-      top: 60%;
-      transform: translate(-50%, -50%);
-    }
-  }
-
-  .shape {
-    top: 50%;
-  }
-
-  .rightSide {
-    right: 0%;
-    top: 80%;
-    // transform: translateY(-60%);
-    width: 100%;
-  }
-
-  .hero {
-    gap: 0.75rem;
-
-    .leftTXT {
-      .intro {
-        font-size: 30px;
-      }
-
-      .name-role {
-        .name {
-          font-size: clamp(28px, 20vw, 40px);
-          line-height: 1;
-        }
-
-        .role {
-          font-size: clamp(18px, 7vw, 24px);
-        }
-      }
-    }
-  }
-
-  .talk {
-    justify-content: center;
-
-    .talkBTN button {
-      font-size: 15px;
-      padding: 12px 28px;
-    }
-  }
-
-  .homeFooter {
-    position: relative;
-    top: 75vh;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 10;
-  }
-
-  .scrollDown,
-  .emailAdressCNT {
-    display: none;
-  }
-}
-
-// Kleine Smartphones (375px - 429px)
-@media (min-width: 375px) and (max-width: 429px) {
-  .leftSide {
-    height: 50vh;
-    width: 100%;
-
-    .shadowIMG {
-      width: 100%;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    .proIMG {
-      width: 80%;
-      left: 50%;
-      top: 54%;
-      transform: translate(-50%, -50%);
-    }
-  }
-
-  .shape {
-    top: 24%;
-  }
-
-  .rightSide {
-    right: 0%;
-    top: 38%;
-    // transform: translateY(-60%);
-    width: 100%;
-  }
-
-  .hero {
-    gap: 0.75rem;
-
-    .leftTXT {
-      .intro {
-        font-size: 30px;
-      }
-
-      .name-role {
-        .name {
-          font-size: clamp(28px, 20vw, 40px);
-          line-height: 1;
-        }
-
-        .role {
-          font-size: clamp(18px, 7vw, 24px);
-        }
-      }
-    }
-  }
-
-  .talk {
-    justify-content: center;
-
-    .talkBTN button {
-      font-size: 15px;
-      padding: 12px 28px;
-    }
-  }
-
-  .homeFooter {
-    position: relative;
-    top: 70vh;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 10;
-  }
-
-  .scrollDown,
-  .emailAdressCNT {
-    display: none;
-  }
-}
-
-// Kleine Smartphones (320px - 374px)
-@media (min-width: 320px) and (max-width: 374px) {
-  .leftSide {
-    height: 45vh;
-    width: 100%;
-
-    .shadowIMG {
-      width: 100%;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    .proIMG {
-      width: 80%;
-      left: 50%;
-      top: 54%;
-      transform: translate(-50%, -50%);
-    }
-  }
-
-  .shape {
-    top: 21%;
-  }
-
-  .rightSide {
-    // right: 5%;
-    top: 35%;
-    // transform: translateY(-60%);
-    width: 100%;
-  }
-
-  .hero {
-    gap: 0.75rem;
-
-    .leftTXT {
-      .intro {
-        font-size: 30px;
-      }
-
-      .name-role {
-        .name {
-          font-size: clamp(28px, 20vw, 40px);
-          line-height: 1;
-        }
-
-        .role {
-          font-size: clamp(18px, 7vw, 24px);
-        }
-      }
-    }
-  }
-
-  .talk {
-    justify-content: center;
-
-    .talkBTN button {
-      font-size: 15px;
-      padding: 12px 28px;
-    }
-  }
-
-  .homeFooter {
-    position: relative;
-    top: 65vh;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 10;
-  }
-
-  .scrollDown,
-  .emailAdressCNT {
-    display: none;
-  }
-}
-
-// @media (min-width: 320px) and (max-width: 374px) -> kleine Smartphones
-// @media (min-width: 375px) and (max-width: 667px) -> iPhone SE -> Raus nehmen
-// @media (min-width: 375px) and (max-width: 812px) -> iPhone X
-// @media (min-width: 414px) and (max-width: 896px) -> iPhone Xr
-// @media (min-width: 390px) and (max-width: 844px) -> iPhone 12
-// @media (min-width: 430px) and (max-width: 932px) -> iPhone 14 Pro Max
-
-// @media (min-width: 768px) and (max-width: 1024px) -> iPad Mini
-// @media (min-width: 820px) and (max-width: 1180px) -> iPad Air
-// @media (min-width: 1024px) and (max-width: 1366px) -> iPad Pro
