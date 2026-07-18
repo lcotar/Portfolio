@@ -180,10 +180,6 @@
     &.reverse {
       flex-direction: column;
     }
-
-    td:has(.singleProjectIMG) {
-      order: -1;
-    }
   }
 
   .singleProjectIMG {

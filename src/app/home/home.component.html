@@ -2,60 +2,73 @@
   <app-navbar-responsiv></app-navbar-responsiv>
 </div>
 
-<section class="heroSection" id="home">
-  <div class="heroPhoto">
+<section class="wholeCNT" id="home">
+  <section class="leftSide">
     <img class="shadowIMG" src="/img/shadow/01_photo_shadows.png" alt="" />
-    <img class="proIMG" src="/img/professionelles_Bild.png" alt="Lea Cotar" />
-    <img class="shape" src="/img/shape.svg" alt="" />
-  </div>
+    <img class="proIMG" src="/img/professionelles_Bild.png" alt="" />
+  </section>
 
-  <div class="heroContent">
-    <div class="heroText">
-      <span class="intro">{{ "home.whoIs" | translate }}</span>
-      <div class="name-role">
-        <h1 class="name">{{ "home.name" | translate }}</h1>
-        <h2 class="role">{{ "home.role" | translate }}</h2>
+  <img class="shape" src="/img/shape.svg" alt="" />
+
+  <section class="rightSide">
+    <div class="hero">
+      <div class="leftTXT">
+        <span class="intro">{{ "home.whoIs" | translate }}</span>
+
+        <div class="name-role">
+          <h1 class="name">{{ "home.name" | translate }}</h1>
+          <h2 class="role">{{ "home.role" | translate }}</h2>
+        </div>
+      </div>
+
+      <div class="talk">
+        <a href="#contact" class="talkBTN">
+          <button id="toContact">
+            {{ "home.talk" | translate }}
+          </button></a
+        >
       </div>
     </div>
+  </section>
 
-    <a href="#contact" class="talkBTN">
-      {{ "home.talk" | translate }}
-    </a>
-  </div>
-
-  <footer class="heroFooter">
+  <!-- HomeFooter -->
+  <section class="homeFooter">
     <div class="socialMedia">
-      <span class="footerLine"></span>
+      <img class="homeLine" src="/img/lines/01_quick_contact.png" alt="" />
 
-      <div class="socialMediaIcons">
-        <a
-          href="https://github.com/lcotar"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+      <div class="SocialMediaIcons">
+        <a class="github" href="https://github.com/lcotar" target="_blank">
           <img src="/img/social_media/08_github.png" alt="GitHub" />
         </a>
-        <a href="#contact">
-          <img src="/img/social_media/09_email.png" alt="E-Mail" />
+
+        <a class="email" href="#contact">
+          <img
+            src="/img/social_media/09_email.png"
+            alt="E-Mail"
+            target="_blank"
+          />
         </a>
+
         <a
-          href="https://www.linkedin.com/in/leacotar"
+          class="linkedIn"
+          href="http://www.linkedin.com/in/leacotar"
           target="_blank"
-          rel="noopener noreferrer"
         >
           <img src="/img/social_media/10_linkedin.png" alt="LinkedIn" />
         </a>
       </div>
 
-      <a class="emailAddress" href="#contact">
-        {{ "home.email" | translate }}
-      </a>
+      <div class="emailAdressCNT">
+        <a class="emailAdress" href="#contact">
+          {{ "home.email" | translate }}
+        </a>
+      </div>
     </div>
 
     <div class="scrollDown">
-      <a href="#contact">
-        <img src="/img/scroll_down.png" alt="Scroll down" />
+      <a class="scrollingDown" href="#contact">
+        <img class="" src="/img/scroll_down.png" alt="" />
       </a>
     </div>
-  </footer>
+  </section>
 </section>
