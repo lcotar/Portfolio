@@ -250,7 +250,7 @@
   }
 
   .homeFooter {
-    padding: 3rem 4% 2rem;
+    // padding: 3rem 4% 2rem;
 
     .socialMedia .emailAdressCNT {
       display: block;
@@ -431,6 +431,19 @@
       height: auto;
       z-index: 3;
       pointer-events: none;
+    }
+  }
+
+  .homeFooter {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    margin-top: 0;
+    padding: 0;
+    z-index: 11;
+
+    .scrollDown {
+      display: block;
     }
   }
 }
