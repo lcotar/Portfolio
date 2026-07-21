@@ -150,11 +150,11 @@
 @media (min-width: 992px) {
   .wholeAboutMeCNT {
     position: relative;
-    min-height: 100vh;
+    // min-height: 100vh;
   }
 
   .aboutMeLeftSide {
-    width: 100%;
+    width: 90%;
   }
 
   .aboutMeHeading h2 {
@@ -169,7 +169,7 @@
     display: flex;
     position: absolute;
     right: 0;
-    top: 50%;
+    top: 30%;
     transform: translateY(-50%);
     width: auto;
     justify-content: flex-end;
@@ -185,11 +185,16 @@
 // ===== 1200px =====
 @media (min-width: 1200px) {
   .aboutMeLeftSide {
-    width: 95%;
+    width: 90%;
   }
 
   .aboutMeRightSide {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
     width: auto;
+    justify-content: flex-end;
   }
 }
 
