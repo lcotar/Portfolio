@@ -207,6 +207,16 @@
 
 // ===== 1600px =====
 @media (min-width: 1600px) {
+  .aboutMeShadow {
+    position: absolute;
+    top: -25%;
+    right: 0;
+    width: clamp(200px, 60vw, 420px);
+    height: auto;
+    z-index: 1;
+    pointer-events: none;
+  }
+
   .profileBorder {
     .profileIMG,
     .aboutMeBorder {
@@ -218,6 +228,16 @@
 
 // ===== 1920px =====
 @media (min-width: 1920px) {
+  .aboutMeShadow {
+    position: absolute;
+    top: -25%;
+    right: 0;
+    width: clamp(150px, 60vw, 400px);
+    height: auto;
+    z-index: 1;
+    pointer-events: none;
+  }
+
   /* .wholeAboutMeCNT {
     padding: 40px 8vw;
   } */
