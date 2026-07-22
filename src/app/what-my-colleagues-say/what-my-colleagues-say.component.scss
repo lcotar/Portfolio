@@ -1,43 +1,100 @@
 .wholeReviewCNT {
-  /* position: relative; // Bezugspunkt für das absolute Gänsefüßchen
-  top: 350vh; // behält die ursprüngliche Positionierung der Section
-  padding: 2rem; // optional, damit Inhalt Platz hat
-  // width: 100%;
-  height: 75vh; */
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  // top: 20vh;
   position: relative;
+  overflow: hidden;
+  padding-top: 40px; // Platz, damit die Anführungszeichen oben nicht abgeschnitten werden
 }
 
-.wholeReviewCNT .quotation {
-  left: 170px; // über die linke Ecke der Box
-  width: 100px; // Grösse anpassen
+/* Schrumpft auf die Breite der Karte, damit die Anführungszeichen
+   relativ zur tatsächlichen Kartenecke positioniert werden können. */
+.reviewAnchor {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.quotation {
+  position: absolute;
+  top: -14px;
+  left: -6px;
+  width: clamp(50px, 18vw, 70px);
   height: auto;
   z-index: 10; // über der Box
 }
 
-@media screen and (max-width: 1000px) {
-  .wholeReviewCNT {
-    /*position: relative; // Bezugspunkt für das absolute Gänsefüßchen
-  top: 350vh; // behält die ursprüngliche Positionierung der Section
-  padding: 2rem; // optional, damit Inhalt Platz hat
-  // width: 100%;  */
-    // height: 40vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    // top: 100vh;
-    position: relative;
-    // transform: translateY(220vh); // verschiebt alles 10vh nach unten
+/* ---- Green shadow image (decorative, behind the review card) ---- */
+.feedbackShadow {
+  position: absolute;
+  right: -20px;
+  bottom: -20px;
+  width: 50vw;
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* 320px */
+@media (min-width: 320px) {
+}
+
+/* 480px */
+@media (min-width: 480px) {
+  .feedbackShadow {
+    right: -30px;
+    bottom: -40px;
+    width: clamp(140px, 45vw, 220px);
+  }
+
+  .quotation {
+    top: -18px;
+    left: -10px;
+    width: clamp(70px, 12vw, 90px);
   }
 }
 
-// @media screen and (min-width: 800px) and (max-width: 1000px)
-// @media screen and (min-width: 600px) and (max-width: 800px)
-// @media screen and (min-width: 500px) and (max-width: 600px)
-// @media screen and (min-width: 400px) and (max-width: 500px)
-// @media screen and (min-width: 320px) and (max-width: 400px)
+/* 576px */
+@media (min-width: 576px) {
+}
+
+/* 768px */
+@media (min-width: 768px) {
+  .wholeReviewCNT {
+    padding-top: 60px;
+  }
+
+  .feedbackShadow {
+    right: -20px;
+    bottom: -60px;
+    width: clamp(160px, 20vw, 320px);
+  }
+
+  .quotation {
+    top: -25px;
+    left: -15px;
+    width: 100px;
+  }
+}
+
+/* 992px */
+@media (min-width: 992px) {
+}
+
+/* 1200px */
+@media (min-width: 1200px) {
+}
+
+/* 1400px */
+@media (min-width: 1400px) {
+}
+
+/* 1600px */
+@media (min-width: 1600px) {
+}
+
+/* 1920px */
+@media (min-width: 1920px) {
+}

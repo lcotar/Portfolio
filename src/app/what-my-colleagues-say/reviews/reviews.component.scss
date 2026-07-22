@@ -8,36 +8,42 @@
   border-radius: 30px; // Abgerundete Ecken
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Schatten
   border: 4px solid #70e61c; // Neuer Rand
+  box-sizing: border-box;
 
-  width: 45vw;
-  height: 25vh;
-  gap: 45px;
-  padding: 50px 95px;
+  /* Mobile-first Basis */
+  width: 90vw;
+  height: auto;
+  gap: 30px;
+  padding: 30px 20px;
 }
 
 .bottomFeedback {
   display: flex;
-  align-items: center;
-  gap: 20px;
-  justify-content: flex-end; /* Inhalt nach rechts im Container */
-  margin-left: auto; /* Schiebt den Container selbst nach rechts */
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-left: 0;
+  width: 100%;
   box-sizing: border-box;
 
-  /* img:first-child {
-    width: 100px; /* z. B. für das erste Bild
-  } */
+  .dividerLine {
+    width: 100%;
+    height: 2px;
+    display: block;
+  }
 
   p {
-    width: 300px; /* z. B. für den Text */
     text-align: center;
   }
 
   a {
-    width: 50px; /* z. B. für den Link mit Icon */
+    width: auto;
 
     img {
       align-items: center;
-      // width: 100%; /* füllt den Linkbereich */
+      width: 30px;
     }
   }
 }
@@ -46,6 +52,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  z-index: 3;
 }
 
 .arrowsDots {
@@ -85,67 +92,77 @@
   }
 }
 
-/* @media screen and (max-width: 1000px) {
-  .wholeFeedbackCNT {
-    position: relative;
-    top: 15vh;
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-} */
+/* 320px */
+@media (min-width: 320px) {
+}
 
-@media screen and (max-width: 1300px) {
+/* 480px */
+@media (min-width: 480px) {
+}
+
+/* 576px */
+@media (min-width: 576px) {
+}
+
+/* 768px */
+@media (min-width: 768px) {
+  .reviewBox {
+    width: clamp(420px, 45vw, 700px);
+    height: auto;
+    gap: clamp(25px, 4vw, 45px);
+    padding: clamp(30px, 4vw, 50px) clamp(30px, 6vw, 95px);
+  }
+
   .bottomFeedback {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 0;
+    flex-wrap: nowrap;
     gap: 20px;
-    justify-content: flex-start; /* Inhalt nach rechts im Container */
-    margin-left: 0; /* Schiebt den Container selbst nach rechts */
+
+    .dividerLine {
+      width: clamp(80px, 12vw, 180px);
+      flex: 0 0 auto;
+    }
   }
 
   .memberReview {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-}
-
-@media screen and (max-width: 1000px) {
-  .reviewBox {
-    width: 90vw; /* Breite anpassen */
-    height: auto; /* Höhe automatisch anpassen, damit Inhalt Platz hat */
-    padding: 30px 20px; /* Padding reduzieren für kleinere Bildschirme */
-    gap: 30px; /* Optional: Abstand zwischen Elementen anpassen */
-  }
-
-  .bottomFeedback {
-    display: flex;
-    justify-content: center; /* Inhalte innerhalb der Box zentrieren */
-    margin-left: 0; /* Entfernt Verschiebung nach rechts */
-    flex-wrap: wrap; /* Falls es zu eng wird, brechen die Elemente um */
-    gap: 15px; /* Lücke zwischen Elementen anpassen */
+    flex: 1 1 auto;
+    min-width: 0;
 
     p {
-      // width: 100%; /* Text passt sich der Breite an */
-      text-align: center; /* Text zentrieren */
+      width: auto;
+      text-align: left;
     }
 
     a {
-      width: auto; /* Icon passt sich an */
+      width: 50px;
+      flex: 0 0 auto;
 
       img {
-        width: 30px; /* Icon-Grösse anpassen */
+        width: auto;
       }
     }
   }
 }
 
-//
-// @media screen and (min-width: 600px) and (max-width: 800px)
-// @media screen and (min-width: 500px) and (max-width: 600px)
-// @media screen and (min-width: 400px) and (max-width: 500px)
-// @media screen and (min-width: 320px) and (max-width: 400px)
+/* 992px */
+@media (min-width: 992px) {
+}
+
+/* 1200px */
+@media (min-width: 1200px) {
+}
+
+/* 1400px */
+@media (min-width: 1400px) {
+}
+
+/* 1600px */
+@media (min-width: 1600px) {
+}
+
+/* 1920px */
+@media (min-width: 1920px) {
+}
