@@ -12,16 +12,88 @@
   </section>
 
   <section class="myPortfolioProjects" ngClass="[fadeclass]">
-    <app-single-project
+    <img
+      class="portfolioShadow"
+      src="/img/shadow/03_purple_shadow_portfolio.png"
+      alt=""
+    />
+
+    <section
+      class="wholeSingleProjectCNT"
       *ngFor="let project of projects; let i = index"
-      [project]="project"
-      [reverseLayout]="i === 1"
-    ></app-single-project>
+    >
+      <table class="singleProjectTbl">
+        <tr class="singleProject" [class.reverse]="i === 1">
+          <td *ngIf="i !== 1">
+            <img
+              class="singleProjectIMG"
+              *ngFor="let img of project.imageProject"
+              [src]="img"
+              [alt]="project.projectname"
+            />
+          </td>
+          <td *ngIf="i !== 1">
+            <div class="singleProjectDetails">
+              <div class="singleProjectDescription">
+                <h3>{{ project.projectname }}</h3>
+
+                <div class="singleProjectTech">
+                  {{ project.content.technologies | translate }}
+                </div>
+
+                <div class="singleProjectTXT">
+                  <p>{{ project.content.description | translate }}</p>
+                </div>
+              </div>
+
+              <div class="singleProjectBTN">
+                <a [href]="project.livetest" target="_blank"
+                  ><button class="singleProjectBTNLiveTest">
+                    Live Test
+                  </button></a
+                >
+                <a [href]="project.github" target="_blank"
+                  ><button class="singleProjectBTNGitHub">GitHub</button></a
+                >
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <tr class="singleProject singleProjectRvs">
+          <td *ngIf="i === 1">
+            <div class="singleProjectDetails">
+              <div class="singleProjectDescription">
+                <h3>{{ project.projectname }}</h3>
+                <div class="singleProjectTech">
+                  {{ project.content.technologies | translate }}
+                </div>
+                <div class="singleProjectTXT">
+                  <p>{{ project.content.description | translate }}</p>
+                </div>
+              </div>
+
+              <div class="singleProjectBTN">
+                <a [href]="project.livetest" target="_blank">
+                  <button class="singleProjectBTNLiveTest">Live Test</button>
+                </a>
+                <a [href]="project.github" target="_blank">
+                  <button class="singleProjectBTNGitHub">GitHub</button>
+                </a>
+              </div>
+            </div>
+          </td>
+
+          <td *ngIf="i === 1">
+            <img
+              class="singleProjectIMG"
+              *ngFor="let img of project.imageProject"
+              [src]="img"
+              [alt]="project.projectname"
+            />
+          </td>
+        </tr>
+      </table>
+    </section>
   </section>
 </section>
-
-<!--
-      *ngFor="let project of projects; let i = index"
-      [project]="project"
-      [reverseLayout]="i === 1"
--->
