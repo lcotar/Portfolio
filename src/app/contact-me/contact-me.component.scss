@@ -1,144 +1,111 @@
+/* ===== BASE (Mobile First, ab 320px) ===== */
 .contactComponent {
   position: relative;
   box-sizing: border-box;
-  // top: 90vh;
   z-index: 10;
-  height: 100vh;
   width: 100%;
+  padding: 60px 20px 40px;
   display: flex;
   flex-direction: column;
+  gap: 40px;
   font-family: Poppins, sans-serif;
-  // transform: translateY(20vh); // verschiebt alles 10vh nach unten
+  overflow: hidden;
 }
 
-.contactLeftSide {
-  height: 15vh;
+/* ===== Purple shadow (decorative, bottom-left glow) ===== */
+.contactShadow {
+  position: absolute;
+  left: -15%;
+  bottom: -10%;
+  width: clamp(260px, 90vw, 678px);
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.contactLeftSide,
+.contactForm {
+  position: relative;
+  z-index: 2;
 }
 
 .contactHeader {
   display: flex;
   align-items: center;
+  gap: clamp(12px, 4vw, 35px);
 
-  width: 100%;
-  height: 110px;
-
-  /* top: 5286px; */
-  gap: 35px;
-  // top: 490vh;
+  img {
+    flex: 1 1 auto;
+    min-width: 40px;
+    max-width: clamp(60px, 20vw, 520px);
+    height: auto;
+  }
 
   h3 {
+    flex: 0 0 auto;
+    margin: 0;
     color: #ffffff;
-    width: 375px;
-    // height: 110px;
-    gap: 10px;
     font-weight: 700;
-    font-size: 90px;
+    font-size: clamp(40px, 12vw, 90px);
     line-height: 120%;
-    text-align: center;
+    white-space: nowrap;
   }
 }
 
 .contactContent {
-  /* ändern!!! */
-  position: absolute; /* oder weglassen */
-  left: 2.5%;
-  height: 30vh;
-  top: auto;
+  margin-top: 20px;
 
   h2 {
-    height: 40px;
+    margin: 0 0 15px;
     font-weight: 700;
-    font-size: 40px;
+    font-size: clamp(24px, 7vw, 40px);
     line-height: 120%;
     color: #ffffff;
   }
 }
 
 .contactTXT {
-  width: 25vw;
-  height: 95px;
+  display: flex;
+  flex-direction: column;
   gap: 15px;
 
   p {
+    margin: 0;
     font-weight: 400;
-    font-size: 15px;
+    font-size: clamp(14px, 3.5vw, 15px);
     line-height: 120%;
     color: #ffffff;
   }
 }
 
 .contactForm {
-  // margin-top: 100px;
   width: 100%;
 }
 
-//     transform: translateY(250vh); // verschiebt alles 10vh nach unten
-
-@media screen and (max-width: 1000px) {
-  /* .contactComponent {
-    transform: translateY(250vh); // verschiebt alles 10vh nach unten
-  } */
-
-  .contactContent {
-    /* NACHFRAGEN!!! */
-    position: absolute;
-    left: 22vw;
-    top: auto;
-  }
-
-  .contactTXT {
-    width: 50vw;
-    height: 95px;
-    gap: 15px;
-
-    p {
-      font-weight: 400;
-      font-size: 15px;
-      line-height: 120%;
-      color: #ffffff;
-    }
-  }
-}
-
-// Contact Form
-/* Style inputs with type="text", select elements and textareas */
+/* ===== Contact Form ===== */
 input[type="text"],
 [type="email"],
 select,
 textarea {
-  width: 100%; /* Full width */
-  padding: 12px; /* Some padding */
-  border: 1px solid #70e61c; /* Gray border */
-  border-radius: 4px; /* Rounded borders */
-  box-sizing: border-box; /* Make sure that padding and width stays in place */
-  margin-top: 6px; /* Add a top margin */
-  margin-bottom: 16px; /* Bottom margin */
-  resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #70e61c;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  font-family: inherit;
 }
 
-/* Style the submit button with a specific background color etc
-input[type="submit"] {
-  background-color: #04aa6d;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-} */
-
-/* When moving the mouse over the submit button, add a darker green color
-input[type="submit"]:hover {
-  background-color: #45a049;
-} */
-
-/* Add a background color and some padding around the form */
 .contactCNT {
   display: flex;
-  justify-content: flex-end;
-  height: 65vh;
-  // border-radius: 5px;
+  justify-content: center;
   background-color: transparent;
-  // padding: 20px;
+}
+
+.contactCNT form {
+  width: 100%;
 }
 
 .contactName,
@@ -146,45 +113,79 @@ input[type="submit"]:hover {
 .contactMessage {
   input,
   textarea {
-    background-color: transparent;
+    background-color: #141d2f;
     border-color: #9747ff;
     border-radius: 10px;
     color: #ffffff;
+    outline: none;
 
     &:hover {
       border-color: #70e61c;
       cursor: pointer;
     }
+
+    &:focus {
+      border-color: #9747ff;
+    }
+
+    &:focus:hover {
+      border-color: #70e61c;
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:focus {
+      border-color: #9747ff;
+      caret-color: #ffffff;
+      -webkit-text-fill-color: #ffffff;
+      -webkit-box-shadow: 0 0 0 1000px #141d2f inset;
+      box-shadow: 0 0 0 1000px #141d2f inset;
+      transition: background-color 9999s ease-in-out 0s;
+    }
+
+    &:-webkit-autofill:hover {
+      border-color: #70e61c;
+      -webkit-box-shadow: 0 0 0 1000px #141d2f inset;
+      box-shadow: 0 0 0 1000px #141d2f inset;
+    }
   }
+}
+
+.contactMessage textarea {
+  min-height: 150px;
 }
 
 .error {
   color: red;
+  font-size: 13px;
 }
 
 .contactPrivacy {
   display: flex;
-  align-items: center;
-  gap: 20px;
+  align-items: flex-start;
+  gap: 15px;
 
   label {
     color: #ffffff;
+    font-size: clamp(13px, 3.2vw, 15px);
+    line-height: 140%;
   }
+
   a {
     text-decoration: none;
     color: #9747ff;
   }
 
   .checkbox {
+    flex-shrink: 0;
+    margin-top: 3px;
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
     width: 20px;
     height: 20px;
     border: 3px solid #70e61c;
-    border-radius: 0; // perfekt quadratisch
+    border-radius: 0;
     background-color: transparent;
-    // cursor: pointer;
     position: relative;
     transition: all 0.3s ease;
 
@@ -193,7 +194,6 @@ input[type="submit"]:hover {
     }
 
     &:checked {
-      // background-color: #007bff;
       border-color: #70e61c;
     }
 
@@ -214,70 +214,167 @@ input[type="submit"]:hover {
 .contactFooter {
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 30px;
   align-items: center;
+  margin-top: 10px;
 
   .contactMessage {
-    width: 255px;
-    height: 60px;
+    width: 100%;
+    max-width: 300px;
     gap: 10px;
     border-radius: 10px;
     padding: 15px 30px;
 
     background-color: #70e61c;
-    color: #ffffff; // Schriftfarbe immer Weiss
+    color: #ffffff;
     border: none;
 
     cursor: pointer;
-    font-family: "Josefin Sans";
-    font-weight: 400;
-    font-size: 18px;
-    width: 300px;
+    font-family: "Josefin Sans", sans-serif;
     margin-bottom: 0;
 
     font-weight: 400;
-    font-style: Regular;
-    font-size: 25px;
+    font-size: clamp(18px, 5vw, 25px);
     line-height: 120%;
     letter-spacing: 0%;
 
-    transition: all 0.3s ease-in-out; // verschiebe die Transition hierher für alle Effekte
+    transition: all 0.3s ease-in-out;
 
     &:hover {
       background-color: #9747ff;
       color: #ffffff;
-      transform: scale(1.05); // Button vergrössert sich um 5%
+      transform: scale(1.05);
     }
 
     &:disabled {
       background-color: grey;
       cursor: not-allowed;
       color: #ffffff;
-      transform: none; // keine Vergrößerung im Disabled-Zustand
+      transform: none;
     }
   }
 }
 
-@media screen and (max-width: 1000px) {
-  .contactCNT {
-    display: flex;
-    justify-content: center;
-    height: 70vh;
-    border-radius: 5px;
-    background-color: transparent;
-    padding: 0px;
-    transform: translateY(20vh);
-  }
+/* ===== Go-up button ===== */
+.contactArrow {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
 
-  .contactArrow {
-    display: flex;
-    justify-content: flex-end;
+  img {
+    width: clamp(36px, 9vw, 56px);
+    height: clamp(36px, 9vw, 56px);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+    }
   }
 }
 
-// @media screen and (min-width: 800px) and (max-width: 1000px)
-// @media screen and (min-width: 600px) and (max-width: 800px)
-// @media screen and (min-width: 500px) and (max-width: 600px)
-// @media screen and (min-width: 400px) and (max-width: 500px)
-// @media screen and (min-width: 320px) and (max-width: 400px)
-// @media screen and (max-width: 600px) {}
+/* ===== 480px ===== */
+@media (min-width: 480px) {
+  .contactMessage textarea {
+    min-height: 180px;
+  }
+}
+
+/* ===== 576px ===== */
+@media (min-width: 576px) {
+  .contactCNT form {
+    max-width: 500px;
+  }
+}
+
+/* ===== 768px ===== */
+@media (min-width: 768px) {
+  .contactComponent {
+    padding: 80px 40px 50px;
+  }
+
+  .contactTXT {
+    max-width: 480px;
+  }
+}
+
+/* ===== 992px (Desktop-Layout) ===== */
+@media (min-width: 992px) {
+  .contactComponent {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 30px;
+    min-height: 100vh;
+    padding: 80px 60px 60px;
+  }
+
+  .contactShadow {
+    left: -10%;
+    bottom: -15%;
+    width: clamp(400px, 40vw, 678px);
+  }
+
+  .contactLeftSide {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contactHeader {
+    justify-content: flex-start;
+  }
+
+  .contactContent {
+    margin-top: 60px;
+  }
+
+  .contactTXT {
+    max-width: 25vw;
+  }
+
+  .contactForm {
+    width: 50%;
+    margin-top: 168px;
+  }
+
+  .contactCNT {
+    justify-content: flex-end;
+  }
+
+  .contactCNT form {
+    max-width: 600px;
+  }
+}
+
+/* ===== 1200px ===== */
+@media (min-width: 1200px) {
+  .contactComponent {
+    padding: 90px 80px 70px;
+  }
+
+  .contactTXT {
+    max-width: 22vw;
+  }
+}
+
+/* ===== 1400px ===== */
+@media (min-width: 1400px) {
+  .contactComponent {
+    padding: 100px 100px 80px;
+  }
+}
+
+/* ===== 1600px ===== */
+@media (min-width: 1600px) {
+  .contactShadow {
+    width: clamp(500px, 35vw, 678px);
+  }
+}
+
+/* ===== 1920px ===== */
+@media (min-width: 1920px) {
+  .contactComponent {
+    padding: 100px 160px 80px;
+  }
+}

@@ -94,7 +94,8 @@
     },
     "text": {
       "eins": "Ermutigen Sie die Leute, sich mit Ihnen in Verbindung zu setzen und beschreiben Sie, für welche Position Sie sich interessieren. Zeigen Sie, dass Sie durch Ihre Arbeit einen Mehrwert für ihre Projekte schaffen werden.",
-      "zwei": "Benötigen Sie einen Frontend-Entwickler? Kontaktieren Sie mich!"
+      "zwei": "Benötigen Sie einen Frontend-Entwickler?",
+      "drei": "Kontaktieren Sie mich!"
     },
     "contactform": {
       "name": "Ihre Name",

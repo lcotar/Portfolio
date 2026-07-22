@@ -39,7 +39,7 @@ export class ContactMeComponent {
   privacyAccepted = false;
 
   post = {
-    endPoint: 'https://deineDomain.de/sendMail.php',
+    endPoint: 'https://leacotar.com/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
