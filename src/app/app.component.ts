@@ -6,10 +6,17 @@ import { TranslateService } from '@ngx-translate/core';
 import { TranslateModule } from '@ngx-translate/core';
 import * as AOS from 'aos';
 import { NavbarComponent } from './home/navbar/navbar.component';
+import { NavbarResponsivComponent } from './home/navbar-responsiv/navbar-responsiv.component';
 
 @Component({
     selector: 'app-root',
-    imports: [RouterOutlet, FooterComponent, TranslateModule, NavbarComponent],
+    imports: [
+        RouterOutlet,
+        FooterComponent,
+        TranslateModule,
+        NavbarComponent,
+        NavbarResponsivComponent,
+    ],
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss'
 })

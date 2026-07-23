@@ -9,49 +9,73 @@ button {
   background-color: #70e61c;
   color: #ffffff;
   border: none;
-  padding: 15px 30px;
+  padding: 12px 24px;
   border-radius: 999px;
   cursor: pointer;
   font-family: arial, "Poppins", sans-serif;
   font-weight: 400;
-  font-size: 18px;
-  margin-top: 64px;
+  font-size: clamp(14px, 3vw, 18px);
 
   &:hover {
     background-color: #9747ff;
   }
 }
 
+.privacyBTN {
+  display: flex;
+  justify-content: center;
+  margin: 32px 0;
+  text-decoration: none;
+}
+
+// ===== BASE (Mobile First, ab 320px) =====
 .privacyComponent {
   display: flex;
-  // align-items: center;
   justify-content: flex-start;
   flex-direction: column;
   height: auto;
-  width: 90vw;
+  width: 100%;
+  max-width: 100%;
+  margin-top: 100px;
+  padding: 0 16px;
+  box-sizing: border-box;
 
   h1 {
     color: #ffffff;
     margin-bottom: 0;
     padding: 0;
+    font-size: clamp(24px, 6vw, 32px);
   }
 
   h2 {
     color: #ffffff;
-    margin-bottom: 0;
+    margin: 24px 0 0;
     padding: 0;
+    font-size: clamp(18px, 4.5vw, 22px);
   }
 
   h3 {
     color: #ffffff;
-    margin-bottom: 0;
+    margin: 16px 0 0;
     padding: 0;
+    font-size: clamp(16px, 4vw, 18px);
   }
 
   p {
     color: #ffffff;
-    margin: 0;
+    margin: 8px 0 0;
     padding: 0;
+    font-size: clamp(14px, 3.5vw, 16px);
+    line-height: 1.5;
+  }
+
+  address {
+    color: #ffffff;
+    margin: 8px 0 0;
+    padding: 0;
+    font-size: clamp(14px, 3.5vw, 16px);
+    font-style: normal;
+    line-height: 1.5;
   }
 
   a {
@@ -61,17 +85,80 @@ button {
 
   ul {
     color: #ffffff;
-    margin: 0;
-    padding: 0;
+    margin: 8px 0 0;
+    padding-left: 1.25rem;
   }
 
   li {
     color: #ffffff;
+    font-size: clamp(14px, 3.5vw, 16px);
+    line-height: 1.5;
+    margin-bottom: 4px;
   }
 }
 
-// @media screen and (min-width: 800px) and (max-width: 1000px)
-// @media screen and (min-width: 600px) and (max-width: 800px)
-// @media screen and (min-width: 500px) and (max-width: 600px)
-// @media screen and (min-width: 400px) and (max-width: 500px)
-// @media screen and (min-width: 320px) and (max-width: 400px)
+// ===== 320px =====
+@media (min-width: 320px) {
+  .privacyComponent {
+    width: 100%;
+  }
+}
+
+// ===== 480px =====
+@media (min-width: 480px) {
+  .privacyComponent {
+    width: 92%;
+    max-width: 440px;
+    align-self: center;
+  }
+}
+
+// ===== 576px =====
+@media (min-width: 576px) {
+  .privacyComponent {
+    max-width: 540px;
+  }
+}
+
+// ===== 768px (Tablet) =====
+@media (min-width: 768px) {
+  .privacyComponent {
+    max-width: 700px;
+    padding: 0;
+  }
+}
+
+// ===== 992px (Desktop-Layout) =====
+@media (min-width: 992px) {
+  .privacyComponent {
+    max-width: 860px;
+  }
+}
+
+// ===== 1200px =====
+@media (min-width: 1200px) {
+  .privacyComponent {
+    max-width: 980px;
+  }
+}
+
+// ===== 1400px =====
+@media (min-width: 1400px) {
+  .privacyComponent {
+    max-width: 1100px;
+  }
+}
+
+// ===== 1600px =====
+@media (min-width: 1600px) {
+  .privacyComponent {
+    max-width: 1250px;
+  }
+}
+
+// ===== 1920px (Ultrawide) =====
+@media (min-width: 1920px) {
+  .privacyComponent {
+    max-width: 1400px;
+  }
+}
