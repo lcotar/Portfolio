@@ -7,7 +7,14 @@
     </div>
 
     <!-- Burger rechts -->
-    <button class="burgerBTN" (click)="toggleMenu()">☰</button>
+    <button
+      class="burgerBTN"
+      (click)="toggleMenu()"
+      [attr.aria-label]="menuOpen ? 'Menu schliessen' : 'Menu oeffnen'"
+      [attr.aria-expanded]="menuOpen"
+    >
+      {{ menuOpen ? "✕" : "☰" }}
+    </button>
   </nav>
 
   <!-- Overlay -->
