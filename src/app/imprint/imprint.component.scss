@@ -1,78 +1,170 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+button {
+  background-color: #70e61c;
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-family: arial, "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: clamp(14px, 3vw, 18px);
+
+  &:hover {
+    background-color: #9747ff;
+  }
+}
+
+.imprintBTN {
+  display: flex;
+  justify-content: center;
+  margin: 32px 0;
+  text-decoration: none;
+}
+
+// ===== BASE (Mobile First, ab 320px) =====
 .wholeImprintContent {
   display: flex;
-  // align-items: center;
-  margin-top: 100px;
+  justify-content: flex-start;
   flex-direction: column;
-  flex: 1;
-  height: 100vh;
-  width: 95vw;
-  color: #ffffff;
-  gap: 20px;
+  height: auto;
+  width: 100%;
+  max-width: 100%;
+  // margin-top: 100px;
+  padding: 0 16px;
+  box-sizing: border-box;
 
-  h1,
-  h2,
-  address,
-  p {
+  h1 {
+    color: #ffffff;
     text-align: center;
-    font-style: normal;
-    margin: 0;
-  }
-
-  .disclaim {
-    text-align: left;
-  }
-
-  ol {
-    margin: 0;
-  }
-
-  li {
-    font-weight: bold;
-  }
-
-  ul {
-    margin: 0;
+    margin-bottom: 0;
     padding: 0;
+    font-size: clamp(24px, 6vw, 32px);
+  }
+
+  h2 {
+    color: #ffffff;
+    text-align: center;
+    margin: 24px 0 0;
+    padding: 0;
+    font-size: clamp(18px, 4.5vw, 22px);
+  }
+
+  p {
+    color: #ffffff;
+    margin: 8px 0 0;
+    padding: 0;
+    font-size: clamp(14px, 3.5vw, 16px);
+    line-height: 1.5;
+    font-weight: 400;
+  }
+
+  address {
+    color: #ffffff;
+    text-align: center;
+    margin: 8px 0 0;
+    padding: 0;
+    font-size: clamp(14px, 3.5vw, 16px);
+    font-style: normal;
+    line-height: 1.5;
   }
 
   a {
     text-decoration: none;
     color: #ffffff;
   }
-
-  address {
-    font-style: normal;
-  }
 }
 
-.imprintBTN {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.imprintList {
+  margin: 16px 0 0;
+  padding-left: 1.25rem;
 
-  button {
-    background-color: #70e61c;
-    border-color: #70e61c;
+  li {
     color: #ffffff;
-    border: none;
-    padding: 10px 24px;
-    border-radius: 999px;
-    font-weight: 400;
-    font-size: 18px;
+    font-size: clamp(14px, 3.5vw, 16px);
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 16px;
 
-    &:hover {
-      cursor: pointer;
-      color: #ffffff;
-      background-color: #9747ff;
-      border-color: #9747ff;
-      transform: scale(1.1);
-      transition: transform 0.3s ease-in-out;
+    p {
+      font-weight: 400;
+      margin-top: 4px;
     }
   }
 }
 
-// @media screen and (min-width: 800px) and (max-width: 1000px)
-// @media screen and (min-width: 600px) and (max-width: 800px)
-// @media screen and (min-width: 500px) and (max-width: 600px)
-// @media screen and (min-width: 400px) and (max-width: 500px)
-// @media screen and (min-width: 320px) and (max-width: 400px)
+.imprintQuestions {
+  margin-top: 24px;
+}
+
+// ===== 320px =====
+@media (min-width: 320px) {
+  .wholeImprintContent {
+    width: 100%;
+  }
+}
+
+// ===== 480px =====
+@media (min-width: 480px) {
+  .wholeImprintContent {
+    width: 92%;
+    max-width: 440px;
+    align-self: center;
+  }
+}
+
+// ===== 576px =====
+@media (min-width: 576px) {
+  .wholeImprintContent {
+    max-width: 540px;
+  }
+}
+
+// ===== 768px (Tablet) =====
+@media (min-width: 768px) {
+  .wholeImprintContent {
+    max-width: 700px;
+    padding: 0;
+  }
+}
+
+// ===== 992px (Desktop-Layout) =====
+@media (min-width: 992px) {
+  .wholeImprintContent {
+    max-width: 860px;
+  }
+}
+
+// ===== 1200px =====
+@media (min-width: 1200px) {
+  .wholeImprintContent {
+    max-width: 980px;
+  }
+}
+
+// ===== 1400px =====
+@media (min-width: 1400px) {
+  .wholeImprintContent {
+    max-width: 1100px;
+  }
+}
+
+// ===== 1600px =====
+@media (min-width: 1600px) {
+  .wholeImprintContent {
+    max-width: 1250px;
+  }
+}
+
+// ===== 1920px (Ultrawide) =====
+@media (min-width: 1920px) {
+  .wholeImprintContent {
+    max-width: 1400px;
+  }
+}
