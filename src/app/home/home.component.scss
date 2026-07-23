@@ -3,7 +3,11 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  min-height: calc(100s / vh - 10vh); // 10vh = Hoehe der responsiven Navbar
+  // margin-top statt padding-top: verschiebt die Box selbst nach unten,
+  // damit auch absolut positionierte Kinder (Desktop-Layout ab 992px)
+  // unter der fixierten Navbar beginnen, nicht nur Flex-Kinder.
+  margin-top: 10vh; // 10vh = Hoehe der responsiven Navbar (mobile Basis)
+  // min-height: calc(100svh - 10vh);
   overflow-x: clip;
 }
 
@@ -213,6 +217,21 @@
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
+      top: 68%;
+      width: 100vw;
+      height: auto;
+      z-index: 3;
+      pointer-events: none;
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  .leftSide {
+    .shape {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
       top: 60%;
       width: 100vw;
       height: auto;
@@ -224,6 +243,11 @@
 
 // ===== 768px (Tablet) =====
 @media (min-width: 768px) {
+  .wholeCNT {
+    margin-top: 11vh; // Navbar wird ab 768px hoeher (siehe navbar-responsiv.component.scss)
+    min-height: calc(100svh - 11vh);
+  }
+
   .leftSide {
     .proIMG {
       width: min(55%, 480px);
@@ -262,7 +286,9 @@
 @media (min-width: 992px) {
   .wholeCNT {
     display: block;
-    min-height: 100vh;
+    // Navbar (navbar.component.scss) ist ebenfalls 11vh hoch, margin-top
+    // aus dem 768px-Block bleibt gueltig.
+    min-height: calc(100vh - 11vh);
   }
 
   .leftSide {
@@ -270,18 +296,24 @@
     left: 0;
     top: 0;
     width: 50%;
-    height: 100vh;
+    height: calc(100vh - 11vh);
     padding-top: 0;
     justify-content: flex-start;
 
     // Breiten in vw statt % von .leftSide (das ab hier nur noch 50vw
     // breit ist), damit die Bilder nicht kleiner wirken als bei 768px.
+    // max-height zusaetzlich, damit die Bilder bei niedrigen Viewports
+    // (z.B. 1366x768) nicht ueber .leftSide hinaus- und unter die
+    // Navbar ragen; height:auto + max-width + max-height skaliert
+    // proportional auf die jeweils kleinere verfuegbare Dimension.
     .shadowIMG {
       left: 0;
       top: 50%;
       transform: translateY(-50%);
-      width: clamp(420px, 58vw, 760px);
-      max-width: none;
+      width: auto;
+      height: auto;
+      max-width: clamp(420px, 58vw, 760px);
+      max-height: 100%;
     }
 
     // Ueber "right" statt "left" verankert: haelt so bei jeder
@@ -291,7 +323,10 @@
       right: 2vw;
       top: 50%;
       transform: translateY(-50%);
-      width: clamp(320px, 42vw, 480px);
+      width: auto;
+      height: auto;
+      max-width: clamp(320px, 42vw, 480px);
+      max-height: 100%;
     }
 
     .shape {
@@ -422,7 +457,7 @@
       position: absolute;
       // left: 50%;
       // transform: translateX(-50%);
-      top: 25%;
+      top: 20%;
       width: 100vw;
       height: auto;
       z-index: 3;
