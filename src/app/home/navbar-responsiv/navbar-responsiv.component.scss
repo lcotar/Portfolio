@@ -1,28 +1,37 @@
-// Burger-Navbar: sichtbar von 320px bis 991px.
-// Ab 992px uebernimmt die Desktop-Navbar (navbar.component).
+/* .navbarResponsiv {
+  display: none;
+width: 100vw;
+  height: 11vh;
+  background-color: #141d2f;
+  top: 0;
+  z-index: 99;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+} */
+
 .navbarResponsiv {
   display: none;
   position: relative;
   width: 100%;
 }
 
-/* --- NAVBAR ===== BASE (320px) ===== --- */
+/* --- NAVBAR --- */
 .topnav {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 10vh;
-  background-color: #141d2f;
+  height: 11vh;
+  background-color: #1a2233;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1rem;
-  box-sizing: border-box;
+  // padding: 0 20px;
   z-index: 2000; // Navbar bleibt oben
 
   .navbarRespoLogo img {
-    height: 36px;
+    height: 45px;
     width: auto;
     border-radius: 6px;
     cursor: pointer;
@@ -31,36 +40,35 @@
   .burgerBTN {
     background: none;
     border: none;
-    color: #ffffff;
-    font-size: 22px;
-    line-height: 1;
+    color: white;
+    font-size: 28px;
     cursor: pointer;
     z-index: 2100;
   }
 }
 
-/* --- OVERLAY ===== BASE (320px) ===== --- */
+/* --- OVERLAY --- */
 .menuOverlay {
   position: fixed;
-  top: 10vh; // direkt unter der Navbar
+  top: 60px; // direkt unter Navbar
   left: 0;
   width: 100%;
-  height: calc(100vh - 10vh);
+  height: 100vh;
   background-color: #414856;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000; // unter der Navbar
+  z-index: 1000; // unter Navbar
 
   .menuLinks {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 30px;
 
     a {
-      color: #ffffff;
-      font-size: 18px;
+      color: white;
+      font-size: 22px;
       text-decoration: none;
 
       &:hover {
@@ -69,9 +77,8 @@
     }
 
     .langSwitch {
-      margin-top: 16px;
-      color: #ffffff;
-      font-size: 14px;
+      margin-top: 20px;
+      color: white;
 
       .activeLang {
         color: #70e61c;
@@ -80,96 +87,54 @@
   }
 }
 
-// ===== 480px =====
-@media (min-width: 480px) {
-  .topnav {
-    .navbarRespoLogo img {
-      height: 40px;
-    }
-
-    .burgerBTN {
-      font-size: 24px;
-    }
-  }
-
-  .menuOverlay .menuLinks {
-    gap: 22px;
-
-    a {
-      font-size: 19px;
-    }
-
-    .langSwitch {
-      font-size: 15px;
-    }
-  }
-}
-
-// ===== 576px =====
-@media (min-width: 576px) {
-  .topnav {
-    padding: 0 1.5rem;
-
-    .navbarRespoLogo img {
-      height: 43px;
-    }
-
-    .burgerBTN {
-      font-size: 26px;
-    }
-  }
-
-  .menuOverlay .menuLinks {
-    gap: 26px;
-
-    a {
-      font-size: 20px;
-    }
-
-    .langSwitch {
-      font-size: 16px;
-    }
-  }
-}
-
-// ===== 768px =====
-@media (min-width: 768px) {
-  .topnav {
-    height: 11vh;
-    padding: 0 2rem;
-
-    .navbarRespoLogo img {
-      height: 45px;
-    }
-
-    .burgerBTN {
-      font-size: 28px;
-    }
-  }
-
-  .menuOverlay {
-    top: 11vh;
-    height: calc(100vh - 11vh);
-
-    .menuLinks {
-      gap: 30px;
-
-      a {
-        font-size: 22px;
-      }
-
-      .langSwitch {
-        margin-top: 20px;
-        font-size: 16px;
-      }
-    }
-  }
-}
-
-// Sichtbarkeit: Burger-Navbar nur unterhalb 992px, dort uebernimmt
-// die Desktop-Navbar (navbar.component.scss).
 @media screen and (max-width: 991px) {
   .navbarResponsiv {
+    display: block;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10vh; // oder deine gewünschte Höhe
+    z-index: 9999; // höher als .rightSide (10) und .shape (2)
+    background-color: #141d2f; // optional halbtransparent
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    box-sizing: border-box;
+  }
+
+  .navbarRespoLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    // padding-left: 100px; /* evt. entfernen */
+
+    img {
+      width: 75px;
+      height: 50px;
+    }
+  }
+
+  .navbarBurgerMenu {
+    .navbarBurgerMenu {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100px;
+      padding-right: 100px; /* evt. entfernen */
+
+      img {
+        width: 75px;
+        height: 50px;
+      }
+    }
   }
 }
+
+// @media screen and (min-width: 800px) and (max-width: 1000px)
+// @media screen and (min-width: 600px) and (max-width: 800px)
+// @media screen and (min-width: 500px) and (max-width: 600px)
+// @media screen and (min-width: 400px) and (max-width: 500px)
+// @media screen and (min-width: 320px) and (max-width: 400px)

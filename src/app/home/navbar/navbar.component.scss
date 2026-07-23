@@ -1,23 +1,24 @@
-// Desktop-Navbar: erscheint erst ab 992px.
-// Unterhalb von 992px uebernimmt die Burger-Navbar (navbar-responsiv).
 .navbarCNT {
-  display: none;
   position: fixed;
+  display: flex;
   width: 100%;
   height: 11vh;
   background-color: #1a2233;
   top: 0;
   z-index: 99;
+  /* gap: 590px; */
 }
 
 .navbarLogo {
   display: flex;
   justify-content: center;
   align-items: center;
+  // width: 100px;
+  padding-left: 10px; /* evt. entfernen */
 
   img {
-    width: 60px;
-    height: 40px;
+    width: 75px;
+    height: 50px;
   }
 }
 
@@ -26,19 +27,19 @@
   justify-content: right;
   align-items: center;
   width: 100%;
-  gap: 40px;
+  gap: 92px;
 }
 
 .navbarLinks {
   display: flex;
   align-items: center;
   height: 100%;
-  gap: 18px;
+
+  gap: 30px;
 
   a {
     color: #ffffff;
     text-decoration: none;
-    font-size: 0.95rem;
 
     &:hover {
       color: #70e61c;
@@ -50,12 +51,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-  padding-right: 24px;
+  // width: 100%;
+  gap: 15px;
+  padding-right: 100px; /* evt. entfernen */
 
   button {
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: #70e61c;
     border: 2px solid #70e61c;
     border-radius: 10px;
@@ -76,141 +78,16 @@
   }
 }
 
-// ===== 992px =====
-@media (min-width: 992px) {
+@media screen and (max-width: 1000px) {
   .navbarCNT {
-    display: flex;
+    display: none;
   }
 }
 
-// ===== 1200px =====
-@media (min-width: 1200px) {
-  .navbarLogo {
-    padding-left: 16px;
+// navbarCNT
 
-    img {
-      width: 65px;
-      height: 43px;
-    }
-  }
-
-  .navbarMenu {
-    gap: 55px;
-  }
-
-  .navbarLinks {
-    gap: 22px;
-
-    a {
-      font-size: 1rem;
-    }
-  }
-
-  .navbarSwitchingLanguage {
-    gap: 12px;
-    padding-right: 40px;
-
-    button {
-      font-size: 1.05rem;
-    }
-  }
-}
-
-// ===== 1400px =====
-@media (min-width: 1400px) {
-  .navbarLogo {
-    padding-left: 20px;
-
-    img {
-      width: 70px;
-      height: 46px;
-    }
-  }
-
-  .navbarMenu {
-    gap: 70px;
-  }
-
-  .navbarLinks {
-    gap: 26px;
-
-    a {
-      font-size: 1.05rem;
-    }
-  }
-
-  .navbarSwitchingLanguage {
-    gap: 13px;
-    padding-right: 60px;
-
-    button {
-      font-size: 1.1rem;
-    }
-  }
-}
-
-// ===== 1600px =====
-@media (min-width: 1600px) {
-  .navbarLogo {
-    padding-left: 24px;
-
-    img {
-      width: 73px;
-      height: 48px;
-    }
-  }
-
-  .navbarMenu {
-    gap: 82px;
-  }
-
-  .navbarLinks {
-    gap: 28px;
-
-    a {
-      font-size: 1.08rem;
-    }
-  }
-
-  .navbarSwitchingLanguage {
-    gap: 14px;
-    padding-right: 80px;
-
-    button {
-      font-size: 1.15rem;
-    }
-  }
-}
-
-// ===== 1920px =====
-@media (min-width: 1920px) {
-  .navbarLogo {
-    padding-left: 10px;
-
-    img {
-      width: 75px;
-      height: 50px;
-    }
-  }
-
-  .navbarMenu {
-    gap: 92px;
-  }
-
-  .navbarLinks {
-    gap: 30px;
-
-    a {
-      font-size: 1.2rem;
-    }
-  }
-
-  .navbarSwitchingLanguage {
-    gap: 15px;
-    padding-right: 100px;
-
-    button {
-      font-size: 1.2rem;
-    }
-  }
-}
+// @media screen and (min-width: 800px) and (max-width: 1000px)
+// @media screen and (min-width: 600px) and (max-width: 800px)
+// @media screen and (min-width: 500px) and (max-width: 600px)
+// @media screen and (min-width: 400px) and (max-width: 500px)
+// @media screen and (min-width: 320px) and (max-width: 400px)
