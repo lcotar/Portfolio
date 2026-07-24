@@ -4,8 +4,18 @@
   justify-content: center;
   flex-direction: column;
   position: relative;
-  overflow: hidden;
+  // overflow: hidden;
   padding-top: 40px; // Platz, damit die Anführungszeichen oben nicht abgeschnitten werden
+}
+
+.shadowClip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; // unter der Box
+  overflow-x: clip;
 }
 
 /* Schrumpft auf die Breite der Karte, damit die Anführungszeichen
@@ -29,7 +39,7 @@
 /* ---- Green shadow image (decorative, behind the review card) ---- */
 .feedbackShadow {
   position: absolute;
-  right: -20px;
+  right: 0px;
   bottom: -20px;
   width: 50vw;
   height: auto;
@@ -44,7 +54,7 @@
 /* 480px */
 @media (min-width: 480px) {
   .feedbackShadow {
-    right: -30px;
+    right: 0px;
     bottom: -40px;
     width: clamp(140px, 45vw, 220px);
   }
@@ -67,7 +77,7 @@
   }
 
   .feedbackShadow {
-    right: -20px;
+    right: 0px;
     bottom: -60px;
     width: clamp(160px, 20vw, 320px);
   }
