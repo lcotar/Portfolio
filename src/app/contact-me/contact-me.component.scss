@@ -33,12 +33,14 @@
   display: flex;
   align-items: center;
   gap: clamp(12px, 4vw, 35px);
+  margin-left: -20px;
+  width: calc(100% + 20px);
 
   img {
     flex: 1 1 auto;
     min-width: 40px;
     max-width: clamp(60px, 20vw, 520px);
-    height: auto;
+    height: 3px;
   }
 
   h3 {
@@ -298,6 +300,11 @@ textarea {
     padding: 80px 40px 50px;
   }
 
+  .contactHeader {
+    margin-left: -40px;
+    width: calc(100% + 40px);
+  }
+
   .contactTXT {
     max-width: 480px;
   }
@@ -328,6 +335,12 @@ textarea {
 
   .contactHeader {
     justify-content: flex-start;
+    margin-left: -60px;
+    width: calc(100% + 60px);
+
+    img {
+      max-width: clamp(60px, 22vw, 560px);
+    }
   }
 
   .contactContent {
@@ -358,6 +371,11 @@ textarea {
     padding: 90px 80px 70px;
   }
 
+  .contactHeader {
+    margin-left: -80px;
+    width: calc(100% + 80px);
+  }
+
   .contactTXT {
     max-width: 22vw;
   }
@@ -367,6 +385,11 @@ textarea {
 @media (min-width: 1400px) {
   .contactComponent {
     padding: 100px 100px 80px;
+  }
+
+  .contactHeader {
+    margin-left: -100px;
+    width: calc(100% + 100px);
   }
 }
 
@@ -381,5 +404,10 @@ textarea {
 @media (min-width: 1920px) {
   .contactComponent {
     padding: 100px 160px 80px;
+  }
+
+  .contactHeader {
+    margin-left: -160px;
+    width: calc(100% + 160px);
   }
 }
