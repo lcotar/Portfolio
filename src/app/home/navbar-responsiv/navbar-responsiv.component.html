@@ -34,7 +34,21 @@
       }}</a>
 
       <div class="langSwitch">
-        <span class="activeLang">EN</span> / <span>DE</span>
+        <button
+          type="button"
+          [class.activeLang]="currentLang === 'en'"
+          (click)="toogleTranslation('en')"
+        >
+          EN
+        </button>
+        /
+        <button
+          type="button"
+          [class.activeLang]="currentLang === 'de'"
+          (click)="toogleTranslation('de')"
+        >
+          DE
+        </button>
       </div>
     </div>
   </div>

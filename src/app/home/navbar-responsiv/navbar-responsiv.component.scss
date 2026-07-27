@@ -23,6 +23,7 @@ width: 100vw;
   left: 0;
   width: 100%;
   height: 11vh;
+  box-sizing: border-box;
   background-color: #1a2233;
   display: flex;
   align-items: center;
@@ -50,10 +51,10 @@ width: 100vw;
 /* --- OVERLAY --- */
 .menuOverlay {
   position: fixed;
-  top: 60px; // direkt unter Navbar
+  top: 11vh; // direkt unter Navbar (Navbar-Hoehe)
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 11vh);
   background-color: #414856;
   display: flex;
   justify-content: center;
@@ -80,8 +81,18 @@ width: 100vw;
       margin-top: 20px;
       color: white;
 
+      button {
+        background: none;
+        border: none;
+        padding: 0;
+        color: inherit;
+        font: inherit;
+        cursor: pointer;
+      }
+
       .activeLang {
         color: #70e61c;
+        font-weight: 700;
       }
     }
   }
@@ -90,51 +101,62 @@ width: 100vw;
 @media screen and (max-width: 991px) {
   .navbarResponsiv {
     display: block;
-
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 10vh; // oder deine gewünschte Höhe
-    z-index: 9999; // höher als .rightSide (10) und .shape (2)
-    background-color: #141d2f; // optional halbtransparent
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 2rem;
-    box-sizing: border-box;
+    height: 11vh; // muss zur .topnav Hoehe passen
   }
 
-  .navbarRespoLogo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100px;
-    // padding-left: 100px; /* evt. entfernen */
+  .topnav {
+    padding: 0 1rem;
 
-    img {
-      width: 75px;
-      height: 50px;
+    .navbarRespoLogo img {
+      width: auto;
+      height: 34px;
+    }
+
+    .burgerBTN {
+      font-size: 24px;
     }
   }
 
-  .navbarBurgerMenu {
-    .navbarBurgerMenu {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100px;
-      padding-right: 100px; /* evt. entfernen */
+  .menuOverlay .menuLinks a {
+    font-size: 18px;
+  }
 
-      img {
-        width: 75px;
-        height: 50px;
+  /* 480px */
+  @media screen and (min-width: 480px) {
+    .topnav {
+      padding: 0 1.5rem;
+
+      .navbarRespoLogo img {
+        height: 38px;
       }
     }
   }
-}
 
-// @media screen and (min-width: 800px) and (max-width: 1000px)
-// @media screen and (min-width: 600px) and (max-width: 800px)
-// @media screen and (min-width: 500px) and (max-width: 600px)
-// @media screen and (min-width: 400px) and (max-width: 500px)
-// @media screen and (min-width: 320px) and (max-width: 400px)
+  /* 576px */
+  @media screen and (min-width: 576px) {
+    .topnav {
+      .navbarRespoLogo img {
+        height: 42px;
+      }
+
+      .burgerBTN {
+        font-size: 26px;
+      }
+    }
+
+    .menuOverlay .menuLinks a {
+      font-size: 20px;
+    }
+  }
+
+  /* 768px */
+  @media screen and (min-width: 768px) {
+    .topnav {
+      padding: 0 2rem;
+    }
+
+    .menuOverlay .menuLinks a {
+      font-size: 22px;
+    }
+  }
+}
