@@ -261,6 +261,11 @@ textarea {
   justify-content: flex-end;
   margin-top: 20px;
 
+  a {
+    display: block;
+    line-height: 0;
+  }
+
   img {
     width: clamp(36px, 9vw, 56px);
     height: clamp(36px, 9vw, 56px);
