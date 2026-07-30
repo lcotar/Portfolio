@@ -4,7 +4,7 @@
   box-sizing: border-box;
   z-index: 10;
   width: 100%;
-  padding: 60px 20px 40px;
+  padding: 60px 0 40px;
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -33,8 +33,6 @@
   display: flex;
   align-items: center;
   gap: clamp(12px, 4vw, 35px);
-  margin-left: -20px;
-  width: calc(100% + 20px);
 
   img {
     flex: 1 1 auto;
@@ -56,6 +54,7 @@
 
 .contactContent {
   margin-top: 20px;
+  padding: 0px 20px 0px;
 
   h2 {
     margin: 0 0 15px;
@@ -82,6 +81,8 @@
 
 .contactForm {
   width: 100%;
+  padding: 0px 20px 0px;
+  box-sizing: border-box;
 }
 
 /* ===== Contact Form ===== */
@@ -297,12 +298,15 @@ textarea {
 /* ===== 768px ===== */
 @media (min-width: 768px) {
   .contactComponent {
-    padding: 80px 40px 50px;
+    padding: 80px 0 50px;
   }
 
-  .contactHeader {
-    margin-left: -40px;
-    width: calc(100% + 40px);
+  .contactContent {
+    padding: 0px 40px 0px;
+  }
+
+  .contactForm {
+    padding: 0px 40px 0px;
   }
 
   .contactTXT {
@@ -318,7 +322,7 @@ textarea {
     justify-content: space-between;
     gap: 30px;
     min-height: 100vh;
-    padding: 80px 60px 60px;
+    padding: 80px 0 60px;
   }
 
   .contactShadow {
@@ -335,8 +339,6 @@ textarea {
 
   .contactHeader {
     justify-content: flex-start;
-    margin-left: -60px;
-    width: calc(100% + 60px);
 
     img {
       max-width: clamp(60px, 22vw, 560px);
@@ -345,6 +347,7 @@ textarea {
 
   .contactContent {
     margin-top: 60px;
+    padding: 0px 60px 0px;
   }
 
   .contactTXT {
@@ -354,6 +357,7 @@ textarea {
   .contactForm {
     width: 50%;
     margin-top: 168px;
+    padding: 0px 60px 0px;
   }
 
   .contactCNT {
@@ -368,12 +372,15 @@ textarea {
 /* ===== 1200px ===== */
 @media (min-width: 1200px) {
   .contactComponent {
-    padding: 90px 80px 70px;
+    padding: 90px 0 70px;
   }
 
-  .contactHeader {
-    margin-left: -80px;
-    width: calc(100% + 80px);
+  .contactContent {
+    padding: 0px 80px 0px;
+  }
+
+  .contactForm {
+    padding: 0px 80px 0px;
   }
 
   .contactTXT {
@@ -384,12 +391,15 @@ textarea {
 /* ===== 1400px ===== */
 @media (min-width: 1400px) {
   .contactComponent {
-    padding: 100px 100px 80px;
+    padding: 100px 0 80px;
   }
 
-  .contactHeader {
-    margin-left: -100px;
-    width: calc(100% + 100px);
+  .contactContent {
+    padding: 0px 100px 0px;
+  }
+
+  .contactForm {
+    padding: 0px 100px 0px;
   }
 }
 
@@ -403,11 +413,14 @@ textarea {
 /* ===== 1920px ===== */
 @media (min-width: 1920px) {
   .contactComponent {
-    padding: 100px 160px 80px;
+    padding: 100px 0 80px;
   }
 
-  .contactHeader {
-    margin-left: -160px;
-    width: calc(100% + 160px);
+  .contactContent {
+    padding: 0px 160px 0px;
+  }
+
+  .contactForm {
+    padding: 0px 160px 0px;
   }
 }
