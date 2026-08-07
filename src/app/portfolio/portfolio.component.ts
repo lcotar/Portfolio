@@ -32,7 +32,7 @@ export class PortfolioComponent {
       },
       imageProject: ['/img/portfolio_projects/02_el_pollo_loco.png'],
       github: 'https://github.com/lcotar/El-Pollo-Loco',
-      livetest: 'https://pollo-loco.leacotar.com/',
+      livetest: 'https://el-pollo-loco.leacotar.com/',
     },
   ];
 

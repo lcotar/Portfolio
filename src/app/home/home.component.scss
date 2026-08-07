@@ -68,8 +68,16 @@
     align-items: flex-end;
     // gap: 0.25rem;
 
+    // "I am" ist so gross, dass seine Textlaenge exakt der Hoehe von
+    // .name-role entspricht. Rechenweg (gilt fuer alle Breakpoints):
+    //   Hoehe .name-role = Name x 1.0 + Rolle x 1.1  (line-heights)
+    //   Textlaenge "I am" = Schriftgroesse x 1.945   (gemessen)
+    //   => Schriftgroesse = Hoehe / 1.945
+    // Hier: Name clamp(34px,10vw,95px), Rolle clamp(22px,6.5vw,62px)
+    //   => Hoehe = 58.2px / 17.15vw / 163.2px
+    //   => intro  = 30px  /  8.82vw /  84px
     .intro {
-      font-size: clamp(26px, 8vw, 70px);
+      font-size: clamp(30px, 8.82vw, 84px);
       font-weight: 400;
       color: #ffffff;
       writing-mode: vertical-rl;
@@ -263,41 +271,65 @@
   .wholeCNT {
     display: block;
     min-height: 100vh;
+    // Kein overflow-clip: die Kurve wuerde sonst mitten im Verlauf
+    // hart abgeschnitten (an der Hero-Unterkante ist sie rgb(23,33,52),
+    // der Seitenhintergrund darunter rgb(20,29,47)) - das ergibt eine
+    // sichtbare Kante ueber die volle Breite. Laesst man sie auslaufen,
+    // erreicht sie von selbst exakt die Hintergrundfarbe.
+    // isolation schafft einen eigenen Stacking-Context, damit die Kurve
+    // (z-index 3) trotz Ueberhang nicht ueber die naechste Section
+    // gezeichnet wird, sondern dahinter bleibt.
+    isolation: isolate;
   }
 
   .leftSide {
     position: absolute;
     left: 0;
-    top: 0;
+    // Startet unter der fixierten Navbar (11vh, siehe navbar.component.scss),
+    // damit das Bild nicht darunter verschwindet.
+    top: 11vh;
     width: 50%;
-    height: 100vh;
+    height: calc(100vh - 11vh);
     padding-top: 0;
     justify-content: flex-start;
 
-    // Breiten in vw statt % von .leftSide (das ab hier nur noch 50vw
-    // breit ist), damit die Bilder nicht kleiner wirken als bei 768px.
-    .shadowIMG {
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      width: clamp(420px, 58vw, 760px);
-      max-width: none;
-    }
-
-    // Ueber "right" statt "left" verankert: haelt so bei jeder
-    // Breite denselben Abstand zum Text in .rightSide ein.
+    // Bild wie in der Vorlage: links verankert und ueber die HOEHE
+    // skaliert (nicht ueber die Breite). Dadurch steht es auf jedem
+    // Desktop-Viewport gleich - oben knapp unter der Navbar, unten mit
+    // Abstand ueber dem Footer - und kann nicht mehr ueberlaufen.
     .proIMG {
       position: absolute;
-      right: 2vw;
-      top: 50%;
-      transform: translateY(-50%);
-      width: clamp(320px, 42vw, 480px);
+      left: 7vw;
+      right: auto;
+      top: auto;
+      bottom: 15vh;
+      transform: none;
+      width: auto;
+      height: 71vh;
+      max-width: 88%;
     }
 
+    // Glow-Hintergrund folgt der vertikalen Mitte des Bildes.
+    .shadowIMG {
+      left: 0;
+      top: 43%;
+      transform: translateY(-50%);
+      width: auto;
+      height: auto;
+      max-width: clamp(420px, 58vw, 760px);
+      max-height: 95%;
+    }
+
+    // Kurve exakt berechnet statt pro Breakpoint geschaetzt:
+    // shape.svg ist 1440x1079 und 100vw breit, also 74.93vw hoch.
+    // Die Kurve setzt am linken Rand bei 421.5/1079 = 39.07% ihrer
+    // Hoehe an, das sind 29.28vw. Sie soll dort auf 83.3vh liegen;
+    // abzueglich der 11vh Offset von .leftSide ergibt das:
+    // 83.3vh - 29.28vw - 11vh = 72.3vh - 29.28vw.
     .shape {
       left: 0;
       transform: none;
-      top: 45%;
+      top: calc(72.3vh - 29.28vw);
     }
   }
 
@@ -311,8 +343,10 @@
     justify-content: center;
 
     .leftTXT {
+      // Name 6.4vw + Rolle 4.5vw x 1.1 = 11.35vw Hoehe von .name-role
+      // => "I am" = 11.35vw / 1.945 = 5.84vw (siehe Rechenweg oben).
       .intro {
-        font-size: clamp(65px, 3vw, 70px);
+        font-size: 5.84vw;
       }
 
       .name-role {
@@ -322,19 +356,24 @@
         }
 
         .name {
-          font-size: clamp(80px, 3.6vw, 70px);
+          font-size: clamp(44px, 6.4vw, 124px);
         }
 
         .role {
-          font-size: clamp(26px, 10vw, 50px);
+          font-size: clamp(28px, 4.5vw, 86px);
         }
       }
     }
   }
 
+  .talk .talkBTN button {
+    font-size: clamp(16px, 1.3vw, 24px);
+    padding: clamp(12px, 0.9vw, 18px) clamp(26px, 2vw, 38px);
+  }
+
   .homeFooter {
     position: absolute;
-    bottom: 30px;
+    bottom: 3vh;
     left: 0;
     margin-top: 0;
     padding: 0;
@@ -345,59 +384,50 @@
   }
 }
 
+// ===== .rightSide fuer die Desktop-Breakpoints =====
+// Werte aus der Design-Vorlage abgeleitet (gemessen bei 1560px Breite):
+//   Name    ~6.15vw   Rolle ~4.58vw   "I am" ~3.5vw
+//   Textblock endet 7% vom rechten Rand, Button mittig darunter.
+// Pro Breakpoint als feste px-Werte gesetzt, damit die Groessen
+// kontrolliert und nachvollziehbar bleiben.
+//
+// align-items: flex-end + .hero width: fit-content sind noetig, damit
+// der Block rechtsbuendig sitzt und der Button unter dem TEXT zentriert
+// wird (nicht ueber die volle halbe Viewportbreite).
+
 // ===== 1200px =====
 @media (min-width: 1200px) {
   .rightSide {
-    position: absolute;
-    right: 5%;
-    top: 45%;
-    transform: translateY(-50%);
-    width: 50%;
-    padding: 0;
-    justify-content: center;
+    .hero {
+      width: fit-content;
+    }
 
     .leftTXT {
+      // .name-role = 74 + 55 x 1.1 = 134.5px => 134.5 / 1.945 = 69px
       .intro {
-        font-size: clamp(65px, 3vw, 70px);
+        font-size: 69px;
       }
 
       .name-role {
-        .name,
-        .role {
-          white-space: nowrap;
-        }
-
         .name {
-          font-size: clamp(80px, 3.6vw, 70px);
+          font-size: 74px;
         }
 
         .role {
-          font-size: clamp(26px, 10vw, 50px);
+          font-size: 55px;
         }
       }
     }
-  }
 
-  .leftSide {
-    .proIMG {
-      width: clamp(420px, 42vw, 560px);
-    }
-
-    .shape {
-      position: absolute;
-      // left: 50%;
-      // transform: translateX(-50%);
-      top: 40%;
-      width: 100vw;
-      height: auto;
-      z-index: 3;
-      pointer-events: none;
+    .talk .talkBTN button {
+      font-size: 18px;
+      padding: 12px 26px;
     }
   }
 }
 
-// ===== 1920px (Ultrawide) =====
-@media (min-width: 1920px) {
+// ===== 1400px =====
+@media (min-width: 1400px) {
   .rightSide {
     position: absolute;
     right: 15%;
@@ -406,40 +436,97 @@
     width: 50%;
     padding: 0;
     justify-content: center;
+
+    .leftTXT {
+      // .name-role = 86 + 64 x 1.1 = 156.4px => 156.4 / 1.945 = 80px
+      .intro {
+        font-size: 80px;
+      }
+
+      .name-role {
+        .name {
+          font-size: 86px;
+        }
+
+        .role {
+          font-size: 64px;
+        }
+      }
+    }
+
+    .talk .talkBTN button {
+      font-size: 20px;
+      padding: 13px 29px;
+    }
   }
+}
 
-  .leftSide {
-    .shadowIMG {
-      width: 85%;
-    }
-
-    .proIMG {
-      left: 15%;
-      width: 55%;
-    }
-
-    .shape {
-      position: absolute;
-      // left: 50%;
-      // transform: translateX(-50%);
-      top: 25%;
-      width: 100vw;
-      height: auto;
-      z-index: 3;
-      pointer-events: none;
-    }
-  }
-
-  .homeFooter {
+// ===== 1600px =====
+@media (min-width: 1600px) {
+  .rightSide {
     position: absolute;
-    bottom: 30px;
-    left: 0;
-    margin-top: 0;
+    right: 15%;
+    top: 45%;
+    transform: translateY(-50%);
+    width: 50%;
     padding: 0;
-    z-index: 11;
+    justify-content: center;
 
-    .scrollDown {
-      display: block;
+    .leftTXT {
+      // .name-role = 98 + 73 x 1.1 = 178.3px => 178.3 / 1.945 = 92px
+      .intro {
+        font-size: 92px;
+      }
+
+      .name-role {
+        .name {
+          font-size: 98px;
+        }
+
+        .role {
+          font-size: 73px;
+        }
+      }
+    }
+
+    .talk .talkBTN button {
+      font-size: 23px;
+      padding: 15px 33px;
+    }
+  }
+}
+
+// ===== 1920px =====
+@media (min-width: 1920px) {
+  .rightSide {
+    position: absolute;
+    right: 15%;
+    top: 40%;
+    transform: translateY(-50%);
+    width: 50%;
+    padding: 0;
+    justify-content: center;
+
+    .leftTXT {
+      // .name-role = 118 + 88 x 1.1 = 214.8px => 214.8 / 1.945 = 110px
+      .intro {
+        font-size: 110px;
+      }
+
+      .name-role {
+        .name {
+          font-size: 118px;
+        }
+
+        .role {
+          font-size: 88px;
+        }
+      }
+    }
+
+    .talk .talkBTN button {
+      font-size: 28px;
+      padding: 18px 40px;
     }
   }
 }
