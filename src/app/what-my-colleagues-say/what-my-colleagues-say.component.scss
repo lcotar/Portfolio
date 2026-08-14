@@ -4,8 +4,10 @@
   justify-content: center;
   flex-direction: column;
   position: relative;
+
+  height: 50vh;
   // overflow: hidden;
-  padding-top: 40px; // Platz, damit die Anführungszeichen oben nicht abgeschnitten werden
+  // padding-top: 40px; // Platz, damit die Anführungszeichen oben nicht abgeschnitten werden
 }
 
 .shadowClip {
@@ -29,7 +31,7 @@
 
 .quotation {
   position: absolute;
-  top: -14px;
+  top: -25px;
   left: -6px;
   width: clamp(50px, 18vw, 70px);
   height: auto;
@@ -40,7 +42,7 @@
 .feedbackShadow {
   position: absolute;
   right: 0px;
-  bottom: -20px;
+  bottom: 30px;
   width: 50vw;
   height: auto;
   z-index: 1;
@@ -55,7 +57,7 @@
 @media (min-width: 480px) {
   .feedbackShadow {
     right: 0px;
-    bottom: -40px;
+    bottom: 150px;
     width: clamp(140px, 45vw, 220px);
   }
 
