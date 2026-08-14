@@ -26,6 +26,7 @@
     <!-- <app-contactform></app-contactform> -->
 
     <!-- Contact Form -->
+    @if (!messageSent) {
     <div class="contactCNT">
       <form
         action="action_page.php"
@@ -56,9 +57,11 @@
             type="email"
             id="email"
             name="email"
+            maxlength="254"
+            autocomplete="email"
             [placeholder]="'contact.contactform.email' | translate"
             required
-            pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+            appEmailRfc
           />
           @if (!email.valid && email.touched) {
             <span class="error">Bitte gib eine gültige Email-Adresse ein</span>
@@ -123,5 +126,8 @@
         </div>
       </form>
     </div>
+    } @else {
+    <p class="thankYouMessage">Vielen Dank für die Nachricht!</p>
+    }
   </section>
 </section>

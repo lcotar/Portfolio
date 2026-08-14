@@ -5,6 +5,7 @@ import { FormsModule, NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { EmailRfcValidatorDirective } from './validators/email-rfc.validator';
 
 @Component({
   selector: 'app-contact-me',
@@ -14,6 +15,7 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     CommonModule,
     RouterModule,
+    EmailRfcValidatorDirective,
   ],
   templateUrl: './contact-me.component.html',
   styleUrl: './contact-me.component.scss',
@@ -37,6 +39,8 @@ export class ContactMeComponent {
 
   mailTest = false;
   privacyAccepted = false;
+  messageSent = false;
+  private messageSentTimeout?: ReturnType<typeof setTimeout>;
 
   post = {
     endPoint: 'https://leacotar.com/sendMail.php',
@@ -61,6 +65,7 @@ export class ContactMeComponent {
         .subscribe({
           next: (response) => {
             ngForm.resetForm();
+            this.showThankYouMessage();
           },
           error: (error) => {
             console.error(error);
@@ -74,6 +79,15 @@ export class ContactMeComponent {
       this.privacyAccepted
     ) {
       ngForm.resetForm();
+      this.showThankYouMessage();
     }
+  }
+
+  private showThankYouMessage() {
+    clearTimeout(this.messageSentTimeout);
+    this.messageSent = true;
+    this.messageSentTimeout = setTimeout(() => {
+      this.messageSent = false;
+    }, 5000);
   }
 }

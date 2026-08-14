@@ -83,6 +83,8 @@
   width: 100%;
   padding: 0px 20px 0px;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 }
 
 /* ===== Contact Form ===== */
@@ -109,6 +111,19 @@ textarea {
 
 .contactCNT form {
   width: 100%;
+}
+
+.thankYouMessage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  min-height: 200px;
+  margin: 0;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: clamp(28px, 6vw, 40px);
+  text-align: center;
 }
 
 .contactName,
@@ -358,6 +373,7 @@ textarea {
     width: 50%;
     margin-top: 168px;
     padding: 0px 60px 0px;
+    align-self: stretch;
   }
 
   .contactCNT {
