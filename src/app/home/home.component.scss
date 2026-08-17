@@ -3,7 +3,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  min-height: calc(100s / vh - 10vh); // 10vh = Hoehe der responsiven Navbar
+  min-height: calc(100s / vh - 10vh);
   overflow-x: clip;
 }
 
@@ -33,8 +33,6 @@
     z-index: 2;
   }
 
-  // An .leftSide verankert: bleibt bei jeder Breite an derselben
-  // Stelle relativ zum Bild, keine Korrektur pro Breakpoint noetig.
   .shape {
     position: absolute;
     left: 50%;
@@ -53,7 +51,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  // padding: 1.5rem 1rem 0;
 }
 
 .hero {
@@ -61,23 +58,14 @@
   flex-direction: column;
   align-items: center;
   gap: clamp(1.25rem, 3vw, 3rem);
-  width: 100%;
+  width: var(--hero-width, 100%);
 
   .leftTXT {
     display: flex;
     align-items: flex-end;
-    // gap: 0.25rem;
 
-    // "I am" ist so gross, dass seine Textlaenge exakt der Hoehe von
-    // .name-role entspricht. Rechenweg (gilt fuer alle Breakpoints):
-    //   Hoehe .name-role = Name x 1.0 + Rolle x 1.1  (line-heights)
-    //   Textlaenge "I am" = Schriftgroesse x 1.945   (gemessen)
-    //   => Schriftgroesse = Hoehe / 1.945
-    // Hier: Name clamp(34px,10vw,95px), Rolle clamp(22px,6.5vw,62px)
-    //   => Hoehe = 58.2px / 17.15vw / 163.2px
-    //   => intro  = 30px  /  8.82vw /  84px
     .intro {
-      font-size: clamp(30px, 8.82vw, 84px);
+      font-size: var(--intro-size, clamp(30px, 8.82vw, 84px));
       font-weight: 400;
       color: #ffffff;
       writing-mode: vertical-rl;
@@ -90,7 +78,7 @@
       flex-direction: column;
 
       .name {
-        font-size: clamp(34px, 10vw, 95px);
+        font-size: var(--name-size, clamp(34px, 10vw, 95px));
         font-weight: 700;
         color: #ffffff;
         margin: 0;
@@ -98,7 +86,7 @@
       }
 
       .role {
-        font-size: clamp(22px, 6.5vw, 62px);
+        font-size: var(--role-size, clamp(22px, 6.5vw, 62px));
         font-weight: 400;
         color: #9747ff;
         margin: 0;
@@ -118,10 +106,13 @@
 
     button {
       color: #ffffff;
-      font-size: clamp(16px, 1.5vw, 23px);
+      font-size: var(--talk-font-size, clamp(16px, 1.5vw, 23px));
       font-family: Poppins, sans-serif;
       font-weight: 400;
-      padding: clamp(12px, 1.2vw, 18px) clamp(26px, 2.5vw, 35px);
+      padding: var(
+        --talk-padding,
+        clamp(12px, 1.2vw, 18px) clamp(26px, 2.5vw, 35px)
+      );
       border-radius: 10px;
       background-color: #70e61c;
       border: none;
@@ -138,7 +129,6 @@
 
 .homeFooter {
   position: relative;
-  // margin-top: auto;
   width: 100%;
   box-sizing: border-box;
   display: flex;
@@ -218,14 +208,7 @@
     }
 
     .shape {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
       top: 60%;
-      width: 100vw;
-      height: auto;
-      z-index: 3;
-      pointer-events: none;
     }
   }
 }
@@ -242,14 +225,7 @@
     }
 
     .shape {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
       top: 57%;
-      width: 100vw;
-      height: auto;
-      z-index: 3;
-      pointer-events: none;
     }
   }
 
@@ -258,8 +234,6 @@
   }
 
   .homeFooter {
-    // padding: 3rem 4% 2rem;
-
     .socialMedia .emailAdressCNT {
       display: block;
     }
@@ -271,61 +245,38 @@
   .wholeCNT {
     display: block;
     min-height: 100vh;
-    // Kein overflow-clip: die Kurve wuerde sonst mitten im Verlauf
-    // hart abgeschnitten (an der Hero-Unterkante ist sie rgb(23,33,52),
-    // der Seitenhintergrund darunter rgb(20,29,47)) - das ergibt eine
-    // sichtbare Kante ueber die volle Breite. Laesst man sie auslaufen,
-    // erreicht sie von selbst exakt die Hintergrundfarbe.
-    // isolation schafft einen eigenen Stacking-Context, damit die Kurve
-    // (z-index 3) trotz Ueberhang nicht ueber die naechste Section
-    // gezeichnet wird, sondern dahinter bleibt.
     isolation: isolate;
   }
 
   .leftSide {
     position: absolute;
     left: 0;
-    // Startet unter der fixierten Navbar (11vh, siehe navbar.component.scss),
-    // damit das Bild nicht darunter verschwindet.
     top: 11vh;
     width: 50%;
     height: calc(100vh - 11vh);
     padding-top: 0;
     justify-content: flex-start;
 
-    // Bild wie in der Vorlage: links verankert und ueber die HOEHE
-    // skaliert (nicht ueber die Breite). Dadurch steht es auf jedem
-    // Desktop-Viewport gleich - oben knapp unter der Navbar, unten mit
-    // Abstand ueber dem Footer - und kann nicht mehr ueberlaufen.
     .proIMG {
       position: absolute;
       left: 7vw;
       right: auto;
       top: auto;
       bottom: 15vh;
-      transform: none;
       width: auto;
       height: 71vh;
       max-width: 88%;
     }
 
-    // Glow-Hintergrund folgt der vertikalen Mitte des Bildes.
     .shadowIMG {
       left: 0;
       top: 43%;
       transform: translateY(-50%);
       width: auto;
-      height: auto;
       max-width: clamp(420px, 58vw, 760px);
       max-height: 95%;
     }
 
-    // Kurve exakt berechnet statt pro Breakpoint geschaetzt:
-    // shape.svg ist 1440x1079 und 100vw breit, also 74.93vw hoch.
-    // Die Kurve setzt am linken Rand bei 421.5/1079 = 39.07% ihrer
-    // Hoehe an, das sind 29.28vw. Sie soll dort auf 83.3vh liegen;
-    // abzueglich der 11vh Offset von .leftSide ergibt das:
-    // 83.3vh - 29.28vw - 11vh = 72.3vh - 29.28vw.
     .shape {
       left: 0;
       transform: none;
@@ -341,34 +292,16 @@
     width: 50%;
     padding: 0;
     justify-content: center;
+    --intro-size: 5.84vw;
+    --name-size: clamp(44px, 6.4vw, 124px);
+    --role-size: clamp(28px, 4.5vw, 86px);
+    --talk-font-size: clamp(16px, 1.3vw, 24px);
+    --talk-padding: clamp(12px, 0.9vw, 18px) clamp(26px, 2vw, 38px);
 
-    .leftTXT {
-      // Name 6.4vw + Rolle 4.5vw x 1.1 = 11.35vw Hoehe von .name-role
-      // => "I am" = 11.35vw / 1.945 = 5.84vw (siehe Rechenweg oben).
-      .intro {
-        font-size: 5.84vw;
-      }
-
-      .name-role {
-        .name,
-        .role {
-          white-space: nowrap;
-        }
-
-        .name {
-          font-size: clamp(44px, 6.4vw, 124px);
-        }
-
-        .role {
-          font-size: clamp(28px, 4.5vw, 86px);
-        }
-      }
+    .leftTXT .name-role .name,
+    .leftTXT .name-role .role {
+      white-space: nowrap;
     }
-  }
-
-  .talk .talkBTN button {
-    font-size: clamp(16px, 1.3vw, 24px);
-    padding: clamp(12px, 0.9vw, 18px) clamp(26px, 2vw, 38px);
   }
 
   .homeFooter {
@@ -384,149 +317,46 @@
   }
 }
 
-// ===== .rightSide fuer die Desktop-Breakpoints =====
-// Werte aus der Design-Vorlage abgeleitet (gemessen bei 1560px Breite):
-//   Name    ~6.15vw   Rolle ~4.58vw   "I am" ~3.5vw
-//   Textblock endet 7% vom rechten Rand, Button mittig darunter.
-// Pro Breakpoint als feste px-Werte gesetzt, damit die Groessen
-// kontrolliert und nachvollziehbar bleiben.
-//
-// align-items: flex-end + .hero width: fit-content sind noetig, damit
-// der Block rechtsbuendig sitzt und der Button unter dem TEXT zentriert
-// wird (nicht ueber die volle halbe Viewportbreite).
-
-// ===== 1200px =====
+// ===== 1200px - 1920px =====
 @media (min-width: 1200px) {
   .rightSide {
-    .hero {
-      width: fit-content;
-    }
-
-    .leftTXT {
-      // .name-role = 74 + 55 x 1.1 = 134.5px => 134.5 / 1.945 = 69px
-      .intro {
-        font-size: 69px;
-      }
-
-      .name-role {
-        .name {
-          font-size: 74px;
-        }
-
-        .role {
-          font-size: 55px;
-        }
-      }
-    }
-
-    .talk .talkBTN button {
-      font-size: 18px;
-      padding: 12px 26px;
-    }
+    --hero-width: fit-content;
+    --intro-size: 69px;
+    --name-size: 74px;
+    --role-size: 55px;
+    --talk-font-size: 18px;
+    --talk-padding: 12px 26px;
   }
 }
 
-// ===== 1400px =====
 @media (min-width: 1400px) {
   .rightSide {
-    position: absolute;
     right: 15%;
-    top: 45%;
-    transform: translateY(-50%);
-    width: 50%;
-    padding: 0;
-    justify-content: center;
-
-    .leftTXT {
-      // .name-role = 86 + 64 x 1.1 = 156.4px => 156.4 / 1.945 = 80px
-      .intro {
-        font-size: 80px;
-      }
-
-      .name-role {
-        .name {
-          font-size: 86px;
-        }
-
-        .role {
-          font-size: 64px;
-        }
-      }
-    }
-
-    .talk .talkBTN button {
-      font-size: 20px;
-      padding: 13px 29px;
-    }
+    --intro-size: 80px;
+    --name-size: 86px;
+    --role-size: 64px;
+    --talk-font-size: 20px;
+    --talk-padding: 13px 29px;
   }
 }
 
-// ===== 1600px =====
 @media (min-width: 1600px) {
   .rightSide {
-    position: absolute;
-    right: 15%;
-    top: 45%;
-    transform: translateY(-50%);
-    width: 50%;
-    padding: 0;
-    justify-content: center;
-
-    .leftTXT {
-      // .name-role = 98 + 73 x 1.1 = 178.3px => 178.3 / 1.945 = 92px
-      .intro {
-        font-size: 92px;
-      }
-
-      .name-role {
-        .name {
-          font-size: 98px;
-        }
-
-        .role {
-          font-size: 73px;
-        }
-      }
-    }
-
-    .talk .talkBTN button {
-      font-size: 23px;
-      padding: 15px 33px;
-    }
+    --intro-size: 92px;
+    --name-size: 98px;
+    --role-size: 73px;
+    --talk-font-size: 23px;
+    --talk-padding: 15px 33px;
   }
 }
 
-// ===== 1920px =====
 @media (min-width: 1920px) {
   .rightSide {
-    position: absolute;
-    right: 15%;
     top: 40%;
-    transform: translateY(-50%);
-    width: 50%;
-    padding: 0;
-    justify-content: center;
-
-    .leftTXT {
-      // .name-role = 118 + 88 x 1.1 = 214.8px => 214.8 / 1.945 = 110px
-      .intro {
-        font-size: 110px;
-      }
-
-      .name-role {
-        .name {
-          font-size: 118px;
-        }
-
-        .role {
-          font-size: 88px;
-        }
-      }
-    }
-
-    .talk .talkBTN button {
-      font-size: 28px;
-      padding: 18px 40px;
-    }
+    --intro-size: 110px;
+    --name-size: 118px;
+    --role-size: 88px;
+    --talk-font-size: 28px;
+    --talk-padding: 18px 40px;
   }
 }

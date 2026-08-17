@@ -21,9 +21,6 @@ import { EmailRfcValidatorDirective } from './validators/email-rfc.validator';
   styleUrl: './contact-me.component.scss',
 })
 export class ContactMeComponent {
-  /* thankYouVisible = false;
-    http=inject(HttpClient) */
-
   http = inject(HttpClient);
   contactData = {
     name: '',
@@ -31,16 +28,12 @@ export class ContactMeComponent {
     message: '',
   };
 
-  /* onSubmit(ngForm: NgForm) {
-    if (ngForm.valid && ngForm.submitted) {
-      console.log(this.contactData);
-    }
-  } */
-
   mailTest = false;
   privacyAccepted = false;
   messageSent = false;
+  messageError = false;
   private messageSentTimeout?: ReturnType<typeof setTimeout>;
+  private messageErrorTimeout?: ReturnType<typeof setTimeout>;
 
   post = {
     endPoint: 'https://leacotar.com/sendMail.php',
@@ -54,33 +47,27 @@ export class ContactMeComponent {
   };
 
   onSubmit(ngForm: NgForm) {
-    if (
-      ngForm.submitted &&
-      ngForm.form.valid &&
-      !this.mailTest &&
-      this.privacyAccepted
-    ) {
-      this.http
-        .post(this.post.endPoint, this.post.body(this.contactData))
-        .subscribe({
-          next: (response) => {
-            ngForm.resetForm();
-            this.showThankYouMessage();
-          },
-          error: (error) => {
-            console.error(error);
-          },
-          complete: () => console.info('send post complete'),
-        });
-    } else if (
-      ngForm.submitted &&
-      ngForm.form.valid &&
-      this.mailTest &&
-      this.privacyAccepted
-    ) {
+    if (!ngForm.submitted || !ngForm.form.valid || !this.privacyAccepted) return;
+
+    if (this.mailTest) {
       ngForm.resetForm();
       this.showThankYouMessage();
+      return;
     }
+
+    this.sendContactRequest(ngForm);
+  }
+
+  private sendContactRequest(ngForm: NgForm) {
+    this.http
+      .post(this.post.endPoint, this.post.body(this.contactData))
+      .subscribe({
+        next: () => {
+          ngForm.resetForm();
+          this.showThankYouMessage();
+        },
+        error: () => this.showErrorMessage(),
+      });
   }
 
   private showThankYouMessage() {
@@ -88,6 +75,14 @@ export class ContactMeComponent {
     this.messageSent = true;
     this.messageSentTimeout = setTimeout(() => {
       this.messageSent = false;
+    }, 5000);
+  }
+
+  private showErrorMessage() {
+    clearTimeout(this.messageErrorTimeout);
+    this.messageError = true;
+    this.messageErrorTimeout = setTimeout(() => {
+      this.messageError = false;
     }, 5000);
   }
 }

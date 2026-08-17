@@ -24,7 +24,6 @@ export class ContactformComponent {
 
   /* onSubmit(ngForm: NgForm) {
     if (ngForm.valid && ngForm.submitted) {
-      console.log(this.contactData);
     }
   } */
 

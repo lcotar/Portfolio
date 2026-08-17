@@ -100,7 +100,10 @@
     "contactform": {
       "name": "Your name",
       "email": "Your email",
-      "message": "Your message"
+      "message": "Your message",
+      "nameError": "Please enter your name",
+      "emailError": "Please enter a valid email address",
+      "messageError": "Please write a message"
     },
     "privacy": {
       "eins": "I've read the ",
@@ -110,6 +113,12 @@
     },
     "button": {
       "text": "Send Message :)"
+    },
+    "error": {
+      "message": "Your message could not be sent. Please try again later."
+    },
+    "success": {
+      "message": "Thank you for your message!"
     },
     "main": {
       "message": "Back to main"

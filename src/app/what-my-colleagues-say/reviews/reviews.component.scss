@@ -1,13 +1,13 @@
 .reviewBox {
-  background-color: transparent; // Hintergrundfarbe
-  color: white; // Textfarbe
-  display: flex; // Inhalt zentrieren
-  align-items: center; // Vertikal zentrieren
-  justify-content: space-between; // Horizontal zentrieren
+  background-color: transparent;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   flex-direction: column;
-  border-radius: 30px; // Abgerundete Ecken
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Schatten
-  border: 4px solid #70e61c; // Neuer Rand
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 4px solid #70e61c;
   box-sizing: border-box;
 
   /* Mobile-first Basis */
@@ -73,7 +73,7 @@
     border-radius: 50%;
     background-color: #9747ff;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.125s;
   }
 
   span.active {

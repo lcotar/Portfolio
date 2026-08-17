@@ -16,7 +16,7 @@ export class PortfolioComponent {
       projectname: 'Join',
       content: {
         title: 'myProjects.join.title',
-        technologies: 'HTML | CSS | Javascript',
+        technologies: 'HTML | CSS | JavaScript',
         description: 'myProjects.join.description',
       },
       imageProject: ['/img/portfolio_projects/01_join.png'],
@@ -27,7 +27,7 @@ export class PortfolioComponent {
       projectname: 'Pollo Loco',
       content: {
         title: 'myProjects.polloLoco.title',
-        technologies: 'HTML | CSS | Javascript',
+        technologies: 'HTML | CSS | JavaScript',
         description: 'myProjects.polloLoco.description',
       },
       imageProject: ['/img/portfolio_projects/02_el_pollo_loco.png'],
@@ -35,12 +35,4 @@ export class PortfolioComponent {
       livetest: 'https://el-pollo-loco.leacotar.com/',
     },
   ];
-
-  /* activeProject = this.projects[0];
-
-  projectnavbar: string[] = ['Join', 'Sharky'];
-
-  changeIndex(index: number) {
-    this.activeProject = this.projects[index];
-  } */
 }

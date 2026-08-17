@@ -54,7 +54,7 @@
 
 .contactContent {
   margin-top: 20px;
-  padding: 0px 20px 0px;
+  padding: 0 var(--section-pad-x, 20px);
 
   h2 {
     margin: 0 0 15px;
@@ -65,10 +65,13 @@
   }
 }
 
+/* --section-pad-x (auf .contactComponent) steuert das horizontale
+   Padding von .contactContent + .contactForm gemeinsam. */
 .contactTXT {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  max-width: var(--txt-max-w, none);
 
   p {
     margin: 0;
@@ -81,7 +84,7 @@
 
 .contactForm {
   width: 100%;
-  padding: 0px 20px 0px;
+  padding: 0 var(--section-pad-x, 20px);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -155,14 +158,12 @@ textarea {
       border-color: #9747ff;
       caret-color: #ffffff;
       -webkit-text-fill-color: #ffffff;
-      -webkit-box-shadow: 0 0 0 1000px #141d2f inset;
       box-shadow: 0 0 0 1000px #141d2f inset;
       transition: background-color 9999s ease-in-out 0s;
     }
 
     &:-webkit-autofill:hover {
       border-color: #70e61c;
-      -webkit-box-shadow: 0 0 0 1000px #141d2f inset;
       box-shadow: 0 0 0 1000px #141d2f inset;
     }
   }
@@ -197,15 +198,13 @@ textarea {
     flex-shrink: 0;
     margin-top: 3px;
     appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
     width: 20px;
     height: 20px;
     border: 3px solid #70e61c;
     border-radius: 0;
     background-color: transparent;
     position: relative;
-    transition: all 0.3s ease;
+    transition: all 0.125s ease;
 
     &:hover {
       cursor: pointer;
@@ -242,21 +241,17 @@ textarea {
     gap: 10px;
     border-radius: 10px;
     padding: 15px 30px;
-
     background-color: #70e61c;
     color: #ffffff;
     border: none;
-
     cursor: pointer;
     font-family: "Josefin Sans", sans-serif;
     margin-bottom: 0;
-
     font-weight: 400;
     font-size: clamp(18px, 5vw, 25px);
     line-height: 120%;
     letter-spacing: 0%;
-
-    transition: all 0.3s ease-in-out;
+    transition: all 0.125s ease-in-out;
 
     &:hover {
       background-color: #9747ff;
@@ -288,7 +283,7 @@ textarea {
     width: clamp(36px, 9vw, 56px);
     height: clamp(36px, 9vw, 56px);
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: transform 0.125s ease;
 
     &:hover {
       transform: translateY(-4px);
@@ -314,18 +309,8 @@ textarea {
 @media (min-width: 768px) {
   .contactComponent {
     padding: 80px 0 50px;
-  }
-
-  .contactContent {
-    padding: 0px 40px 0px;
-  }
-
-  .contactForm {
-    padding: 0px 40px 0px;
-  }
-
-  .contactTXT {
-    max-width: 480px;
+    --section-pad-x: 40px;
+    --txt-max-w: 480px;
   }
 }
 
@@ -338,20 +323,19 @@ textarea {
     gap: 30px;
     min-height: 100vh;
     padding: 80px 0 60px;
+    --section-pad-x: 60px;
+    --txt-max-w: 25vw;
   }
-
   .contactShadow {
     left: -10%;
     bottom: -15%;
     width: clamp(400px, 40vw, 678px);
   }
-
   .contactLeftSide {
     width: 45%;
     display: flex;
     flex-direction: column;
   }
-
   .contactHeader {
     justify-content: flex-start;
 
@@ -359,27 +343,17 @@ textarea {
       max-width: clamp(60px, 22vw, 560px);
     }
   }
-
   .contactContent {
     margin-top: 60px;
-    padding: 0px 60px 0px;
   }
-
-  .contactTXT {
-    max-width: 25vw;
-  }
-
   .contactForm {
     width: 50%;
     margin-top: 168px;
-    padding: 0px 60px 0px;
     align-self: stretch;
   }
-
   .contactCNT {
     justify-content: flex-end;
   }
-
   .contactCNT form {
     max-width: 600px;
   }
@@ -389,18 +363,8 @@ textarea {
 @media (min-width: 1200px) {
   .contactComponent {
     padding: 90px 0 70px;
-  }
-
-  .contactContent {
-    padding: 0px 80px 0px;
-  }
-
-  .contactForm {
-    padding: 0px 80px 0px;
-  }
-
-  .contactTXT {
-    max-width: 22vw;
+    --section-pad-x: 80px;
+    --txt-max-w: 22vw;
   }
 }
 
@@ -408,14 +372,7 @@ textarea {
 @media (min-width: 1400px) {
   .contactComponent {
     padding: 100px 0 80px;
-  }
-
-  .contactContent {
-    padding: 0px 100px 0px;
-  }
-
-  .contactForm {
-    padding: 0px 100px 0px;
+    --section-pad-x: 100px;
   }
 }
 
@@ -429,14 +386,6 @@ textarea {
 /* ===== 1920px ===== */
 @media (min-width: 1920px) {
   .contactComponent {
-    padding: 100px 0 80px;
-  }
-
-  .contactContent {
-    padding: 0px 160px 0px;
-  }
-
-  .contactForm {
-    padding: 0px 160px 0px;
+    --section-pad-x: 160px;
   }
 }
