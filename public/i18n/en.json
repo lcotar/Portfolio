@@ -145,12 +145,111 @@
   "privacy": {
     "header": "Privacy Policy",
     "subtitle": {
-      "eins": "Sub1",
-      "zwei": "Sub2"
+      "eins": "1. Data Controller",
+      "zwei": "2. Purpose and Legal Basis of Data Processing",
+      "zwecke": {
+        "eins": "2.1 Purpose of Data Processing:",
+        "zwei": "2.2 Legal Basis of Data Processing:"
+      },
+
+      "drei": "3. Categories of Personal Data",
+      "vier": "4. Recipients of Data",
+      "fuenf": "5. Transfer to Third Countries",
+      "sechs": "6. Storage Period",
+      "sieben": "7. Rights of Data Subjects",
+      "acht": "8. Withdrawal of Consent",
+      "neun": "9. Automated Decision-Making / Profiling",
+      "zehn": "10. Cookies and Tracking",
+      "elf": "11. Social Media Notices",
+      "zwoelf": "12. Security Measures",
+      "dreizehn": "13. Changes to this Privacy Policy"
     },
+
     "text": {
-      "eins": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-      "zwei": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+      "eins": "The party responsible for processing your personal data within the meaning of Swiss data protection law is:",
+      "zwei": {
+        "intro": "I collect personal data only to the extent necessary for the use of the website. This includes, for example:",
+        "liste": {
+          "eins": "Name and email address, if you contact us via the contact form",
+          "zwei": "IP address and technical data automatically logged when visiting the website"
+        }
+      },
+
+      "zwecke": {
+        "eins": {
+          "eins": "Processing inquiries submitted via the contact form",
+          "zwei": "Providing and optimizing the website",
+          "drei": "Analyzing website usage (e.g., to improve content)",
+          "vier": "Interacting with our social media profiles (e.g., LinkedIn)"
+        },
+        "zwei": {
+          "eins": "Your consent (Art. 6(1)(a) GDPR / Swiss FADP)",
+          "zwei": "Legitimate interest (e.g., web analytics, website security)"
+        }
+      },
+
+      "drei": {
+        "eins": { "label": "Contact Data:", "text": "Name, email address" },
+        "zwei": { "label": "Usage Data:", "text": "IP address, browser type, operating system, access times" },
+        "drei": { "label": "Optional:", "text": "Cookies and tracking data (see item 10)" }
+      },
+      "vier": {
+        "intro": "Your data will not be shared with uninvolved third parties, except:",
+        "liste": {
+          "eins": { "label": "Hosting Provider:", "link": "All-Inkl.com", "nach": ", Germany, for operating the website" },
+          "zwei": "Analytics services, if you have consented to the use of cookies/tracking",
+          "drei": "Social networks, if you use their content directly or visit our profiles"
+        },
+        "outro": "All-Inkl.com processes data exclusively within the scope of data processing agreements under GDPR/Swiss FADP."
+      },
+      "fuenf": "Data is generally processed within Switzerland or the EU/EEA. Should All-Inkl.com or an external service process data outside these regions, we ensure that legally required safeguards are in place, such as standard contractual clauses.",
+      "sechs": {
+        "eins": { "label": "Contact Data:", "text": "is deleted once the inquiry has been processed, but no later than 12 months" },
+        "zwei": { "label": "Usage Data:", "text": "is anonymized or deleted after 30 days at the latest" }
+      },
+      "sieben": {
+        "intro": "You have the right to:",
+        "liste": {
+          "eins": "Access to the data stored about you",
+          "zwei": "Rectification of inaccurate data",
+          "drei": "Erasure or restriction of processing",
+          "vier": "Data portability",
+          "fuenf": "Object to processing or direct marketing",
+          "sechs": "Lodge a complaint with the competent data protection authority"
+        }
+      },
+      "acht": "Once given, consent can be withdrawn at any time. Withdrawal does not affect the lawfulness of processing carried out before the withdrawal.",
+      "neun": "No automated decision-making or profiling takes place.",
+      "zehn": {
+        "intro": "The website uses only cookies that are necessary for its functionality.",
+        "liste": {
+          "eins": { "label": "Purpose:", "text": "Improving user experience" },
+          "zwei": "Tracking/analytics (e.g., Google Analytics) is only carried out with your consent.",
+          "drei": "You can disable or delete cookies at any time in your browser settings."
+        }
+      },
+      "elf": {
+        "intro": "My website contains links to social networks and embedded content:",
+        "liste": {
+          "eins": { "label": "LinkedIn:", "link": "my official profile" }
+        },
+        "outro": "If you click these links or use embedded content, personal data may be transferred to the respective providers. The providers process this data in accordance with their own privacy policies."
+      },
+      "zwoelf": "We take technical and organizational measures to protect your data from loss, misuse, or unauthorized access.",
+      "dreizehn": "This privacy policy may be updated from time to time. The date of the last update is indicated below."
+    },
+
+    "adresse": {
+      "name": "Lea Cotar, Praxis am Klusplatz AG",
+      "strasse": "Witikonerstrasse 3",
+      "plzort": "8032 Zurich, Switzerland",
+      "email": "contact@leacotar.com",
+      "telefon": "+41 44 123 45 67"
+    },
+
+    "aenderungen": {
+      "eins": "Last updated:",
+      "zwei": "August 17, 2026"
     }
   }
 }

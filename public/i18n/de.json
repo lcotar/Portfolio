@@ -144,12 +144,111 @@
   "privacy": {
     "header": "Datenschutzerklärung",
     "subtitle": {
-      "eins": "Sub1",
-      "zwei": "Sub2"
+      "eins": "1. Verantwortlicher",
+      "zwei": "2. Zweck und Rechtsgrundlage der Datenverarbeitung",
+      "zwecke": {
+        "eins": "2.1 Zweck der Datenverarbeitung:",
+        "zwei": "2.2 Rechtsgrundlage der Datenverarbeitung:"
+      },
+
+      "drei": "3. Kategorien personenbezogener Daten",
+      "vier": "4. Empfänger der Daten",
+      "fuenf": "5. Übermittlung in Drittländer",
+      "sechs": "6. Speicherdauer",
+      "sieben": "7. Rechte der Betroffenen",
+      "acht": "8. Widerruf von Einwilligungen",
+      "neun": "9. Automatisierte Entscheidungsfindung / Profiling",
+      "zehn": "10. Cookies und Tracking",
+      "elf": "11. Social Media Hinweise",
+      "zwoelf": "12. Sicherheitsmassnahmen",
+      "dreizehn": "13. Änderungen der Datenschutzerklärung"
     },
+
     "text": {
-      "eins": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-      "zwei": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+      "eins": "Verantwortlich für die Verarbeitung Ihrer personenbezogenen Daten im Sinne der Datenschutzgesetze der Schweiz ist:",
+      "zwei": {
+        "intro": "Ich erhebe personenbezogene Daten nur, soweit dies für die Nutzung der Website erforderlich ist. Dazu gehören z.B.:",
+        "liste": {
+          "eins": "Name und E-Mail-Adresse, wenn Sie uns über das Kontaktformular anschreiben",
+          "zwei": "IP-Adresse und technische Daten, die beim Besuch der Website automatisch protokolliert werden"
+        }
+      },
+
+      "zwecke": {
+        "eins": {
+          "eins": "Bearbeitung von Anfragen über das Kontaktformular",
+          "zwei": "Bereitstellung und Optimierung der Website",
+          "drei": "Analyse der Website-Nutzung (z.B. zur Verbesserung von Inhalten)",
+          "vier": "Interaktion mit unseren Social-Media-Profilen (z.B. LinkedIn)"
+        },
+        "zwei": {
+          "eins": "Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO / DSG)",
+          "zwei": "Berechtigtes Interesse (z.B. Webanalyse, Sicherheit der Website)"
+        }
+      },
+
+      "drei": {
+        "eins": { "label": "Kontaktdaten:", "text": "Name, E-Mail-Adresse" },
+        "zwei": { "label": "Nutzungsdaten:", "text": "IP-Adresse, Browsertyp, Betriebssystem, Zugriffszeiten" },
+        "drei": { "label": "Optional:", "text": "Cookies und Tracking-Daten (siehe Punkt 10)" }
+      },
+      "vier": {
+        "intro": "Ihre Daten werden nicht an unbeteiligte Dritte weitergegeben, ausser:",
+        "liste": {
+          "eins": { "label": "Hosting-Anbieter:", "link": "All-Inkl.com", "nach": ", Germany, für den Betrieb der Website" },
+          "zwei": "Analyse-Dienste, wenn Sie der Nutzung von Cookies/Tracking zugestimmt haben",
+          "drei": "Soziale Netzwerke, wenn Sie Inhalte von diesen direkt nutzen oder unsere Profile besuchen"
+        },
+        "outro": "All-Inkl.com verarbeitet Daten ausschliesslich im Rahmen der Auftragsverarbeitung gemäß DSGVO/DSG."
+      },
+      "fuenf": "Die Daten werden grundsätzlich innerhalb der Schweiz oder EU/des EWR verarbeitet. Sollte All-Inkl.com oder ein externer Dienst Daten ausserhalb dieser Regionen verarbeiten, stellen wir sicher, dass gesetzlich vorgeschriebene Garantien bestehen, z.B. Standardvertragsklauseln.",
+      "sechs": {
+        "eins": { "label": "Kontaktdaten:", "text": "werden gelöscht, sobald die Bearbeitung der Anfrage abgeschlossen ist, spätestens jedoch nach 12 Monaten" },
+        "zwei": { "label": "Nutzungsdaten:", "text": "werden spätestens nach 30 Tagen anonymisiert oder gelöscht" }
+      },
+      "sieben": {
+        "intro": "Sie haben das Recht auf:",
+        "liste": {
+          "eins": "Auskunft über die gespeicherten Daten",
+          "zwei": "Berichtigung unrichtiger Daten",
+          "drei": "Löschung oder Einschränkung der Verarbeitung",
+          "vier": "Datenübertragbarkeit",
+          "fuenf": "Widerspruch gegen die Verarbeitung oder Direktwerbung",
+          "sechs": "Beschwerde bei der zuständigen Datenschutzaufsichtsbehörde"
+        }
+      },
+      "acht": "Einmal erteilte Einwilligungen können Sie jederzeit widerrufen. Der Widerruf berührt nicht die Rechtmässigkeit der bis dahin erfolgten Verarbeitung.",
+      "neun": "Es findet keine automatisierte Entscheidungsfindung oder Profiling statt.",
+      "zehn": {
+        "intro": "Die Website verwendet nur notwendige Cookies zur Funktionalität.",
+        "liste": {
+          "eins": { "label": "Zweck:", "text": "Verbesserung der Benutzerfreundlichkeit" },
+          "zwei": "Tracking/Analyse (z.B. Google Analytics) erfolgt nur mit Ihrer Einwilligung.",
+          "drei": "Sie können Cookies jederzeit in den Browsereinstellungen deaktivieren oder löschen."
+        }
+      },
+      "elf": {
+        "intro": "Meine Website enthält Links zu sozialen Netzwerken und eingebettete Inhalte:",
+        "liste": {
+          "eins": { "label": "LinkedIn:", "link": "mein offizielles Profil" }
+        },
+        "outro": "Wenn Sie auf diese Links klicken oder eingebettete Inhalte nutzen, können personenbezogene Daten an die jeweiligen Anbieter übertragen werden. Die Anbieter verarbeiten die Daten gemäss deren Datenschutzerklärungen."
+      },
+      "zwoelf": "Wir treffen technische und organisatorische Massnahmen, um Ihre Daten vor Verlust, Missbrauch oder unbefugtem Zugriff zu schützen.",
+      "dreizehn": "Diese Datenschutzerklärung kann von Zeit zu Zeit angepasst werden. Das Datum der letzten Änderung wird unten angegeben."
+    },
+
+    "adresse": {
+      "name": "Lea Cotar, Praxis am Klusplatz AG",
+      "strasse": "Witikonerstrasse 3",
+      "plzort": "8032 Zürich, Schweiz",
+      "email": "contact@leacotar.com",
+      "telefon": "+41 44 123 45 67"
+    },
+
+    "aenderungen": {
+      "eins": "Letzte Änderung:",
+      "zwei": "17.08.2026"
     }
   }
 }

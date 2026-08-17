@@ -3,9 +3,9 @@ import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
-    selector: 'app-privacy',
-    imports: [RouterModule, TranslateModule],
-    templateUrl: './privacy.component.html',
-    styleUrl: './privacy.component.scss'
+  selector: 'app-privacy',
+  imports: [RouterModule, TranslateModule],
+  templateUrl: './privacy.component.html',
+  styleUrl: './privacy.component.scss',
 })
 export class PrivacyComponent {}
