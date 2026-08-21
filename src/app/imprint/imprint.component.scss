@@ -98,6 +98,10 @@ button {
   }
 }
 
+.imprintContactInfo {
+  text-align: center;
+}
+
 .imprintQuestions {
   margin-top: 24px;
 }
@@ -137,6 +141,7 @@ button {
 @media (min-width: 992px) {
   .wholeImprintContent {
     max-width: 860px;
+    margin-top: 11vh;
   }
 }
 
