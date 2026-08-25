@@ -1,5 +1,4 @@
 import { Component, inject } from '@angular/core';
-import { ContactformComponent } from './contactform/contactform.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
@@ -10,7 +9,6 @@ import { EmailRfcValidatorDirective } from './validators/email-rfc.validator';
 @Component({
   selector: 'app-contact-me',
   imports: [
-    // ContactformComponent,
     TranslateModule,
     FormsModule,
     CommonModule,

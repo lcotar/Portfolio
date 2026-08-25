@@ -47,32 +47,29 @@ export class ReviewsComponent {
     }
 
     // Fall 2: 5 oder mehr Feedbacks -> mittleren grünen simulieren
-    const range = 2; // 2 links, 2 rechts
-    this.visibleDots = [];
+    this.visibleDots = this.buildCenteredDots(total, 2);
+  }
 
+  private buildCenteredDots(total: number, range: number): number[] {
+    const dots: number[] = [];
     for (let offset = -range; offset <= range; offset++) {
-      let index = (this.currentIndex + offset + total) % total;
-      this.visibleDots.push(index);
+      const index = (this.currentIndex + offset + total) % total;
+      dots.push(index);
     }
+    return dots;
   }
 
   isCenterDot(dotPos: number): boolean {
     const total = this.rezessionen.length;
 
-    if (total === 1) {
-      return true; // einziger Punkt ist grün
-    }
-
     if (total === 2) {
       return this.visibleDots[dotPos] === this.currentIndex;
     }
 
-    if (total === 3) {
-      return dotPos === 1; // mittlerer Punkt
-    }
-
-    if (total === 4) {
-      return dotPos === 2; // zweiter von rechts (Index 2)
+    // Feste "mittlere" Position je nach Anzahl der Punkte (1/3/4 Feedbacks)
+    const fixedCenter: Record<number, number> = { 1: 0, 3: 1, 4: 2 };
+    if (total in fixedCenter) {
+      return dotPos === fixedCenter[total];
     }
 
     // Bei >= 5 Feedbacks ist immer der mittlere Dot grün

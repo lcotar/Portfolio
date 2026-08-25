@@ -52,12 +52,12 @@
 @media (min-width: 480px) {
   .feedbackShadow {
     right: 0px;
-    bottom: 150px;
+    // bottom: 150px;
     width: clamp(140px, 45vw, 220px);
   }
 
   .quotation {
-    top: -18px;
+    top: -35px;
     left: -10px;
     width: clamp(70px, 12vw, 90px);
   }
@@ -75,12 +75,12 @@
 
   .feedbackShadow {
     right: 0px;
-    bottom: -60px;
+    // bottom: -60px;
     width: clamp(160px, 20vw, 320px);
   }
 
   .quotation {
-    top: -25px;
+    top: -45px;
     left: -15px;
     width: 100px;
   }

@@ -4,7 +4,7 @@
   box-sizing: border-box;
   z-index: 10;
   width: 100%;
-  padding: 60px 0 40px;
+  // padding: 60px 0 40px;
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -272,7 +272,7 @@ textarea {
 .contactArrow {
   display: flex;
   justify-content: flex-end;
-  margin-top: 20px;
+  margin: 20px;
 
   a {
     display: block;
@@ -308,7 +308,7 @@ textarea {
 /* ===== 768px ===== */
 @media (min-width: 768px) {
   .contactComponent {
-    padding: 80px 0 50px;
+    // padding: 80px 0 50px;
     --section-pad-x: 40px;
     --txt-max-w: 480px;
   }
@@ -322,7 +322,7 @@ textarea {
     justify-content: space-between;
     gap: 30px;
     min-height: 100vh;
-    padding: 80px 0 60px;
+    // padding: 80px 0 60px;
     --section-pad-x: 60px;
     --txt-max-w: 25vw;
   }
