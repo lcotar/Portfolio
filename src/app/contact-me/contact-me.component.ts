@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnDestroy } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
@@ -18,7 +18,7 @@ import { EmailRfcValidatorDirective } from './validators/email-rfc.validator';
   templateUrl: './contact-me.component.html',
   styleUrl: './contact-me.component.scss',
 })
-export class ContactMeComponent {
+export class ContactMeComponent implements OnDestroy {
   http = inject(HttpClient);
   contactData = {
     name: '',
@@ -30,6 +30,7 @@ export class ContactMeComponent {
   privacyAccepted = false;
   messageSent = false;
   messageError = false;
+  isSubmitting = false;
   private messageSentTimeout?: ReturnType<typeof setTimeout>;
   private messageErrorTimeout?: ReturnType<typeof setTimeout>;
 
@@ -45,7 +46,8 @@ export class ContactMeComponent {
   };
 
   onSubmit(ngForm: NgForm) {
-    if (!ngForm.submitted || !ngForm.form.valid || !this.privacyAccepted) return;
+    const canSubmit = ngForm.submitted && ngForm.form.valid && this.privacyAccepted;
+    if (!canSubmit || this.isSubmitting) return;
 
     if (this.mailTest) {
       ngForm.resetForm();
@@ -57,15 +59,29 @@ export class ContactMeComponent {
   }
 
   private sendContactRequest(ngForm: NgForm) {
+    this.isSubmitting = true;
     this.http
       .post(this.post.endPoint, this.post.body(this.contactData))
       .subscribe({
-        next: () => {
-          ngForm.resetForm();
-          this.showThankYouMessage();
-        },
-        error: () => this.showErrorMessage(),
+        next: () => this.onSendSuccess(ngForm),
+        error: () => this.onSendError(),
       });
+  }
+
+  private onSendSuccess(ngForm: NgForm) {
+    this.isSubmitting = false;
+    ngForm.resetForm();
+    this.showThankYouMessage();
+  }
+
+  private onSendError() {
+    this.isSubmitting = false;
+    this.showErrorMessage();
+  }
+
+  ngOnDestroy() {
+    clearTimeout(this.messageSentTimeout);
+    clearTimeout(this.messageErrorTimeout);
   }
 
   private showThankYouMessage() {

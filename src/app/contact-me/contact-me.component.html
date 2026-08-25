@@ -83,7 +83,7 @@
                 required
               ></textarea>
 
-              @if (!message.valid && message.touched && message.disabled) {
+              @if (!message.valid && message.touched) {
                 <span class="error">{{
                   "contact.contactform.messageError" | translate
                 }}</span>
@@ -114,7 +114,7 @@
                 type="submit"
                 [value]="'contact.button.text' | translate"
                 class="contactMessage"
-                [disabled]="!contactform.valid || !privacyAccepted"
+                [disabled]="!contactform.valid || !privacyAccepted || isSubmitting"
               />
             </div>
           </div>
