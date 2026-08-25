@@ -66,12 +66,19 @@ export class ReviewsComponent {
       return this.visibleDots[dotPos] === this.currentIndex;
     }
 
+    return this.isFixedCenter(total, dotPos) ?? this.isCalculatedCenter(dotPos);
+  }
+
+  private isFixedCenter(total: number, dotPos: number): boolean | null {
     // Feste "mittlere" Position je nach Anzahl der Punkte (1/3/4 Feedbacks)
     const fixedCenter: Record<number, number> = { 1: 0, 3: 1, 4: 2 };
-    if (total in fixedCenter) {
-      return dotPos === fixedCenter[total];
+    if (!(total in fixedCenter)) {
+      return null;
     }
+    return dotPos === fixedCenter[total];
+  }
 
+  private isCalculatedCenter(dotPos: number): boolean {
     // Bei >= 5 Feedbacks ist immer der mittlere Dot grün
     const centerPosition = Math.floor(this.visibleDots.length / 2);
     return dotPos === centerPosition;
