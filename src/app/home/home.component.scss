@@ -3,7 +3,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 500vh;
   overflow-x: clip;
 }
 
@@ -71,6 +71,13 @@
       writing-mode: vertical-rl;
       transform: rotate(180deg);
       line-height: 1;
+
+      // "Ich bin" hat fast doppelt so viele Zeichen wie "I am" - bei
+      // gleicher font-size waere die Spalte deutlich hoeher als
+      // .name-role. Deshalb im Deutschen kleiner skalieren.
+      &:lang(de) {
+        font-size: calc(var(--intro-size, clamp(30px, 8.82vw, 84px)) * 0.65);
+      }
     }
 
     .name-role {
@@ -182,13 +189,33 @@
   .scrollDown {
     display: none;
     margin-right: 4%;
+    z-index: 20;
 
-    a img {
-      width: 16px;
-      height: auto;
-      transition: transform 0.125s ease;
+    a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: #ffffff;
+      text-decoration: none;
+      font-family: Poppins, sans-serif;
+      font-size: 16px;
 
-      &:hover {
+      span {
+        writing-mode: vertical-rl;
+        color: #ffffff;
+        text-decoration: none;
+        transition: transform 0.125s ease;
+      }
+
+      img {
+        width: 20px;
+        height: auto;
+        transition: transform 0.125s ease;
+      }
+
+      &:hover img,
+      &:hover span {
         transform: scale(1.1);
       }
     }

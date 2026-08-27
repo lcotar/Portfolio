@@ -15,5 +15,6 @@ export class NavbarComponent {
   toogleTranslation(language: string) {
     this.translate.use(language);
     this.currentLang = language;
+    document.documentElement.lang = language;
   }
 }

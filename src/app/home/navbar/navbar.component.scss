@@ -3,9 +3,14 @@
   display: flex;
   align-items: center;
   width: 100%;
+  max-width: 1920px;
   height: 11vh;
   background-color: #1a2233;
   top: 0;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  margin-bottom: clamp(40px, 6vw, 100px);
   z-index: 99;
 }
 

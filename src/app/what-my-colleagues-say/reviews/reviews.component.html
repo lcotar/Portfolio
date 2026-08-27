@@ -20,6 +20,7 @@
 
   <div class="arrowsDots">
     <img
+      *ngIf="rezessionen && rezessionen.length > 1"
       class="arrows"
       src="/img/review/01_arrow_back.png"
       alt=""
@@ -35,6 +36,7 @@
     </div>
 
     <img
+      *ngIf="rezessionen && rezessionen.length > 1"
       class="arrows"
       src="/img/review/02_arrow_forward.png"
       alt=""

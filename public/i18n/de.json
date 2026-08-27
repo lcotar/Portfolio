@@ -6,6 +6,10 @@
     "contact": "Kontakt"
   },
 
+  "footer": {
+    "legalNotice": "Impressum"
+  },
+
   "home": {
     "whoIs": "Ich bin",
     "name": "Lea Cotar",

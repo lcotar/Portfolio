@@ -4,7 +4,10 @@
   justify-content: center;
   flex-direction: column;
   position: relative;
-  height: 50vh;
+  // height: 50vh;
+  max-width: 1920px;
+  margin-inline: auto;
+  // margin-bottom: clamp(40px, 6vw, 100px);
 }
 
 .shadowClip {
@@ -69,9 +72,9 @@
 
 /* 768px */
 @media (min-width: 768px) {
-  .wholeReviewCNT {
+  /* .wholeReviewCNT {
     padding-top: 60px;
-  }
+  } */
 
   .feedbackShadow {
     right: 0px;

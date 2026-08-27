@@ -19,6 +19,7 @@ export class NavbarResponsivComponent {
   toogleTranslation(languae: string) {
     this.translate.use(languae);
     this.currentLang = languae;
+    document.documentElement.lang = languae;
   }
 
   /* isOpen: boolean = false;
