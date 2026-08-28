@@ -114,7 +114,9 @@
                 type="submit"
                 [value]="'contact.button.text' | translate"
                 class="contactMessage"
-                [disabled]="!contactform.valid || !privacyAccepted || isSubmitting"
+                [disabled]="
+                  !contactform.valid || !privacyAccepted || isSubmitting
+                "
               />
             </div>
           </div>
@@ -125,7 +127,7 @@
 
           <div class="contactArrow">
             <a href="#home" aria-label="Nach oben scrollen">
-              <img src="/img/contact/go_up.png" alt="" />
+              <img src="/img/contact/go_up.svg" alt="" />
             </a>
           </div>
         </form>
