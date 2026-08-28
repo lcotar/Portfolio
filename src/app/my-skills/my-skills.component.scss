@@ -3,13 +3,11 @@
    Desktop: 2-column grid (icons left, text right)
    Mobile:  1-column stacked (title → text → icons → sub → btn)
    =========================== */
-
 .wholeSkillsCTN {
   position: relative;
-  min-height: 50vh;
+  min-height: 75vh;
   max-width: 1920px;
   margin-inline: auto;
-  // margin-bottom: clamp(40px, 6vw, 100px);
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
@@ -20,7 +18,6 @@
   align-items: center;
   align-content: center;
   width: 100%;
-  // height: 100vh;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   box-sizing: border-box;

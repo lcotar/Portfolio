@@ -3,7 +3,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  min-height: 500vh;
+  min-height: 50vh;
   overflow-x: clip;
 }
 
@@ -72,9 +72,9 @@
       transform: rotate(180deg);
       line-height: 1;
 
-      // "Ich bin" hat fast doppelt so viele Zeichen wie "I am" - bei
-      // gleicher font-size waere die Spalte deutlich hoeher als
-      // .name-role. Deshalb im Deutschen kleiner skalieren.
+      /* "Ich bin" hat fast doppelt so viele Zeichen wie "I am" - bei
+      gleicher font-size waere die Spalte deutlich hoeher als
+       .name-role. Deshalb im Deutschen kleiner skalieren. */
       &:lang(de) {
         font-size: calc(var(--intro-size, clamp(30px, 8.82vw, 84px)) * 0.65);
       }
