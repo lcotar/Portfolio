@@ -6,8 +6,7 @@
   width: 100%;
   max-width: 1920px;
   margin-inline: auto;
-    box-sizing: border-box;
-  height: 140vh;
+  box-sizing: border-box;
 }
 
 .portfolioHead {
@@ -274,9 +273,6 @@
 }
 
 @media screen and (min-width: 768px) {
-  .wholePortfolioCNT {
-    height: 175vh;
-  }
   .wholeSingleProjectCNT {
     --project-max-w: 560px;
   }
@@ -300,7 +296,6 @@
 @media screen and (min-width: 992px) {
   .wholePortfolioCNT {
     padding: 0;
-    height: 125vh;
   }
 
   .portfolioHeader {
