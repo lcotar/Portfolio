@@ -392,6 +392,10 @@
 
 // ===== iPad Pro Hochformat (834px & 1024px breit) =====
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .wholeCNT {
+    min-height: 65vh;
+  }
+
   .leftSide {
     padding-top: 0;
 
