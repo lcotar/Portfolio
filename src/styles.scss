@@ -6,6 +6,21 @@ body {
   /* overflow-x: hidden; */
 }
 
+/* Footer soll bei kurzen Seiten (Impressum, Privacy) immer am unteren
+   Bildschirmrand bleiben statt direkt nach dem Inhalt abzubrechen.
+   app-root ist das einzige Kind von body und umschliesst Navbar,
+   Seiteninhalt und Footer, daher muss der Flex-Kontext hier sitzen. */
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+app-imprint,
+app-privacy {
+  flex: 1 0 auto;
+}
+
 *,
 html {
   scroll-behavior: smooth;

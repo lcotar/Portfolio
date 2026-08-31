@@ -3,11 +3,15 @@
    Desktop: 2-column grid (icons left, text right)
    Mobile:  1-column stacked (title → text → icons → sub → btn)
    =========================== */
+.skillsOuter {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
 .wholeSkillsCTN {
   position: relative;
-  min-height: 75vh;
-  max-width: 1920px;
-  margin-inline: auto;
+  // min-height: 75vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
@@ -66,6 +70,16 @@
   position: relative;
   z-index: 1;
   padding-right: 5vw;
+  opacity: 0;
+  transform: translateY(60px);
+  transition:
+    opacity 1s ease-out,
+    transform 1s ease-out;
+
+  .wholeSkillsCTN.inView & {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
   p {
     color: #ffffff;
@@ -89,6 +103,15 @@
   z-index: 1;
 }
 
+@keyframes skillIconFlip {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
 .skillItem {
   display: flex;
   flex-direction: column;
@@ -96,12 +119,17 @@
   text-align: center;
   gap: 8px;
   cursor: default;
+  perspective: 600px;
 
   .skillIcon {
     width: 60px;
     height: 60px;
     object-fit: contain;
     transition: transform 0.125s ease;
+
+    .wholeSkillsCTN.inView & {
+      animation: skillIconFlip 0.8s ease-in-out;
+    }
   }
 
   &:hover .skillIcon {
@@ -128,6 +156,16 @@
   position: relative;
   z-index: 11;
   padding-right: 5vw;
+  opacity: 0;
+  transform: translateY(60px);
+  transition:
+    opacity 1s ease-out,
+    transform 1s ease-out;
+
+  .wholeSkillsCTN.inView & {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .skillsSubHeader {
@@ -176,6 +214,16 @@
   justify-content: flex-end;
   padding-right: 5vw;
   align-self: start;
+  opacity: 0;
+  transform: translateY(60px);
+  transition:
+    opacity 1s ease-out,
+    transform 1s ease-out;
+
+  .wholeSkillsCTN.inView & {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
   a {
     text-decoration: none;

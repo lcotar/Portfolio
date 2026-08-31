@@ -3,7 +3,6 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  max-width: 1920px;
   margin-inline: auto;
 }
 
@@ -37,7 +36,6 @@ button {
   flex-direction: column;
   height: auto;
   width: 100%;
-  max-width: 100%;
   padding: 0 16px;
   box-sizing: border-box;
 
@@ -119,22 +117,13 @@ button {
 @media (min-width: 480px) {
   .wholeImprintContent {
     width: 92%;
-    max-width: 440px;
     align-self: center;
-  }
-}
-
-// ===== 576px =====
-@media (min-width: 576px) {
-  .wholeImprintContent {
-    max-width: 540px;
   }
 }
 
 // ===== 768px (Tablet) =====
 @media (min-width: 768px) {
   .wholeImprintContent {
-    max-width: 700px;
     padding: 0;
   }
 }
@@ -142,35 +131,6 @@ button {
 // ===== 992px (Desktop-Layout) =====
 @media (min-width: 992px) {
   .wholeImprintContent {
-    max-width: 860px;
-    margin-top: 11vh;
-  }
-}
-
-// ===== 1200px =====
-@media (min-width: 1200px) {
-  .wholeImprintContent {
-    max-width: 980px;
-  }
-}
-
-// ===== 1400px =====
-@media (min-width: 1400px) {
-  .wholeImprintContent {
-    max-width: 1100px;
-  }
-}
-
-// ===== 1600px =====
-@media (min-width: 1600px) {
-  .wholeImprintContent {
-    max-width: 1250px;
-  }
-}
-
-// ===== 1920px (Ultrawide) =====
-@media (min-width: 1920px) {
-  .wholeImprintContent {
-    max-width: 1400px;
+    margin: 11vh 0 17.5vh 0;
   }
 }

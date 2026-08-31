@@ -1,42 +1,44 @@
-<section class="wholeAboutMeCNT" id="aboutme">
-  <img
-    class="aboutMeShadow"
-    src="/img/shadow/02_purple_shadow_about_me.png"
-    alt=""
-  />
+<section class="aboutMeOuter" id="aboutme">
+  <div class="wholeAboutMeCNT">
+    <img
+      class="aboutMeShadow"
+      src="/img/shadow/02_purple_shadow_about_me.png"
+      alt=""
+    />
 
-  <section class="aboutMeLeftSide">
-    <div class="aboutMeHeading">
-      <h2>{{ "aboutMe.header" | translate }}</h2>
-    </div>
-
-    <div class="aboutMeDescription">
-      <p class="aboutMeTXT">{{ "aboutMe.text" | translate }}</p>
-      <div class="aboutMeLocation">
-        <img src="/img/about_me/11_location.png" alt="Location Icon" />
-        <p>{{ "aboutMe.location" | translate }}</p>
+    <section class="aboutMeLeftSide" #aboutMeLeftSide>
+      <div class="aboutMeHeading">
+        <h2>{{ "aboutMe.header" | translate }}</h2>
       </div>
 
-      <div class="aboutMeOpenMinded">
-        <img src="/img/about_me/12_bulb.png" alt="Bulb Icon" />
-        <p>{{ "aboutMe.openMinded" | translate }}</p>
+      <div class="aboutMeDescription">
+        <p class="aboutMeTXT">{{ "aboutMe.text" | translate }}</p>
+        <div class="aboutMeLocation">
+          <img src="/img/about_me/11_location.png" alt="Location Icon" />
+          <p>{{ "aboutMe.location" | translate }}</p>
+        </div>
+
+        <div class="aboutMeOpenMinded">
+          <img src="/img/about_me/12_bulb.png" alt="Bulb Icon" />
+          <p>{{ "aboutMe.openMinded" | translate }}</p>
+        </div>
+
+        <div class="aboutMeProblemSolving">
+          <img src="/img/about_me/13_puzzle.png" alt="Puzzle Icon" />
+          <p>{{ "aboutMe.description" | translate }}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="aboutMeRightSide">
+      <div class="profileBorder">
+        <img class="profileIMG" src="/img/profilbild.jpg" alt="" />
+        <img class="aboutMeBorder" src="/img/lines/07_border.png" alt="" />
       </div>
 
-      <div class="aboutMeProblemSolving">
-        <img src="/img/about_me/13_puzzle.png" alt="Puzzle Icon" />
-        <p>{{ "aboutMe.description" | translate }}</p>
+      <div class="aboutMeLine">
+        <img src="/img/lines/07_about_me.png" alt="" />
       </div>
-    </div>
-  </section>
-
-  <section class="aboutMeRightSide">
-    <div class="profileBorder">
-      <img class="profileIMG" src="/img/profilbild.jpg" alt="" />
-      <img class="aboutMeBorder" src="/img/lines/07_border.png" alt="" />
-    </div>
-
-    <div class="aboutMeLine">
-      <img src="/img/lines/07_about_me.png" alt="" />
-    </div>
-  </section>
+    </section>
+  </div>
 </section>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -8,7 +8,21 @@ import { TranslateModule } from '@ngx-translate/core';
     templateUrl: './my-skills.component.html',
     styleUrl: './my-skills.component.scss'
 })
-export class MySkillsComponent {
+export class MySkillsComponent implements AfterViewInit, OnDestroy {
+  @ViewChild('wholeSkillsCTN') wholeSkillsCTN!: ElementRef<HTMLElement>;
+  private observer?: IntersectionObserver;
+
+  ngAfterViewInit() {
+    this.observer = new IntersectionObserver(([entry]) => {
+      entry.target.classList.toggle('inView', entry.isIntersecting);
+    }, { threshold: 0.2 });
+    this.observer.observe(this.wholeSkillsCTN.nativeElement);
+  }
+
+  ngOnDestroy() {
+    this.observer?.disconnect();
+  }
+
   iconsFrondend = [
     {
       name: 'HTML',

@@ -1,8 +1,7 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Project } from '../interfaces/projects.interface';
 import { TranslateModule } from '@ngx-translate/core';
-import * as AOS from 'aos';
 
 @Component({
   selector: 'app-portfolio',
@@ -10,7 +9,21 @@ import * as AOS from 'aos';
   templateUrl: './portfolio.component.html',
   styleUrls: ['./portfolio.component.scss'],
 })
-export class PortfolioComponent {
+export class PortfolioComponent implements AfterViewInit, OnDestroy {
+  @ViewChild('wholePortfolioCNT') wholePortfolioCNT!: ElementRef<HTMLElement>;
+  private observer?: IntersectionObserver;
+
+  ngAfterViewInit() {
+    this.observer = new IntersectionObserver(([entry]) => {
+      entry.target.classList.toggle('inView', entry.isIntersecting);
+    }, { threshold: 0.2 });
+    this.observer.observe(this.wholePortfolioCNT.nativeElement);
+  }
+
+  ngOnDestroy() {
+    this.observer?.disconnect();
+  }
+
   projects: Project[] = [
     {
       projectname: 'Join',

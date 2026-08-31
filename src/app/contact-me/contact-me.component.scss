@@ -1,11 +1,15 @@
 /* ===== BASE (Mobile First, ab 320px) ===== */
+.contactOuter {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+}
+
 .contactComponent {
   position: relative;
   box-sizing: border-box;
   z-index: 10;
   width: 100%;
-  max-width: 1920px;
-  margin-inline: auto;
   // padding: 60px 0 40px;
   display: flex;
   flex-direction: column;
@@ -78,7 +82,7 @@
   p {
     margin: 0;
     font-weight: 400;
-    font-size: clamp(14px, 3.5vw, 15px);
+    font-size: 16px;
     line-height: 120%;
     color: #ffffff;
   }
@@ -177,7 +181,7 @@ textarea {
 
 .error {
   color: red;
-  font-size: 13px;
+  font-size: 16px;
 }
 
 .contactPrivacy {
@@ -187,7 +191,7 @@ textarea {
 
   label {
     color: #ffffff;
-    font-size: clamp(13px, 3.2vw, 15px);
+    font-size: 16px;
     line-height: 140%;
   }
 
@@ -325,7 +329,7 @@ textarea {
     align-items: flex-start;
     justify-content: space-between;
     gap: 30px;
-    min-height: 100vh;
+    min-height: 50vh;
     // padding: 80px 0 60px;
     --section-pad-x: 60px;
     --txt-max-w: 25vw;
@@ -366,7 +370,7 @@ textarea {
 /* ===== 1200px ===== */
 @media (min-width: 1200px) {
   .contactComponent {
-    padding: 90px 0 70px;
+    // padding: 90px 0 70px;
     --section-pad-x: 80px;
     --txt-max-w: 22vw;
   }
@@ -375,7 +379,7 @@ textarea {
 /* ===== 1400px ===== */
 @media (min-width: 1400px) {
   .contactComponent {
-    padding: 100px 0 80px;
+    // padding: 100px 0 80px;
     --section-pad-x: 100px;
   }
 }

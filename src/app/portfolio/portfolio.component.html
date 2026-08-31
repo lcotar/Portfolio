@@ -1,4 +1,5 @@
-<section class="wholePortfolioCNT" id="portfolio">
+<section class="portfolioOuter" id="portfolio">
+ <div class="wholePortfolioCNT" #wholePortfolioCNT>
   <img
     class="portfolioShadowMobile"
     src="/img/shadow/04_shadow_mobile.svg"
@@ -17,7 +18,7 @@
     </div>
   </section>
 
-  <section class="myPortfolioProjects" ngClass="[fadeclass]">
+  <section class="myPortfolioProjects">
     <img
       class="portfolioShadow"
       src="/img/shadow/03_purple_shadow_portfolio.png"
@@ -43,9 +44,9 @@
               <div class="singleProjectDescription">
                 <h3>{{ project.projectname }}</h3>
 
-                <div class="singleProjectTech">
+                <p class="singleProjectTech">
                   {{ project.content.technologies | translate }}
-                </div>
+                </p>
 
                 <div class="singleProjectTXT">
                   <p>{{ project.content.description | translate }}</p>
@@ -71,9 +72,9 @@
             <div class="singleProjectDetails">
               <div class="singleProjectDescription">
                 <h3>{{ project.projectname }}</h3>
-                <div class="singleProjectTech">
+                <p class="singleProjectTech">
                   {{ project.content.technologies | translate }}
-                </div>
+                </p>
                 <div class="singleProjectTXT">
                   <p>{{ project.content.description | translate }}</p>
                 </div>
@@ -102,4 +103,5 @@
       </table>
     </section>
   </section>
+ </div>
 </section>
