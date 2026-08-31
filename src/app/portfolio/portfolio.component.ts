@@ -1,4 +1,10 @@
-import { AfterViewInit, Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnDestroy,
+  ViewChild,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Project } from '../interfaces/projects.interface';
 import { TranslateModule } from '@ngx-translate/core';
@@ -14,9 +20,12 @@ export class PortfolioComponent implements AfterViewInit, OnDestroy {
   private observer?: IntersectionObserver;
 
   ngAfterViewInit() {
-    this.observer = new IntersectionObserver(([entry]) => {
-      entry.target.classList.toggle('inView', entry.isIntersecting);
-    }, { threshold: 0.2 });
+    this.observer = new IntersectionObserver(
+      ([entry]) => {
+        entry.target.classList.toggle('inView', entry.isIntersecting);
+      },
+      { threshold: 0.2 },
+    );
     this.observer.observe(this.wholePortfolioCNT.nativeElement);
   }
 
@@ -33,7 +42,7 @@ export class PortfolioComponent implements AfterViewInit, OnDestroy {
         description: 'myProjects.join.description',
       },
       imageProject: ['/img/portfolio_projects/01_join.png'],
-      github: 'https://github.com/johannesngl/join-main',
+      github: 'https://github.com/johannesngl/join',
       livetest: 'https://join.leacotar.com/',
     },
     {
