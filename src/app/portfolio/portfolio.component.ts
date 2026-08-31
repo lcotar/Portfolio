@@ -42,7 +42,7 @@ export class PortfolioComponent implements AfterViewInit, OnDestroy {
         description: 'myProjects.join.description',
       },
       imageProject: ['/img/portfolio_projects/01_join.png'],
-      github: 'https://github.com/johannesngl/join',
+      github: 'https://github.com/lcotar/join',
       livetest: 'https://join.leacotar.com/',
     },
     {
