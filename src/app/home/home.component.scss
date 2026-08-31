@@ -380,8 +380,35 @@
 }
 
 @media (min-width: 1920px) {
+  .wholeCNT {
+    max-width: 1920px;
+    margin-inline: auto;
+    overflow-x: visible;
+  }
+
+  .leftSide {
+    .shadowIMG {
+      left: 10vw;
+    }
+
+    .shape {
+      left: calc((1920px - 100vw) / 2);
+    }
+  }
+
+  .homeFooter {
+    .socialMedia {
+      transform: translateX(calc((1920px - 100vw) / 2));
+
+      .homeLine {
+        width: 20vw;
+      }
+    }
+  }
+
   .rightSide {
     top: 40%;
+    right: 0;
     --intro-size: 110px;
     --name-size: 118px;
     --role-size: 88px;

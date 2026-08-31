@@ -25,6 +25,8 @@
   font-weight: 400;
   box-sizing: border-box;
   z-index: 1;
+  max-width: 1920px;
+  margin-inline: auto;
 }
 
 /* ---- Green shadow image (behind content, cut off at section edges) ---- */
@@ -361,5 +363,30 @@
   .contactBTN {
     width: 100%;
     max-width: 280px;
+  }
+}
+
+// ===== 1920px (Widescreen) =====
+@media (min-width: 1920px) {
+  // Bleibt trotz zentriertem/begrenztem .wholeSkillsCTN ueber die ganze
+  // echte Bildschirmbreite hinweg am linken Rand (kompensiert den durch
+  // margin-inline:auto entstehenden Versatz).
+  .skillsShadow {
+    left: calc((1920px - 100vw) / 2 - 10px);
+  }
+
+  // Bleibt trotz zentriertem/begrenztem .wholeSkillsCTN am echten rechten
+  // Bildschirmrand (kompensiert den durch margin-inline:auto entstehenden
+  // Versatz in die andere Richtung als .skillsShadow).
+  .skillsTitle {
+    transform: translateX(calc((100vw - 1920px) / 2));
+  }
+
+  // Waechst bis an den rechten Rand des Containers.
+  .skillsTitle img {
+    flex: 1 1 0%;
+    width: auto;
+    max-width: none;
+    height: 5px;
   }
 }

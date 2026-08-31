@@ -3,6 +3,8 @@
   position: relative;
   z-index: 10;
   width: 100%;
+  max-width: 1920px;
+  margin-inline: auto;
 }
 
 .contactComponent {
@@ -10,7 +12,6 @@
   box-sizing: border-box;
   z-index: 10;
   width: 100%;
-  // padding: 60px 0 40px;
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -391,5 +392,17 @@ textarea {
 @media (min-width: 1920px) {
   .contactComponent {
     --section-pad-x: 160px;
+    overflow: visible;
+  }
+
+  // Bleibt trotz zentriertem/begrenztem .contactOuter am echten linken
+  // Bildschirmrand (kompensiert den durch margin-inline:auto entstehenden
+  // Versatz).
+  .contactShadow {
+    left: calc((1920px - 100vw) / 2 - 10%);
+  }
+
+  .contactHeader {
+    transform: translateX(calc((1920px - 100vw) / 2));
   }
 }
