@@ -134,3 +134,11 @@ button {
     margin: 11vh 0 17.5vh 0;
   }
 }
+
+@media (min-width: 1920px) {
+  .wholeImprintContent {
+    max-width: 1920px;
+    margin-inline: auto;
+    margin-top: 11vh;
+  }
+}

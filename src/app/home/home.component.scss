@@ -5,6 +5,7 @@
   flex-direction: column;
   min-height: 50vh;
   overflow-x: clip;
+  scroll-margin-top: 11vh;
 }
 
 .leftSide {
@@ -250,10 +251,11 @@
 
     .shadowIMG {
       max-width: 760px;
+      top: 55%;
     }
 
     .shape {
-      top: 57%;
+      top: 60%;
     }
   }
 
@@ -298,11 +300,10 @@
     }
 
     .shadowIMG {
-      left: 0;
+      left: 7vw;
       top: 43%;
       transform: translateY(-50%);
       width: auto;
-      max-width: clamp(420px, 58vw, 760px);
       max-height: 95%;
     }
 
@@ -388,7 +389,7 @@
 
   .leftSide {
     .shadowIMG {
-      left: 10vw;
+      left: 0vw;
     }
 
     .shape {
@@ -408,7 +409,25 @@
 
   .rightSide {
     top: 40%;
-    right: 0;
+    right: 10vw;
+    --intro-size: 110px;
+    --name-size: 118px;
+    --role-size: 88px;
+    --talk-font-size: 28px;
+    --talk-padding: 18px 40px;
+  }
+}
+
+@media (min-width: 1921px) {
+  .leftSide {
+    .shadowIMG {
+      left: 10vw;
+    }
+  }
+
+  .rightSide {
+    top: 40%;
+    right: 0vw;
     --intro-size: 110px;
     --name-size: 118px;
     --role-size: 88px;
