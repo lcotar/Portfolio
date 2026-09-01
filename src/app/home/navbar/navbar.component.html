@@ -7,10 +7,18 @@
 
   <div class="navbarMenu">
     <div class="navbarLinks">
-      <a href="#aboutme">{{ "navbar.aboutMe" | translate }}</a>
-      <a href="#skills">{{ "navbar.skills" | translate }}</a>
-      <a href="#portfolio">{{ "navbar.projects" | translate }}</a>
-      <a href="#contact">{{ "navbar.contact" | translate }}</a>
+      <a href="#aboutme" (click)="scrollToSection($event, 'aboutme')">{{
+        "navbar.aboutMe" | translate
+      }}</a>
+      <a href="#skills" (click)="scrollToSection($event, 'skills')">{{
+        "navbar.skills" | translate
+      }}</a>
+      <a href="#portfolio" (click)="scrollToSection($event, 'portfolio')">{{
+        "navbar.projects" | translate
+      }}</a>
+      <a href="#contact" (click)="scrollToSection($event, 'contact')">{{
+        "navbar.contact" | translate
+      }}</a>
     </div>
 
     <div class="navbarSwitchingLanguage">

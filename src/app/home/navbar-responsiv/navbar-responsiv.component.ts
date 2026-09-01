@@ -37,4 +37,15 @@ export class NavbarResponsivComponent {
   toggleMenu(): void {
     this.menuOpen = !this.menuOpen;
   }
+
+  scrollToSection(event: Event, id: string) {
+    event.preventDefault();
+    this.toggleMenu();
+    const target = document.getElementById(id);
+    if (!target) return;
+    const navbarHeight =
+      document.querySelector('.topnav')?.getBoundingClientRect().height ?? 0;
+    const targetTop = target.getBoundingClientRect().top + window.scrollY - navbarHeight;
+    window.scrollTo({ top: targetTop, behavior: 'smooth' });
+  }
 }
