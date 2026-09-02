@@ -1,141 +1,145 @@
 <section id="contact" class="contactOuter content-box">
- <div class="contactComponent">
-  <img
-    class="contactShadow"
-    src="/img/shadow/04_purple_shadow_contact.png"
-    alt=""
-  />
+  <div class="contactComponent">
+    <img
+      class="contactShadow"
+      src="/img/shadow/04_purple_shadow_contact.png"
+      alt=""
+    />
 
-  <section class="contactLeftSide">
-    <div class="contactHeader">
-      <img src="/img/lines/05_contact.png" alt="" />
-      <h3>{{ "contact.header.eins" | translate }}</h3>
-    </div>
-    <div class="contactContent">
-      <h2>{{ "contact.header.zwei" | translate }}</h2>
-      <div class="contactTXT">
-        <p>{{ "contact.text.eins" | translate }}</p>
-        <p>
-          {{ "contact.text.zwei" | translate }}
-          <strong>{{ "contact.text.drei" | translate }}</strong>
-        </p>
+    <section class="contactLeftSide">
+      <div class="contactHeader">
+        <img src="/img/lines/05_contact.png" alt="" />
+        <h3>{{ "contact.header.eins" | translate }}</h3>
       </div>
-    </div>
-  </section>
+      <div class="contactContent">
+        <h2>{{ "contact.header.zwei" | translate }}</h2>
+        <div class="contactTXT">
+          <p>{{ "contact.text.eins" | translate }}</p>
+          <p>
+            {{ "contact.text.zwei" | translate }}
+            <strong>{{ "contact.text.drei" | translate }}</strong>
+          </p>
+        </div>
+      </div>
+    </section>
 
-  <section class="contactForm">
-    <!-- Contact Form -->
-    @if (!messageSent) {
-      <div class="contactCNT">
-        <form
-          action="action_page.php"
-          (ngSubmit)="onSubmit(contactform)"
-          #contactform="ngForm"
-        >
-          <!-- Name -->
-          <div class="contactName">
-            <input
-              #name="ngModel"
-              [(ngModel)]="contactData.name"
-              type="text"
-              id="lname"
-              name="name"
-              [placeholder]="'contact.contactform.name' | translate"
-              required
-            />
-            @if (!name.valid && name.touched) {
-              <span class="error">{{
-                "contact.contactform.nameError" | translate
-              }}</span>
-            }
-          </div>
-
-          <!-- E-Mail Adresse -->
-          <div class="contactEmail">
-            <input
-              #email="ngModel"
-              [(ngModel)]="contactData.email"
-              type="email"
-              id="email"
-              name="email"
-              maxlength="254"
-              autocomplete="email"
-              [placeholder]="'contact.contactform.email' | translate"
-              required
-              appEmailRfc
-            />
-            @if (!email.valid && email.touched) {
-              <span class="error">{{
-                "contact.contactform.emailError" | translate
-              }}</span>
-            }
-          </div>
-
-          <!-- Message -->
-          <div class="contactMessage">
-            <div>
-              <textarea
-                #message="ngModel"
-                [(ngModel)]="contactData.message"
-                id="subject"
-                name="subject"
-                [placeholder]="'contact.contactform.message' | translate"
-                style="height: 200px"
+    <section class="contactForm">
+      <!-- Contact Form -->
+      @if (!messageSent) {
+        <div class="contactCNT">
+          <form
+            action="action_page.php"
+            (ngSubmit)="onSubmit(contactform)"
+            #contactform="ngForm"
+          >
+            <!-- Name -->
+            <div class="contactName">
+              <input
+                #name="ngModel"
+                [(ngModel)]="contactData.name"
+                type="text"
+                id="lname"
+                name="name"
+                [placeholder]="'contact.contactform.name' | translate"
                 required
-              ></textarea>
-
-              @if (!message.valid && message.touched) {
+              />
+              @if (!name.valid && name.touched) {
                 <span class="error">{{
-                  "contact.contactform.messageError" | translate
+                  "contact.contactform.nameError" | translate
                 }}</span>
               }
             </div>
 
-            <div class="contactFooter">
-              <div class="contactPrivacy">
-                <input
-                  type="checkbox"
-                  name="privacyAccepted"
-                  id="privacyAccepted"
-                  class="checkbox"
-                  [(ngModel)]="privacyAccepted"
-                  required
-                />
-                <label for="privacyAccepted">
-                  {{ "contact.privacy.eins" | translate }}
-                  <a [routerLink]="['/privacy']">{{
-                    "contact.privacy.zwei" | translate
-                  }}</a>
+            <!-- E-Mail Adresse -->
+            <div class="contactEmail">
+              <input
+                #email="ngModel"
+                [(ngModel)]="contactData.email"
+                type="email"
+                id="email"
+                name="email"
+                maxlength="254"
+                autocomplete="email"
+                [placeholder]="'contact.contactform.email' | translate"
+                required
+                appEmailRfc
+              />
+              @if (!email.valid && email.touched) {
+                <span class="error">{{
+                  "contact.contactform.emailError" | translate
+                }}</span>
+              }
+            </div>
 
-                  {{ "contact.privacy.drei" | translate }}
-                </label>
+            <!-- Message -->
+            <div class="contactMessage">
+              <div>
+                <textarea
+                  #message="ngModel"
+                  [(ngModel)]="contactData.message"
+                  id="subject"
+                  name="subject"
+                  [placeholder]="'contact.contactform.message' | translate"
+                  style="height: 200px"
+                  required
+                ></textarea>
+
+                @if (!message.valid && message.touched) {
+                  <span class="error">{{
+                    "contact.contactform.messageError" | translate
+                  }}</span>
+                }
               </div>
 
-              <input
-                type="submit"
-                [value]="'contact.button.text' | translate"
-                class="contactMessage"
-                [disabled]="
-                  !contactform.valid || !privacyAccepted || isSubmitting
-                "
-              />
+              <div class="contactFooter">
+                <div class="contactPrivacy">
+                  <input
+                    type="checkbox"
+                    name="privacyAccepted"
+                    id="privacyAccepted"
+                    class="checkbox"
+                    [(ngModel)]="privacyAccepted"
+                    required
+                  />
+                  <label for="privacyAccepted">
+                    {{ "contact.privacy.eins" | translate }}
+                    <a [routerLink]="['/privacy']">{{
+                      "contact.privacy.zwei" | translate
+                    }}</a>
+
+                    {{ "contact.privacy.drei" | translate }}
+                  </label>
+                </div>
+
+                <input
+                  type="submit"
+                  [value]="'contact.button.text' | translate"
+                  class="contactMessage"
+                  [disabled]="
+                    !contactform.valid || !privacyAccepted || isSubmitting
+                  "
+                />
+              </div>
             </div>
-          </div>
 
-          @if (messageError) {
-            <span class="error">{{ "contact.error.message" | translate }}</span>
-          }
+            @if (messageError) {
+              <span class="error">{{
+                "contact.error.message" | translate
+              }}</span>
+            }
 
-          <div class="contactArrow">
-            <a href="#home" aria-label="Nach oben scrollen">
-              <img src="/img/contact/go_up.svg" alt="" />
-            </a>
-          </div>
-        </form>
-      </div>
-    } @else {
-      <p class="thankYouMessage">{{ "contact.success.message" | translate }}</p>
-    }
-  </section>
- </div>
+            <div class="contactArrow">
+              <a href="#home" aria-label="Nach oben scrollen">
+                <img src="/img/contact/go_up.svg" alt="" />
+              </a>
+            </div>
+          </form>
+        </div>
+      } @else {
+        <p class="thankYouMessage">
+          {{ "contact.success.message" | translate }}
+        </p>
+      }
+    </section>
+  </div>
 </section>

@@ -1,63 +1,65 @@
 <section class="skillsOuter" id="skills">
- <div class="wholeSkillsCTN content-box" #wholeSkillsCTN>
-  <img
-    class="skillsShadow"
-    src="/img/shadow/02_reen_shadow_skills.png"
-    alt=""
-  />
+  <div class="wholeSkillsCTN content-box" #wholeSkillsCTN>
+    <img
+      class="skillsShadow"
+      src="/img/shadow/02_green_shadow_skills.png"
+      alt=""
+    />
 
-  <div class="skillsTitle">
-    <h2>{{ "mySkills.header.eins" | translate }}</h2>
-    <img src="/img/lines/01_my_skills.png" alt="" />
-  </div>
+    <div class="skillsTitle">
+      <h2>{{ "mySkills.header.eins" | translate }}</h2>
+      <img src="/img/lines/01_my_skills.png" alt="" />
+    </div>
 
-  <div class="skillsHeaderTXT">
-    <p>{{ "mySkills.text.eins" | translate }}</p>
-  </div>
+    <div class="skillsHeaderTXT">
+      <p>{{ "mySkills.text.eins" | translate }}</p>
+    </div>
 
-  <div class="skillsIcons">
-    @for (item of iconsFrondend; track $index) {
-      <div
-        class="skillItem"
-        (mouseenter)="item.isHovered = true"
-        (mouseleave)="item.isHovered = false"
-      >
-        <img
-          [src]="item.isHovered ? item.srcHover : item.srcDefault"
-          [alt]="item.name"
-          class="skillIcon"
-        />
-        <p
-          class="skillLBL"
-          [ngClass]="{ highlightedSkill: item.name === 'Continuous Learning' }"
+    <div class="skillsIcons">
+      @for (item of iconsFrondend; track $index) {
+        <div
+          class="skillItem"
+          (mouseenter)="item.isHovered = true"
+          (mouseleave)="item.isHovered = false"
         >
-          {{ item.name }}
-        </p>
+          <img
+            [src]="item.isHovered ? item.srcHover : item.srcDefault"
+            [alt]="item.name"
+            class="skillIcon"
+          />
+          <p
+            class="skillLBL"
+            [ngClass]="{
+              highlightedSkill: item.name === 'Continuous Learning',
+            }"
+          >
+            {{ item.name }}
+          </p>
+        </div>
+      }
+    </div>
+
+    <div class="skillsSubheaderCTN">
+      <div class="skillsSubHeader">
+        <h2 class="skillsHeaderGap">
+          {{ "mySkills.header.zwei" | translate }}
+        </h2>
+        <h2 class="skillsHeaderColor">
+          {{ "mySkills.header.drei" | translate }}
+        </h2>
+        <h2>{{ "mySkills.header.vier" | translate }}</h2>
       </div>
-    }
-  </div>
-
-  <div class="skillsSubheaderCTN">
-    <div class="skillsSubHeader">
-      <h2 class="skillsHeaderGap">
-        {{ "mySkills.header.zwei" | translate }}
-      </h2>
-      <h2 class="skillsHeaderColor">
-        {{ "mySkills.header.drei" | translate }}
-      </h2>
-      <h2>{{ "mySkills.header.vier" | translate }}</h2>
+      <div class="skillsSubTXT">
+        <p>{{ "mySkills.text.zwei" | translate }}</p>
+      </div>
     </div>
-    <div class="skillsSubTXT">
-      <p>{{ "mySkills.text.zwei" | translate }}</p>
+
+    <div class="skillsBTNContact">
+      <a href="#contact">
+        <button class="contactBTN">
+          {{ "mySkills.button.text" | translate }}
+        </button>
+      </a>
     </div>
   </div>
-
-  <div class="skillsBTNContact">
-    <a href="#contact">
-      <button class="contactBTN">
-        {{ "mySkills.button.text" | translate }}
-      </button>
-    </a>
-  </div>
- </div>
 </section>
