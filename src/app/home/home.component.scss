@@ -321,8 +321,6 @@
 
   .rightSide {
     position: absolute;
-    // Gleicher Gutter-Wert wie .content-box - Hero-Text/Button landen
-    // dadurch immer exakt auf der gemeinsamen rechten Content-Achse.
     right: var(--page-gutter);
     top: 45%;
     transform: translateY(-50%);
@@ -368,9 +366,6 @@
 
 @media (min-width: 1400px) {
   .rightSide {
-    // Zusaetzlich zum bestehenden translateY(-50%) (vertikale Zentrierung)
-    // ab hier 3vw nach links verschoben (1vw + weitere 2vw).
-    transform: translateY(-50%) translateX(-3vw);
     --intro-size: 80px;
     --name-size: 86px;
     --role-size: 64px;
