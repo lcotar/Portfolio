@@ -1,4 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* ===== Globales vertikales Content-Grid =====
+   Eine Quelle der Wahrheit fuer die linke/rechte Content-Grenze der
+   gesamten Seite. --page-gutter uebernimmt exakt den Wert, den die
+   Navbar bereits fuer Logo/Sprachumschalter verwendet, damit jede
+   Section automatisch auf derselben vertikalen Achse wie die Navbar
+   landet. --content-inset ist der Abstand, um den die zentrierte
+   Content-Box ab 1920px vom echten Bildschirmrand nach innen rueckt -
+   Full-Bleed-Elemente (Shadows, Shapes, Deko-Linien) rechnen diesen
+   Wert heraus, um trotzdem bis zum echten Rand zu reichen. */
+:root {
+  --content-max-width: 1920px;
+  // 7.8125vw = 150px bei genau 1920px Breite - ab da deckelt der max-Wert
+  // (150px) den Gutter fest, damit der Inhalt bei > 1920px NICHT weiter
+  // nach innen wandert, sondern exakt auf der Linie von 1920px bleibt.
+  --page-gutter: clamp(20px, 8vw, 150px);
+  --content-inset: max(0px, calc((100vw - var(--content-max-width)) / 2));
+}
+
+.content-box {
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin-inline: auto;
+  padding-inline: var(--page-gutter);
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   background-color: #141d2f;

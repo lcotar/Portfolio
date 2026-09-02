@@ -1,39 +1,41 @@
-<section class="navbarCNT">
-  <div class="navbarLogo">
-    <a routerLink="/" fragment="home">
-      <img src="/img/logo/LC_Logo_leuchtend.svg" alt="" />
-    </a>
-  </div>
-
-  <div class="navbarMenu">
-    <div class="navbarLinks">
-      <a href="#aboutme" (click)="scrollToSection($event, 'aboutme')">{{
-        "navbar.aboutMe" | translate
-      }}</a>
-      <a href="#skills" (click)="scrollToSection($event, 'skills')">{{
-        "navbar.skills" | translate
-      }}</a>
-      <a href="#portfolio" (click)="scrollToSection($event, 'portfolio')">{{
-        "navbar.projects" | translate
-      }}</a>
-      <a href="#contact" (click)="scrollToSection($event, 'contact')">{{
-        "navbar.contact" | translate
-      }}</a>
+<section class="navbarOuter">
+  <div class="navbarCNT content-box">
+    <div class="navbarLogo">
+      <a routerLink="/" fragment="home">
+        <img src="/img/logo/LC_Logo_leuchtend.svg" alt="" />
+      </a>
     </div>
 
-    <div class="navbarSwitchingLanguage">
-      <button
-        [class.active-lang]="currentLang === 'de'"
-        (click)="toogleTranslation('de')"
-      >
-        DE
-      </button>
-      <button
-        [class.active-lang]="currentLang === 'en'"
-        (click)="toogleTranslation('en')"
-      >
-        EN
-      </button>
+    <div class="navbarMenu">
+      <div class="navbarLinks">
+        <a href="#aboutme" (click)="scrollToSection($event, 'aboutme')">{{
+          "navbar.aboutMe" | translate
+        }}</a>
+        <a href="#skills" (click)="scrollToSection($event, 'skills')">{{
+          "navbar.skills" | translate
+        }}</a>
+        <a href="#portfolio" (click)="scrollToSection($event, 'portfolio')">{{
+          "navbar.projects" | translate
+        }}</a>
+        <a href="#contact" (click)="scrollToSection($event, 'contact')">{{
+          "navbar.contact" | translate
+        }}</a>
+      </div>
+
+      <div class="navbarSwitchingLanguage">
+        <button
+          [class.active-lang]="currentLang === 'de'"
+          (click)="toogleTranslation('de')"
+        >
+          DE
+        </button>
+        <button
+          [class.active-lang]="currentLang === 'en'"
+          (click)="toogleTranslation('en')"
+        >
+          EN
+        </button>
+      </div>
     </div>
   </div>
 </section>

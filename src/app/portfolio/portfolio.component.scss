@@ -5,12 +5,13 @@
   width: 100%;
 }
 
+// .content-box (global, styles.scss) uebernimmt max-width/margin-inline/
+// padding-inline - dadurch liegen Header und Projekte immer exakt auf der
+// gemeinsamen Content-Achse der ganzen Seite.
 .wholePortfolioCNT {
   position: relative;
   z-index: 10;
   font-family: Poppins, sans-serif;
-  width: 100%;
-  box-sizing: border-box;
 }
 
 .portfolioHead {
@@ -21,21 +22,32 @@
   gap: 12px;
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: center;
   height: auto;
-  width: 100%;
-  margin: 0 auto;
+  box-sizing: border-box;
+  // Bis 1920px wird die GESAMTE Gruppe (Linien + h1 als Einheit) nach
+  // rechts verschoben, bis sie am echten Bildschirmrand anliegt - NICHT
+  // die einzelnen Linien unabhaengig auf beide Seiten bleeden. Ab 1921px
+  // (siehe Media Query weiter unten) entfaellt die Verschiebung wieder:
+  // dort sollen .lineLeft/.lineRight exakt auf Hoehe von
+  // .portfolioHeaderTXT liegen (unverschoben).
+  transform: translateX(calc(var(--page-gutter) + var(--content-inset)));
 
+  // h1 sitzt zwischen zwei wachsenden Linien - ohne Deckel fuellen sie in
+  // jeder Breite automatisch exakt bis zur normalen (NICHT gebleedeten)
+  // Breite von .portfolioHeader, die deckungsgleich mit .portfolioHeaderTXT
+  // ist.
   .lineLeft {
     border-width: 4px;
-    width: var(--line-left-w, 9.4vw);
+    flex: 3 1 auto;
+    min-width: 20px;
     height: 4px;
   }
 
   .lineRight {
-    flex: 0 0 auto;
     border-width: 4px;
-    width: var(--line-right-w, 15.6vw);
+    flex: 5 1 auto;
+    min-width: 20px;
     height: 4px;
   }
 
@@ -50,24 +62,38 @@
   }
 }
 
-@media screen and (min-width: 480px) {
+// ===== > 1920px =====
+@media (min-width: 1921px) {
+  // Verschiebung (transform) entfaellt. .lineRight verlaesst den Flex-Fluss
+  // komplett und bleedet als reine Deko bis zum echten Rand (exakt so lang
+  // wie die Linie in .skillsTitle - 30px Gap-Abzug). .lineLeft bleibt
+  // bewusst kurz (max-width-Deckel, deutlich kuerzer als .lineRight) und
+  // haengt sich per margin-left:auto direkt (nur normaler gap-Abstand)
+  // an h1 - der Leerraum wandert dadurch VOR die Linie statt dahinter.
+  // h1 landet weiterhin exakt an der rechten Kante von .portfolioHeader
+  // (== .skillsHeaderTXT & Co), da nach h1 nur noch die absolut
+  // positionierte .lineRight folgt.
   .portfolioHeader {
-    --line-left-w: 7.9vw;
-    --line-right-w: 14vw;
-  }
-}
+    position: relative;
+    transform: none;
 
-@media screen and (min-width: 576px) {
-  .portfolioHeader {
-    --line-left-w: 8vw;
-    --line-right-w: 14.1vw;
-  }
-}
+    .lineLeft {
+      max-width: clamp(30px, 8vw, 200px);
+      margin-left: auto;
+    }
 
-@media screen and (min-width: 768px) {
-  .portfolioHeader {
-    --line-left-w: 7.8vw;
-    --line-right-w: 14.1vw;
+    .lineRight {
+      position: absolute;
+      top: 50%;
+      right: calc(-1 * (var(--page-gutter) + var(--content-inset)));
+      // 30px = derselbe Gap-Wert wie --skillsTitleGap in .skillsTitle -
+      // macht beide Linien gleich lang.
+      width: calc(var(--page-gutter) + var(--content-inset) - 30px);
+      min-width: 0;
+      max-width: none;
+      flex: none;
+      transform: translateY(-50%);
+    }
   }
 }
 
@@ -78,13 +104,19 @@
   line-height: 20px;
   text-align: center;
   margin-top: 10px;
-  padding: 0 20px;
 }
 
 .myPortfolioProjects {
   position: relative;
   margin-top: 30px;
-  padding: 0 20px;
+}
+
+// .portfolioShadow ist ein direktes Kind von .myPortfolioProjects und darf
+// KEINE Animation erben - deshalb sitzt die inView-Animation auf diesem
+// separaten Wrapper um die Projekt-Karten, nicht auf .myPortfolioProjects
+// selbst (Opacity/Transform auf einem Vorfahren wuerden zwangslaeufig auch
+// auf .portfolioShadow durchschlagen).
+.portfolioProjectsList {
   opacity: 0;
   transform: translateY(60px);
   transition:
@@ -101,7 +133,9 @@
   display: none;
   position: absolute;
   top: 75%;
-  left: -20px;
+  // Bleibt bewusst am echten Bildschirmrand (Full-Bleed-Deko-Ausnahme) - in
+  // jeglicher Breite, nicht erst ab 1920px.
+  left: calc(-1 * (var(--page-gutter) + var(--content-inset)));
   transform: translateY(-50%);
   width: clamp(200px, 55vw, 320px);
   height: auto;
@@ -112,7 +146,7 @@
 .portfolioShadowMobile {
   position: absolute;
   top: 44%;
-  right: 0;
+  right: calc(-1 * var(--content-inset));
   width: 90vw;
   height: auto;
   z-index: -1;
@@ -308,20 +342,9 @@
 
 /* ===== Desktop: side-by-side layout ===== */
 @media screen and (min-width: 992px) {
-  .wholePortfolioCNT {
-    padding: 0;
-  }
-
   .portfolioHeader {
     gap: clamp(12px, 2vw, 32px);
     height: 110px;
-
-    .lineLeft,
-    .lineRight {
-      flex: 0 0 auto;
-      width: auto;
-      height: auto;
-    }
 
     h1 {
       font-size: clamp(48px, 6vw, 90px);
@@ -390,7 +413,6 @@
 
   .portfolioShadow {
     display: block;
-    right: -60px;
     width: clamp(280px, 24vw, 420px);
   }
 

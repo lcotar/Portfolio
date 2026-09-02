@@ -1,10 +1,15 @@
 /* ===== BASE (Mobile First, ab 320px) ===== */
+// .content-box (global, styles.scss) uebernimmt max-width/margin-inline/
+// padding-inline - dadurch liegen Header und Formular immer exakt auf der
+// gemeinsamen Content-Achse der ganzen Seite.
 .contactOuter {
   position: relative;
   z-index: 10;
-  width: 100%;
-  max-width: 1920px;
-  margin-inline: auto;
+  // Clip-Grenze fuer die randbuendigen Deko-Elemente (.contactShadow,
+  // .contactHeader) - liegt genau am echten Bildschirmrand (siehe
+  // ueberschreibung bei 1920px), nicht an .contactComponents eigener,
+  // durch padding-inline eingerueckter Box.
+  overflow-x: clip;
 }
 
 .contactComponent {
@@ -16,13 +21,15 @@
   flex-direction: column;
   gap: 40px;
   font-family: Poppins, sans-serif;
-  overflow: hidden;
 }
 
 /* ===== Purple shadow (decorative, bottom-left glow) ===== */
 .contactShadow {
   position: absolute;
-  left: -15%;
+  // Bleibt bewusst am echten Bildschirmrand (Full-Bleed-Deko-Ausnahme) - in
+  // jeglicher Breite, nicht erst ab 1920px. Der Ueberschuss ueber den Rand
+  // hinaus wird durch .contactOuters overflow-x:clip abgeschnitten.
+  left: calc(-1 * (var(--page-gutter) + var(--content-inset)) - 10%);
   bottom: -10%;
   width: clamp(260px, 90vw, 678px);
   height: auto;
@@ -46,6 +53,9 @@
     min-width: 40px;
     max-width: clamp(60px, 20vw, 520px);
     height: 3px;
+    // Bleibt bewusst am echten Bildschirmrand (Full-Bleed-Deko-Ausnahme) - in
+    // jeglicher Breite, nicht erst ab 1920px.
+    margin-left: calc(-1 * (var(--page-gutter) + var(--content-inset)));
   }
 
   h3 {
@@ -61,7 +71,6 @@
 
 .contactContent {
   margin-top: 20px;
-  padding: 0 var(--section-pad-x, 20px);
 
   h2 {
     margin: 0 0 15px;
@@ -72,8 +81,6 @@
   }
 }
 
-/* --section-pad-x (auf .contactComponent) steuert das horizontale
-   Padding von .contactContent + .contactForm gemeinsam. */
 .contactTXT {
   display: flex;
   flex-direction: column;
@@ -91,7 +98,6 @@
 
 .contactForm {
   width: 100%;
-  padding: 0 var(--section-pad-x, 20px);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -317,7 +323,6 @@ textarea {
 /* ===== 768px ===== */
 @media (min-width: 768px) {
   .contactComponent {
-    --section-pad-x: 40px;
     --txt-max-w: 480px;
   }
 }
@@ -330,11 +335,9 @@ textarea {
     justify-content: space-between;
     gap: 30px;
     min-height: 50vh;
-    --section-pad-x: 60px;
     --txt-max-w: 25vw;
   }
   .contactShadow {
-    left: -10%;
     bottom: -15%;
     width: clamp(400px, 40vw, 678px);
   }
@@ -369,15 +372,7 @@ textarea {
 /* ===== 1200px ===== */
 @media (min-width: 1200px) {
   .contactComponent {
-    --section-pad-x: 80px;
     --txt-max-w: 22vw;
-  }
-}
-
-/* ===== 1400px ===== */
-@media (min-width: 1400px) {
-  .contactComponent {
-    --section-pad-x: 100px;
   }
 }
 
@@ -390,19 +385,35 @@ textarea {
 
 /* ===== 1920px ===== */
 @media (min-width: 1920px) {
-  .contactComponent {
-    --section-pad-x: 160px;
-    overflow: visible;
+  // Erlaubt .contactShadow/.contactHeader ab hier bis zum echten
+  // Bildschirmrand zu bleeden (unterhalb 1920px faellt die Clip-Grenze von
+  // .contactOuter exakt mit dem echten Rand zusammen, siehe Basis-Regel).
+  .contactOuter {
+    overflow-x: visible;
   }
+}
 
-  // Bleibt trotz zentriertem/begrenztem .contactOuter am echten linken
-  // Bildschirmrand (kompensiert den durch margin-inline:auto entstehenden
-  // Versatz).
-  .contactShadow {
-    left: calc((1920px - 100vw) / 2 - 10%);
-  }
-
+// ===== > 1920px =====
+@media (min-width: 1921px) {
   .contactHeader {
-    transform: translateX(calc((1920px - 100vw) / 2));
+    // h3 ist ab hier das einzige Element im normalen Flex-Fluss und sitzt
+    // dadurch exakt an der linken Kante von .contactHeader (== linke Kante
+    // von .contactContent). Die Linie liegt frei (position:absolute) links
+    // davon und reicht bis zum echten Bildschirmrand, ohne h3 zu verschieben.
+    position: relative;
+    --contactHeaderGap: clamp(12px, 4vw, 35px);
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: calc(-1 * (var(--page-gutter) + var(--content-inset)));
+      width: calc(
+        var(--page-gutter) + var(--content-inset) - var(--contactHeaderGap)
+      );
+      min-width: 0;
+      max-width: none;
+      margin-left: 0;
+      transform: translateY(-50%);
+    }
   }
 }

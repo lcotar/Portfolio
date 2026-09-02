@@ -5,6 +5,8 @@
 }
 
 /* --- NAVBAR --- */
+// Gleicher Gutter-Wert wie .content-box/die Desktop-Navbar, damit Logo und
+// Burger-Button auf derselben Content-Achse wie der Rest der Seite liegen.
 .topnav {
   position: fixed;
   top: 0;
@@ -16,6 +18,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-inline: var(--page-gutter);
   z-index: 2000; // Navbar bleibt oben
 
   .navbarRespoLogo img {
@@ -92,8 +95,6 @@
   }
 
   .topnav {
-    padding: 0 1rem;
-
     .navbarRespoLogo img {
       width: auto;
       height: 34px;
@@ -111,8 +112,6 @@
   /* 480px */
   @media screen and (min-width: 480px) {
     .topnav {
-      padding: 0 1.5rem;
-
       .navbarRespoLogo img {
         height: 38px;
       }
@@ -138,10 +137,6 @@
 
   /* 768px */
   @media screen and (min-width: 768px) {
-    .topnav {
-      padding: 0 2rem;
-    }
-
     .menuOverlay .menuLinks a {
       font-size: 22px;
     }

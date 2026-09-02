@@ -3,6 +3,11 @@
   width: 100%;
 }
 
+// .content-box (global, styles.scss) uebernimmt max-width/margin-inline/
+// padding-inline, damit die Section-Box konsistent mit dem Rest der Seite
+// bleibt. Die Review-Karte selbst ist bewusst eine zentrierte, kompakte
+// Karte mit eigener max-width (Design-Ausnahme, keine Kante zur Content-
+// Achse noetig).
 .wholeReviewCNT {
   display: flex;
   align-items: center;
@@ -14,8 +19,13 @@
 .shadowClip {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
+  // Reicht bewusst bis zum echten Bildschirmrand (nicht nur bis zur
+  // padding-inline-Kante von .content-box), damit der Deko-Shadow
+  // trotzdem bis zum echten Rand bleeden und trotzdem geclippt bleiben
+  // kann, statt einen horizontalen Overflow zu erzeugen.
+  left: calc(-1 * var(--content-inset));
+  right: calc(-1 * var(--content-inset));
+  width: auto;
   height: 100%;
   z-index: 1;
   overflow-x: clip;
@@ -40,7 +50,7 @@
 /* ---- Green shadow image (decorative, behind the review card) ---- */
 .feedbackShadow {
   position: absolute;
-  right: 0px;
+  right: 0;
   bottom: 30px;
   width: 50vw;
   height: auto;
@@ -55,7 +65,7 @@
 /* 480px */
 @media (min-width: 480px) {
   .feedbackShadow {
-    right: 0px;
+    right: 0;
     width: clamp(140px, 45vw, 220px);
   }
 
@@ -73,7 +83,7 @@
 /* 768px */
 @media (min-width: 768px) {
   .feedbackShadow {
-    right: 0px;
+    right: 0;
 
     width: clamp(160px, 20vw, 320px);
   }

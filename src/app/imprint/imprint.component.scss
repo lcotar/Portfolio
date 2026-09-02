@@ -3,6 +3,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 100%;
   margin-inline: auto;
 }
 
@@ -30,14 +31,16 @@ button {
 }
 
 // ===== BASE (Mobile First, ab 320px) =====
+// .content-box (global, styles.scss) uebernimmt max-width/margin-inline/
+// padding-inline - der Seiteninhalt liegt dadurch immer exakt auf der
+// gemeinsamen Content-Achse der ganzen Seite. Fliesstext bekommt zusaetzlich
+// eine eigene Lesebreite (max-width auf p/address/Liste), damit Zeilen bei
+// sehr breiten Bildschirmen nicht unleserlich lang werden.
 .wholeImprintContent {
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
   height: auto;
-  width: 100%;
-  padding: 0 16px;
-  box-sizing: border-box;
 
   h1 {
     color: #ffffff;
@@ -57,8 +60,9 @@ button {
 
   p {
     color: #ffffff;
-    margin: 8px 0 0;
+    margin: 8px auto 0;
     padding: 0;
+    max-width: 700px;
     font-size: clamp(14px, 3.5vw, 16px);
     line-height: 1.5;
     font-weight: 400;
@@ -67,8 +71,9 @@ button {
   address {
     color: #ffffff;
     text-align: center;
-    margin: 8px 0 0;
+    margin: 8px auto 0;
     padding: 0;
+    max-width: 700px;
     font-size: clamp(14px, 3.5vw, 16px);
     font-style: normal;
     line-height: 1.5;
@@ -81,7 +86,8 @@ button {
 }
 
 .imprintList {
-  margin: 16px 0 0;
+  margin: 16px auto 0;
+  max-width: 700px;
   padding-left: 1.25rem;
 
   li {
@@ -106,39 +112,9 @@ button {
   margin-top: 24px;
 }
 
-// ===== 320px =====
-@media (min-width: 320px) {
-  .wholeImprintContent {
-    width: 100%;
-  }
-}
-
-// ===== 480px =====
-@media (min-width: 480px) {
-  .wholeImprintContent {
-    width: 92%;
-    align-self: center;
-  }
-}
-
-// ===== 768px (Tablet) =====
-@media (min-width: 768px) {
-  .wholeImprintContent {
-    padding: 0;
-  }
-}
-
 // ===== 992px (Desktop-Layout) =====
 @media (min-width: 992px) {
   .wholeImprintContent {
-    margin: 11vh 0 17.5vh 0;
-  }
-}
-
-@media (min-width: 1920px) {
-  .wholeImprintContent {
-    max-width: 1920px;
-    margin-inline: auto;
-    margin-top: 11vh;
+    margin-block: 11vh 17.5vh;
   }
 }

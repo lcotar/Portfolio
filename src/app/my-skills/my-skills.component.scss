@@ -9,6 +9,9 @@
   width: 100%;
 }
 
+// .content-box (global, styles.scss) uebernimmt max-width/margin-inline/
+// padding-inline - Icons-Spalte (links) und Titel/Text/Button-Spalte
+// (rechts) landen dadurch immer exakt auf der gemeinsamen Content-Achse.
 .wholeSkillsCTN {
   position: relative;
   display: grid;
@@ -20,19 +23,17 @@
     "icons btn";
   align-items: center;
   align-content: center;
-  width: 100%;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
-  box-sizing: border-box;
   z-index: 1;
-  max-width: 1920px;
-  margin-inline: auto;
 }
 
 /* ---- Green shadow image (behind content, cut off at section edges) ---- */
 .skillsShadow {
   position: absolute;
-  left: -10px;
+  // Bleibt bewusst am echten Bildschirmrand (Full-Bleed-Deko-Ausnahme) -
+  // kompensiert das neue padding-inline/max-width von .content-box.
+  left: calc(-1 * var(--content-inset) - 10px);
   top: 40%;
   width: clamp(220px, 22vw, 340px);
   height: auto;
@@ -48,8 +49,8 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 30px;
   align-self: end;
+  gap: 20px;
 
   h2 {
     color: #ffffff;
@@ -60,8 +61,39 @@
   }
 
   img {
-    width: clamp(40px, 95vw, 100px);
-    height: auto;
+    flex: 1 1 auto;
+    min-width: 20px;
+    max-width: clamp(60px, 15vw, 400px);
+    height: 5px;
+    // Bleibt bewusst am echten Bildschirmrand (Full-Bleed-Deko-Ausnahme) - in
+    // jeglicher Breite bis 1920px. Ab 1921px siehe Media Query weiter unten:
+    // dort sitzt h2 stattdessen exakt auf Hoehe von .skillsHeaderTXT & Co.
+    margin-right: calc(-1 * (var(--page-gutter) + var(--content-inset)));
+  }
+}
+
+// ===== > 1920px =====
+@media (min-width: 1921px) {
+  .skillsTitle {
+    // h2 ist ab hier das einzige Element im normalen Flex-Fluss und sitzt
+    // dadurch exakt auf der rechten Kante von .skillsTitle (== rechte Kante
+    // von .skillsHeaderTXT/.skillsSubheaderCTN/.skillsBTNContact). Die Linie
+    // liegt frei (position:absolute) rechts davon bis zum echten Rand, ohne
+    // h2 zu verschieben.
+    --skillsTitleGap: 30px;
+
+    img {
+      position: absolute;
+      top: 50%;
+      right: calc(-1 * (var(--page-gutter) + var(--content-inset)));
+      width: calc(
+        var(--page-gutter) + var(--content-inset) - var(--skillsTitleGap)
+      );
+      min-width: 0;
+      max-width: none;
+      margin-right: 0;
+      transform: translateY(-50%);
+    }
   }
 }
 
@@ -70,7 +102,6 @@
   grid-area: text;
   position: relative;
   z-index: 1;
-  padding-right: 5vw;
   opacity: 0;
   transform: translateY(60px);
   transition:
@@ -100,7 +131,7 @@
   gap: 20px 10px;
   justify-items: center;
   align-content: center;
-  padding: 40px 5vw;
+  padding: 40px 0;
   z-index: 1;
 }
 
@@ -155,7 +186,6 @@
   grid-area: sub;
   position: relative;
   z-index: 11;
-  padding-right: 5vw;
   opacity: 0;
   transform: translateY(60px);
   transition:
@@ -212,7 +242,6 @@
   z-index: 1;
   display: flex;
   justify-content: flex-end;
-  padding-right: 5vw;
   align-self: start;
   opacity: 0;
   transform: translateY(60px);
@@ -274,16 +303,12 @@
   }
 
   .skillsTitle {
-    padding-right: 0;
-
     h2 {
       font-size: clamp(36px, 8vw, 55px);
     }
   }
 
   .skillsHeaderTXT {
-    padding-right: 0;
-
     p {
       text-align: center;
       margin: 0 auto;
@@ -310,10 +335,6 @@
     }
   }
 
-  .skillsSubheaderCTN {
-    padding-right: 0;
-  }
-
   .skillsSubHeader {
     justify-content: center;
   }
@@ -328,7 +349,6 @@
 
   .skillsBTNContact {
     justify-content: center;
-    padding-right: 0;
     margin-top: 10px;
   }
 }
@@ -362,24 +382,5 @@
   .contactBTN {
     width: 100%;
     max-width: 280px;
-  }
-}
-
-// ===== 1920px (Widescreen) =====
-@media (min-width: 1920px) {
-  .skillsShadow {
-    left: calc((1920px - 100vw) / 2 - 10px);
-  }
-
-  .skillsTitle {
-    transform: translateX(calc((100vw - 1920px) / 2));
-  }
-
-  // Waechst bis an den rechten Rand des Containers.
-  .skillsTitle img {
-    flex: 1 1 0%;
-    width: auto;
-    max-width: none;
-    height: 5px;
   }
 }

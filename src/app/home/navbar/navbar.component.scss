@@ -1,23 +1,30 @@
-.navbarCNT {
+// .navbarOuter traegt Fixed-Positionierung + Hintergrundfarbe OHNE
+// max-width - dadurch bleibt der Hintergrund auch ueber 1920px hinaus
+// durchgezogen bis zum echten Bildschirmrand, waehrend .navbarCNT
+// (content-box) den Inhalt weiterhin auf 1920px kappt und zentriert.
+.navbarOuter {
   position: fixed;
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 11vh;
-  background-color: #141d2f;
   top: 0;
   left: 0;
   right: 0;
+  height: 11vh;
+  background-color: #141d2f;
   z-index: 99;
-  max-width: 1920px;
-  margin-inline: auto;
+}
+
+// .content-box (global, styles.scss) uebernimmt max-width/margin-inline/
+// padding-inline - dadurch liegt das Navbar-Logo immer exakt auf der
+// gemeinsamen linken Content-Achse der ganzen Seite.
+.navbarCNT {
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 
 .navbarLogo {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-left: clamp(20px, 3vw, 60px);
 
   img {
     width: clamp(75px, 6vw, 120px);
@@ -35,7 +42,6 @@
   width: 100%;
   height: clamp(32px, 3vw, 40px);
   gap: clamp(60px, 5vw, 100px);
-  padding-right: clamp(20px, 3vw, 60px);
 }
 
 .navbarLinks {
@@ -92,7 +98,7 @@
 }
 
 @media screen and (max-width: 991.98px) {
-  .navbarCNT {
+  .navbarOuter {
     display: none;
   }
 }

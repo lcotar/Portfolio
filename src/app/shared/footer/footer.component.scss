@@ -3,21 +3,20 @@
   z-index: 10;
   width: 100%;
   background-color: #1a2233;
-  margin-inline: auto;
 }
 
+// .content-box (global, styles.scss) uebernimmt max-width/margin-inline/
+// padding-inline - dadurch liegen Logo (links) und Social-Icons (rechts)
+// immer exakt auf der gemeinsamen Content-Achse der ganzen Seite.
 .wholeFooter {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  max-width: 1920px;
-  margin-inline: auto;
   justify-content: center;
   position: relative;
   gap: 20px;
   z-index: 10;
-  padding: 35px 0;
+  padding-block: 35px;
 }
 
 .line {
@@ -78,7 +77,7 @@
 @media (min-width: 480px) {
   .wholeFooter {
     gap: 24px;
-    padding: 40px 0;
+    padding-block: 40px;
   }
 
   .footerSocialMedia {
@@ -107,7 +106,7 @@
 @media (min-width: 768px) {
   .wholeFooter {
     gap: 28px;
-    padding: 45px 0;
+    padding-block: 45px;
   }
 
   .footerSocialMedia {
@@ -120,9 +119,9 @@
   .wholeFooter {
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     gap: 30px;
-    padding: 25px 0;
+    padding-block: 25px;
   }
 
   .footerLogoLegalNotice {
@@ -164,43 +163,11 @@
 /* 1200px */
 @media (min-width: 1200px) {
   .wholeFooter {
-    padding: 25px 0;
+    padding-block: 25px;
   }
 
   .footerCopyright p,
   .footerLegalNotice a {
     font-size: 16px;
-  }
-}
-
-/* 1400px */
-@media (min-width: 1400px) {
-  .wholeFooter {
-    padding: 25px 0;
-  }
-}
-
-/* 1600px */
-@media (min-width: 1600px) {
-  .wholeFooter {
-    padding: 25px 0;
-  }
-}
-
-/* 1920px */
-@media (min-width: 1920px) {
-  .wholeFooter {
-    padding: 25px 0;
-    display: flex;
-    justify-content: space-between;
-    max-width: 1920px;
-  }
-
-  .footerLogoLegalNotice {
-    padding-left: clamp(20px, 3vw, 60px);
-  }
-
-  .footerSocialMedia {
-    padding-right: clamp(20px, 3vw, 60px);
   }
 }

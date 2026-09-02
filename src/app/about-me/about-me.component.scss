@@ -5,11 +5,13 @@
   width: 100%;
 }
 
+// .content-box (global, styles.scss) uebernimmt max-width/margin-inline/
+// padding-inline - Text (linke Seite) landet dadurch immer exakt auf der
+// gemeinsamen Content-Achse der ganzen Seite.
 .wholeAboutMeCNT {
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 100%;
   color: #ffffff;
   font-family: Poppins, sans-serif;
   z-index: 10;
@@ -17,8 +19,6 @@
 
 .aboutMeLeftSide {
   position: relative;
-  width: 90%;
-  padding: 0 5% 0 5%;
   z-index: 2;
   opacity: 0;
   transform: translateY(60px);
@@ -88,7 +88,7 @@
 .aboutMeShadow {
   position: absolute;
   top: -15%;
-  right: 0;
+  right: calc(-1 * var(--content-inset));
   width: clamp(200px, 60vw, 420px);
   height: auto;
   z-index: 1;
@@ -127,7 +127,11 @@
 
   img {
     display: block;
-    width: clamp(150px, 15vw, 400px);
+    // Beginnt direkt am Foto (.profileBorder, davor im DOM/Flex-Fluss) und
+    // reicht bis zum echten Bildschirmrand - das Foto selbst landet dadurch
+    // exakt auf der normalen rechten Content-Kante (z.B. wie .skillsHeaderTXT),
+    // OHNE .aboutMeLeftSide zu veraendern.
+    width: calc(var(--page-gutter) + var(--content-inset));
     height: 6px;
   }
 }
@@ -152,10 +156,6 @@
     position: relative;
   }
 
-  .aboutMeLeftSide {
-    width: 90%;
-  }
-
   .aboutMeHeading h2 {
     font-size: clamp(60px, 6vw, 90px);
   }
@@ -167,7 +167,10 @@
   .aboutMeRightSide {
     display: flex;
     position: absolute;
-    right: 0;
+    // Bleibt bewusst am echten Bildschirmrand (Full-Bleed-Bildausnahme),
+    // statt sich am Content-Gutter auszurichten - kompensiert das
+    // padding-inline/max-width von .content-box auf .wholeAboutMeCNT.
+    right: calc(-1 * var(--content-inset));
     top: 30%;
     transform: translateY(-50%);
     width: auto;
@@ -176,7 +179,7 @@
 
   .aboutMeShadow {
     top: -20%;
-    right: 0;
+    right: calc(-1 * var(--content-inset));
     width: clamp(350px, 30vw, 600px);
     z-index: -1;
   }
@@ -184,13 +187,8 @@
 
 // ===== 1200px =====
 @media (min-width: 1200px) {
-  .aboutMeLeftSide {
-    width: 90%;
-  }
-
   .aboutMeRightSide {
     position: absolute;
-    right: 0;
     top: 50%;
     transform: translateY(-50%);
     width: auto;
@@ -210,7 +208,7 @@
   .aboutMeShadow {
     position: absolute;
     top: -25%;
-    right: 0;
+    right: calc(-1 * var(--content-inset));
     width: clamp(200px, 60vw, 420px);
     height: auto;
     z-index: 1;
@@ -228,15 +226,10 @@
 
 // ===== 1920px =====
 @media (min-width: 1920px) {
-  .aboutMeLeftSide {
-    max-width: 1920px;
-    margin-inline: auto;
-  }
-
   .aboutMeShadow {
     position: absolute;
     top: -25%;
-    right: 0;
+    right: calc(-1 * var(--content-inset));
     width: clamp(150px, 60vw, 550px);
     height: auto;
     z-index: 1;

@@ -1,5 +1,5 @@
 <section class="portfolioOuter" id="portfolio">
- <div class="wholePortfolioCNT" #wholePortfolioCNT>
+ <div class="wholePortfolioCNT content-box" #wholePortfolioCNT>
   <img
     class="portfolioShadowMobile"
     src="/img/shadow/04_shadow_mobile.svg"
@@ -25,6 +25,7 @@
       alt=""
     />
 
+    <div class="portfolioProjectsList">
     <section
       class="wholeSingleProjectCNT"
       *ngFor="let project of projects; let i = index"
@@ -102,6 +103,7 @@
         </tr>
       </table>
     </section>
+    </div>
   </section>
  </div>
 </section>

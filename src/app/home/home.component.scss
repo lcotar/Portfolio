@@ -1,10 +1,16 @@
 // ===== BASE (Mobile First, ab 320px) =====
+// max-width/margin-inline (dieselben globalen Werte wie .content-box, aber
+// bewusst OHNE padding-inline: leftSide/rightSide/homeFooter positionieren
+// sich selbst absolut und wuerden durch ein zusaetzliches Container-Padding
+// ihr fein abgestimmtes Koordinatensystem verlieren).
 .wholeCNT {
   position: relative;
   display: flex;
   flex-direction: column;
   min-height: 50vh;
   overflow-x: clip;
+  max-width: var(--content-max-width);
+  margin-inline: auto;
 }
 
 .leftSide {
@@ -315,7 +321,9 @@
 
   .rightSide {
     position: absolute;
-    right: 5%;
+    // Gleicher Gutter-Wert wie .content-box - Hero-Text/Button landen
+    // dadurch immer exakt auf der gemeinsamen rechten Content-Achse.
+    right: var(--page-gutter);
     top: 45%;
     transform: translateY(-50%);
     width: 50%;
@@ -360,7 +368,9 @@
 
 @media (min-width: 1400px) {
   .rightSide {
-    right: 15%;
+    // Zusaetzlich zum bestehenden translateY(-50%) (vertikale Zentrierung)
+    // ab hier 3vw nach links verschoben (1vw + weitere 2vw).
+    transform: translateY(-50%) translateX(-3vw);
     --intro-size: 80px;
     --name-size: 86px;
     --role-size: 64px;
@@ -381,8 +391,6 @@
 
 @media (min-width: 1920px) {
   .wholeCNT {
-    max-width: 1920px;
-    margin-inline: auto;
     overflow-x: visible;
   }
 
@@ -391,14 +399,16 @@
       left: 0vw;
     }
 
+    // Bleibt bewusst am echten Bildschirmrand (Full-Bleed-Deko-Ausnahme).
     .shape {
-      left: calc((1920px - 100vw) / 2);
+      left: calc(-1 * var(--content-inset));
     }
   }
 
   .homeFooter {
     .socialMedia {
-      transform: translateX(calc((1920px - 100vw) / 2));
+      // Bleibt bewusst am echten Bildschirmrand (Full-Bleed-Deko-Ausnahme).
+      transform: translateX(calc(-1 * var(--content-inset)));
 
       .homeLine {
         width: 20vw;
@@ -408,7 +418,6 @@
 
   .rightSide {
     top: 40%;
-    right: 10vw;
     --intro-size: 110px;
     --name-size: 118px;
     --role-size: 88px;
@@ -426,7 +435,6 @@
 
   .rightSide {
     top: 40%;
-    right: 0vw;
     --intro-size: 110px;
     --name-size: 118px;
     --role-size: 88px;
