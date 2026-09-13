@@ -1,21 +1,30 @@
-import { AfterViewInit, Component, ElementRef, OnDestroy, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnDestroy,
+  ViewChild,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
-    selector: 'app-my-skills',
-    imports: [CommonModule, TranslateModule],
-    templateUrl: './my-skills.component.html',
-    styleUrl: './my-skills.component.scss'
+  selector: 'app-my-skills',
+  imports: [CommonModule, TranslateModule],
+  templateUrl: './my-skills.component.html',
+  styleUrl: './my-skills.component.scss',
 })
 export class MySkillsComponent implements AfterViewInit, OnDestroy {
   @ViewChild('wholeSkillsCTN') wholeSkillsCTN!: ElementRef<HTMLElement>;
   private observer?: IntersectionObserver;
 
   ngAfterViewInit() {
-    this.observer = new IntersectionObserver(([entry]) => {
-      entry.target.classList.toggle('inView', entry.isIntersecting);
-    }, { threshold: 0.2 });
+    this.observer = new IntersectionObserver(
+      ([entry]) => {
+        entry.target.classList.toggle('inView', entry.isIntersecting);
+      },
+      { threshold: 0.2 },
+    );
     this.observer.observe(this.wholeSkillsCTN.nativeElement);
   }
 
@@ -26,68 +35,72 @@ export class MySkillsComponent implements AfterViewInit, OnDestroy {
   iconsFrondend = [
     {
       name: 'HTML',
-      srcDefault: '/img/skills/icons/10_html_icon.png',
-      srcHover: '/img/skills/hover_icons/10_html_icon_hover.png',
+      srcDefault: '/img/skills/icons/01 Frontend/10_html.png',
+      srcHover: '/img/skills/icons/01 Frontend/01_hover/10_html_hover.png',
       isHovered: false,
     },
     {
       name: 'CSS',
-      srcDefault: '/img/skills/icons/11_css_icon.png',
-      srcHover: '/img/skills/hover_icons/11_css_icon_hover.png',
+      srcDefault: '/img/skills/icons/01 Frontend/11_css.png',
+      srcHover: '/img/skills/icons/01 Frontend/01_hover/11_css_hover.png',
       isHovered: false,
     },
     {
       name: 'JavaScript',
-      srcDefault: '/img/skills/icons/06_javaScript_icon.png',
-      srcHover: '/img/skills/hover_icons/06_javaScript_icon_hover.png',
+      srcDefault: '/img/skills/icons/01 Frontend/06_javaScript.png',
+      srcHover:
+        '/img/skills/icons/01 Frontend/01_hover/06_javaScript_hover.png',
       isHovered: false,
     },
     {
       name: 'TypeScript',
-      srcDefault: '/img/skills/icons/12_typeScript_icon.png',
-      srcHover: '/img/skills/hover_icons/12_typeScript_icon_hover.png',
+      srcDefault: '/img/skills/icons/01 Frontend/12_TypeScript.png',
+      srcHover:
+        '/img/skills/icons/01 Frontend/01_hover/12_TypeScript_hover.png',
       isHovered: false,
     },
     {
       name: 'Angular',
-      srcDefault: '/img/skills/icons/15_angular_icon.png',
-      srcHover: '/img/skills/hover_icons/15_angular_icon_hover.png',
+      srcDefault: '/img/skills/icons/01 Frontend/15_angular.png',
+      srcHover: '/img/skills/icons/01 Frontend/01_hover/15_angular_hover.png',
       isHovered: false,
     },
     {
       name: 'Firebase',
-      srcDefault: '/img/skills/icons/07_firebase_icon.png',
-      srcHover: '/img/skills/hover_icons/07_firebase_icon_hover.png',
+      srcDefault: '/img/skills/icons/01 Frontend/07_firebase.png',
+      srcHover: '/img/skills/icons/01 Frontend/01_hover/07_firebase_hover.png',
       isHovered: false,
     },
     {
       name: 'Git',
-      srcDefault: '/img/skills/icons/09_git_icon.png',
-      srcHover: '/img/skills/hover_icons/09_git_icon_hover.png',
+      srcDefault: '/img/skills/icons/01 Frontend/09_git.png',
+      srcHover: '/img/skills/icons/01 Frontend/01_hover/09_git_hover.png',
       isHovered: false,
     },
     {
       name: 'Rest API',
-      srcDefault: '/img/skills/icons/13_restAPI_icon.png',
-      srcHover: '/img/skills/hover_icons/13_restAPI_icon_hover.png',
+      srcDefault: '/img/skills/icons/01 Frontend/13_restAPI.png',
+      srcHover: '/img/skills/icons/01 Frontend/01_hover/13_restAPI_hover.png',
       isHovered: false,
     },
     {
       name: 'Scrum',
-      srcDefault: '/img/skills/icons/08_scrum_icon.png',
-      srcHover: '/img/skills/hover_icons/08_scrum_icon_hover.png',
+      srcDefault: '/img/skills/icons/01 Frontend/08_scrum.png',
+      srcHover: '/img/skills/icons/01 Frontend/01_hover/08_scrum_hover.png',
       isHovered: false,
     },
     {
       name: 'Material Design',
-      srcDefault: '/img/skills/icons/18_materialDesign_icon.png',
-      srcHover: '/img/skills/hover_icons/18_materialDesign_icon_hover.png',
+      srcDefault: '/img/skills/icons/01 Frontend/18_materialDesign.png',
+      srcHover:
+        '/img/skills/icons/01 Frontend/01_hover/18_materialDesign_hover.png',
       isHovered: false,
     },
     {
       name: 'Continuous Learning',
-      srcDefault: '/img/skills/icons/16_continuallyLearning_icon.png',
-      srcHover: '/img/skills/icons/16_continuallyLearning_icon.png',
+      srcDefault: '/img/skills/icons/01 Frontend/16_continuallyLearning.png',
+      srcHover:
+        '/img/skills/icons/01 Frontend/01_hover/16_continuallyLearning.png',
       isHovered: false,
     },
   ];
