@@ -133,6 +133,8 @@
   align-content: center;
   padding: 40px 0;
   z-index: 1;
+  // Das (unsichtbare) Hover-Fenster darf keinen horizontalen Scroll erzeugen.
+  overflow-x: clip;
 }
 
 @keyframes skillIconFlip {
@@ -152,6 +154,7 @@
   gap: 8px;
   cursor: default;
   perspective: 600px;
+  position: relative;
 
   .skillIcon {
     width: 60px;
@@ -166,6 +169,92 @@
 
   &:hover .skillIcon {
     transform: scale(1.1);
+  }
+
+  // Weisses Hover-Fenster ("Continuous Learning") - erscheint nur, solange
+  // die Maus auf dem Item steht.
+  &:hover,
+  &:focus-visible {
+    z-index: 30;
+    outline: none;
+  }
+
+  .skillTooltip {
+    position: absolute;
+    bottom: calc(100% + 14px);
+    left: 50%;
+    transform: translateX(calc(-50% + var(--tip-shift, 0px))) translateY(6px);
+    width: max-content;
+    box-sizing: border-box;
+    max-width: min(460px, calc(100vw - 80px));
+    padding: 16px 20px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+      opacity 2s ease,
+      transform 2s ease,
+      visibility 2s;
+
+    // Spitze nach unten, zeigt auf das Icon
+    &::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: clamp(28px, calc(50% - var(--tip-shift, 0px)), calc(100% - 28px));
+      transform: translateX(-50%);
+      border: 10px solid transparent;
+      border-top-color: #ffffff;
+    }
+  }
+
+  &:hover .skillTooltip,
+  &:focus-visible .skillTooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(calc(-50% + var(--tip-shift, 0px))) translateY(0);
+  }
+
+  .skillTooltipTXT {
+    margin: 0 0 12px;
+    color: #9747ff;
+    font-size: 16px;
+    line-height: 1.3;
+    font-weight: 500;
+  }
+
+  .skillTooltipIcons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px 24px;
+  }
+
+  // Erste Zeile: React + Vue.js, danach die 5 Backend-Icons in Zeile 2.
+  .skillTooltipBreak {
+    flex-basis: 100%;
+    height: 0;
+  }
+
+  .skillTooltipIcon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+
+    img {
+      width: 36px;
+      height: 36px;
+    }
+
+    span {
+      color: #9747ff;
+      font-size: 15px;
+      font-weight: 600;
+    }
   }
 
   .skillLBL {

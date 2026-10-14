@@ -32,76 +32,99 @@ export class MySkillsComponent implements AfterViewInit, OnDestroy {
     this.observer?.disconnect();
   }
 
+  /** Haelt das weisse Hover-Fenster innerhalb des Icon-Bereichs (v.a. mobil). */
+  positionTooltip(event: Event) {
+    const item = event.currentTarget as HTMLElement;
+    const tip = item.querySelector<HTMLElement>('.skillTooltip');
+    const area = item.closest('.skillsIcons')?.getBoundingClientRect();
+    if (!tip || !area) return;
+    tip.style.setProperty('--tip-shift', '0px');
+    const box = tip.getBoundingClientRect();
+    const pad = 8;
+    let shift = 0;
+    if (box.right > area.right - pad) shift = area.right - pad - box.right;
+    if (box.left + shift < area.left + pad) shift = area.left + pad - box.left;
+    tip.style.setProperty('--tip-shift', `${shift}px`);
+  }
+
   iconsFrondend = [
     {
       name: 'HTML',
-      srcDefault: '/img/skills/icons/01 Frontend/10_html.png',
-      srcHover: '/img/skills/icons/01 Frontend/01_hover/10_html_hover.png',
+      srcDefault: '/img/skills/01 Frontend/10_html.png',
+      srcHover: '/img/skills/01 Frontend/01_hover/10_html_hover.png',
       isHovered: false,
     },
     {
       name: 'CSS',
-      srcDefault: '/img/skills/icons/01 Frontend/11_css.png',
-      srcHover: '/img/skills/icons/01 Frontend/01_hover/11_css_hover.png',
+      srcDefault: '/img/skills/01 Frontend/11_css.png',
+      srcHover: '/img/skills/01 Frontend/01_hover/11_css_hover.png',
       isHovered: false,
     },
     {
       name: 'JavaScript',
-      srcDefault: '/img/skills/icons/01 Frontend/06_javaScript.png',
-      srcHover:
-        '/img/skills/icons/01 Frontend/01_hover/06_javaScript_hover.png',
+      srcDefault: '/img/skills/01 Frontend/06_javaScript.png',
+      srcHover: '/img/skills/01 Frontend/01_hover/06_javaScript_hover.png',
       isHovered: false,
     },
     {
       name: 'TypeScript',
-      srcDefault: '/img/skills/icons/01 Frontend/12_TypeScript.png',
-      srcHover:
-        '/img/skills/icons/01 Frontend/01_hover/12_TypeScript_hover.png',
+      srcDefault: '/img/skills/01 Frontend/12_TypeScript.png',
+      srcHover: '/img/skills/01 Frontend/01_hover/12_TypeScript_hover.png',
       isHovered: false,
     },
     {
       name: 'Angular',
-      srcDefault: '/img/skills/icons/01 Frontend/15_angular.png',
-      srcHover: '/img/skills/icons/01 Frontend/01_hover/15_angular_hover.png',
+      srcDefault: '/img/skills/01 Frontend/15_angular.png',
+      srcHover: '/img/skills/01 Frontend/01_hover/15_angular_hover.png',
       isHovered: false,
     },
     {
       name: 'Firebase',
-      srcDefault: '/img/skills/icons/01 Frontend/07_firebase.png',
-      srcHover: '/img/skills/icons/01 Frontend/01_hover/07_firebase_hover.png',
+      srcDefault: '/img/skills/01 Frontend/07_firebase.png',
+      srcHover: '/img/skills/01 Frontend/01_hover/07_firebase_hover.png',
       isHovered: false,
     },
     {
       name: 'Git',
-      srcDefault: '/img/skills/icons/01 Frontend/09_git.png',
-      srcHover: '/img/skills/icons/01 Frontend/01_hover/09_git_hover.png',
+      srcDefault: '/img/skills/01 Frontend/09_git.png',
+      srcHover: '/img/skills/01 Frontend/01_hover/09_git_hover.png',
       isHovered: false,
     },
     {
       name: 'Rest API',
-      srcDefault: '/img/skills/icons/01 Frontend/13_restAPI.png',
-      srcHover: '/img/skills/icons/01 Frontend/01_hover/13_restAPI_hover.png',
+      srcDefault: '/img/skills/01 Frontend/13_restAPI.png',
+      srcHover: '/img/skills/01 Frontend/01_hover/13_restAPI_hover.png',
       isHovered: false,
     },
     {
       name: 'Scrum',
-      srcDefault: '/img/skills/icons/01 Frontend/08_scrum.png',
-      srcHover: '/img/skills/icons/01 Frontend/01_hover/08_scrum_hover.png',
-      isHovered: false,
-    },
-    {
-      name: 'Material Design',
-      srcDefault: '/img/skills/icons/01 Frontend/18_materialDesign.png',
-      srcHover:
-        '/img/skills/icons/01 Frontend/01_hover/18_materialDesign_hover.png',
+      srcDefault: '/img/skills/01 Frontend/08_scrum.png',
+      srcHover: '/img/skills/01 Frontend/01_hover/08_scrum_hover.png',
       isHovered: false,
     },
     {
       name: 'Continuous Learning',
-      srcDefault: '/img/skills/icons/01 Frontend/16_continuallyLearning.png',
-      srcHover:
-        '/img/skills/icons/01 Frontend/01_hover/16_continuallyLearning.png',
+      srcDefault: '/img/skills/01 Frontend/16_continuallyLearning.png',
+      srcHover: '/img/skills/01 Frontend/01_hover/16_continuallyLearning.png',
       isHovered: false,
+      interests: [
+        { name: 'React', src: '/img/skills/01 Frontend/19_React.svg' },
+        { name: 'Vue.js', src: '/img/skills/01 Frontend/20_VueJs.svg' },
+        {
+          name: 'Python',
+          src: '/img/skills/02 Backend/01_hover/01_Python.svg',
+        },
+        {
+          name: 'Django',
+          src: '/img/skills/02 Backend/01_hover/02_Django.svg',
+        },
+        { name: 'Linux', src: '/img/skills/02 Backend/01_hover/03_Linux.svg' },
+        {
+          name: 'PostgreSQL',
+          src: '/img/skills/02 Backend/01_hover/06_PostgreSQL.svg',
+        },
+        { name: 'SQL', src: '/img/skills/02 Backend/01_hover/08_SQL.svg' },
+      ],
     },
   ];
 

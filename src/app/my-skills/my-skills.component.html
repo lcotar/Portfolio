@@ -19,7 +19,9 @@
       @for (item of iconsFrondend; track $index) {
         <div
           class="skillItem"
-          (mouseenter)="item.isHovered = true"
+          [attr.tabindex]="item.interests ? 0 : null"
+          (mouseenter)="item.isHovered = true; positionTooltip($event)"
+          (focus)="positionTooltip($event)"
           (mouseleave)="item.isHovered = false"
         >
           <img
@@ -35,6 +37,24 @@
           >
             {{ item.name }}
           </p>
+          @if (item.interests) {
+            <div class="skillTooltip" role="tooltip">
+              <p class="skillTooltipTXT">
+                {{ "mySkills.learning.intro" | translate }}
+              </p>
+              <div class="skillTooltipIcons">
+                @for (interest of item.interests; track interest.name) {
+                  <div class="skillTooltipIcon">
+                    <img [src]="interest.src" [alt]="interest.name" />
+                    <span>{{ interest.name }}</span>
+                  </div>
+                  @if ($index === 1) {
+                    <div class="skillTooltipBreak"></div>
+                  }
+                }
+              </div>
+            </div>
+          }
         </div>
       }
     </div>

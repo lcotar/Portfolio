@@ -38,6 +38,9 @@
       "eins": "Hier findest du verschiedene Frontend-Technologien, die ich meinen Projekten verwendet habe.",
       "zwei": "Technologien entwickeln sich ständig weiter-genau das motiviert mich, immer Neues zu entdecken und auszuprobieren."
     },
+    "learning": {
+      "intro": "Ich interessiere mich besonders dafür, zu lernen:"
+    },
     "button": {
       "text": "Kontakt aufnehmen"
     }

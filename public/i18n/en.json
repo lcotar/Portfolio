@@ -38,6 +38,9 @@
       "eins": "Here you will find various front-end technologies that I have used in my projects.",
       "zwei": "Technologies are constantly evolving-that's exactly what motivates me to always discover and try new things."
     },
+    "learning": {
+      "intro": "I have special interests in learning:"
+    },
     "button": {
       "text": "Get in touch"
     }
